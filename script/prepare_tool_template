@@ -1,0 +1,78 @@
+#!/bin/sh
+set -eu
+
+if [ $# -ne 1 ]; then
+  echo "Usage: bash test.sh tool_name(test_tool/test_tool_1)"
+  exit 1
+fi
+
+tool_dir=${1}
+tool_name=$(echo ${tool_dir} | sed -e 's/.*\///g')
+script_dir=$(cd $(dirname $0) && pwd)
+tool_root_dir=$(cd ${script_dir}/../tool && pwd)
+
+echo "*** START PREPARING TOOL TEMPLATE: ${tool_name} ***"
+echo "...making tool dir"
+mkdir -p "${tool_root_dir}/${tool_dir}"
+
+echo "...generate build.sh"
+cat << EOS > "${tool_root_dir}/${tool_dir}/build.sh"
+#!/bin/sh
+set -eux
+cd $(dirname $0)
+docker build -t dat2-cwl/${tool_name} .
+EOS
+
+echo "...generate Dockerfile"
+cat << EOS > "${tool_root_dir}/${tool_dir}/Dockerfile"
+FROM biocontainers/biocontainers:latest
+USER root
+RUN conda install -y \\
+    tool_1 \\
+    tool_2
+WORKDIR /workdir
+COPY ${tool_name}.sh /workdir/
+EOS
+
+echo "...generate ${tool_name}.cwl"
+cat << EOS > "${tool_root_dir}/${tool_dir}/${tool_name}.cwl"
+#!/usr/bin/env cwl-runner
+cwlVersion: v1.0
+class: CommandLineTool
+doc: string
+requirements:
+  DockerRequirement:
+    dockerPull: dat2-cwl/${tool_name}:latest
+baseCommand: bash
+arguments:
+  - position: 0
+    valueFrom: /workdir/${tool_name}.sh
+inputs:
+  input_1:
+    type: File
+    inputBinding:
+      position: 1
+outputs:
+  output_1:
+    type: File
+    outputBinding:
+      glob: "*.txt"
+  stdout: stdout
+  stderr: stderr
+stdout: ${tool_name}-stdout.log
+stderr: ${tool_name}-stderr.log
+EOS
+
+echo "...generate ${tool_name}.sh"
+cat << EOS > "${tool_root_dir}/${tool_dir}/${tool_name}.sh"
+#!/bin/sh
+# doc
+set -eux
+input_1=\${1}  # file_path
+# script here
+EOS
+
+echo "...generate ${tool_name}.yml"
+touch "${tool_root_dir}/${tool_dir}/${tool_name}.yml"
+
+echo "*** FINISH PREPARING TOOL TEMPLATE: ${tool_name} ***"

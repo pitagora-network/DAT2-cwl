@@ -1,0 +1,27 @@
+#!/bin/sh
+set -eu
+
+if [ $# -ne 1 ]; then
+  echo "Usage: bash test.sh tool_name"
+  exit 1
+fi
+
+tool_name=$1
+script_dir=$(cd $(dirname $0) && pwd)
+root_dir=$(cd ${script_dir}/.. && pwd)
+tool_root_dir=$(cd ${root_dir}/tool && pwd)
+tool_dir=$(find ${tool_root_dir} -type d | grep ${tool_name})
+
+echo "*** START BUILDING TOOL: ${tool_name} ***"
+echo "...build tool docker image"
+cd ${tool_dir}
+bash build.sh
+
+echo "...validate by cwltool"
+cwltool --validate ${tool_dir}/${tool_name}.cwl
+
+echo "...generate ${tool_name}.yml"
+cwltool --make-template ${tool_dir}/${tool_name}.cwl > ${tool_dir}/${tool_name}.yml
+cp ${tool_dir}/${tool_name}.yml ${root_dir}/test/tool/test_job/
+
+echo "*** FINISH BUILDING TOOL: ${tool_name} ***"
