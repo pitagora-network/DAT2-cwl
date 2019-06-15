@@ -1,0 +1,4 @@
+output: a_string  # type "string"
+input:  # type "File"
+    class: File
+    path: a/file/path

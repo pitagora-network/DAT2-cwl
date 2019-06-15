@@ -1,0 +1,10 @@
+cpu: 4
+domtblout: sample.longest_orfs.SOD_Cu.out
+hmm:
+  class: File
+  path: >-
+    ../../data/Sod_Cu.hmm
+pep:
+  class: File
+  path: >-
+    ../../data/sample.longest_orfs.pep
