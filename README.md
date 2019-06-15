@@ -15,9 +15,9 @@
 - metagenome
   - inutano
 - rna-seq
-  - yasumizu
+  - yamada
 - transcriptome-assemble
-  - tasumizu
+  - yasumizu
 
 ## Directory 構造と命名規則
 
