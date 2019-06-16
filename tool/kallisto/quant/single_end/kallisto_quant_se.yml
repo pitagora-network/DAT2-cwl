@@ -1,0 +1,10 @@
+index_file: 
+  class: File
+  path: /home/kyamada/cwl/out_test/kallisto/kallisto.idx
+  # genome_version: _GENOME_VER_
+fq:
+  - class: File
+    path: /home/kyamada/cwl/data/fastq/single_end/SRR4081222.fastq
+nthreads: 4
+# fragment_length: 200
+# standard_deviation: 20
