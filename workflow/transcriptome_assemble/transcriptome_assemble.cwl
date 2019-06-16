@@ -11,6 +11,18 @@ inputs:
   - id: cpu
     type: int?
     'sbg:exposed': true
+  - id: split_spot
+    type: boolean?
+    'sbg:exposed': true
+  - id: split_files
+    type: boolean?
+    'sbg:exposed': true
+  - id: split_3
+    type: boolean?
+    'sbg:exposed': true
+  - id: skip_technical
+    type: boolean?
+    'sbg:exposed': true
   - id: runid
     type: string
     'sbg:exposed': true
@@ -43,21 +55,45 @@ outputs:
     outputSource:
       - fasterq_dump/reverse
     type: File?
-    'sbg:x': 142
-    'sbg:y': -72
-  - id: fastqFiles
+    'sbg:x': -38.3668212890625
+    'sbg:y': -74
+  - id: forward
     outputSource:
-      - fasterq_dump/fastqFiles
-    type: 'File[]'
-    'sbg:x': 156
-    'sbg:y': 165
+      - fasterq_dump/forward
+    type: File?
+    'sbg:x': 39.6331787109375
+    'sbg:y': 306
+  - id: output
+    outputSource:
+      - gzip/output
+    type: File
+    'sbg:x': 244.6331787109375
+    'sbg:y': -88
+  - id: output_1
+    outputSource:
+      - gzip_1/output
+    type: File
+    'sbg:x': 362.6331787109375
+    'sbg:y': 335
+  - id: trinity_results
+    outputSource:
+      - trinity_pe/trinity_results
+    type: Directory
+    'sbg:x': 1017.6331787109375
+    'sbg:y': -159
+  - id: output_2
+    outputSource:
+      - aaea/output
+    type: Directory?
+    'sbg:x': 1244
+    'sbg:y': 493
 steps:
   - id: trim_galore
     in:
       - id: read1
-        source: fasterq_dump/forward
+        source: gzip_1/output
       - id: read2
-        source: fasterq_dump/reverse
+        source: gzip/output
     out:
       - id: out1
       - id: out2
@@ -97,8 +133,14 @@ steps:
     'sbg:y': 56
   - id: fasterq_dump
     in:
+      - id: skip_technical
+        source: skip_technical
+      - id: split_3
+        source: split_3
       - id: split_files
-        default: true
+        source: split_files
+      - id: split_spot
+        source: split_spot
       - id: runid
         source: runid
     out:
@@ -106,7 +148,49 @@ steps:
       - id: forward
       - id: reverse
     run: ../../tool/fasterq-dump/fasterq-dump.cwl
-    label: 'fastq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': -106
-    'sbg:y': 108
+    label: 'fasterq-dump: dump .sra format file to generate fastq file'
+    'sbg:x': -128
+    'sbg:y': 78
+  - id: gzip
+    in:
+      - id: input
+        source: fasterq_dump/reverse
+    out:
+      - id: output
+    run: ../../tool/gzip/gzip.cwl
+    label: gzip
+    'sbg:x': 137.6328125
+    'sbg:y': 1
+  - id: gzip_1
+    in:
+      - id: input
+        source: fasterq_dump/forward
+    out:
+      - id: output
+    run: ../../tool/gzip/gzip.cwl
+    label: gzip
+    'sbg:x': 144
+    'sbg:y': 137
+  - id: aaea
+    in:
+      - id: transcript
+        source: trinity_pe/trinity_results
+      - id: thread_count
+        default: 30
+      - id: left
+        source: trim_galore/out2
+      - id: right
+        source: trim_galore/out1
+      - id: est_method
+        default: kallisto
+      - id: kallisto_add_opts
+        default: '"-t 30"'
+      - id: output_dir
+        default: kallisto_out
+    out:
+      - id: output
+    run: ../../tool/trinity/aaea.cwl
+    label: aaea
+    'sbg:x': 993
+    'sbg:y': 467
 requirements: []
