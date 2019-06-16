@@ -193,11 +193,11 @@ outputs:
   - id: forward
     type: File?
     outputBinding:
-      glob: '*_1.fastq*'
+      glob: '*_1.fastq'
   - id: reverse
     type: File?
     outputBinding:
-      glob: '*_2.fastq*'
+      glob: '*_2.fastq'
 doc: 'sra-toolkit: https://github.com/ncbi/sra-tools/wiki/Download-On-Demand'
 label: 'fastq-dump: dump .sra format file to generate fastq file'
 arguments:

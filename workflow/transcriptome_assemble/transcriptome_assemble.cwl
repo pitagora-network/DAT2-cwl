@@ -5,28 +5,16 @@ label: transcriptome_assemble
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: runid
-    type: string
-    'sbg:exposed': true
   - id: max_memory
     type: string
     'sbg:exposed': true
   - id: cpu
     type: int?
     'sbg:exposed': true
+  - id: runid
+    type: string
+    'sbg:exposed': true
 outputs:
-  - id: output
-    outputSource:
-      - gzip/output
-    type: File
-    'sbg:x': 353.5230712890625
-    'sbg:y': -174
-  - id: output_1
-    outputSource:
-      - gzip_1/output
-    type: File
-    'sbg:x': 372.5230712890625
-    'sbg:y': 242
   - id: out2
     outputSource:
       - trim_galore/out2
@@ -51,29 +39,25 @@ outputs:
     type: File
     'sbg:x': 841.5230712890625
     'sbg:y': 227
+  - id: reverse
+    outputSource:
+      - fasterq_dump/reverse
+    type: File?
+    'sbg:x': 142
+    'sbg:y': -72
+  - id: fastqFiles
+    outputSource:
+      - fasterq_dump/fastqFiles
+    type: 'File[]'
+    'sbg:x': 156
+    'sbg:y': 165
 steps:
-  - id: fasterq_dump
-    in:
-      - id: split_files
-        default: true
-      - id: split_spot
-        default: false
-      - id: runid
-        source: runid
-    out:
-      - id: fastqFiles
-      - id: forward
-      - id: reverse
-    run: ../../tool/fasterq-dump/fasterq-dump.cwl
-    label: 'fastq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': -210
-    'sbg:y': 79
   - id: trim_galore
     in:
       - id: read1
-        source: gzip_1/output
+        source: fasterq_dump/forward
       - id: read2
-        source: gzip/output
+        source: fasterq_dump/reverse
     out:
       - id: out1
       - id: out2
@@ -111,24 +95,18 @@ steps:
     run: ../../tool/trinity/trinity-pe.cwl
     'sbg:x': 869
     'sbg:y': 56
-  - id: gzip
+  - id: fasterq_dump
     in:
-      - id: input
-        source: fasterq_dump/reverse
+      - id: split_files
+        default: true
+      - id: runid
+        source: runid
     out:
-      - id: output
-    run: ../../tool/gzip/gzip.cwl
-    label: gzip
-    'sbg:x': 159.5230712890625
-    'sbg:y': -23
-  - id: gzip_1
-    in:
-      - id: input
-        source: fasterq_dump/forward
-    out:
-      - id: output
-    run: ../../tool/gzip/gzip.cwl
-    label: gzip
-    'sbg:x': 182
-    'sbg:y': 136
+      - id: fastqFiles
+      - id: forward
+      - id: reverse
+    run: ../../tool/fasterq-dump/fasterq-dump.cwl
+    label: 'fastq-dump: dump .sra format file to generate fastq file'
+    'sbg:x': -106
+    'sbg:y': 108
 requirements: []
