@@ -18,8 +18,10 @@ outputs: []
 steps:
   - id: fasterq_dump
     in:
-      - id: split_spot
+      - id: split_files
         default: true
+      - id: split_spot
+        default: false
       - id: runid
         source: runid
     out:
@@ -30,32 +32,12 @@ steps:
     label: 'fastq-dump: dump .sra format file to generate fastq file'
     'sbg:x': 0
     'sbg:y': 39.5
-  - id: gzip
-    in:
-      - id: input
-        source: fasterq_dump/reverse
-    out:
-      - id: output
-    run: ../../tool/gzip/gzip.cwl
-    label: gzip
-    'sbg:x': 312.140625
-    'sbg:y': 107
-  - id: gzip_1
-    in:
-      - id: input
-        source: fasterq_dump/forward
-    out:
-      - id: output
-    run: ../../tool/gzip/gzip.cwl
-    label: gzip
-    'sbg:x': 312.140625
-    'sbg:y': 0
   - id: trim_galore
     in:
       - id: read1
-        source: gzip_1/output
-      - id: read2
         source: gzip/output
+      - id: read2
+        source: gzip_1/output
     out:
       - id: out1
       - id: out2
@@ -93,4 +75,24 @@ steps:
     run: ../../tool/trinity/trinity-pe.cwl
     'sbg:x': 869
     'sbg:y': 56
+  - id: gzip
+    in:
+      - id: input
+        source: fasterq_dump/forward
+    out:
+      - id: output
+    run: ../../tool/gzip/gzip.cwl
+    label: gzip
+    'sbg:x': 250
+    'sbg:y': 101
+  - id: gzip_1
+    in:
+      - id: input
+        source: fasterq_dump/reverse
+    out:
+      - id: output
+    run: ../../tool/gzip/gzip.cwl
+    label: gzip
+    'sbg:x': 234
+    'sbg:y': -44
 requirements: []
