@@ -14,6 +14,16 @@ inputs:
     type: File
     inputBinding:
       position: 0
+  - id: fastqc
+    type: boolean?
+    inputBinding:
+      position: -2
+      prefix: '--fastqc'
+  - id: trim1
+    type: boolean?
+    inputBinding:
+      position: -1
+      prefix: '--trim1'
 outputs:
   - id: out1
     type: File
