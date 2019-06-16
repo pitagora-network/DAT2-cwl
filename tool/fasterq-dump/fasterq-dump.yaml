@@ -19,7 +19,7 @@ progress: null
 quiet: null
 rowid_as_name: null
 runid: DRR092257
-skip_technical: null
+skip_technical: false
 split_3: false
 split_files: true
 split_spot: false
