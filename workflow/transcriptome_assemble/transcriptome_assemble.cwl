@@ -14,7 +14,43 @@ inputs:
   - id: cpu
     type: int?
     'sbg:exposed': true
-outputs: []
+outputs:
+  - id: output
+    outputSource:
+      - gzip/output
+    type: File
+    'sbg:x': 353.5230712890625
+    'sbg:y': -174
+  - id: output_1
+    outputSource:
+      - gzip_1/output
+    type: File
+    'sbg:x': 372.5230712890625
+    'sbg:y': 242
+  - id: out2
+    outputSource:
+      - trim_galore/out2
+    type: File
+    'sbg:x': 625.5230712890625
+    'sbg:y': -91
+  - id: out1
+    outputSource:
+      - trim_galore/out1
+    type: File
+    'sbg:x': 614.5230712890625
+    'sbg:y': 225
+  - id: output2
+    outputSource:
+      - for_trinity/output2
+    type: File
+    'sbg:x': 817.5230712890625
+    'sbg:y': -93
+  - id: output1
+    outputSource:
+      - for_trinity/output1
+    type: File
+    'sbg:x': 841.5230712890625
+    'sbg:y': 227
 steps:
   - id: fasterq_dump
     in:
@@ -30,14 +66,14 @@ steps:
       - id: reverse
     run: ../../tool/fasterq-dump/fasterq-dump.cwl
     label: 'fastq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': 0
-    'sbg:y': 39.5
+    'sbg:x': -210
+    'sbg:y': 79
   - id: trim_galore
     in:
       - id: read1
-        source: gzip/output
-      - id: read2
         source: gzip_1/output
+      - id: read2
+        source: gzip/output
     out:
       - id: out1
       - id: out2
@@ -78,21 +114,21 @@ steps:
   - id: gzip
     in:
       - id: input
-        source: fasterq_dump/forward
-    out:
-      - id: output
-    run: ../../tool/gzip/gzip.cwl
-    label: gzip
-    'sbg:x': 250
-    'sbg:y': 101
-  - id: gzip_1
-    in:
-      - id: input
         source: fasterq_dump/reverse
     out:
       - id: output
     run: ../../tool/gzip/gzip.cwl
     label: gzip
-    'sbg:x': 234
-    'sbg:y': -44
+    'sbg:x': 159.5230712890625
+    'sbg:y': -23
+  - id: gzip_1
+    in:
+      - id: input
+        source: fasterq_dump/forward
+    out:
+      - id: output
+    run: ../../tool/gzip/gzip.cwl
+    label: gzip
+    'sbg:x': 182
+    'sbg:y': 136
 requirements: []
