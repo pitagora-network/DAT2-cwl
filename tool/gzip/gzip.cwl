@@ -16,3 +16,6 @@ outputs:
     outputBinding:
       glob: '*.gz'
 label: gzip
+requirements:
+  - class: DockerRequirement
+    dockerPull: 'ubuntu:latest'
