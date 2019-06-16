@@ -1,7 +1,7 @@
 nthreads: 8
 genomeDir:
     class: Directory
-    path:/home/kyamada/cwl/out_test/STAR_reference
+    path: /home/kyamada/cwl/out_test/STAR_reference
 genomeFastaFiles:
     class: File
     path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa
