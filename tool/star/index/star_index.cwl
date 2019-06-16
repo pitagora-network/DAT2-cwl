@@ -67,6 +67,11 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--runMode'
+  - id: genomeDir
+    type: Directory?
+    inputBinding:
+      position: 0
+      prefix: '--genomeDir'
 outputs:
   - id: starIndex
     type: 'File[]'
@@ -76,10 +81,6 @@ doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR genomeGenerate: Generating genome indexes.'
-arguments:
-  - position: 0
-    prefix: '--genomeDir'
-    valueFrom: $(runtime.outdir)
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/star:2.6.0c--0'
