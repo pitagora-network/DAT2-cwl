@@ -57,6 +57,10 @@ outputs:
     type: Directory
     outputBinding:
       glob: $(inputs.output_dir)
+  - id: transcript
+    type: File?
+    outputBinding:
+      glob: $(inputs.output_dir)/Trinity.fasta
 requirements:
   - class: InitialWorkDirRequirement
     listing:
