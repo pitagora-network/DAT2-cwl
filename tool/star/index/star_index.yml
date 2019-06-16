@@ -1,0 +1,11 @@
+nthreads: 8
+genomeDir:
+  class: Directory
+  STAR_reference
+genomeFastaFiles:
+  class: File
+  path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+sjdbGTFfile:
+  class: File
+  path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.95.gtf
+# sjdbOverhang: _SJDB_OVERHANG_
