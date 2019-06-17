@@ -1,4 +1,4 @@
-index_name: /home/kyamada/cwl/out_test//kallisto.idx
+index_name: /home/kyamada/cwl/out_test/kallisto.idx
 fasta_files:
   - class: File
     path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.cdna.all.fa
