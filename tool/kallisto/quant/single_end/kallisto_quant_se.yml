@@ -1,6 +1,6 @@
 index_file: 
   class: File
-  path: /home/kyamada/cwl/DAT2-cwl_kyamada/tool/kallisto/index/kallisto.idx
+  path: /home/kyamada/cwl/out_test/kallisto/kallisto.idx
   # genome_version: _GENOME_VER_
 fq:
   - class: File
