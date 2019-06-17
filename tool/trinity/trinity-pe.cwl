@@ -69,4 +69,4 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: 'comics/trinityrnaseq:2.2.0'
+    dockerPull: 'trinityrnaseq/trinityrnaseq:2.8.5'

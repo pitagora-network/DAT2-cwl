@@ -20,10 +20,10 @@ inputs:
   - id: runid
     type: string
     'sbg:exposed': true
-  - id: seq_type
+  - id: max_memory
     type: string
     'sbg:exposed': true
-  - id: max_memory
+  - id: seq_type
     type: string
     'sbg:exposed': true
   - id: cpu
@@ -52,20 +52,20 @@ outputs:
     outputSource:
       - fasterq_dump/forward
     type: File?
-    'sbg:x': -29
-    'sbg:y': 427
+    'sbg:x': -83
+    'sbg:y': 550
   - id: output_2
     outputSource:
       - aaea/output
     type: Directory?
-    'sbg:x': 871
-    'sbg:y': 588
+    'sbg:x': 999
+    'sbg:y': 526
   - id: trinity_results
     outputSource:
       - trinity_pe/trinity_results
     type: Directory
-    'sbg:x': 1083
-    'sbg:y': 48
+    'sbg:x': 1070.3231201171875
+    'sbg:y': -53.5
 steps:
   - id: for_trinity
     in:
@@ -98,8 +98,8 @@ steps:
       - id: reverse
     run: ../../tool/fasterq-dump/fasterq-dump.cwl
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': -292
-    'sbg:y': 196
+    'sbg:x': -320
+    'sbg:y': 230
   - id: aaea
     in:
       - id: transcript
@@ -120,51 +120,14 @@ steps:
       - id: output
     run: ../../tool/trinity/aaea.cwl
     label: aaea
-    'sbg:x': 680
-    'sbg:y': 547
-  - id: trinity_pe
-    in:
-      - id: cpu
-        default: 30
-        source: cpu
-      - id: fq1
-        source: for_trinity/output1
-      - id: fq2
-        source: for_trinity/output2
-      - id: max_memory
-        source: max_memory
-      - id: seq_type
-        source: seq_type
-    out:
-      - id: trinity_results
-      - id: transcript
-    run: ../../tool/trinity/trinity-pe.cwl
-    'sbg:x': 901
-    'sbg:y': 217
-  - id: pigz
-    in:
-      - id: file
-        source: fasterq_dump/reverse
-    out:
-      - id: compressed
-    run: ../../tool/pigz/pigz.cwl
-    'sbg:x': -3
-    'sbg:y': 114
-  - id: pigz_1
-    in:
-      - id: file
-        source: fasterq_dump/forward
-    out:
-      - id: compressed
-    run: ../../tool/pigz/pigz.cwl
-    'sbg:x': 14.3231201171875
-    'sbg:y': 277.5
+    'sbg:x': 789
+    'sbg:y': 525
   - id: trim_galore
     in:
       - id: read1
-        source: pigz_1/compressed
+        source: gzip_1/gzipped
       - id: read2
-        source: pigz/compressed
+        source: gzip/gzipped
       - id: fastqc
         default: true
       - id: trim1
@@ -176,4 +139,46 @@ steps:
     label: trim_galore
     'sbg:x': 274.328125
     'sbg:y': 228.5
+  - id: trinity_pe
+    in:
+      - id: cpu
+        source: cpu
+      - id: fq1
+        source: for_trinity/output1
+      - id: fq2
+        source: for_trinity/output2
+      - id: max_memory
+        source: max_memory
+      - id: output_dir
+        default: trinity_out_dir
+      - id: seq_type
+        source: seq_type
+    out:
+      - id: trinity_results
+      - id: transcript
+    run: ../../tool/trinity/trinity-pe.cwl
+    'sbg:x': 933.328125
+    'sbg:y': 200.5
+  - id: gzip
+    in:
+      - id: input_1
+        source: fasterq_dump/reverse
+    out:
+      - id: gzipped
+      - id: stderr
+      - id: stdout
+    run: ../../tool/gzip/gzip.cwl
+    'sbg:x': 4.828125
+    'sbg:y': 196
+  - id: gzip_1
+    in:
+      - id: input_1
+        source: fasterq_dump/forward
+    out:
+      - id: gzipped
+      - id: stderr
+      - id: stdout
+    run: ../../tool/gzip/gzip.cwl
+    'sbg:x': 9
+    'sbg:y': 354
 requirements: []
