@@ -1,24 +1,42 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: manipulate tape archives
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/tar:latest
-baseCommand: bash
-arguments:
-  - position: 0
-    valueFrom: /workdir/tar.sh
+    dockerPull: alpine:3.9
+  InlineJavascriptRequirement: {}
+baseCommand: tar
 inputs:
-  input_1:
+  file:
     type: File
     inputBinding:
-      position: 1
+      prefix: --file=
+      separate: false
+  extract:
+    type: boolean
+    default: false
+    inputBinding:
+      prefix: -x
+  gzip:
+    type: boolean
+    default: false
+    inputBinding:
+      prefix: -z
+  verbose:
+    type: boolean
+    default: false
+    inputBinding:
+      prefix: -v
 outputs:
-  output_1:
-    type: File
+  output:
+    type: Directory
     outputBinding:
-      glob: "*.txt"
+      glob: |
+        ${
+          var extlen = inputs.gzip ? -2 : -1;
+          return inputs.file.basename.split('.').slice(0, extlen).join('.');
+        }
   stdout: stdout
   stderr: stderr
 stdout: tar-stdout.log
