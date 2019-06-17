@@ -1,25 +1,17 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: concatenate files and print on the standard output
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/cat:latest
-baseCommand: bash
-arguments:
-  - position: 0
-    valueFrom: /workdir/cat.sh
+    dockerPull: alpine:3.9
+baseCommand: cat
 inputs:
-  input_1:
-    type: File
-    inputBinding:
-      position: 1
+  files:
+    type: File[]
+    inputBinding: {}
 outputs:
-  output_1:
-    type: File
-    outputBinding:
-      glob: "*.txt"
-  stdout: stdout
+  concatinated: stdout
   stderr: stderr
 stdout: cat-stdout.log
 stderr: cat-stderr.log
