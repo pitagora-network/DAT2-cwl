@@ -1,5 +1,6 @@
 cpu: 30
 max_memory: '100'
+minimum_protein_length: 30
 runid: DRR092257
 seq_type: fq
 skip_technical: false

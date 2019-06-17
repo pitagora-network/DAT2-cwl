@@ -66,6 +66,12 @@ outputs:
     type: Directory
     'sbg:x': 1070.3231201171875
     'sbg:y': -53.5
+  - id: output
+    outputSource:
+      - transdecoder/output
+    type: Directory?
+    'sbg:x': 1398.828125
+    'sbg:y': 362.5
 steps:
   - id: for_trinity
     in:
@@ -181,4 +187,14 @@ steps:
     run: ../../tool/gzip/gzip.cwl
     'sbg:x': 9
     'sbg:y': 354
+  - id: transdecoder
+    in:
+      - id: transcripts
+        source: trinity_pe/transcript
+    out:
+      - id: output
+    run: ../../tool/transdecoder/transdecoder.cwl
+    label: transdecoder
+    'sbg:x': 1205
+    'sbg:y': 373
 requirements: []
