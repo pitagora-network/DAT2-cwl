@@ -14,6 +14,26 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--genomeDir'
+  - id: '--genomeFastaFiles'
+    type: File?
+    inputBinding:
+      position: 0
+      prefix: '--genomeFastaFiles'
+  - id: '--runThreadN'
+    type: string?
+    inputBinding:
+      position: 0
+      prefix: '--runThreadN'
+  - id: '--sjdbGTFfile'
+    type: File?
+    inputBinding:
+      position: 0
+      prefix: '--sjdbGTFfile'
+  - id: '--sjdbOverhang'
+    type: File?
+    inputBinding:
+      position: 0
+      prefix: '--sjdbOverhang'
 outputs:
   - id: starIndex
     type: 'File[]'
@@ -23,19 +43,6 @@ doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR genomeGenerate: Generating genome indexes.'
-arguments:
-  - position: 0
-    prefix: ''
-    valueFrom: '--genomeFastaFiles'
-  - position: 0
-    prefix: ''
-    valueFrom: '--runThreadN'
-  - position: 0
-    prefix: ''
-    valueFrom: '--sjdbGTFfile'
-  - position: 0
-    prefix: ''
-    valueFrom: '--sjdbOverhang'
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/star:2.6.0c--0'
