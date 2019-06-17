@@ -21,6 +21,10 @@ outputs:
     type: Directory?
     outputBinding:
       glob: '*.transdecoder_dir'
+  - id: pep
+    type: File?
+    outputBinding:
+      glob: '*.pep'
 label: transdecoder
 requirements:
   - class: DockerRequirement

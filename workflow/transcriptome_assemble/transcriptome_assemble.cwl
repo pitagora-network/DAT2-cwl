@@ -29,19 +29,34 @@ inputs:
   - id: cpu
     type: int?
     'sbg:exposed': true
+  - id: output_name
+    type: string
+    'sbg:exposed': true
+  - id: url
+    type: string
+    'sbg:exposed': true
+  - id: minimum_protein_length
+    type: int
+    'sbg:exposed': true
+  - id: cpu_1
+    type: int?
+    'sbg:exposed': true
+  - id: domtblout
+    type: string
+    'sbg:exposed': true
 outputs:
   - id: output2
     outputSource:
       - for_trinity/output2
     type: File
-    'sbg:x': 750
-    'sbg:y': -87
+    'sbg:x': 455
+    'sbg:y': -7
   - id: output1
     outputSource:
       - for_trinity/output1
     type: File
-    'sbg:x': 755
-    'sbg:y': 325
+    'sbg:x': 451
+    'sbg:y': 246
   - id: reverse
     outputSource:
       - fasterq_dump/reverse
@@ -58,20 +73,20 @@ outputs:
     outputSource:
       - aaea/output
     type: Directory?
-    'sbg:x': 999
-    'sbg:y': 526
+    'sbg:x': 559
+    'sbg:y': 425
   - id: trinity_results
     outputSource:
       - trinity_pe/trinity_results
     type: Directory
-    'sbg:x': 1070.3231201171875
-    'sbg:y': -53.5
+    'sbg:x': 768
+    'sbg:y': -1
   - id: output
     outputSource:
       - transdecoder/output
     type: Directory?
-    'sbg:x': 1398.828125
-    'sbg:y': 362.5
+    'sbg:x': 905
+    'sbg:y': 294
 steps:
   - id: for_trinity
     in:
@@ -84,8 +99,8 @@ steps:
       - id: output2
     run: ../../tool/for_trinity/for_trinity.cwl
     label: for_trinity
-    'sbg:x': 613
-    'sbg:y': 210
+    'sbg:x': 316
+    'sbg:y': 176
   - id: fasterq_dump
     in:
       - id: skip_technical
@@ -126,8 +141,8 @@ steps:
       - id: output
     run: ../../tool/trinity/aaea.cwl
     label: aaea
-    'sbg:x': 789
-    'sbg:y': 525
+    'sbg:x': 364
+    'sbg:y': 422
   - id: trim_galore
     in:
       - id: read1
@@ -143,8 +158,8 @@ steps:
       - id: out2
     run: ../../tool/trim_galore/trim_galore_PE.cwl
     label: trim_galore
-    'sbg:x': 274.328125
-    'sbg:y': 228.5
+    'sbg:x': 123
+    'sbg:y': 240
   - id: trinity_pe
     in:
       - id: cpu
@@ -163,8 +178,8 @@ steps:
       - id: trinity_results
       - id: transcript
     run: ../../tool/trinity/trinity-pe.cwl
-    'sbg:x': 933.328125
-    'sbg:y': 200.5
+    'sbg:x': 611
+    'sbg:y': 173
   - id: gzip
     in:
       - id: input_1
@@ -174,8 +189,8 @@ steps:
       - id: stderr
       - id: stdout
     run: ../../tool/gzip/gzip.cwl
-    'sbg:x': 4.828125
-    'sbg:y': 196
+    'sbg:x': -90
+    'sbg:y': 193
   - id: gzip_1
     in:
       - id: input_1
@@ -185,16 +200,46 @@ steps:
       - id: stderr
       - id: stdout
     run: ../../tool/gzip/gzip.cwl
-    'sbg:x': 9
-    'sbg:y': 354
+    'sbg:x': -83
+    'sbg:y': 341
   - id: transdecoder
     in:
       - id: transcripts
         source: trinity_pe/transcript
+      - id: minimum_protein_length
+        source: minimum_protein_length
     out:
       - id: output
+      - id: pep
     run: ../../tool/transdecoder/transdecoder.cwl
     label: transdecoder
-    'sbg:x': 1205
-    'sbg:y': 373
+    'sbg:x': 803
+    'sbg:y': 191
+  - id: hmmsearch
+    in:
+      - id: cpu
+        source: cpu_1
+      - id: domtblout
+        source: domtblout
+      - id: hmm
+        source: wget/downloaded
+      - id: pep
+        source: transdecoder/pep
+    out: []
+    run: ../../tool/hmmer/hmmsearch.cwl
+    label: hmmsearch
+    'sbg:x': 1076
+    'sbg:y': 192
+  - id: wget
+    in:
+      - id: output_name
+        source: output_name
+      - id: url
+        source: url
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../tool/wget/wget.cwl
+    'sbg:x': 906
+    'sbg:y': 431
 requirements: []
