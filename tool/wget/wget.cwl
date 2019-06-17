@@ -1,25 +1,39 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: The non-interactive network downloader
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/curl:latest
-baseCommand: bash
-arguments:
-  - position: 0
-    valueFrom: /workdir/curl.sh
+    dockerPull: alpine:3.9
+  InlineJavascriptRequirement: {}
+baseCommand: wget
 inputs:
-  input_1:
-    type: File
+  url:
+    doc: Download target URL
+    type: string
+    inputBinding: {}
+  output_name:
+    doc: Output file name (use `wget-stdout.txt` by default)
+    type: string
+    default: wget-stdout.txt
     inputBinding:
-      position: 1
+      prefix: --output-document=
+      separate: false
+      valueFrom: "$(inputs.use_remote_name ? inputs.url.split('/').pop() : self)"
+  use_remote_name:
+    doc: Use the basename of `url` parameter as an output file name. It is equivalent to `curl -O`.
+    type: boolean
+    default: false
+  track_location:
+    doc: Equivalent to `curl -L`
+    type: boolean
+    default: false
+    inputBinding:
+      prefix: --trusted-server-names
 outputs:
-  output_1:
+  output:
     type: File
     outputBinding:
-      glob: "*.txt"
-  stdout: stdout
+      glob: "$(inputs.use_remote_name ? inputs.url.split('/').pop() : inputs.output_name)"
   stderr: stderr
-stdout: curl-stdout.log
-stderr: curl-stderr.log
+stderr: wget-stderr.log
