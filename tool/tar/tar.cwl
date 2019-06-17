@@ -34,8 +34,8 @@ outputs:
     outputBinding:
       glob: |
         ${
-          var extlen = inputs.gzip ? -2 : -1;
-          return inputs.file.basename.split('.').slice(0, extlen).join('.');
+          var extlen = inputs.gzip ? 2 : 1;
+          return inputs.file.basename.split('.').slice(0, -extlen).join('.');
         }
   stdout: stdout
   stderr: stderr
