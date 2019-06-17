@@ -31,7 +31,7 @@ inputs:
     inputBinding:
       prefix: --trusted-server-names
 outputs:
-  output:
+  downloaded:
     type: File
     outputBinding:
       glob: "$(inputs.use_remote_name ? inputs.url.split('/').pop() : inputs.output_name)"
