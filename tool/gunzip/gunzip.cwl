@@ -4,11 +4,11 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/gzip:latest
+    dockerPull: dat2-cwl/gunzip:latest
 baseCommand: bash
 arguments:
   - position: 0
-    valueFrom: /workdir/gzip.sh
+    valueFrom: /workdir/gunzip.sh
 inputs:
   input_1:
     type: File
@@ -21,5 +21,5 @@ outputs:
       glob: "*.txt"
   stdout: stdout
   stderr: stderr
-stdout: gzip-stdout.log
-stderr: gzip-stderr.log
+stdout: gunzip-stdout.log
+stderr: gunzip-stderr.log
