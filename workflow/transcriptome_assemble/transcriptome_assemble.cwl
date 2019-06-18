@@ -107,18 +107,6 @@ outputs:
     type: File?
     'sbg:x': -203.8203125
     'sbg:y': 438.5
-  - id: compressed
-    outputSource:
-      - gzip/compressed
-    type: stdout
-    'sbg:x': 129.1796875
-    'sbg:y': 63.5
-  - id: compressed_1
-    outputSource:
-      - gzip_1/compressed
-    type: stdout
-    'sbg:x': 152.1796875
-    'sbg:y': 463.5
 steps:
   - id: for_trinity
     in:
