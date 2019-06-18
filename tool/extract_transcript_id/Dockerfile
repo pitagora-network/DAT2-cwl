@@ -1,4 +1,4 @@
-FROM 
+FROM ubuntu:latest
 USER root
 
 WORKDIR /workdir
