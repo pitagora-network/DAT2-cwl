@@ -75,18 +75,6 @@ outputs:
     type: Directory?
     'sbg:x': 905
     'sbg:y': 294
-  - id: out2
-    outputSource:
-      - trim_galore/out2
-    type: File
-    'sbg:x': 200.6796875
-    'sbg:y': 41
-  - id: out1
-    outputSource:
-      - trim_galore/out1
-    type: File
-    'sbg:x': 180.6796875
-    'sbg:y': 482
 steps:
   - id: for_trinity
     in:
@@ -130,9 +118,7 @@ steps:
       - id: left
         source: trim_galore/out1
       - id: right
-        source:
-          - trim_galore/out2
-          - trim_galore/out1
+        source: trim_galore/out2
       - id: est_method
         default: kallisto
       - id: kallisto_add_opts
@@ -145,23 +131,6 @@ steps:
     label: aaea
     'sbg:x': 364
     'sbg:y': 422
-  - id: trim_galore
-    in:
-      - id: read1
-        source: gzip_1/compressed
-      - id: read2
-        source: gzip/compressed
-      - id: fastqc
-        default: true
-      - id: trim1
-        default: true
-    out:
-      - id: out1
-      - id: out2
-    run: ../../tool/trim_galore/trim_galore_PE.cwl
-    label: trim_galore
-    'sbg:x': 123
-    'sbg:y': 240
   - id: trinity_pe
     in:
       - id: cpu
@@ -242,5 +211,23 @@ steps:
     run: ../../tool/gzip/gzip.cwl
     'sbg:x': -61
     'sbg:y': 306
-requirements:
-  - class: MultipleInputFeatureRequirement
+  - id: trim_galore
+    in:
+      - id: read1
+        source: gzip_1/compressed
+      - id: read2
+        source: gzip/compressed
+      - id: fastqc
+        default: true
+      - id: trim1
+        default: true
+      - id: paired
+        default: true
+    out:
+      - id: out1
+      - id: out2
+    run: ../../tool/trim_galore/trim_galore_PE.cwl
+    label: trim_galore
+    'sbg:x': 122
+    'sbg:y': 234
+requirements: []

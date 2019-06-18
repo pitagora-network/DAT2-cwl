@@ -24,6 +24,11 @@ inputs:
     inputBinding:
       position: -1
       prefix: '--trim1'
+  - id: paired
+    type: boolean?
+    inputBinding:
+      position: 0
+      prefix: '--paired'
 outputs:
   - id: out1
     type: File
@@ -34,11 +39,6 @@ outputs:
     outputBinding:
       glob: '*_2_val_2.fq*'
 label: trim_galore
-arguments:
-  - position: 0
-    prefix: ''
-    separate: false
-    valueFrom: '--paired'
 requirements:
   - class: DockerRequirement
     dockerPull: miasteinberg/trim-galore
