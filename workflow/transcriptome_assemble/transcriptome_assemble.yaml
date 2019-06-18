@@ -1,5 +1,4 @@
 cpu: 30
-cpu_1: 30
 db_flag: trinity_rslt
 domtblout: longest_orfs.SOD_Cu.out
 max_memory: 100G

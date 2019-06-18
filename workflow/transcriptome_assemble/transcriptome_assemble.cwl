@@ -20,14 +20,8 @@ inputs:
   - id: runid
     type: string
     'sbg:exposed': true
-  - id: max_memory
-    type: string
-    'sbg:exposed': true
   - id: seq_type
     type: string
-    'sbg:exposed': true
-  - id: cpu
-    type: int?
     'sbg:exposed': true
   - id: output_name
     type: string
@@ -41,9 +35,6 @@ inputs:
   - id: domtblout
     type: string
     'sbg:exposed': true
-  - id: cpu_1
-    type: int?
-    'sbg:exposed': true
   - id: output_1
     type: string
     'sbg:exposed': true
@@ -53,6 +44,14 @@ inputs:
   - id: out_flag
     type: string
     'sbg:exposed': true
+  - id: cpu
+    type: int
+    'sbg:x': 68
+    'sbg:y': -291
+  - id: max_memory
+    type: string
+    'sbg:x': 63.1796875
+    'sbg:y': -118
 outputs:
   - id: output2
     outputSource:
@@ -96,6 +95,30 @@ outputs:
     type: File
     'sbg:x': 1391
     'sbg:y': 160
+  - id: reverse
+    outputSource:
+      - fasterq_dump/reverse
+    type: File?
+    'sbg:x': -233.8203125
+    'sbg:y': 74.5
+  - id: forward
+    outputSource:
+      - fasterq_dump/forward
+    type: File?
+    'sbg:x': -203.8203125
+    'sbg:y': 438.5
+  - id: compressed
+    outputSource:
+      - gzip/compressed
+    type: stdout
+    'sbg:x': 129.1796875
+    'sbg:y': 63.5
+  - id: compressed_1
+    outputSource:
+      - gzip_1/compressed
+    type: stdout
+    'sbg:x': 152.1796875
+    'sbg:y': 463.5
 steps:
   - id: for_trinity
     in:
@@ -128,8 +151,8 @@ steps:
       - id: reverse
     run: ../../tool/fasterq-dump/fasterq-dump.cwl
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': -320
-    'sbg:y': 230
+    'sbg:x': -375
+    'sbg:y': 222
   - id: aaea
     in:
       - id: transcript
@@ -205,8 +228,8 @@ steps:
       - id: compressed
       - id: stderr
     run: ../../tool/gzip/gzip.cwl
-    'sbg:x': -56
-    'sbg:y': 152
+    'sbg:x': -70
+    'sbg:y': 147
   - id: gzip_1
     in:
       - id: file
@@ -239,7 +262,7 @@ steps:
   - id: hmmsearch
     in:
       - id: cpu
-        source: cpu_1
+        source: cpu
       - id: domtblout
         source: domtblout
       - id: hmm
