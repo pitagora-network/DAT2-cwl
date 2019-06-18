@@ -1,25 +1,18 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/seqkit:latest
-baseCommand: bash
-arguments:
-  - position: 0
-    valueFrom: /workdir/seqkit.sh
+    dockerPull: quay.io/biocontainers/seqkit:0.10.1--1
+baseCommand: [seqkit, stats]
 inputs:
-  input_1:
+  fastq:
     type: File
     inputBinding:
-      position: 1
+      position: 0
 outputs:
-  output_1:
-    type: File
-    outputBinding:
-      glob: "*.txt"
-  stdout: stdout
+  result: stdout
   stderr: stderr
-stdout: seqkit-stdout.log
+stdout: seqkit-result.tsv
 stderr: seqkit-stderr.log
