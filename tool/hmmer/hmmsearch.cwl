@@ -24,7 +24,11 @@ inputs:
     type: File?
     inputBinding:
       position: 2
-outputs: []
+outputs:
+  - id: output
+    type: File?
+    outputBinding:
+      glob: $(inputs.domtblout)
 label: hmmsearch
 requirements:
   - class: DockerRequirement

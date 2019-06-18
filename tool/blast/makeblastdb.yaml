@@ -1,0 +1,8 @@
+dtbype: prot
+hash_index: true
+out: trinity_rslt
+parse_seqids: true
+pep:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta.transdecoder_dir/longest_orfs.pep

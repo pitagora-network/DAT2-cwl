@@ -31,8 +31,13 @@ inputs:
     inputBinding:
       position: 0
       prefix: '-parse_seqids'
-outputs: []
+outputs:
+  - id: output
+    type: 'File[]?'
+    outputBinding:
+      glob: $(inputs.out).*
 label: makeblastdb
 requirements:
   - class: DockerRequirement
     dockerPull: 'biocontainers/blast:v2.2.31_cv2'
+  - class: InlineJavascriptRequirement

@@ -1,7 +1,5 @@
 cpu: 30
-cpu_1: 6
-domtblout: longest_orfs.SOD_Cu.out
-max_memory: '100'
+max_memory: 100G
 minimum_protein_length: 30
 output_name: Sod_Cu.hmm
 runid: DRR092257
