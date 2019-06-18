@@ -75,18 +75,18 @@ outputs:
     type: Directory?
     'sbg:x': 905
     'sbg:y': 294
-  - id: compressed
+  - id: out2
     outputSource:
-      - gzip/compressed
-    type: stdout
-    'sbg:x': 116.6796875
-    'sbg:y': 30.5
-  - id: compressed_1
+      - trim_galore/out2
+    type: File
+    'sbg:x': 200.6796875
+    'sbg:y': 41
+  - id: out1
     outputSource:
-      - gzip_1/compressed
-    type: stdout
-    'sbg:x': 125
-    'sbg:y': 468
+      - trim_galore/out1
+    type: File
+    'sbg:x': 180.6796875
+    'sbg:y': 482
 steps:
   - id: for_trinity
     in:
@@ -130,7 +130,9 @@ steps:
       - id: left
         source: trim_galore/out1
       - id: right
-        source: trim_galore/out2
+        source:
+          - trim_galore/out2
+          - trim_galore/out1
       - id: est_method
         default: kallisto
       - id: kallisto_add_opts
@@ -240,4 +242,5 @@ steps:
     run: ../../tool/gzip/gzip.cwl
     'sbg:x': -61
     'sbg:y': 306
-requirements: []
+requirements:
+  - class: MultipleInputFeatureRequirement
