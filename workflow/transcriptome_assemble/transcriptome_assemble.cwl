@@ -57,18 +57,6 @@ outputs:
     type: File
     'sbg:x': 451
     'sbg:y': 246
-  - id: reverse
-    outputSource:
-      - fasterq_dump/reverse
-    type: File?
-    'sbg:x': -39
-    'sbg:y': -77
-  - id: forward
-    outputSource:
-      - fasterq_dump/forward
-    type: File?
-    'sbg:x': -83
-    'sbg:y': 550
   - id: output_2
     outputSource:
       - aaea/output
@@ -87,6 +75,18 @@ outputs:
     type: Directory?
     'sbg:x': 905
     'sbg:y': 294
+  - id: compressed
+    outputSource:
+      - gzip/compressed
+    type: stdout
+    'sbg:x': 116.6796875
+    'sbg:y': 30.5
+  - id: compressed_1
+    outputSource:
+      - gzip_1/compressed
+    type: stdout
+    'sbg:x': 125
+    'sbg:y': 468
 steps:
   - id: for_trinity
     in:
@@ -228,8 +228,8 @@ steps:
       - id: compressed
       - id: stderr
     run: ../../tool/gzip/gzip.cwl
-    'sbg:x': -67
-    'sbg:y': 160
+    'sbg:x': -56
+    'sbg:y': 152
   - id: gzip_1
     in:
       - id: file
