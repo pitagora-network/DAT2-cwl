@@ -43,8 +43,8 @@ else
 fi
 
 # template を作成しておく
-cwl_template_file=${tool_dir}/${tool_name}.yml
-cwltool --make-template ${cwl_file} > ${cwl_template_file}
+# cwl_template_file=${tool_dir}/${tool_name}.yml
+# cwltool --make-template ${cwl_file} > ${cwl_template_file}
 
 # Dockerfile が存在する場合、build を行っておく
 dockerfile=${tool_dir}/Dockerfile
