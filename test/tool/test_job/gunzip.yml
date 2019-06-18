@@ -1,0 +1,4 @@
+file:
+  class: File
+  location: ../../data/test.tar.gz
+
