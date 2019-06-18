@@ -146,9 +146,9 @@ steps:
   - id: trim_galore
     in:
       - id: read1
-        source: gzip_1/gzipped
+        source: gzip_1/compressed
       - id: read2
-        source: gzip/gzipped
+        source: gzip/compressed
       - id: fastqc
         default: true
       - id: trim1
@@ -180,28 +180,6 @@ steps:
     run: ../../tool/trinity/trinity-pe.cwl
     'sbg:x': 611
     'sbg:y': 173
-  - id: gzip
-    in:
-      - id: input_1
-        source: fasterq_dump/reverse
-    out:
-      - id: gzipped
-      - id: stderr
-      - id: stdout
-    run: ../../tool/gzip/gzip.cwl
-    'sbg:x': -90
-    'sbg:y': 193
-  - id: gzip_1
-    in:
-      - id: input_1
-        source: fasterq_dump/forward
-    out:
-      - id: gzipped
-      - id: stderr
-      - id: stdout
-    run: ../../tool/gzip/gzip.cwl
-    'sbg:x': -83
-    'sbg:y': 341
   - id: transdecoder
     in:
       - id: transcripts
@@ -242,4 +220,24 @@ steps:
     run: ../../tool/wget/wget.cwl
     'sbg:x': 906
     'sbg:y': 431
+  - id: gzip
+    in:
+      - id: file
+        source: fasterq_dump/reverse
+    out:
+      - id: compressed
+      - id: stderr
+    run: ../../tool/gzip/gzip.cwl
+    'sbg:x': -67
+    'sbg:y': 160
+  - id: gzip_1
+    in:
+      - id: file
+        source: fasterq_dump/forward
+    out:
+      - id: compressed
+      - id: stderr
+    run: ../../tool/gzip/gzip.cwl
+    'sbg:x': -61
+    'sbg:y': 306
 requirements: []
