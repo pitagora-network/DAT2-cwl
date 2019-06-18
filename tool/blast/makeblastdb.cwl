@@ -4,40 +4,19 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 id: makeblastdb
 baseCommand:
-  - makeblastdb
+  - bash
+  - makeblastdb.sh
 inputs:
-  - id: pep
+  - id: input_pep
     type: File
     inputBinding:
       position: 0
-      prefix: '-in'
-  - id: out
-    type: string?
-    inputBinding:
-      position: 1
-      prefix: '-out'
-  - id: dtbype
-    type: string?
-    inputBinding:
-      position: 2
-      prefix: '-dbtype'
-  - id: hash_index
-    type: boolean?
-    inputBinding:
-      position: 4
-      prefix: '-hash_index'
-  - id: parse_seqids
-    type: boolean?
-    inputBinding:
-      position: 0
-      prefix: '-parse_seqids'
 outputs:
-  - id: output
-    type: 'File[]?'
+  - id: db_dir
+    type: Directory?
     outputBinding:
-      glob: $(inputs.out).*
+      glob: blastdb
 label: makeblastdb
 requirements:
   - class: DockerRequirement
-    dockerPull: 'biocontainers/blast:v2.2.31_cv2'
-  - class: InlineJavascriptRequirement
+    dockerPull: dat2-cwl/blast

@@ -1,0 +1,10 @@
+db_flag: trinity_rslt
+entry_batch_flag:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta.transdecoder_dir/longest_orfs.SOD_Cu.ids
+input_pep:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta.transdecoder_dir/longest_orfs.SOD_Cu.pep
+out_flag: longest_orfs.SOD_Cu.pep

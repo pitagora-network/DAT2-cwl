@@ -47,6 +47,12 @@ inputs:
   - id: output_1
     type: string
     'sbg:exposed': true
+  - id: db_flag
+    type: string
+    'sbg:exposed': true
+  - id: out_flag
+    type: string
+    'sbg:exposed': true
 outputs:
   - id: output2
     outputSource:
@@ -76,14 +82,20 @@ outputs:
     outputSource:
       - transdecoder/output
     type: Directory?
-    'sbg:x': 905
-    'sbg:y': 294
+    'sbg:x': 864
+    'sbg:y': 313
   - id: out
     outputSource:
       - extract_transcript_id/out
     type: File?
-    'sbg:x': 1372
-    'sbg:y': 194
+    'sbg:x': 1347
+    'sbg:y': -70
+  - id: blastdbcmd_results
+    outputSource:
+      - blastdbcmd/blastdbcmd_results
+    type: File
+    'sbg:x': 1391
+    'sbg:y': 160
 steps:
   - id: for_trinity
     in:
@@ -183,8 +195,8 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../tool/wget/wget.cwl
-    'sbg:x': 906
-    'sbg:y': 431
+    'sbg:x': 1018
+    'sbg:y': -12
   - id: gzip
     in:
       - id: file
@@ -238,8 +250,8 @@ steps:
       - id: output
     run: ../../tool/hmmer/hmmsearch.cwl
     label: hmmsearch
-    'sbg:x': 1057
-    'sbg:y': 197
+    'sbg:x': 1110
+    'sbg:y': -175
   - id: extract_transcript_id
     in:
       - id: input
@@ -250,16 +262,32 @@ steps:
       - id: out
     run: ../../tool/extract_transcript_id/extract_transcript_id.cwl
     label: extract_transcript_id
-    'sbg:x': 1224
-    'sbg:y': 194
+    'sbg:x': 1175
+    'sbg:y': -69
   - id: makeblastdb
     in:
-      - id: pep
+      - id: input_pep
         source: transdecoder/pep
     out:
-      - id: output
+      - id: db_dir
     run: ../../tool/blast/makeblastdb.cwl
     label: makeblastdb
-    'sbg:x': 981
-    'sbg:y': 67
+    'sbg:x': 1022
+    'sbg:y': 175
+  - id: blastdbcmd
+    in:
+      - id: blastdb_dir
+        source: makeblastdb/db_dir
+      - id: db_flag
+        source: db_flag
+      - id: entry_batch_flag
+        source: extract_transcript_id/out
+      - id: out_flag
+        source: out_flag
+    out:
+      - id: blastdbcmd_results
+    run: ../../tool/blast/blastdbcmd.cwl
+    label: Blastdbcmd to dump seqs/info.
+    'sbg:x': 1199
+    'sbg:y': 159
 requirements: []

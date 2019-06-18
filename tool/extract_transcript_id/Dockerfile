@@ -1,4 +1,4 @@
-FROM perl:latest
+FROM 
 USER root
 
 WORKDIR /workdir
