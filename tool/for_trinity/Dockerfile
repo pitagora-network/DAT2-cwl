@@ -1,6 +1,8 @@
 FROM ubuntu:latest
 USER root
 
+RUN apt-get update && apt-get install -y wget
+
 WORKDIR /workdir
 
 COPY for_trinity.sh /workdir
