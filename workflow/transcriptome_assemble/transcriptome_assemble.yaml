@@ -1,6 +1,9 @@
 cpu: 30
+cpu_1: 30
+domtblout: longest_orfs.SOD_Cu.out
 max_memory: 100G
 minimum_protein_length: 30
+output_1: longest_orfs.SOD_Cu.ids
 output_name: Sod_Cu.hmm
 runid: DRR092257
 seq_type: fq

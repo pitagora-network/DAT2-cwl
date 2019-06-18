@@ -38,10 +38,13 @@ inputs:
   - id: minimum_protein_length
     type: int
     'sbg:exposed': true
+  - id: domtblout
+    type: string
+    'sbg:exposed': true
   - id: cpu_1
     type: int?
     'sbg:exposed': true
-  - id: domtblout
+  - id: output_1
     type: string
     'sbg:exposed': true
 outputs:
@@ -75,6 +78,12 @@ outputs:
     type: Directory?
     'sbg:x': 905
     'sbg:y': 294
+  - id: out
+    outputSource:
+      - extract_transcript_id/out
+    type: File?
+    'sbg:x': 1372
+    'sbg:y': 194
 steps:
   - id: for_trinity
     in:
@@ -164,21 +173,6 @@ steps:
     label: transdecoder
     'sbg:x': 803
     'sbg:y': 191
-  - id: hmmsearch
-    in:
-      - id: cpu
-        source: cpu_1
-      - id: domtblout
-        source: domtblout
-      - id: hmm
-        source: wget/downloaded
-      - id: pep
-        source: transdecoder/pep
-    out: []
-    run: ../../tool/hmmer/hmmsearch.cwl
-    label: hmmsearch
-    'sbg:x': 1076
-    'sbg:y': 192
   - id: wget
     in:
       - id: output_name
@@ -230,4 +224,42 @@ steps:
     label: trim_galore
     'sbg:x': 122
     'sbg:y': 234
+  - id: hmmsearch
+    in:
+      - id: cpu
+        source: cpu_1
+      - id: domtblout
+        source: domtblout
+      - id: hmm
+        source: wget/downloaded
+      - id: pep
+        source: transdecoder/pep
+    out:
+      - id: output
+    run: ../../tool/hmmer/hmmsearch.cwl
+    label: hmmsearch
+    'sbg:x': 1057
+    'sbg:y': 197
+  - id: extract_transcript_id
+    in:
+      - id: input
+        source: hmmsearch/output
+      - id: output
+        source: output_1
+    out:
+      - id: out
+    run: ../../tool/extract_transcript_id/extract_transcript_id.cwl
+    label: extract_transcript_id
+    'sbg:x': 1224
+    'sbg:y': 194
+  - id: makeblastdb
+    in:
+      - id: pep
+        source: transdecoder/pep
+    out:
+      - id: output
+    run: ../../tool/blast/makeblastdb.cwl
+    label: makeblastdb
+    'sbg:x': 981
+    'sbg:y': 67
 requirements: []
