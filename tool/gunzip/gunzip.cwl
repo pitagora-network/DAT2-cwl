@@ -1,7 +1,7 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: compression/decompression tool using Lempel-Ziv coding (LZ77)
+doc: decompression tool using Lempel-Ziv coding (LZ77)
 requirements:
   DockerRequirement:
     dockerPull: alpine:3.9
