@@ -1,8 +1,7 @@
-FROM perl:latest
+FROM ubuntu:latest
 USER root
 
 WORKDIR /workdir
-RUN curl -O https://raw.githubusercontent.com/bonohu/denovoTA/master/for_trinity.pl 
 
 COPY for_trinity.sh /workdir
 RUN chmod 777 for_trinity.sh
