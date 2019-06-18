@@ -1,9 +1,13 @@
 cpu: 30
+cpu_1: 6
+domtblout: longest_orfs.SOD_Cu.out
 max_memory: '100'
 minimum_protein_length: 30
+output_name: Sod_Cu.hmm
 runid: DRR092257
 seq_type: fq
 skip_technical: false
 split_3: false
 split_files: true
 split_spot: false
+url: 'https://pfam.xfam.org/family/PF00080/hmm'
