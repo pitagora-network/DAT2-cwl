@@ -1,25 +1,17 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: compression/decompression tool using Lempel-Ziv coding (LZ77)
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/gzip:latest
-baseCommand: bash
-arguments:
-  - position: 0
-    valueFrom: /workdir/gzip.sh
+    dockerPull: alpine:3.9
+baseCommand: [gzip, -c]
 inputs:
-  input_1:
+  file:
     type: File
-    inputBinding:
-      position: 1
+    inputBinding: {}
 outputs:
-  output_1:
-    type: File
-    outputBinding:
-      glob: "*.txt"
-  stdout: stdout
+  compressed: stdout
   stderr: stderr
-stdout: gzip-stdout.log
+stdout: $(inputs.file.basename).gz
 stderr: gzip-stderr.log
