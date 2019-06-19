@@ -15,7 +15,7 @@ inputs:
       position: 0
       prefix: '--genomeDir'
   - id: '--genomeFastaFiles'
-    type: Directory?
+    type: File?
     inputBinding:
       position: 0
       prefix: '--genomeFastaFiles'
@@ -36,7 +36,7 @@ inputs:
       prefix: '--sjdbOverhang'
 outputs:
   - id: starIndex
-    type: 'File[]'
+    type: Directory
     outputBinding:
       glob: '*'
 doc: >-
