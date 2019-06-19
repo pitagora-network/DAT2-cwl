@@ -1,25 +1,47 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: Tools to process and analyze deep sequencing data.
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/deepTools_computeMatrix_reference-point:latest
-baseCommand: bash
+    dockerPull: quay.io/biocontainers/deeptools:3.3.0--py_0
+  InlineJavascriptRequirement: {}
+baseCommand: ["computeMatrix", "sreference-point"]
 arguments:
-  - position: 0
-    valueFrom: /workdir/deepTools_computeMatrix_reference-point.sh
+  - position: 2
+    prefix: -outFileName
+    valueFrom: $(inputs.regions_file_name.nameroot).matrix.txt.gz
+  - position: 3
+    prefix: --referencePoint
+    valueFrom: center
+  - position: 4
+    prefix: --upstream
+    valueFrom: "1000"
+  - position: 5
+    prefix: --downstream
+    valueFrom: "1000"
+  - position: 6
+    prefix: --skipZeros
+    valueFrom: $(true)
 inputs:
-  input_1:
-    type: File
+  regions_file_name:
+    type: string?
+    default: None
+    inputBinding:
+      position: 0
+      prefix: --regionsFileName
+  score_file_name:
+    type: string?
+    default: None
     inputBinding:
       position: 1
+      prefix: --scoreFileName
 outputs:
-  output_1:
+  result:
     type: File
     outputBinding:
-      glob: "*.txt"
+      glob: $(inputs.regions_file_name.nameroot).matrix.txt.gz
   stdout: stdout
   stderr: stderr
-stdout: deepTools_computeMatrix_reference-point-stdout.log
-stderr: deepTools_computeMatrix_reference-point-stderr.log
+stdout: deepTools_bamCoverage-stdout.log
+stderr: deepTools_bamCoverage-stderr.log

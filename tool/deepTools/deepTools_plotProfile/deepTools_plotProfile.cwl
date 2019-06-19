@@ -1,25 +1,40 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: Tools to process and analyze deep sequencing data.
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/deepTools_plotProfile:latest
-baseCommand: bash
+    dockerPull: quay.io/biocontainers/deeptools:3.3.0--py_0
+baseCommand: plotProfile
 arguments:
-  - position: 0
-    valueFrom: /workdir/deepTools_plotProfile.sh
+  - position: 1
+    prefix: -out
+    valueFrom: $(inputs.matrix-file.nameroot).pdf
 inputs:
-  input_1:
+  matrix-file:
     type: File
+    doc: Matrix file from the computeMatrix tool.
     inputBinding:
-      position: 1
+      position: 0
+      prefix: -m
+  plot_title:
+    type: string?
+    default: None
+    inputBinding:
+      position: 2
+      prefix: --plotTitle
+  regions_label:
+    type: string?
+    default: None
+    inputBinding:
+      position: 3
+      prefix: --regionsLabel
 outputs:
-  output_1:
+  result:
     type: File
     outputBinding:
-      glob: "*.txt"
+      glob: $(inputs.matrix-file.nameroot).pdf
   stdout: stdout
   stderr: stderr
-stdout: deepTools_plotProfile-stdout.log
-stderr: deepTools_plotProfile-stderr.log
+stdout: deepTools_bamCoverage-stdout.log
+stderr: deepTools_bamCoverage-stderr.log
