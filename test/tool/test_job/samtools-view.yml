@@ -1,0 +1,6 @@
+threads: 4
+output_bam: true
+use_fast_compression: true
+sam:
+  class: File
+  location: ../../data/ERR034597_1.sam
