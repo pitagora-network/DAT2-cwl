@@ -1,0 +1,3 @@
+use_remote_name: true  # type "boolean"
+url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/master/README.md # type "string"
+track_location: false  # type "boolean"
