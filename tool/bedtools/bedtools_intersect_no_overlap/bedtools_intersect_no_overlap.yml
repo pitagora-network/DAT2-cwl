@@ -1,0 +1,6 @@
+peaks_narrow_peak_b:  # type "File"
+    class: File
+    path: a/file/path
+peaks_narrow_peak_a:  # type "File"
+    class: File
+    path: a/file/path

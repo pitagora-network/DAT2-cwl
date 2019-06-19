@@ -1,0 +1,7 @@
+process: 0  # type "int" (optional)
+genome_index:  # type "File"
+    class: File
+    path: a/file/path
+fastq:  # type "File"
+    class: File
+    path: a/file/path
