@@ -4,21 +4,39 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/wtdbg2:latest
-baseCommand: bash
-arguments:
-  - position: 0
-    valueFrom: /workdir/wtdbg2.sh
+    dockerPull: quay.io/biocontainers/wtdbg2:2.0--h470a237_0
+baseCommand: wtdbg2
+
 inputs:
-  input_1:
-    type: File
+  threads:
+    type: int
+    label: "Number of threads, 0 for all cores"
+    default: 32
     inputBinding:
-      position: 1
+      prefix: -t
+  sequence:
+    type: File
+    label: "Long reads sequences file (REQUIRED; can be multiple)"
+    inputBinding:
+      prefix: -i
+  overwrite:
+    type: boolean
+    label: "Force to overwrite output files"
+    default: true
+    inputBinding:
+      prefix: -f
+  output_prefix:
+    type: string
+    label: "Prefix of output files (REQUIRED)"
+    default: worm.wtdbg2
+    inputBinding:
+      prefix: -o
+
 outputs:
-  output_1:
+  contigs:
     type: File
     outputBinding:
-      glob: "*.txt"
+      glob: "$(inputs.output_prefix).ctg.lay.gz"
   stdout: stdout
   stderr: stderr
 stdout: wtdbg2-stdout.log
