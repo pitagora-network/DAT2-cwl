@@ -19,7 +19,7 @@ inputs:
   use_fast_compression:
     type: boolean
     inputBinding:
-      prefix: -1
+      prefix: "-1"
   sam:
     type: File
     inputBinding: {}
