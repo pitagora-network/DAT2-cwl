@@ -15,7 +15,7 @@ inputs:
       position: 0
       prefix: '--genomeDir'
   - id: '--genomeFastaFiles'
-    type: File?
+    type: Directory?
     inputBinding:
       position: 0
       prefix: '--genomeFastaFiles'
