@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/samtools-index:latest
+    dockerPull: quay.io/biocontainers/samtools:1.9--h8571acd_11
 baseCommand: bash
 arguments:
   - position: 0

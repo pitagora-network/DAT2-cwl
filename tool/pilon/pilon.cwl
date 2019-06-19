@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/pilon:latest
+    dockerPull: quay.io/biocontainers/pilon:1.23--0
 baseCommand: bash
 arguments:
   - position: 0

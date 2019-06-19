@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/nanoplot:latest
+    dockerPull: quay.io/biocontainers/nanoplot:1.20.0--py36_0
 baseCommand: bash
 arguments:
   - position: 0

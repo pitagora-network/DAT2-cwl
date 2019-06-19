@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/bwa-mem:latest
+    dockerPull: quay.io/biocontainers/bwa:0.7.17--h84994c4_5
 baseCommand: bash
 arguments:
   - position: 0
