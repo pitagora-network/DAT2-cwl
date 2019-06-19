@@ -1,0 +1,3 @@
+input_contigs:
+  class: File
+  path: ../../data/worm.wtdbg2.ctg.lay.gz
