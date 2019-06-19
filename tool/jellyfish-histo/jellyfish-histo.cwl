@@ -4,22 +4,22 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/jellyfish-histo:latest
-baseCommand: bash
-arguments:
-  - position: 0
-    valueFrom: /workdir/jellyfish-histo.sh
+    dockerPull: quay.io/biocontainers/jellyfish:1.1.12--h2d50403_0
+baseCommand: [jellyfish, histo]
 inputs:
-  input_1:
+  threads:
+    type: int
+    default: 4
+    label: "Number of threads"
+    inputBinding:
+      prefix: -t
+  kmer_db:
     type: File
+    label: "jellyfish count output"
     inputBinding:
       position: 1
 outputs:
-  output_1:
-    type: File
-    outputBinding:
-      glob: "*.txt"
   stdout: stdout
   stderr: stderr
-stdout: jellyfish-histo-stdout.log
+stdout: reads.histo
 stderr: jellyfish-histo-stderr.log
