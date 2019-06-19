@@ -9,8 +9,6 @@ baseCommand: [seqkit, stats]
 inputs:
   fastq:
     type: File
-    inputBinding:
-      position: 0
 outputs:
   result: stdout
   stderr: stderr
