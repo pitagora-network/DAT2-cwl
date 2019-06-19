@@ -1,12 +1,15 @@
-cpu: 6
-db: uniprot_insect
-db_dir:
+blastdb_dir:
   class: Directory
-  path: ../../../../mishima_gassyuku/TA/trinity_out_dir
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/blastdb_insect
+db_flag: uniprot_insect
 max_target_seqs: 1
-out: blast.result.tab
-outfmt: 6
-query:
+num_threads_flag: 4
+out_flag: blast.result.tab
+outfmt_flag: '6'
+query_flag:
   class: File
   path: >-
     /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/longest_orfs.SOD_Cu.pep
+task_flag: null
+taxid_flag: null

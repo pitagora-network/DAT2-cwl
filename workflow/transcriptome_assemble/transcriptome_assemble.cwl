@@ -38,9 +38,6 @@ inputs:
   - id: output_1
     type: string
     'sbg:exposed': true
-  - id: db_flag
-    type: string
-    'sbg:exposed': true
   - id: out_flag
     type: string
     'sbg:exposed': true
@@ -52,6 +49,15 @@ inputs:
     type: string
     'sbg:x': 63.1796875
     'sbg:y': -118
+  - id: db_flag
+    type: string?
+    label: db_flag
+    'sbg:x': 955
+    'sbg:y': 369
+  - id: db_flag_insect
+    type: string?
+    'sbg:x': 976.68310546875
+    'sbg:y': 489
 outputs:
   - id: output2
     outputSource:
@@ -69,8 +75,8 @@ outputs:
     outputSource:
       - aaea/output
     type: Directory?
-    'sbg:x': 559
-    'sbg:y': 425
+    'sbg:x': 690
+    'sbg:y': 426
   - id: trinity_results
     outputSource:
       - trinity_pe/trinity_results
@@ -161,7 +167,7 @@ steps:
       - id: output
     run: ../../tool/trinity/aaea.cwl
     label: aaea
-    'sbg:x': 364
+    'sbg:x': 516
     'sbg:y': 422
   - id: trinity_pe
     in:
@@ -275,16 +281,6 @@ steps:
     label: extract_transcript_id
     'sbg:x': 1175
     'sbg:y': -69
-  - id: makeblastdb
-    in:
-      - id: input_pep
-        source: transdecoder/pep
-    out:
-      - id: db_dir
-    run: ../../tool/blast/makeblastdb.cwl
-    label: makeblastdb
-    'sbg:x': 1022
-    'sbg:y': 175
   - id: blastdbcmd
     in:
       - id: blastdb_dir
@@ -301,4 +297,41 @@ steps:
     label: Blastdbcmd to dump seqs/info.
     'sbg:x': 1199
     'sbg:y': 159
+  - id: wget_1
+    in:
+      - id: output_name
+        default: uniprot-taxonomy_50557.fasta
+      - id: url
+        default: 'https://www.uniprot.org/uniprot/?query=taxonomy:50557&format=fasta'
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../tool/wget/wget.cwl
+    label: download uniprot insect fasta
+    'sbg:x': 1019
+    'sbg:y': 623
+  - id: makeblastdb
+    in:
+      - id: input_pep
+        source: transdecoder/pep
+      - id: out
+        source: db_flag
+    out:
+      - id: db_dir
+    run: ../../tool/blast/makeblastdb.cwl
+    label: makeblastdb
+    'sbg:x': 1023
+    'sbg:y': 184
+  - id: makeblastdb_1
+    in:
+      - id: input_pep
+        source: wget_1/downloaded
+      - id: out
+        source: db_flag_insect
+    out:
+      - id: db_dir
+    run: ../../tool/blast/makeblastdb.cwl
+    label: makeblastdb
+    'sbg:x': 1185
+    'sbg:y': 552
 requirements: []
