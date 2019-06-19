@@ -1,0 +1,3 @@
+input_file:
+  class: File
+  path: ../../data/ERR34597_1.fastq
