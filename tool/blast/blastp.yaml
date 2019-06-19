@@ -1,0 +1,12 @@
+cpu: 6
+db: uniprot_insect
+db_dir:
+  class: Directory
+  path: ../../../../mishima_gassyuku/TA/trinity_out_dir
+max_target_seqs: 1
+out: blast.result.tab
+outfmt: 6
+query:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/longest_orfs.SOD_Cu.pep

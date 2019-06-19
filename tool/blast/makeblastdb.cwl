@@ -11,12 +11,17 @@ inputs:
     type: File
     inputBinding:
       position: 0
+  - id: out
+    type: string?
+    inputBinding:
+      position: 0
 outputs:
   - id: db_dir
     type: Directory?
     outputBinding:
-      glob: blastdb
+      glob: blastdb_$(inputs.out)
 label: makeblastdb
 requirements:
   - class: DockerRequirement
     dockerPull: dat2-cwl/blast
+  - class: InlineJavascriptRequirement
