@@ -1,0 +1,10 @@
+process: 2 # type "int" (optional)
+genome_index: # type "File"
+  class: File
+  path: ../../data/bowtie2_index_mm10/mm10_chr19.fa
+fastq2: # type "File"
+  class: File
+  path: ../../data/DRR024501_2.fastq
+fastq1: # type "File"
+  class: File
+  path: ../../data/DRR024501_1.fastq
