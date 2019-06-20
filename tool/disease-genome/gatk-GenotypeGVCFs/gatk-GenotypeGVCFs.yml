@@ -1,0 +1,11 @@
+variant:  # type "File"
+    class: File
+    path: a/file/path
+reference:  # type "File"
+    class: File
+    path: a/file/path
+output: a_string  # type "string"
+intervals:  # type "File"
+    class: File
+    path: a/file/path
+interval_padding: 0  # type "int"
