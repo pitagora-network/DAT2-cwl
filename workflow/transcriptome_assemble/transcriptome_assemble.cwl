@@ -43,8 +43,8 @@ inputs:
     'sbg:exposed': true
   - id: cpu
     type: int
-    'sbg:x': 68
-    'sbg:y': -291
+    'sbg:x': 131
+    'sbg:y': -273
   - id: max_memory
     type: string
     'sbg:x': 63.1796875
@@ -54,10 +54,18 @@ inputs:
     label: db_flag
     'sbg:x': 955
     'sbg:y': 369
-  - id: db_flag_insect
-    type: string?
-    'sbg:x': 976.68310546875
-    'sbg:y': 489
+  - id: out_flag_1
+    type: string
+    'sbg:exposed': true
+  - id: outfmt_flag
+    type: string
+    'sbg:exposed': true
+  - id: max_target_seqs
+    type: int?
+    'sbg:exposed': true
+  - id: db_flag_1
+    type: string
+    'sbg:exposed': true
 outputs:
   - id: output2
     outputSource:
@@ -113,6 +121,12 @@ outputs:
     type: File?
     'sbg:x': -203.8203125
     'sbg:y': 438.5
+  - id: blast_results
+    outputSource:
+      - blastp/blast_results
+    type: File
+    'sbg:x': 1613.68310546875
+    'sbg:y': 403.5
 steps:
   - id: for_trinity
     in:
@@ -149,8 +163,6 @@ steps:
     'sbg:y': 222
   - id: aaea
     in:
-      - id: transcript
-        source: trinity_pe/transcript
       - id: thread_count
         default: 30
       - id: left
@@ -185,7 +197,6 @@ steps:
         source: seq_type
     out:
       - id: trinity_results
-      - id: transcript
     run: ../../tool/trinity/trinity-pe.cwl
     'sbg:x': 611
     'sbg:y': 173
@@ -327,11 +338,34 @@ steps:
       - id: input_pep
         source: wget_1/downloaded
       - id: out
-        source: db_flag_insect
+        default: uniprot_insect
     out:
       - id: db_dir
     run: ../../tool/blast/makeblastdb.cwl
     label: makeblastdb
-    'sbg:x': 1185
-    'sbg:y': 552
+    'sbg:x': 1245
+    'sbg:y': 530
+  - id: blastp
+    in:
+      - id: blastdb_dir
+        source: makeblastdb_1/db_dir
+      - id: db_flag
+        source: db_flag_1
+      - id: num_threads_flag
+        source: cpu
+      - id: out_flag
+        default: uniprot_insect
+        source: out_flag_1
+      - id: outfmt_flag
+        source: outfmt_flag
+      - id: query_flag
+        source: blastdbcmd/blastdbcmd_results
+      - id: max_target_seqs
+        source: max_target_seqs
+    out:
+      - id: blast_results
+    run: ../../tool/blast/blastp.cwl
+    label: BLASTP search.
+    'sbg:x': 1455
+    'sbg:y': 404
 requirements: []
