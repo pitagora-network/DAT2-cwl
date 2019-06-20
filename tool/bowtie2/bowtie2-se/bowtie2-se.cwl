@@ -5,11 +5,12 @@ doc: A fast and sensitive gapped read aligner
 requirements:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/bowtie2:2.3.5--py36he860b03_0
+  InlineJavascriptRequirement: {}
 baseCommand: bowtie2
 arguments:
   - prefix: -S
     position: 3
-    valueFrom: $(inputs.fastq.nameroot).sam
+    valueFrom: $(inputs.fastq.basename.replace('.gz', '').replace('.fastq', '').replace('.fq', '')).sam
 inputs:
   genome_index:
     type: File
@@ -29,8 +30,9 @@ inputs:
     inputBinding:
       prefix: -U
       position: 1
-  process:
-    type: int?
+  num_process:
+    type: int
+    default: 4
     inputBinding:
       prefix: -p
       position: 2
@@ -38,7 +40,7 @@ outputs:
   sam:
     type: File
     outputBinding:
-      glob: $(inputs.fastq.nameroot).sam
+      glob: $(inputs.fastq.basename.replace('.gz', '').replace('.fastq', '').replace('.fq', '')).sam
   stdout: stdout
   stderr: stderr
 stdout: bowtie2-pe-stdout.log

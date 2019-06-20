@@ -16,7 +16,7 @@ inputs:
     inputBinding:
       position: 1
 outputs:
-  result_html:
+  html:
     type: File
     outputBinding:
       glob: "*.html"
