@@ -1,2 +1,4 @@
 .DS_Store
 tool/for_trinity/DRR092257_*.fq.gz
+tool/trinity/reads.left.fq.gz
+tool/trinity/reads.right.fq.gz

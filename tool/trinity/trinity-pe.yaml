@@ -1,10 +1,12 @@
 cpu: 6
 fq1:
   class: File
-  path: /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/DRR092257_1.fq.gz
+  path: >-
+    reads.left.fq.gz
 fq2:
   class: File
-  path: /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/DRR092257_2.fq.gz
+  path: >-
+    reads.right.fq.gz
 max_memory: 16G
 min_contig_length: 200
 no_bowtie: false

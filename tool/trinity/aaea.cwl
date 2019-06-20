@@ -4,13 +4,8 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 id: aaea
 baseCommand:
-  - align_and_estimate_abundance.pl
+  - /usr/local/bin/trinityrnaseq/util/align_and_estimate_abundance.pl
 inputs:
-  - id: transcript
-    type: File
-    inputBinding:
-      position: 0
-      prefix: '--transcripts'
   - id: thread_count
     type: int?
     inputBinding:
@@ -46,13 +41,24 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--output_dir'
+  - id: trinity_dir
+    type: Directory?
+  - id: seqType
+    type: string?
+    inputBinding:
+      position: 0
+      prefix: '--seqType'
 outputs:
   - id: output
     type: Directory?
     outputBinding:
-      glob: '${inputs.output_dir}'
+      glob: $(inputs.output_dir)
 label: aaea
+arguments:
+  - position: 0
+    prefix: '--transcripts'
+    valueFrom: $(inputs.trinity_dir.path)/Trinity.fasta
 requirements:
   - class: DockerRequirement
-    dockerPull: 'comics/trinityrnaseq:2.2.0'
+    dockerPull: 'trinityrnaseq/trinityrnaseq:2.8.5'
   - class: InlineJavascriptRequirement
