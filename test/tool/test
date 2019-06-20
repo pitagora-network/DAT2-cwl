@@ -9,7 +9,7 @@ fi
 tool_name=$1
 test_dir=$(cd $(dirname $0) && pwd)
 root_dir=$(cd ${test_dir}/../.. && pwd)
-cwl_file=$(find ${root_dir}/tool -type f | grep "${tool_name}.cwl"))
+cwl_file=$(find ${root_dir}/tool -type f | grep "${tool_name}.cwl")
 tool_dir=$(cd $(dirname ${cwl_file}) && pwd)
 
 echo "*** TEST START: ${tool_name} ***"
