@@ -12,5 +12,5 @@ inputs:
 outputs:
   result: stdout
   stderr: stderr
-stdout: seqkit-result.tsv
-stderr: seqkit-stderr.log
+stdout: seqkit-stats-result.tsv
+stderr: seqkit-stats-stderr.log
