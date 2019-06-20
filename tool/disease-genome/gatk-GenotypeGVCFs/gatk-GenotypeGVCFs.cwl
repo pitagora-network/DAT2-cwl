@@ -27,6 +27,11 @@ inputs:
     type: int
     inputBinding:
       prefix: --interval-padding
+  heap_size:
+    type: int
+    inputBinding:
+      prefix: --java-options
+      valueFrom: -Xmx$(self)g
 outputs:
   gvcf:
     type: File
