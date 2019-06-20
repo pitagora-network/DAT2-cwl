@@ -1,0 +1,3 @@
+bed:
+  class: File
+  location: ../../data/ERR034597_1.sort_summits.bed
