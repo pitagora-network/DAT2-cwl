@@ -6,6 +6,9 @@ requirements:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/picard:2.18.27--0
   InlineJavascriptRequirement: {}
+  InitialWorkDirRequirement:
+    listing:
+      - entry: $(inputs.reference)
 baseCommand: [picard, CreateSequenceDictionary]
 inputs:
   reference:
@@ -24,7 +27,7 @@ outputs:
     outputBinding:
       glob: |
         ${
-          return inputs.output_name ? inputs.output_name : inputs.reference.basename+'.dict';
+          return inputs.output_name ? inputs.output_name : inputs.reference.nameroot+'.dict';
         }
   stdout: stdout
   stderr: stderr
