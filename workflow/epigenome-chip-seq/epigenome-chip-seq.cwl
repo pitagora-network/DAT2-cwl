@@ -255,7 +255,29 @@ steps:
       - summits-bed
       - treat-pileup-bdg
       - control-lambda-bdg
-
+  # bedtools-intersect-overlapped-posi1:
+  #   run: ../../tool/bedtools/bedtools_intersect_overlap/bedtools_intersect_overlap.cwl
+  #   in:
+  #     peaks_narrow_peak_a:
+  #     peaks_narrow_peak_b:
+  #   out:
+  #     - result-narrow-peak
+  # bedtools-intersect-not-overlapped-posi1:
+  #   run: ../../
+  #   in:
+  #   out:
+  # bedtools-intersect-overlapped-posi2:
+  #   run: ../../tool/bedtools/bedtools_intersect_overlap/bedtools_intersect_overlap.cwl
+  #   in:
+  #   out:
+  # bedtools-intersect-not-overlapped-posi2:
+  #   run: ../../
+  #   in:
+  #   out:
+  # bedtools intersect -u -a BRD4_ChIP_IFNy_peaks.narrowPeak -b IRF1_ChIP_IFNy_peaks.narrowPeak > BRD4_ChIP_IFNy_peaks.overlapped_with_IRF1_ChIP_IFNy_peaks.narrowPeak
+  # bedtools intersect -v -a BRD4_ChIP_IFNy_peaks.narrowPeak -b IRF1_ChIP_IFNy_peaks.narrowPeak > BRD4_ChIP_IFNy_peaks.not_overlapped_with_IRF1_ChIP_IFNy_peaks.narrowPeak
+  # bedtools intersect -u -a IRF1_ChIP_IFNy_peaks.narrowPeak -b BRD4_ChIP_IFNy_peaks.narrowPeak > IRF1_ChIP_IFNy_peaks.overlapped_with_BRD4_ChIP_IFNy_peaks.narrowPeak
+  # bedtools intersect -v -a IRF1_ChIP_IFNy_peaks.narrowPeak -b BRD4_ChIP_IFNy_peaks.narrowPeak > IRF1_ChIP_IFNy_peaks.not_overlapped_with_BRD4_ChIP_IFNy_peaks.narrowPeak
 outputs:
   fastqc-fastq-posi1_html:
     type: File
