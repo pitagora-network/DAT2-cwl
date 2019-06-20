@@ -35,5 +35,5 @@ outputs:
       glob: $(inputs.fastq2.nameroot).fastp.fastq
   stdout: stdout
   stderr: stderr
-stdout: fastp-stdout.log
-stderr: fastp-stderr.log
+stdout: fastp-pe-stdout.log
+stderr: fastp-pe-stderr.log
