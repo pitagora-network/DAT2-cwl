@@ -12,5 +12,5 @@ inputs:
 outputs:
   result: stdout
   stderr: stderr
-stdout: seqkit-stats-result.tsv
+stdout: $(inputs.fastq.nameroot)_seqkit-stats-result.tsv
 stderr: seqkit-stats-stderr.log

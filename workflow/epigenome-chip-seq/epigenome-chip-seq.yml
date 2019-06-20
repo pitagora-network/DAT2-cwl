@@ -1,16 +1,20 @@
-input_fastq3_name: BRD4_ChIP_IFNy.R1.fastq.gz # type "string"
-input_fastq2_name: IRF1_ChIP_IFNy.R1.fastq.gz # type "string"
-input_fastq1_name: Input_DNA.R1.fastq.gz # type "string"
-input_fastq3: # type "File"
+input_fastq_posi1_name: BRD4_ChIP_IFNy.R1.fastq.gz # type "string"
+input_fastq_posi2_name: IRF1_ChIP_IFNy.R1.fastq.gz # type "string"
+input_fastq_nega_name: Input_DNA.R1.fastq.gz # type "string"
+input_fastq_nega: # type "File"
   class: File
   path: ../../test/data/SRR5208838.small.fastq.gz
-input_fastq2: # type "File"
+input_fastq_posi2: # type "File"
   class: File
   path: ../../test/data/SRR5208828.small.fastq.gz
-input_fastq1: # type "File"
+input_fastq_posi1: # type "File"
   class: File
   path: ../../test/data/SRR5208824.small.fastq.gz
 num_process: 4 # type "int"
 genome_index: # type "File"
   class: File
   path: ../../test/data/bowtie2_index_mm10/mm10_chr19.fa
+samtools_skip_alignments: 42 # default value of type "int".
+samtools_filter_alignments: "0x4" # default value of type "string".
+macs2_p-value: 0.01 # default value of type "float".
+macs2_organism: mm # default value of type "string".
