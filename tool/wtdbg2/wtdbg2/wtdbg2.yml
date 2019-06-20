@@ -1,0 +1,6 @@
+threads: 32  # default value of type "int".
+sequence:  # type "File"
+    class: File
+    path: a/file/path
+overwrite: true  # default value of type "boolean".
+output_prefix: worm.wtdbg2  # default value of type "string".
