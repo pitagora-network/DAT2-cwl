@@ -1,0 +1,4 @@
+threads: 2  # default value of type "int".
+sequence:  # type "File"
+    class: File
+    path: a/file/path

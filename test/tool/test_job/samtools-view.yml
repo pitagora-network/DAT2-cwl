@@ -1,0 +1,3 @@
+input_file:
+  class: File
+  path: ../../data/ERR034597_1.sam

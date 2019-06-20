@@ -1,0 +1,3 @@
+kmer_db:
+  class: File
+  path: ../../data/reads.jf_0
