@@ -5,6 +5,9 @@ doc: Identifies duplicate reads
 requirements:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/picard:2.18.27--0
+  InitialWorkDirRequirement:
+    listing:
+      - entry: $(inputs.input)
 baseCommand: [picard, MarkDuplicates]
 inputs:
   input:
@@ -20,7 +23,7 @@ inputs:
   metrics_file_name:
     type: string
     inputBinding:
-      prefix: MERICS_FILE=
+      prefix: METRICS_FILE=
       separate: false
   validation_stringency:
     type:
