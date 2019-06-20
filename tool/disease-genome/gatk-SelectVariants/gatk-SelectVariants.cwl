@@ -43,5 +43,5 @@ outputs:
       glob: $(inputs.output)
   stdout: stdout
   stderr: stderr
-stdout: gatk-GenotypeGVCFs-stdout.log
-stderr: gatk-GenotypeGVCFs-stderr.log
+stdout: gatk-SelectVariants-stdout.log
+stderr: gatk-SelectVariants-stderr.log
