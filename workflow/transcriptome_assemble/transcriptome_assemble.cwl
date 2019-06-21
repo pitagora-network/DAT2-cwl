@@ -174,7 +174,6 @@ steps:
     in:
       - id: transcripts
         source:
-          - trinity_pe/transcript
           - trinity_pe/trinity_results
       - id: minimum_protein_length
         source: minimum_protein_length

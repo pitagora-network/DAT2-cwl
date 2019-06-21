@@ -7,8 +7,8 @@ $namespaces:
 inputs:
   - id: entry_batch_flag
     type: File?
-    'sbg:x': -561.3968505859375
-    'sbg:y': -346.5
+    'sbg:x': -575
+    'sbg:y': -402
   - id: db_flag
     type: string
     'sbg:exposed': true
