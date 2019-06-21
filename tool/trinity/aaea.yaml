@@ -1,5 +1,6 @@
+cpu: 6
 est_method: kallisto
-kallisto_add_opts: '--kallisto_add_opts "-t 4"'
+kallisto_add_opts: true
 left:
   class: File
   path: >-
@@ -11,8 +12,8 @@ right:
   path: >-
     /Users/yasumizuyoshiaki/RabixComposer/Executions/local/trinity-pe/2019-06-20-21-29-11/app-2019-06-20-212911.888/root/reads.right.fq.gz
 seqType: fq
-thread_count: 4
-trinity_dir:
-  class: Directory
+thread_count: true
+transcripts:
+  class: File
   path: >-
-    /Users/yasumizuyoshiaki/RabixComposer/Executions/local/trinity-pe/2019-06-20-21-29-11/app-2019-06-20-212911.888/root/trinity_out_dir
+    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta

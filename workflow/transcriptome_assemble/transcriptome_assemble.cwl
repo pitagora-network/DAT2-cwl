@@ -20,9 +20,6 @@ inputs:
   - id: runid
     type: string
     'sbg:exposed': true
-  - id: seq_type
-    type: string
-    'sbg:exposed': true
   - id: output_name
     type: string
     'sbg:exposed': true
@@ -45,10 +42,6 @@ inputs:
     type: int
     'sbg:x': 131
     'sbg:y': -273
-  - id: max_memory
-    type: string
-    'sbg:x': 63.1796875
-    'sbg:y': -118
   - id: db_flag
     type: string?
     label: db_flag
@@ -66,6 +59,28 @@ inputs:
   - id: db_flag_1
     type: string
     'sbg:exposed': true
+  - id: url_1
+    type: string
+    'sbg:exposed': true
+  - id: output_name_1
+    type: string
+    'sbg:exposed': true
+  - id: max_memory
+    type: string
+    'sbg:x': 183.18011474609375
+    'sbg:y': -25.5
+  - id: seq_type
+    type: string
+    'sbg:exposed': true
+  - id: est_method
+    type: string
+    'sbg:exposed': true
+  - id: output_dir
+    type: string?
+    'sbg:exposed': true
+  - id: seqType
+    type: string?
+    'sbg:exposed': true
 outputs:
   - id: output2
     outputSource:
@@ -77,20 +92,8 @@ outputs:
     outputSource:
       - for_trinity/output1
     type: File
-    'sbg:x': 451
-    'sbg:y': 246
-  - id: output_2
-    outputSource:
-      - aaea/output
-    type: Directory?
-    'sbg:x': 690
-    'sbg:y': 426
-  - id: trinity_results
-    outputSource:
-      - trinity_pe/trinity_results
-    type: Directory
-    'sbg:x': 768
-    'sbg:y': -1
+    'sbg:x': 420
+    'sbg:y': 360
   - id: output
     outputSource:
       - transdecoder/output
@@ -127,6 +130,12 @@ outputs:
     type: File
     'sbg:x': 1613.68310546875
     'sbg:y': 403.5
+  - id: output_2
+    outputSource:
+      - aaea/output
+    type: Directory?
+    'sbg:x': 849
+    'sbg:y': 427
 steps:
   - id: for_trinity
     in:
@@ -161,49 +170,12 @@ steps:
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
     'sbg:x': -375
     'sbg:y': 222
-  - id: aaea
-    in:
-      - id: thread_count
-        default: 30
-      - id: left
-        source: trim_galore/out1
-      - id: right
-        source: trim_galore/out2
-      - id: est_method
-        default: kallisto
-      - id: kallisto_add_opts
-        default: '"-t 30"'
-      - id: output_dir
-        default: kallisto_out
-    out:
-      - id: output
-    run: ../../tool/trinity/aaea.cwl
-    label: aaea
-    'sbg:x': 516
-    'sbg:y': 422
-  - id: trinity_pe
-    in:
-      - id: cpu
-        source: cpu
-      - id: fq1
-        source: for_trinity/output1
-      - id: fq2
-        source: for_trinity/output2
-      - id: max_memory
-        source: max_memory
-      - id: output_dir
-        default: trinity_out_dir
-      - id: seq_type
-        source: seq_type
-    out:
-      - id: trinity_results
-    run: ../../tool/trinity/trinity-pe.cwl
-    'sbg:x': 611
-    'sbg:y': 173
   - id: transdecoder
     in:
       - id: transcripts
-        source: trinity_pe/transcript
+        source:
+          - trinity_pe/transcript
+          - trinity_pe/trinity_results
       - id: minimum_protein_length
         source: minimum_protein_length
     out:
@@ -312,8 +284,10 @@ steps:
     in:
       - id: output_name
         default: uniprot-taxonomy_50557.fasta
+        source: output_name_1
       - id: url
         default: 'https://www.uniprot.org/uniprot/?query=taxonomy:50557&format=fasta'
+        source: url_1
     out:
       - id: downloaded
       - id: stderr
@@ -368,4 +342,52 @@ steps:
     label: BLASTP search.
     'sbg:x': 1455
     'sbg:y': 404
-requirements: []
+  - id: trinity_pe
+    in:
+      - id: cpu
+        source: cpu
+      - id: fq1
+        source: for_trinity/output1
+      - id: fq2
+        source: for_trinity/output2
+      - id: max_memory
+        source: max_memory
+      - id: seq_type
+        source: seq_type
+    out:
+      - id: trinity_results
+    run: ../../tool/trinity/trinity-pe.cwl
+    label: Trinity
+    'sbg:x': 545
+    'sbg:y': 174
+  - id: aaea
+    in:
+      - id: thread_count
+        default: true
+      - id: left
+        source: for_trinity/output1
+      - id: right
+        source: for_trinity/output2
+      - id: est_method
+        default: kallisto
+        source: est_method
+      - id: kallisto_add_opts
+        default: true
+      - id: prep_reference
+        default: false
+      - id: output_dir
+        source: output_dir
+      - id: seqType
+        source: seqType
+      - id: transcripts
+        source: trinity_pe/trinity_results
+      - id: cpu
+        source: cpu
+    out:
+      - id: output
+    run: ../../tool/trinity/aaea.cwl
+    label: aaea
+    'sbg:x': 668
+    'sbg:y': 425
+requirements:
+  - class: MultipleInputFeatureRequirement

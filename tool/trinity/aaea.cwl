@@ -7,10 +7,11 @@ baseCommand:
   - /usr/local/bin/trinityrnaseq/util/align_and_estimate_abundance.pl
 inputs:
   - id: thread_count
-    type: int?
+    type: boolean?
     inputBinding:
       position: 0
       prefix: '--thread_count'
+      valueFrom: $(inputs.cpu)
   - id: left
     type: File
     inputBinding:
@@ -27,10 +28,11 @@ inputs:
       position: 5
       prefix: '--est_method'
   - id: kallisto_add_opts
-    type: string?
+    type: boolean?
     inputBinding:
       position: 6
       prefix: '--kallisto_add_opts'
+      valueFrom: '"-t $(inputs.cpu)"'
   - id: prep_reference
     type: boolean?
     inputBinding:
@@ -41,23 +43,24 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--output_dir'
-  - id: trinity_dir
-    type: Directory?
   - id: seqType
     type: string?
     inputBinding:
       position: 0
       prefix: '--seqType'
+  - id: transcripts
+    type: File
+    inputBinding:
+      position: 0
+      prefix: '--transcripts'
+  - id: cpu
+    type: int
 outputs:
   - id: output
     type: Directory?
     outputBinding:
       glob: $(inputs.output_dir)
 label: aaea
-arguments:
-  - position: 0
-    prefix: '--transcripts'
-    valueFrom: $(inputs.trinity_dir.path)/Trinity.fasta
 requirements:
   - class: DockerRequirement
     dockerPull: 'trinityrnaseq/trinityrnaseq:2.8.5'
