@@ -136,6 +136,12 @@ outputs:
     type: Directory?
     'sbg:x': 849
     'sbg:y': 427
+  - id: trinity_results
+    outputSource:
+      - trinity_pe/trinity_results
+    type: File
+    'sbg:x': 654.1796875
+    'sbg:y': 42.5
 steps:
   - id: for_trinity
     in:
@@ -173,8 +179,7 @@ steps:
   - id: transdecoder
     in:
       - id: transcripts
-        source:
-          - trinity_pe/trinity_results
+        source: trinity_pe/trinity_results
       - id: minimum_protein_length
         source: minimum_protein_length
     out:
@@ -388,5 +393,4 @@ steps:
     label: aaea
     'sbg:x': 668
     'sbg:y': 425
-requirements:
-  - class: MultipleInputFeatureRequirement
+requirements: []
