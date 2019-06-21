@@ -56,7 +56,7 @@ outputs:
   - id: trinity_results
     type: File
     outputBinding:
-      glob: $(inputs.output_dir)/Trinity.fasta
+      glob: '*/Trinity.fasta'
 doc: >-
   test files :
   https://github.com/trinityrnaseq/trinityrnaseq/tree/devel/sample_data/test_Trinity_Assembly
