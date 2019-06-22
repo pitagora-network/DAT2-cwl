@@ -14,23 +14,23 @@ inputs:
     inputBinding:
       position: 0
       prefix: '--genomeDir'
-  - id: '--genomeFastaFiles'
+  - id: genomeFastaFiles
     type: File?
     inputBinding:
       position: 0
       prefix: '--genomeFastaFiles'
-  - id: '--runThreadN'
+  - id: runThreadN
     type: string?
     inputBinding:
       position: 0
       prefix: '--runThreadN'
-  - id: '--sjdbGTFfile'
+  - id: sjdbGTFfile
     type: File?
     inputBinding:
       position: 0
       prefix: '--sjdbGTFfile'
-  - id: '--sjdbOverhang'
-    type: File?
+  - id: sjdbOverhang
+    type: int?
     inputBinding:
       position: 0
       prefix: '--sjdbOverhang'
@@ -38,16 +38,21 @@ outputs:
   - id: starIndex
     type: Directory
     outputBinding:
-      glob: '*'
+      glob: $(inputs.genomeDir.path)
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR genomeGenerate: Generating genome indexes.'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genomeDir)
+        writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/star:2.6.0c--0'
-requirements:
-  - class: InlineJavascriptRequirement
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
@@ -58,3 +63,4 @@ $schemas:
     's:name': Tazro Ohta
 's:codeRepository': 'https://github.com/pitagora-network/pitagora-cwl'
 's:license': 'https://spdx.org/licenses/Apache-2.0'
+
