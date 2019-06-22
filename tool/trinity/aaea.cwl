@@ -64,4 +64,7 @@ label: aaea
 requirements:
   - class: DockerRequirement
     dockerPull: 'trinityrnaseq/trinityrnaseq:2.8.5'
+  - class: InitialWorkDirRequirement
+    listing:
+      - $(inputs.transcripts)
   - class: InlineJavascriptRequirement
