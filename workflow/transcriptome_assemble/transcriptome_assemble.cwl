@@ -45,8 +45,8 @@ inputs:
   - id: db_flag
     type: string?
     label: db_flag
-    'sbg:x': 955
-    'sbg:y': 369
+    'sbg:x': 930
+    'sbg:y': 406
   - id: out_flag_1
     type: string
     'sbg:exposed': true
@@ -98,8 +98,8 @@ outputs:
     outputSource:
       - transdecoder/output
     type: Directory?
-    'sbg:x': 864
-    'sbg:y': 313
+    'sbg:x': 921
+    'sbg:y': 286
   - id: out
     outputSource:
       - extract_transcript_id/out
@@ -378,7 +378,7 @@ steps:
       - id: kallisto_add_opts
         default: true
       - id: prep_reference
-        default: false
+        default: true
       - id: output_dir
         source: output_dir
       - id: seqType
