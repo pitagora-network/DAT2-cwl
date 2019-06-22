@@ -1,0 +1,5 @@
+summits_bed:  # type "File"
+    class: File
+    path: a/file/path
+size: 200  # default value of type "int". (optional)
+organism: mm10  # default value of type "string". (optional)
