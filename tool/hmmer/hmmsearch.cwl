@@ -32,6 +32,6 @@ outputs:
 label: hmmsearch
 requirements:
   - class: DockerRequirement
-    dockerPull: 'biocontainers/hmmer:v3.1b2dfsg-5-deb_cv1'
+    dockerPull: 'quay.io/biocontainers/hmmer:3.2.1--hf484d3e_1'
   - class: InlineJavascriptRequirement
 stdout: $(inputs.pep.nameroot).$(inputs.hmm.nameroot).log

@@ -3,3 +3,4 @@ tool/for_trinity/DRR092257_*.fq.gz
 tool/trinity/reads.left.fq.gz
 tool/trinity/reads.right.fq.gz
 tool/trinity/kallisto_out
+tool/transdecoder/Trinity.fasta.transdecoder_dir

@@ -57,7 +57,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: ncbi/blast
+    dockerPull: 'quay.io/biocontainers/blast:2.9.0--pl526h979a64d_3'
 'sbg:links':
   - id: >-
       https://github.com/ncbi/cwl-demos/blob/0d2a5b145fce0e8424b7cebc4d2881cc30e40ca4/blast-pipelines/blastdbcmd_docker.cwl

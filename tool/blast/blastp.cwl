@@ -65,4 +65,4 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: ncbi/blast
+    dockerPull: 'quay.io/biocontainers/blast:2.9.0--pl526h979a64d_3'

@@ -24,8 +24,8 @@ outputs:
   - id: pep
     type: File?
     outputBinding:
-      glob: '*.pep'
+      glob: '*/longest_orfs.pep'
 label: transdecoder
 requirements:
   - class: DockerRequirement
-    dockerPull: 'comics/transdecoder:5.0.1'
+    dockerPull: 'quay.io/biocontainers/transdecoder:5.5.0--0'

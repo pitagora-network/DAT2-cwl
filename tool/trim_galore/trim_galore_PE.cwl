@@ -41,4 +41,4 @@ outputs:
 label: trim_galore
 requirements:
   - class: DockerRequirement
-    dockerPull: miasteinberg/trim-galore
+    dockerPull: 'quay.io/biocontainers/trim-galore:0.6.2--0'
