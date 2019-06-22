@@ -63,4 +63,3 @@ $schemas:
     's:name': Tazro Ohta
 's:codeRepository': 'https://github.com/pitagora-network/pitagora-cwl'
 's:license': 'https://spdx.org/licenses/Apache-2.0'
-

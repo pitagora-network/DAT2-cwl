@@ -1,0 +1,15 @@
+nthreads: 8
+genomeDir:
+  class: Directory
+  path: /home/kyamada/cwl/DAT2-cwl_kyamada/tool/star_pre/index/STAR_reference
+fq1:
+  class: File
+  path: /home/kyamada/cwl/data_cwl/seq/SRR1550989_1.fastq.gz
+fq2:
+  class: File
+  path: /home/kyamada/cwl/data_cwl/seq/SRR1550989_2.fastq.gz
+quantMode: TranscriptomeSAM
+outSAMtype: [BAM, SortedByCoordinate]
+#outSAMtype: BAM
+outFileNamePrefix: SRR1550989
+readFilesCommand: gunzip -c

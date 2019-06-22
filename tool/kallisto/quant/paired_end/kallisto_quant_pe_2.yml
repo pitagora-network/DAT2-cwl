@@ -3,10 +3,10 @@ index_file:
   path: /home/kyamada/cwl/out_test/kallisto/kallisto.idx
 fq1:
   class: File
-  path: /home/kyamada/cwl/data_cwl/seq/SRR1550989_1.fastq.gz
+  path: /home/kyamada/cwl/data_cwl/seq/SRR1551091_1.fastq.gz
 fq2:
   class: File
-  path: /home/kyamada/cwl/data_cwl/seq/SRR1550989_2.fastq.gz
-out_dir_name: SRR1550989
+  path: /home/kyamada/cwl/data_cwl/seq/SRR1551091_2.fastq.gz
+out_dir_name: SRR1551091
 bootstrap_samples: 100
 nthreads: 4

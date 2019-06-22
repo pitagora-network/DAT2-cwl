@@ -36,18 +36,23 @@ inputs:
       prefix: '--sjdbOverhang'
 outputs:
   - id: starIndex
-    type: Directory
+    type: 'File[]'
     outputBinding:
-      glob: $(inputs.genomeDir.basename)
+      glob: '*'
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR genomeGenerate: Generating genome indexes.'
+arguments:
+  - position: 0
+    prefix: '--genomeDir'
+    valueFrom: $(runtime.outdir)
 requirements:
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.genomeDir)
         writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/star:2.6.0c--0'
