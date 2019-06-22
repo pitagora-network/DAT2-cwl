@@ -1,0 +1,10 @@
+index_file:
+  class: File
+  path: /home/kyamada/cwl/out_test/kallisto/kallisto.idx
+fq1:
+  class: File
+  path: /home/kyamada/cwl/data/fastq/SRR1551071_1.fastq
+fq2:
+  class: File
+  path: /home/kyamada/cwl/data/fastq/SRR1551071_2.fastq
+nthreads: 4
