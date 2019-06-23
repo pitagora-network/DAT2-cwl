@@ -1,6 +1,3 @@
-# R を起動させる
-R
-# 以下はRのコマンド
 source("http://bioconductor.org/biocLite.R")
 biocLite("rhdf5")
 install.packages("devtools")
@@ -11,8 +8,6 @@ library("sleuth")
 # サンプル情報を読み込む
 s2c <- read.table("sample.txt", header=T, stringsAsFactors=F, sep="\t")
 s2c$condition <- gsub(" ","_",s2c$condition)
-# 表示させて内容を確認する
-s2c
 
 # 遺伝子IDと遺伝子名の対応表を読み込む
 t2g <- read.table("../ref/target2gene.txt", header=T, stringsAsFactors=F)
@@ -21,10 +16,6 @@ t2g <- read.table("../ref/target2gene.txt", header=T, stringsAsFactors=F)
 so <- sleuth_prep(s2c, extra_bootstrap_summary=T, target_mapping=t2g)
 # 遺伝子レベルで解析する場合は以下
 so <- sleuth_prep(s2c, extra_bootstrap_summary=T, target_mapping=t2g, aggregation_column='ens_gene', gene_mode=T)
-
-# kallisto の結果を眺める（先頭の20行のみ）
-head(kallisto_table(so), 20)
-# 表示される表は Sample1 の transcriptA, Sample2 の transcriptA, Sample1のtranscriptB… という具合に縦に長く続いている。縦に遺伝子・横にサンプルという単純なパネルではない
 
 # 遺伝子IDに対応する遺伝子名を付与する
 kallisto.df <- kallisto_table(so)
@@ -35,35 +26,29 @@ kallisto.df <- merge(kalisto.df,t2g, by.x="target_id2", by.y="target_id")
 write.table(kallisto.df, "kallisto_res.txt", row.names=F, quote=F)
 
 
-まずは尤度比検定
+#まずは尤度比検定
 so <- sleuth_fit(so, ~condition, 'full')
-# fitting measurement error models と表示されるが、これはエラーメッセージではない
+
 LRT <- sleuth_fit(so, ~1, 'reduced')
 LRT <- sleuth_lrt(LRT, 'reduced', 'full')
 LRT_table <- sleuth_results(LRT, 'reduced:full', 'lrt', show_all=F)
-# 検定結果を眺める（先頭10行のみ）
-head(LRT_table, 10)
-# 転写産物やp値、q値などが表示される
+
 # p値の低い順に並べ替えるには以下のコマンドを実行する
 LRT_table <- LRT_table[order(LRT_table$pval),]
-head(LRT_table,10)
-# p値が最小なのは ENST00000503567.5 (FAM153A) であることがわかる。また遺伝子レベルで解析した場合はENSG00000169710 (FASN) が最も低いp値を示す
-# q値など別の指標で並べ替える場合は LRT_table$ のあとの文字を変更する
+
 # 結果を保存する
 write.table(LRT_table, "LRT_res.sorted.txt", row.names=F, quote=F, sep="\t")
 
-発現量をボックスプロットおよびヒートマップで図示する
+#発現量をボックスプロットおよびヒートマップで図示する
 library(ggplot2)
 p <- plot_bootstrap(LRT, "ENST00000503567.5", units="est_counts", color_by="condition")
-# 図を表示させる
-p
+
 # 図を保存する
 ggplot2::ggsave("ENST00000503567.5.png", p)
-# 拡張子を .pdf や .eps にすることでファイル形式を選択できる
-# width や height で画像サイズも指定できる
+ggplot2::ggsave("ENST00000503567.5.pdf", p)
+
 # 作図に使われているデータは下記で抜き出すことができる
 data <- as.data.frame(LRT$bs_quants)
-# 棒の上下端が max/min、箱の上下が upper/lower、箱内の横線が midに対応している。このデータを用いてggplot2などで作図できる
 
 # ヒートマップ
 # p値の低い20遺伝子で作図する（上記のコマンドでp値の低い順に並べ替えてあるので、上から順に20個の遺伝子IDを指定する）
@@ -72,21 +57,21 @@ plot_transcript_heatmap(LRT, transcripts, units="tpm")
 # 上記コマンドでヒートマップが表示されない場合は dev.off() を入力したのち、下記コマンドでファイルに出力する
 
 # ヒートマップはgtableオブジェクトのためggsave()は使えず、直接書き出す必要がある
-# https://github.com/pachterlab/sleuth/issues/193
+
 pdf('heatmap.pdf')
 plot_transcript_heatmap(LRT, transcripts, units="tpm")
 dev.off()
 
 # ヒートマップ作図用のデータはkallisto.dfにも含まれている
 
-Wald検定
+#Wald検定
 WT <- sleuth_wt(so, ‘conditionType_1_Diabetes’)
 WT_table <- sleuth_results(WT, ‘conditionType_1_Diabetes’)
 # q値の小さい順に並べ替える
 WT_table <- WT_table[order(WT_table$qval),]
 write.table(WT_table, “WT_res.sorted.txt”, row.names=F, quote=F, sep=”¥t)
 
-Wald検定の結果をvolcano plotで図示する。デフォルト設定ではq値が0.1を下回る転写産物が赤いプロットで示される。
+#Wald検定の結果をvolcano plotで図示する。デフォルト設定ではq値が0.1を下回る転写産物が赤いプロットで示される。
 p3 <- plot_volcano(WT, ‘conditionType_1_Diabetes’, ‘wt’)
 ggsave(“volcanoplot.png”, p3)
 # volcano plot 作図用のデータは WT_table にも含まれているので、ggplot などを使って自分で作図することができる
