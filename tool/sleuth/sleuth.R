@@ -1,5 +1,11 @@
-source("http://bioconductor.org/biocLite.R")
-biocLite("rhdf5")
+#source("http://bioconductor.org/biocLite.R")
+#biocLite("rhdf5")
+#上はversionが古い
+
+if (!requireNamespace(“BiocManager”, quietly = TRUE))
+  install.packages(“BiocManager”)
+
+BiocManager::install(“rhdf5”)
 install.packages("devtools")
 devtools::install_github("pachterlab/sleuth")
 # sleuthパッケージを読み込む
