@@ -1,4 +1,23 @@
 sraFiles:
   - class: File
-    path: _PATH_TO_SRA_FILE_
-nthreads: _NTHREADS_
+    path: /home/kyamada/cwl/data_cwl/seq/SRR1550989.sra
+sraFiles:
+  - class: File
+    path: /home/kyamada/cwl/data_cwl/seq/SRR1551005.sra
+sraFiles:
+  - class: File
+    path: /home/kyamada/cwl/data_cwl/seq/SRR1551011.sra
+sraFiles:
+  - class: File
+    path: /home/kyamada/cwl/data_cwl/seq/SRR1551050.sra
+sraFiles:
+  - class: File
+    path: /home/kyamada/cwl/data_cwl/seq/SRR1551057.sra
+sraFiles:
+  - class: File
+    path: /home/kyamada/cwl/data_cwl/seq/SRR1551071.sra
+sraFiles:
+  - class: File
+    path: /home/kyamada/cwl/data_cwl/seq/SRR1551091.sra
+
+nthreads: 10
