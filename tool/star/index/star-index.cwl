@@ -1,97 +1,65 @@
-#!/usr/bin/env cwl-runner
-cwlVersion: v1.0
 class: CommandLineTool
-
-label: STAR-index
-doc: Spliced Transcripts Alignment to a Reference
-
-requirements:
-  - class: ShellCommandRequirement
-  - class: InlineJavascriptRequirement
-
-hints:
-  - $import: star.yml
-
-inputs:
-  runMode:
-    type: string
-    default: "genomeGenerate"
-    inputBinding:
-      position: 1
-      prefix: --runMode
-  genomeChrBinNbits:
-    type: int
-    default: 16
-    inputBinding:
-      position: 2
-      prefix: --genomeChrBinNbits
-  sjdbOverhang:
-    type: int
-    default: 124
-    inputBinding:
-      position: 4
-      prefix: --sjdbOverhang
-  genomeDir:
-    type: string
-    default: '.'
-    inputBinding:
-      position: 5
-      prefix: --genomeDir
-  runThreadN:
-    type: int
-    inputBinding:
-      prefix: --runThreadN
-      position: 6
-  genomeFastaFiles:
-    type: File
-    inputBinding:
-      position: 7
-      prefix: --genomeFastaFiles
-  sjdbGTFfile:
-    type: File
-    inputBinding:
-      position: 8
-      prefix: --sjdbGTFfile
-
-outputs:
-  indices_txt:
-    type: File[]
-    outputBinding:
-      glob: "*.txt"
-  indices_tab:
-    type: File[]
-    outputBinding:
-      glob: "*.tab"
-  indices_genome:
-    type: File
-    outputBinding:
-      glob: "Genome"
-  indices_SA:
-    type: File
-    outputBinding:
-      glob: "SA"
-  indices_SAindex:
-    type: File
-    outputBinding:
-      glob: "SAindex"
-  indices_out:
-    type: File
-    outputBinding:
-      glob: "Log.out"
-
-baseCommand: ["STAR"]
-
-s:author:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0002-4108-5982
-    s:email: mailto:r78v10a07@gmail.com
-    s:name: Roberto Vera Alvarez
-
-s:codeRepository: https://github.com/alexdobin/STAR
-s:license: https://spdx.org/licenses/OPL-1.0
-
+cwlVersion: v1.0
 $namespaces:
-  s: http://schema.org/
-
+  edam: 'http://edamontology.org/'
+  s: 'https://schema.org/'
+  sbg: 'https://www.sevenbridges.com/'
+baseCommand:
+  - STAR
+  - '--runMode'
+  - genomeGenerate
+inputs:
+  - id: genomeDir
+    type: Directory?
+    inputBinding:
+      position: 0
+      prefix: '--genomeDir'
+  - id: genomeFastaFiles
+    type: File?
+    inputBinding:
+      position: 0
+      prefix: '--genomeFastaFiles'
+  - id: runThreadN
+    type: string?
+    inputBinding:
+      position: 0
+      prefix: '--runThreadN'
+  - id: sjdbGTFfile
+    type: File?
+    inputBinding:
+      position: 0
+      prefix: '--sjdbGTFfile'
+  - id: sjdbOverhang
+    type: int?
+    inputBinding:
+      position: 0
+      prefix: '--sjdbOverhang'
+outputs:
+  - id: starIndex
+    type: Directory
+    outputBinding:
+      glob: $(inputs.genomeDir.path)
+doc: >-
+  STAR: Spliced Transcripts Alignment to a Reference.
+  https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
+label: 'STAR genomeGenerate: Generating genome indexes.'
+requirements:
+  - class: InlineJavascriptRequirement
+  - class: InitialWorkDirRequirement
+    listing:
+      - entry: $(inputs.genomeDir)
+        writable: true
+  - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: 'quay.io/biocontainers/star:2.6.0c--0'
 $schemas:
-  - http://schema.org/docs/schema_org_rdfa.html
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+  - 'http://edamontology.org/EDAM_1.18.owl'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:inutano@gmail.com'
+    's:identifier': 'https://orcid.org/0000-0003-3777-5945'
+    's:name': Tazro Ohta
+'s:codeRepository': 'https://github.com/pitagora-network/pitagora-cwl'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
