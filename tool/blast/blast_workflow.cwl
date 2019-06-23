@@ -31,6 +31,12 @@ outputs:
     type: File
     'sbg:x': -80
     'sbg:y': -261
+  - id: db_dir
+    outputSource:
+      - makeblastdb/db_dir
+    type: Directory?
+    'sbg:x': -358.8984375
+    'sbg:y': 36.5
 steps:
   - id: blastdbcmd
     in:

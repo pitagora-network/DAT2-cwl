@@ -5,3 +5,5 @@ tool/trinity/reads.right.fq.gz
 tool/trinity/kallisto_out
 tool/transdecoder/Trinity.fasta.transdecoder_dir
 tool/transdecoder/longest_orfs.SOD_Cu.out
+tool/blast/blastdb_trinity_rslt
+tool/blast/longest_orfs.SOD_Cu.pep

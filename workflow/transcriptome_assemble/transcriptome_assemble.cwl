@@ -140,6 +140,24 @@ outputs:
     type: File
     'sbg:x': 1350.1796875
     'sbg:y': 86.5
+  - id: db_dir
+    outputSource:
+      - makeblastdb/db_dir
+    type: Directory?
+    'sbg:x': 1183.18017578125
+    'sbg:y': 318.5
+  - id: db_dir_1
+    outputSource:
+      - makeblastdb_1/db_dir
+    type: Directory?
+    'sbg:x': 1392.18017578125
+    'sbg:y': 672.5
+  - id: pep
+    outputSource:
+      - transdecoder/pep
+    type: File?
+    'sbg:x': 903
+    'sbg:y': 75
 steps:
   - id: for_trinity
     in:
@@ -374,8 +392,8 @@ steps:
       - id: db_dir
     run: ../../tool/blast/makeblastdb.cwl
     label: makeblastdb
-    'sbg:x': 1033
-    'sbg:y': 194
+    'sbg:x': 1029
+    'sbg:y': 181
   - id: blastdbcmd
     in:
       - id: blastdb_dir
