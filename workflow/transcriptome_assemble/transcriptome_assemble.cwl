@@ -35,18 +35,10 @@ inputs:
   - id: output_1
     type: string
     'sbg:exposed': true
-  - id: out_flag
-    type: string
-    'sbg:exposed': true
   - id: cpu
     type: int
     'sbg:x': 131
     'sbg:y': -273
-  - id: db_flag
-    type: string?
-    label: db_flag
-    'sbg:x': 930
-    'sbg:y': 406
   - id: out_flag_1
     type: string
     'sbg:exposed': true
@@ -81,6 +73,12 @@ inputs:
   - id: seqType
     type: string?
     'sbg:exposed': true
+  - id: db_flag
+    type: string
+    'sbg:exposed': true
+  - id: out_flag
+    type: string
+    'sbg:exposed': true
 outputs:
   - id: output2
     outputSource:
@@ -106,12 +104,6 @@ outputs:
     type: File?
     'sbg:x': 1347
     'sbg:y': -70
-  - id: blastdbcmd_results
-    outputSource:
-      - blastdbcmd/blastdbcmd_results
-    type: File
-    'sbg:x': 1391
-    'sbg:y': 160
   - id: reverse
     outputSource:
       - fasterq_dump/reverse
@@ -142,6 +134,12 @@ outputs:
     type: File
     'sbg:x': 654.1796875
     'sbg:y': 42.5
+  - id: blastdbcmd_results
+    outputSource:
+      - blastdbcmd/blastdbcmd_results
+    type: File
+    'sbg:x': 1350.1796875
+    'sbg:y': 86.5
 steps:
   - id: for_trinity
     in:
@@ -189,7 +187,7 @@ steps:
     label: transdecoder
     'sbg:x': 803
     'sbg:y': 191
-  - id: wget
+  - id: 'wget:Sod_Cu.hmm'
     in:
       - id: output_name
         source: output_name
@@ -247,15 +245,15 @@ steps:
       - id: domtblout
         source: domtblout
       - id: hmm
-        source: wget/downloaded
+        source: 'wget:Sod_Cu.hmm/downloaded'
       - id: pep
         source: transdecoder/pep
     out:
       - id: output
     run: ../../tool/hmmer/hmmsearch.cwl
     label: hmmsearch
-    'sbg:x': 1110
-    'sbg:y': -175
+    'sbg:x': 1123
+    'sbg:y': -176
   - id: extract_transcript_id
     in:
       - id: input
@@ -266,25 +264,9 @@ steps:
       - id: out
     run: ../../tool/extract_transcript_id/extract_transcript_id.cwl
     label: extract_transcript_id
-    'sbg:x': 1175
-    'sbg:y': -69
-  - id: blastdbcmd
-    in:
-      - id: blastdb_dir
-        source: makeblastdb/db_dir
-      - id: db_flag
-        source: db_flag
-      - id: entry_batch_flag
-        source: extract_transcript_id/out
-      - id: out_flag
-        source: out_flag
-    out:
-      - id: blastdbcmd_results
-    run: ../../tool/blast/blastdbcmd.cwl
-    label: Blastdbcmd to dump seqs/info.
-    'sbg:x': 1199
-    'sbg:y': 159
-  - id: wget_1
+    'sbg:x': 1205
+    'sbg:y': -61
+  - id: 'wget:uniprot-taxonomy_50557.fasta'
     in:
       - id: output_name
         default: uniprot-taxonomy_50557.fasta
@@ -296,25 +278,13 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../tool/wget/wget.cwl
-    label: download uniprot insect fasta
+    label: 'wget:uniprot-taxonomy_50557.fasta'
     'sbg:x': 1019
     'sbg:y': 623
-  - id: makeblastdb
-    in:
-      - id: input_pep
-        source: transdecoder/pep
-      - id: out
-        source: db_flag
-    out:
-      - id: db_dir
-    run: ../../tool/blast/makeblastdb.cwl
-    label: makeblastdb
-    'sbg:x': 1023
-    'sbg:y': 184
   - id: makeblastdb_1
     in:
       - id: input_pep
-        source: wget_1/downloaded
+        source: 'wget:uniprot-taxonomy_50557.fasta/downloaded'
       - id: out
         default: uniprot_insect
     out:
@@ -390,7 +360,35 @@ steps:
     out:
       - id: output
     run: ../../tool/trinity/aaea.cwl
-    label: aaea
+    label: align_and_estimate_abundance.pl
     'sbg:x': 668
     'sbg:y': 425
+  - id: makeblastdb
+    in:
+      - id: input_pep
+        source: transdecoder/pep
+      - id: out
+        default: trinity_rslt
+    out:
+      - id: db_dir
+    run: ../../tool/blast/makeblastdb.cwl
+    label: makeblastdb
+    'sbg:x': 1033
+    'sbg:y': 194
+  - id: blastdbcmd
+    in:
+      - id: blastdb_dir
+        source: makeblastdb/db_dir
+      - id: db_flag
+        source: db_flag
+      - id: entry_batch_flag
+        source: extract_transcript_id/out
+      - id: out_flag
+        source: out_flag
+    out:
+      - id: blastdbcmd_results
+    run: ../../tool/blast/blastdbcmd.cwl
+    label: Blastdbcmd to dump seqs/info.
+    'sbg:x': 1231
+    'sbg:y': 161
 requirements: []

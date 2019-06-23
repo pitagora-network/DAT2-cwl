@@ -15,12 +15,15 @@ inputs:
   - id: out_flag_1
     type: string?
     label: out_flag
-    'sbg:x': -740.3968505859375
-    'sbg:y': -226
+    'sbg:x': -760
+    'sbg:y': -229
   - id: input_pep
     type: File
     'sbg:x': -788.3968505859375
     'sbg:y': -29
+  - id: out_flag
+    type: string
+    'sbg:exposed': true
 outputs:
   - id: blastdbcmd_results
     outputSource:
@@ -38,7 +41,7 @@ steps:
       - id: entry_batch_flag
         source: entry_batch_flag
       - id: out_flag
-        source: out_flag_1
+        source: out_flag
     out:
       - id: blastdbcmd_results
     run: ./blastdbcmd.cwl

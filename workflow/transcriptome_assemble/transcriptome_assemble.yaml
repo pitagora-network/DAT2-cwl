@@ -1,9 +1,9 @@
-cpu: 100
+cpu: 30
 db_flag: trinity_rslt
 db_flag_1: uniprot_insect
 domtblout: longest_orfs.SOD_Cu.out
 est_method: kallisto
-max_memory: 500G
+max_memory: 100G
 max_target_seqs: 1
 minimum_protein_length: 30
 out_flag: longest_orfs.SOD_Cu.pep
