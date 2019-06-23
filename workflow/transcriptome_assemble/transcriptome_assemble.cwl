@@ -187,7 +187,7 @@ steps:
     label: transdecoder
     'sbg:x': 803
     'sbg:y': 191
-  - id: 'wget:Sod_Cu.hmm'
+  - id: wget-Sod_Cu-hmm
     in:
       - id: output_name
         source: output_name
@@ -197,8 +197,9 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../tool/wget/wget.cwl
-    'sbg:x': 1018
-    'sbg:y': -12
+    label: 'wget:Sod_Cu.hmm'
+    'sbg:x': 874
+    'sbg:y': -66
   - id: gzip
     in:
       - id: file
@@ -245,7 +246,7 @@ steps:
       - id: domtblout
         source: domtblout
       - id: hmm
-        source: 'wget:Sod_Cu.hmm/downloaded'
+        source: wget-Sod_Cu-hmm/downloaded
       - id: pep
         source: transdecoder/pep
     out:
@@ -266,7 +267,7 @@ steps:
     label: extract_transcript_id
     'sbg:x': 1205
     'sbg:y': -61
-  - id: 'wget:uniprot-taxonomy_50557.fasta'
+  - id: wget-uniprot-taxonomy_50557-fasta
     in:
       - id: output_name
         default: uniprot-taxonomy_50557.fasta
@@ -284,7 +285,7 @@ steps:
   - id: makeblastdb_1
     in:
       - id: input_pep
-        source: 'wget:uniprot-taxonomy_50557.fasta/downloaded'
+        source: wget-uniprot-taxonomy_50557-fasta/downloaded
       - id: out
         default: uniprot_insect
     out:
