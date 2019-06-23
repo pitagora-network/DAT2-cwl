@@ -36,15 +36,18 @@ inputs:
       prefix: '--sjdbOverhang'
 outputs:
   - id: starIndex
-    type: Directory
+    type: 'File[]'
     outputBinding:
-      glob: $(inputs.genomeDir.path)
+      glob: '*'
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR genomeGenerate: Generating genome indexes.'
+arguments:
+  - position: 0
+    prefix: '--genomeDir'
+    valueFrom: $(runtime.outdir)
 requirements:
-  - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.genomeDir)
@@ -63,4 +66,3 @@ $schemas:
     's:name': Tazro Ohta
 's:codeRepository': 'https://github.com/pitagora-network/pitagora-cwl'
 's:license': 'https://spdx.org/licenses/Apache-2.0'
-

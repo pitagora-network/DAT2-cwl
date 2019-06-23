@@ -1,11 +1,7 @@
-FROM bioconductor/release_base2:R3.5.0_Bioc3.7
-MAINTAINER kyamada <inaeva7691@gmail.com>
+FROM r-base
 
-RUN R -e 'source("http://bioconductor.org/biocLite.R"); \
-biocLite("devtools", ask=F); \
-biocLite("getopt", ask=F); \
-biocLite("remotes", ask=F); \
-biocLite("pachterlab/sleuth", ask=F); \
-biocLite("grimbough/biomaRt", ask=F)'
+RUN apt-get update \
+     && apt-get install -y libmysqlclient-dev libxml2-dev libcurl4-gnutls-dev libssl-dev
 
-RUN mkdir /data
+COPY dependencies.R /tmp/dependencies.R
+RUN R -f /tmp/dependencies.R
