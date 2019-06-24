@@ -2,7 +2,8 @@
 
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-BiocManager::install("biomaRt", version = "3.8")
+#BiocManager::install("biomaRt", version = "3.8")
+BiocManager::install("biomaRt")
 
 # 下記コマンドで対象種のDataset名を確認する
 ensembl = biomaRt::useEnsembl(biomart="ensembl")
