@@ -21,7 +21,8 @@ t2g <- read.table("../ref/target2gene.txt", header=T, stringsAsFactors=F)
 # kallisto の出力ファイルを読み込む
 so <- sleuth_prep(s2c, extra_bootstrap_summary=T, target_mapping=t2g)
 # 遺伝子レベルで解析する場合は以下
-so <- sleuth_prep(s2c, extra_bootstrap_summary=T, target_mapping=t2g, aggregation_column='ens_gene', gene_mode=T)
+#so <- sleuth_prep(s2c, extra_bootstrap_summary=T, target_mapping=t2g, aggregation_column='ens_gene', gene_mode=T)
+#ひとまず遺伝子レベルは除く
 
 # 遺伝子IDに対応する遺伝子名を付与する
 kallisto.df <- kallisto_table(so)
