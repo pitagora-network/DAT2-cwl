@@ -38,7 +38,7 @@ outputs:
   - id: starIndex
     type: Directory
     outputBinding:
-      glob: $(inputs.genomeDir.path)
+      glob: $(inputs.genomeDir.basename)
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
