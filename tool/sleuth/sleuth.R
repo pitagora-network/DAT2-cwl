@@ -12,7 +12,7 @@ devtools::install_github("pachterlab/sleuth")
 library("sleuth")
 
 # サンプル情報を読み込む
-s2c <- read.table("sample.txt", header=T, stringsAsFactors=F, sep="\t")
+s2c <- read.table("/home/kyamada/cwl/data_cwl/sample.txt", header=T, stringsAsFactors=F, sep="\t")
 s2c$condition <- gsub(" ","_",s2c$condition)
 
 # 遺伝子IDと遺伝子名の対応表を読み込む
