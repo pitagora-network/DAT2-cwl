@@ -201,7 +201,7 @@ steps:
     out:
       - id: output
       - id: pep
-    run: ../../tool/transdecoder/transdecoder.cwl
+    run: ../../tool/TransDecoder/TransDecoder-TransDecoder.LongOrfs/TransDecoder-TransDecoder.LongOrfs.cwl
     label: transdecoder
     'sbg:x': 803
     'sbg:y': 191
@@ -253,7 +253,7 @@ steps:
     out:
       - id: out1
       - id: out2
-    run: ../../tool/trim_galore/trim_galore_PE.cwl
+    run: ../../tool/trim_galore/trim_galore-pe/trim_galore-pe.cwl
     label: trim_galore
     'sbg:x': 122
     'sbg:y': 234
@@ -269,7 +269,7 @@ steps:
         source: transdecoder/pep
     out:
       - id: output
-    run: ../../tool/hmmer/hmmsearch.cwl
+    run: ../../tool/hmmer/hmmer-hmmsearch/hmmer-hmmsearch.cwl
     label: hmmsearch
     'sbg:x': 1123
     'sbg:y': -176
@@ -349,7 +349,7 @@ steps:
         source: seq_type
     out:
       - id: trinity_results
-    run: ../../tool/trinity/trinity-pe.cwl
+    run: ../../tool/Trinity/Trinity-pe/Trinity-pe.cwl
     label: Trinity
     'sbg:x': 545
     'sbg:y': 174
@@ -378,7 +378,7 @@ steps:
         source: cpu
     out:
       - id: output
-    run: ../../tool/trinity/aaea.cwl
+    run: ../../tool/Trinity/Trinity-aaea/Trinity-aaea.cwl
     label: align_and_estimate_abundance.pl
     'sbg:x': 668
     'sbg:y': 425
