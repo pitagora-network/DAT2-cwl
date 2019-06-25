@@ -16,7 +16,7 @@ s2c <- read.table("/home/kyamada/cwl/data_cwl/sample.txt", header=T, stringsAsFa
 s2c$condition <- gsub(" ","_",s2c$condition)
 
 # 遺伝子IDと遺伝子名の対応表を読み込む
-t2g <- read.table("../ref/target2gene.txt", header=T, stringsAsFactors=F)
+t2g <- read.table("/home/kyamada/cwl/data_cwl/target2gene.txt", header=T, stringsAsFactors=F)
 
 # kallisto の出力ファイルを読み込む
 so <- sleuth_prep(s2c, extra_bootstrap_summary=T, target_mapping=t2g)
