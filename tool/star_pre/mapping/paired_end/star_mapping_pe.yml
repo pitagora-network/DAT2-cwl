@@ -11,4 +11,4 @@ fq2:
 quantMode: TranscriptomeSAM
 outSAMtype: BAM SortedByCoordinate
 outFileNamePrefix: SRR1550989
-readFilesCommand: gunzip
+readFilesCommand: gunzip -c
