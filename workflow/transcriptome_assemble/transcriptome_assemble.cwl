@@ -308,7 +308,7 @@ steps:
         default: uniprot_insect
     out:
       - id: db_dir
-    run: ../../tool/blast/makeblastdb.cwl
+    run: ../../tool/blast/blast-makeblastdb/blast-makeblastdb.cwl
     label: makeblastdb
     'sbg:x': 1245
     'sbg:y': 530
@@ -331,7 +331,7 @@ steps:
         source: max_target_seqs
     out:
       - id: blast_results
-    run: ../../tool/blast/blastp.cwl
+    run: ../../tool/blast/blast-blastp/blast-blastp.cwl
     label: BLASTP search.
     'sbg:x': 1455
     'sbg:y': 404
@@ -390,7 +390,7 @@ steps:
         default: trinity_rslt
     out:
       - id: db_dir
-    run: ../../tool/blast/makeblastdb.cwl
+    run: ../../tool/blast/blast-makeblastdb/blast-makeblastdb.cwl
     label: makeblastdb
     'sbg:x': 1029
     'sbg:y': 181
@@ -406,7 +406,7 @@ steps:
         source: out_flag
     out:
       - id: blastdbcmd_results
-    run: ../../tool/blast/blastdbcmd.cwl
+    run: ../../tool/blast/blast-blastdbcmd/blast-blastdbcmd.cwl
     label: Blastdbcmd to dump seqs/info.
     'sbg:x': 1231
     'sbg:y': 161

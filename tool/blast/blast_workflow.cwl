@@ -50,7 +50,7 @@ steps:
         source: out_flag
     out:
       - id: blastdbcmd_results
-    run: ./blastdbcmd.cwl
+    run: ./blast-blastdbcmd/blastdbcmd.cwl
     label: Blastdbcmd to dump seqs/info.
     'sbg:x': -302.3984375
     'sbg:y': -260.5
@@ -62,7 +62,7 @@ steps:
         source: out_flag_1
     out:
       - id: db_dir
-    run: ./makeblastdb.cwl
+    run: ./blast-makeblastdb/makeblastdb.cwl
     label: makeblastdb
     'sbg:x': -546
     'sbg:y': -123
