@@ -179,10 +179,11 @@ inputs:
       - BAM
       - Unsorted
     id: outSAMtype
-    type: string
+    type: 'string[]'
     inputBinding:
-      position: 0
+      position: 1
       prefix: '--outSAMtype'
+      shellQuote: false
     label: type of SAM/BAM output
     doc: >-
       1st word: BAM: output BAM without sorting, SAM: output SAM without
@@ -282,6 +283,8 @@ doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR mapping: running mapping jobs.'
+requirements:
+  - class: ShellCommandRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/star:2.6.0c--0'
