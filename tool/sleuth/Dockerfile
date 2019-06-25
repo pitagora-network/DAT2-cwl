@@ -7,8 +7,8 @@ RUN mkdir test_output
 RUN mkdir file
 
 COPY sleuth.R  /test_output/sleuth.R
-COPY /home/kyamada/cwl/data_cwl/sample.txt  /file/sample.txt
-COPY /home/kyamada/cwl/data_cwl/target2gene.txt  /file/target2gene.txt
+COPY sample.txt  /file/sample.txt
+COPY target2gene.txt  /file/target2gene.txt
 
 #COPY test/test.R  /test_output/test.R
 

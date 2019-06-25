@@ -2,6 +2,9 @@
 set -eux
 cd .
 
+cp /home/kyamada/cwl/data_cwl/sample.txt .
+cp /home/kyamada/cwl/data_cwl/target2gene.txt .
+
 #wget https://raw.githubusercontent.com/bonohu/denovoTA/master/for_trinity.pl
 docker image build -t dat2-cwl/sleuth .
 
