@@ -9,7 +9,7 @@ fq2:
   class: File
   path: /home/kyamada/cwl/data_cwl/seq/SRR1550989_2.fastq.gz
 quantMode: TranscriptomeSAM
-outSAMtype: BAM SortedByCoordinate
+outSAMtype: [BAM, SortedByCoordinate]
 #outSAMtype: BAM
 outFileNamePrefix: SRR1550989
 readFilesCommand: gunzip -c
