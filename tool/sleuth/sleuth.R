@@ -27,7 +27,7 @@ so <- sleuth_prep(s2c, extra_bootstrap_summary=T, target_mapping=t2g)
 # 遺伝子IDに対応する遺伝子名を付与する
 kallisto.df <- kallisto_table(so)
 kallisto.df$target_id2 <- sub("\\..*","",kallisto.df$target_id)
-kallisto.df <- merge(kalisto.df,t2g, by.x="target_id2", by.y="target_id")
+kallisto.df <- merge(kallisto.df,t2g, by.x="target_id2", by.y="target_id")
 
 # 今回は使わないが、この表は別の解析などにも活用できるので保存しておく
 write.table(kallisto.df, "kallisto_res.txt", row.names=F, quote=F)
