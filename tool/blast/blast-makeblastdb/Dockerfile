@@ -3,6 +3,6 @@ USER root
 
 WORKDIR /workdir
 
-COPY makeblastdb.sh /workdir
+COPY blast-makeblastdb.sh /workdir
 
 ENV PATH $PATH:/workdir
