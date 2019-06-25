@@ -5,7 +5,7 @@ $namespaces:
 id: makeblastdb
 baseCommand:
   - bash
-  - makeblastdb.sh
+  - blast-makeblastdb.sh
 inputs:
   - id: input_pep
     type: File
