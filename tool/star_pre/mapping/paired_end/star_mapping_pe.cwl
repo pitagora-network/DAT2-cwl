@@ -6,6 +6,8 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 baseCommand:
   - STAR
+  - '--runMode'
+  - alignReads
 inputs:
   - default: 1000000
     id: alignIntronMax
@@ -280,15 +282,9 @@ doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR mapping: running mapping jobs.'
-arguments:
-  - position: 0
-    prefix: '--outFileNamePrefix'
-    valueFrom: $(runtime.outdir)/$(inputs.output_dir_name)
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/star:2.6.0c--0'
-requirements:
-  - class: InlineJavascriptRequirement
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
