@@ -179,7 +179,7 @@ inputs:
       - BAM
       - Unsorted
     id: outSAMtype
-    type: string
+    type: 'string[]'
     inputBinding:
       position: 0
       prefix: '--outSAMtype'
@@ -253,7 +253,7 @@ inputs:
       position: 0
       prefix: '--outFileNamePrefix'
   - id: readFilesCommand
-    type: string?
+    type: 'string[]?'
     inputBinding:
       position: 0
       prefix: '--readFilesCommand'
