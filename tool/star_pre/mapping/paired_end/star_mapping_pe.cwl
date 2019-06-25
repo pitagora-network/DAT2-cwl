@@ -177,7 +177,7 @@ inputs:
       - BAM
       - Unsorted
     id: outSAMtype
-    type: 'string[]'
+    type: string
     inputBinding:
       position: 0
       prefix: '--outSAMtype'
@@ -218,7 +218,7 @@ inputs:
       - TranscriptomeSAM
       - GeneCounts
     id: quantMode
-    type: 'string[]'
+    type: string
     inputBinding:
       position: 0
       prefix: '--quantMode'
