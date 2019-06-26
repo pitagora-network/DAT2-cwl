@@ -10,6 +10,7 @@ COPY sleuth.R  /test_output/sleuth.R
 COPY sample.txt  /file/sample.txt
 COPY target2gene.txt  /file/target2gene.txt
 COPY SRR1550989/ /file/SRR1550989/
+COPY SRR1551091/ /file/SRR1551091/
 
 #COPY test/test.R  /test_output/test.R
 
