@@ -60,11 +60,6 @@ hints:
     dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 requirements:
   - class: InlineJavascriptRequirement
-  - class: InitialWorkDirRequirement
-    listing:
-      - entry: $(inputs.genomeDir)
-        writable: true
-  - class: InlineJavascriptRequirement
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
