@@ -20,7 +20,7 @@ inputs:
       the sequence of a genome, and will extract transcript reference sequences
       using the gene annotations specified in <file>, which should be in GTF
       format.
-  - id: reference_fasta_dir
+  - id: reference_fasta
     type: File
     inputBinding:
       position: 1
