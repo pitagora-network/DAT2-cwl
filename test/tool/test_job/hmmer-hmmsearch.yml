@@ -1,5 +1,5 @@
 cpu: 4
-domtblout: longest_orfs.SOD_Cu.out
+domtblout: sample.longest_orfs.SOD_Cu.out
 hmm:
   class: File
   path: >-

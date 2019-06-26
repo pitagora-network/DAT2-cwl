@@ -2,4 +2,4 @@ minimum_protein_length: 30
 transcripts:
   class: File
   path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta
+    ../../data/sample.Trinity.fasta

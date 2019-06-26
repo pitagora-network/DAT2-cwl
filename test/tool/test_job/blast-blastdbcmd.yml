@@ -1,14 +1,14 @@
 blastdb_dir:
   class: Directory
   path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta.transdecoder_dir
+    ../../data/blastdb_trinity_rslt
 db_flag: trinity_rslt
 entry_batch_flag:
   class: File
   path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta.transdecoder_dir/longest_orfs.SOD_Cu.ids
+    ../../data/sample.longest_orfs.SOD_Cu.ids
 entry_flag: null
-out_flag: longest_orfs.SOD_Cu.pep
+out_flag: sample.longest_orfs.SOD_Cu.pep
 outfmt_flag: null
 target_flag: null
 taxids_flag: null

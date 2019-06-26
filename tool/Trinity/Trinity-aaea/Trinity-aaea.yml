@@ -1,19 +1,16 @@
-cpu: 6
-est_method: kallisto
-kallisto_add_opts: true
-left:
-  class: File
-  path: >-
-    /Users/yasumizuyoshiaki/RabixComposer/Executions/local/trinity-pe/2019-06-20-21-29-11/app-2019-06-20-212911.888/root/reads.left.fq.gz
-output_dir: kallisto_out
-prep_reference: true
-right:
-  class: File
-  path: >-
-    /Users/yasumizuyoshiaki/RabixComposer/Executions/local/trinity-pe/2019-06-20-21-29-11/app-2019-06-20-212911.888/root/reads.right.fq.gz
-seqType: fq
-thread_count: true
-transcripts:
-  class: File
-  path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta
+cpu: 0  # type "int"
+transcripts:  # type "File"
+    class: File
+    path: a/file/path
+seqType: a_string  # type "string" (optional)
+output_dir: a_string  # type "string" (optional)
+prep_reference: false  # type "boolean" (optional)
+kallisto_add_opts: false  # type "boolean" (optional)
+est_method: a_string  # type "string"
+right:  # type "File"
+    class: File
+    path: a/file/path
+left:  # type "File"
+    class: File
+    path: a/file/path
+thread_count: false  # type "boolean" (optional)

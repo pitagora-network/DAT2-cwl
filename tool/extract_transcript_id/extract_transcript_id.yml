@@ -1,5 +1,4 @@
-input:
-  class: File
-  path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta.transdecoder_dir/longest_orfs.SOD_Cu.out
-output: longest_orfs.SOD_Cu.ids
+output: a_string  # type "string"
+input:  # type "File"
+    class: File
+    path: a/file/path

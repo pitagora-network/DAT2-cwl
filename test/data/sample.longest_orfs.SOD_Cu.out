@@ -1,0 +1,13 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+#
+# Program:         hmmsearch
+# Version:         3.2.1 (June 2018)
+# Pipeline mode:   SEARCH
+# Query file:      /var/lib/cwl/stg3f58ba30-2b19-4744-bb43-bad29d483722/Sod_Cu.hmm
+# Target file:     /var/lib/cwl/stg13d09ca6-e455-4f88-aca6-d55476dabd28/sample.longest_orfs.pep
+# Option settings: hmmsearch --domtblout sample.longest_orfs.SOD_Cu.out --cpu 4 /var/lib/cwl/stg3f58ba30-2b19-4744-bb43-bad29d483722/Sod_Cu.hmm /var/lib/cwl/stg13d09ca6-e455-4f88-aca6-d55476dabd28/sample.longest_orfs.pep 
+# Current dir:     /ZFQpRt
+# Date:            Wed Jun 26 13:36:30 2019
+# [ok]

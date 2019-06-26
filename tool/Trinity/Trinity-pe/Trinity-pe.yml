@@ -1,15 +1,13 @@
-cpu: 6
-fq1:
-  class: File
-  path: >-
-    reads.left.fq.gz
-fq2:
-  class: File
-  path: >-
-    reads.right.fq.gz
-max_memory: 16G
-min_contig_length: 200
-no_bowtie: false
-output_dir: trinity_out_dir
-seq_type: fq
-ss_lib_type: null
+ss_lib_type: a_string  # type "string" (optional)
+seq_type: a_string  # type "string"
+output_dir: a_string  # type "string" (optional)
+no_bowtie: false  # type "boolean" (optional)
+min_contig_length: 0  # type "int" (optional)
+max_memory: a_string  # type "string"
+fq2:  # type "File"
+    class: File
+    path: a/file/path
+fq1:  # type "File"
+    class: File
+    path: a/file/path
+cpu: 0  # type "int" (optional)

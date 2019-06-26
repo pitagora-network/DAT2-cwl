@@ -4,16 +4,16 @@ kallisto_add_opts: true
 left:
   class: File
   path: >-
-    /Users/yasumizuyoshiaki/RabixComposer/Executions/local/trinity-pe/2019-06-20-21-29-11/app-2019-06-20-212911.888/root/reads.left.fq.gz
+    ../../data/sample.DRR092257_1.fq.gz
 output_dir: kallisto_out
 prep_reference: true
 right:
   class: File
   path: >-
-    /Users/yasumizuyoshiaki/RabixComposer/Executions/local/trinity-pe/2019-06-20-21-29-11/app-2019-06-20-212911.888/root/reads.right.fq.gz
+    ../../data/sample.DRR092257_2.fq.gz
 seqType: fq
 thread_count: true
 transcripts:
   class: File
   path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta
+    ../../data/sample.Trinity.fasta

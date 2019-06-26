@@ -1,14 +1,12 @@
-blastdb_dir:
-  class: Directory
-  path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta.transdecoder_dir
-db_flag: trinity_rslt
-entry_batch_flag:
-  class: File
-  path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/Trinity.fasta.transdecoder_dir/longest_orfs.SOD_Cu.ids
-entry_flag: null
-out_flag: longest_orfs.SOD_Cu.pep
-outfmt_flag: null
-target_flag: null
-taxids_flag: null
+taxids_flag: a_string  # type "string" (optional)
+target_flag: false  # type "boolean" (optional)
+outfmt_flag: a_string  # type "string" (optional)
+out_flag: blastdbcmd.out  # default value of type "string".
+entry_flag: a_string  # type "string" (optional)
+entry_batch_flag:  # type "File" (optional)
+    class: File
+    path: a/file/path
+db_flag: a_string  # type "string"
+blastdb_dir:  # type "Directory"
+    class: Directory
+    path: a/directory/path
