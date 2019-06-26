@@ -319,10 +319,12 @@ doc: >-
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR mapping: running mapping jobs.'
 requirements:
+  - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.genomeDir)
         writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/star:2.6.0c--0'
