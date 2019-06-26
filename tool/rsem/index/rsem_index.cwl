@@ -42,7 +42,7 @@ outputs:
   - id: rsem_index
     type: Directory
     outputBinding:
-      glob: $(inputs.reference_name.basename)
+      glob: $(inputs.reference_name)
 doc: >-
   RSEM is a software package for estimating gene and isoform expression levels
   from RNA-Seq data. The RSEM package provides an user-friendly interface,
