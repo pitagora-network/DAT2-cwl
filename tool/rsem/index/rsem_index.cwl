@@ -20,7 +20,7 @@ inputs:
       the sequence of a genome, and will extract transcript reference sequences
       using the gene annotations specified in <file>, which should be in GTF
       format.
-  - id: reference_fasta_dir
+  - id: reference_fasta
     type: File
     inputBinding:
       position: 1
@@ -40,7 +40,7 @@ inputs:
       contain path information (e.g. '/ref/mm9').
 outputs:
   - id: rsem_index
-    type: Directory
+    type: File
     outputBinding:
       glob: $(inputs.reference_name)
 doc: >-
@@ -55,14 +55,15 @@ label: 'rsem-prepare-reference: preparing reference sequences'
 arguments:
   - position: 50
     valueFrom: $(runtime.outdir)/$(inputs.reference_name)
-hints:
-  - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 requirements:
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.reference_name)
         writable: true
+  - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
