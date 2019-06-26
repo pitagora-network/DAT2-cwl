@@ -1,9 +1,0 @@
-fastqc: true
-paired: true
-read1:
-  class: File
-  path: /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/DRR092257_1.fastq
-read2:
-  class: File
-  path: /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/DRR092257_2.fastq
-trim1: true

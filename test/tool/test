@@ -50,8 +50,11 @@ cwltool --make-template ${cwl_file} > ${cwl_template_file}
 dockerfile=${tool_dir}/Dockerfile
 if [ -f ${dockerfile} ]; then
   echo "...docker build"
-  build_file=${tool_dir}/build.sh
-  bash ${build_file}
+  # build_file=${tool_dir}/build.sh
+  # bash ${build_file}
+  cd ${tool_dir}
+  bash build.sh
+  cd -
   if [ $? -ne 0 ]; then
     echo "[ERROR] Docker build is failed."
     exit 1
@@ -76,6 +79,6 @@ if [ $? -ne 0 ]; then
 else
   echo "[PASS] test job is passed."
 fi
-rm -rf ${test_dir}/tmp
+# rm -rf ${test_dir}/tmp
 
 echo "*** ALL TEST IS PASSED ***"

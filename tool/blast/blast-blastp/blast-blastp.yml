@@ -1,0 +1,15 @@
+blastdb_dir:
+  class: Directory
+  path: >-
+    /Users/yasumizuyoshiaki/RabixComposer/Executions/local/makeblastdb/2019-06-20-22-49-16/app-2019-06-20-224917.773/root/blastdb_uniprot_insect
+db_flag: uniprot_insect
+max_target_seqs: 1
+num_threads_flag: 4
+out_flag: blast.result.tab
+outfmt_flag: '6'
+query_flag:
+  class: File
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/longest_orfs.SOD_Cu.pep
+task_flag: null
+taxid_flag: null
