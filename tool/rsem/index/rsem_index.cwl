@@ -40,7 +40,7 @@ inputs:
       contain path information (e.g. '/ref/mm9').
 outputs:
   - id: rsem_index
-    type: string
+    type: Directory
     outputBinding:
       glob: $(inputs.reference_name)
 doc: >-
