@@ -1,0 +1,5 @@
+sraFiles:
+  - class: File
+    path: /home/kyamada/cwl/data_cwl/seq/SRR1551005.sra
+
+nthreads: 10
