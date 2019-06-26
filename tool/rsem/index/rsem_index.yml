@@ -1,0 +1,8 @@
+gtf:
+  class: File
+  path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.95.gtf
+reference_fasta_dir:
+  class: Directory
+  path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+reference_name: RSEM_reference
+
