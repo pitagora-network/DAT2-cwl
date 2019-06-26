@@ -38,11 +38,7 @@ inputs:
       The name of the reference used. RSEM will generate several
       reference-related files that are prefixed by this name. This name can
       contain path information (e.g. '/ref/mm9').
-outputs:
-  - id: rsem_index
-    type: Directory
-    outputBinding:
-      glob: $(inputs.reference_name)
+outputs: []
 doc: >-
   RSEM is a software package for estimating gene and isoform expression levels
   from RNA-Seq data. The RSEM package provides an user-friendly interface,
