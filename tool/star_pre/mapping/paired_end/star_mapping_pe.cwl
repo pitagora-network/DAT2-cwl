@@ -259,26 +259,61 @@ inputs:
       position: 0
       prefix: '--readFilesCommand'
 outputs:
-  - id: logfiles
-    type: 'File[]'
-    outputBinding:
-      glob: '*.out'
-  - id: output_bam
+  - id: aligned
     type: File
     outputBinding:
-      glob: '*Aligned.out.bam'
-  - id: readsPerGene
-    type: File
+      glob: |
+        ${
+          if (inputs.outSAMtype == "BAM Unsorted")
+            return p+"Aligned.out.bam";
+          var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
+          return p+"Aligned.sortedByCoord.out.bam";
+        }
+    secondaryFiles:
+      - |
+        ${
+           var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
+           return [
+             {"path": p+"Log.final.out", "class":"File"},
+             {"path": p+"SJ.out.tab", "class":"File"},
+             {"path": p+"Log.out", "class":"File"}
+           ];
+        }
+  - id: bamRemDups
+    type: File?
     outputBinding:
-      glob: '*ReadsPerGene.out.tab'
-  - id: spliceJunctions
-    type: File
+      glob: |
+        ${
+          if (inputs.bamRemoveDuplicatesType != "UniqueIdentical")
+            return null;
+          var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
+          return p+"Processed.out.bam";
+        }
+  - id: mappingstats
+    type: File?
     outputBinding:
-      glob: '*SJ.out.tab'
-  - id: toTranscriptome_bam
-    type: File
+      loadContents: true
+      glob: |
+        ${
+          var p = inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
+          return p+"Log.final.out";
+        }
+  - id: readspergene
+    type: File?
     outputBinding:
-      glob: '*Aligned.toTranscriptome.out.bam'
+      glob: |
+        ${
+          var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
+          return p+"ReadsPerGene.out.tab";
+        }
+  - id: transcriptomesam
+    type: File?
+    outputBinding:
+      glob: |
+        ${
+          var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
+          return p+"Aligned.toTranscriptome.out.bam";
+        }
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
