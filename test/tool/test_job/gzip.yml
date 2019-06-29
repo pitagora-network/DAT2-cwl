@@ -1,0 +1,3 @@
+file:
+  class: File
+  location: ../../data/chr22.fa

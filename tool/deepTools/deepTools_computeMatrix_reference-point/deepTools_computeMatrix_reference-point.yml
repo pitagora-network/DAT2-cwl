@@ -1,0 +1,2 @@
+score_file_name: None  # default value of type "string". (optional)
+regions_file_name: None  # default value of type "string". (optional)
