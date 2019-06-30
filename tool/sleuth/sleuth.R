@@ -34,7 +34,7 @@ write.table(kallisto.df, "kallisto_res.txt", row.names=F, quote=F)
 
 
 #まずは尤度比検定
-so <- sleuth_fit(so, ~condition, 'full')
+#so <- sleuth_fit(so, ~condition, 'full')
 
 LRT <- sleuth_fit(so, ~1, 'reduced')
 LRT <- sleuth_lrt(LRT, 'reduced', 'full')
