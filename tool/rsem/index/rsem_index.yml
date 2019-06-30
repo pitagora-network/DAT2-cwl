@@ -1,7 +1,14 @@
 gtf:
   class: File
-  path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.95.gtf
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/kyamada/data/Homo_sapiens.GRCh38.95.gtf
+num_threads: 4
+reference_dir:
+  class: Directory
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/cwl/tools/rsem/index/RSEM_reference
 reference_fasta:
   class: File
-  path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa
-reference_name: RSEM_reference
+  path: >-
+    /Users/yasumizuyoshiaki/bioinformatics/cwl/kyamada/data/Homo_sapiens.GRCh38.dna.primary_assembly.fa
+reference_prefix: RSEM_reference
