@@ -1,12 +1,9 @@
-nthreads: _NTHREADS_
-input_fastq_fw:
+nthreads: 8
+bam: 
   class: File
-  path: _PATH_TO_FORWARD_FASTQ_
-input_fastq_rv:
-  class: File
-  path: _PATH_TO_REVERSE_FASTQ_
+  path: /home/kyamada/cwl/DAT2-cwl_kyamada/tool/star_pre/mapping/paired_end/SRR1550989Aligned.toTranscriptome.out.bam
 rsem_index_dir:
   class: Directory
-  path: _PATH_TO_INDEX_DIR_
-rsem_index_prefix: _RSEM_INDEX_PREFIX_
-rsem_output_prefix: _PREFIX_
+  path: /home/kyamada/cwl/DAT2-cwl_kyamada/tool/rsem/index/RSEM_reference
+rsem_index_prefix: RSEM_reference
+rsem_output_prefix: SRR1550989
