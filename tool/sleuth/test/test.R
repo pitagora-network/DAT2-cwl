@@ -1,2 +1,0 @@
-x <- "one"
-print(x)

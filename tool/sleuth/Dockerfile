@@ -1,22 +1,10 @@
-FROM r-base
+FROM bioconductor/release_base2:R3.6.0_Bioc3.9
 
-RUN apt-get update \
-     && apt-get install -y libmysqlclient-dev libxml2-dev libcurl4-gnutls-dev libssl-dev
+RUN R -e "install.packages('BiocManager',dependencies=TRUE, repos='http://cran.rstudio.com/'); \
+          BiocManager::install('rhdf5'); \
+          install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/'); \
+          devtools::install_github("pachterlab/sleuth")"
 
-RUN R -e "install.packages('BiocManager',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-     && R -e "BiocManager::install('rhdf5')" \
-     && R -e "install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-#     && R -e "devtools::install_github("pachterlab/sleuth")"
+RUN mkdir /output
 
-RUN mkdir test_output
-RUN mkdir file
-
-COPY sleuth.R  /test_output/sleuth.R
-COPY sample.txt  /file/sample.txt
-COPY target2gene.txt  /file/target2gene.txt
-COPY SRR1550989/ /file/SRR1550989/
-COPY SRR1551091/ /file/SRR1551091/
-
-#COPY test/test.R  /test_output/test.R
-
-RUN R -f /test_output/sleuth.R
+WORKDIR /workdir
