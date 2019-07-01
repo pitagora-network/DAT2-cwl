@@ -7,7 +7,7 @@
 
 #BiocManager::install("rhdf5")
 #install.packages("devtools")
-#devtools::install_github("pachterlab/sleuth")
+devtools::install_github("pachterlab/sleuth")
 # sleuthパッケージを読み込む
 library("sleuth")
 

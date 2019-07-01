@@ -59,15 +59,15 @@ arguments:
     prefix: ''
     separate: false
     valueFrom: $(inputs.reference_dir.basename)/$(inputs.reference_prefix)
-hints:
-  - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 requirements:
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.reference_dir)
         writable: true
   - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
