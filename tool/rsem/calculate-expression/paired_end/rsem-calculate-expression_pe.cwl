@@ -59,19 +59,12 @@ outputs:
   - id: genes_result
     type: File
     outputBinding:
-      glob: |
-        ${
-          var p = inputs.rsem_output_prefix?inputs.rsem_output_prefix:"";
-          return p+".genes.results";
-        }
+      glob: $(inputs.rsem_output_prefix+'.genes.results')
   - id: isoforms_result
     type: File
     outputBinding:
       glob: |
-        ${
-          var p = inputs.rsem_output_prefix?inputs.rsem_output_prefix:"";
-          return p+".isoforms.results";
-        }
+        $(inputs.rsem_output_prefix+'.isoforms.results')
   - id: star_output
     type: Directory
     outputBinding:
@@ -92,16 +85,15 @@ label: 'rsem-calculate-expression: calculate expression values (BAM input versio
 arguments:
   - position: 3
     valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
-hints:
-  - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 requirements:
-  - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.rsem_index_dir)
         writable: true
   - class: InlineJavascriptRequirement
+hints:
+  - class: DockerRequirement
+    dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
