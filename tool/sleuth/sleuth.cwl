@@ -20,7 +20,11 @@ inputs:
       position: 2
   - id: kallisto_out
     type: 'Directory[]'
-outputs: []
+outputs:
+  - id: output
+    type: Directory
+    outputBinding:
+      glob: output
 label: sleuth
 requirements:
   - class: DockerRequirement
