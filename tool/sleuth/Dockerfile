@@ -5,6 +5,5 @@ RUN R -e "install.packages('BiocManager',dependencies=TRUE, repos='http://cran.r
           install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/'); \
           devtools::install_github('pachterlab/sleuth')"
 
-RUN mkdir /output
-
 WORKDIR /workdir
+RUN mkdir output

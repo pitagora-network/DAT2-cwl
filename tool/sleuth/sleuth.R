@@ -25,7 +25,7 @@ kallisto.df$target_id2 <- sub("\\..*","",kallisto.df$target_id)
 kallisto.df <- merge(kallisto.df,t2g, by.x="target_id2", by.y="target_id")
 
 # 今回は使わないが、この表は別の解析などにも活用できるので保存しておく
-write.table(kallisto.df, "/output/kallisto_res.txt", row.names=F, quote=F)
+write.table(kallisto.df, "output/kallisto_res.txt", row.names=F, quote=F)
 
 
 #まずは尤度比検定
@@ -39,15 +39,15 @@ LRT_table <- sleuth_results(LRT, 'reduced:full', 'lrt', show_all=F)
 LRT_table <- LRT_table[order(LRT_table$pval),]
 
 # 結果を保存する
-write.table(LRT_table, "/output/LRT_res.sorted.txt", row.names=F, quote=F, sep="\t")
+write.table(LRT_table, "output/LRT_res.sorted.txt", row.names=F, quote=F, sep="\t")
 
 #発現量をボックスプロットおよびヒートマップで図示する
 library(ggplot2)
 p <- plot_bootstrap(LRT, "ENST00000503567.5", units="est_counts", color_by="condition")
 
 # 図を保存する
-ggplot2::ggsave("/output/ENST00000503567.5.png", p)
-ggplot2::ggsave("/output/ENST00000503567.5.pdf", p)
+ggplot2::ggsave("output/ENST00000503567.5.png", p)
+ggplot2::ggsave("output/ENST00000503567.5.pdf", p)
 
 # 作図に使われているデータは下記で抜き出すことができる
 data <- as.data.frame(LRT$bs_quants)
@@ -60,7 +60,7 @@ plot_transcript_heatmap(LRT, transcripts, units="tpm")
 
 # ヒートマップはgtableオブジェクトのためggsave()は使えず、直接書き出す必要がある
 
-pdf('/output/heatmap.pdf')
+pdf('output/heatmap.pdf')
 plot_transcript_heatmap(LRT, transcripts, units="tpm")
 dev.off()
 
@@ -71,9 +71,9 @@ WT <- sleuth_wt(so, 'conditionType_1_Diabetes')
 WT_table <- sleuth_results(WT, 'conditionType_1_Diabetes')
 # q値の小さい順に並べ替える
 WT_table <- WT_table[order(WT_table$qval),]
-write.table(WT_table, "/output/WT_res.sorted.txt", row.names=F, quote=F, sep="¥t")
+write.table(WT_table, "output/WT_res.sorted.txt", row.names=F, quote=F, sep="¥t")
 
 #Wald検定の結果をvolcano plotで図示する。デフォルト設定ではq値が0.1を下回る転写産物が赤いプロットで示される。
 p3 <- plot_volcano(WT, 'conditionType_1_Diabetes', 'wt')
-ggsave("/output/volcanoplot.png", p3)
+ggsave("output/volcanoplot.png", p3)
 # volcano plot 作図用のデータは WT_table にも含まれているので、ggplot などを使って自分で作図することができる
