@@ -99,8 +99,9 @@ requirements:
   - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
     listing:
-      - entry: $(inputs.rsem_output_prefix)
+      - entry: $(inputs.rsem_index_dir)
         writable: true
+  - class: InlineJavascriptRequirement
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
