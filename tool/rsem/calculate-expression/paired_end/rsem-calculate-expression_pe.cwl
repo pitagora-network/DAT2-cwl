@@ -96,6 +96,7 @@ hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 requirements:
+  - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.rsem_output_prefix)
