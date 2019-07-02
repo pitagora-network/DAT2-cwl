@@ -92,7 +92,7 @@ arguments:
 requirements:
   - class: InitialWorkDirRequirement
     listing:
-      - entry: $(inputs.rsem_index_dir)
+      - entry: $(inputs.bam)
         writable: true
   - class: InlineJavascriptRequirement
 hints:
