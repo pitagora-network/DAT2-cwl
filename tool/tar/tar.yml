@@ -1,6 +1,0 @@
-verbose: false  # type "boolean"
-gzip: false  # type "boolean"
-file:  # type "File"
-    class: File
-    path: a/file/path
-extract: false  # type "boolean"

@@ -1,25 +1,17 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: decompression tool using Lempel-Ziv coding (LZ77)
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/gunzip:latest
-baseCommand: bash
-arguments:
-  - position: 0
-    valueFrom: /workdir/gunzip.sh
+    dockerPull: alpine:3.9
+baseCommand: [gunzip, --stdout]
 inputs:
-  input_1:
+  file:
     type: File
-    inputBinding:
-      position: 1
+    inputBinding: {}
 outputs:
-  output_1:
-    type: File
-    outputBinding:
-      glob: "*.txt"
-  stdout: stdout
+  decompressed: stdout
   stderr: stderr
-stdout: gunzip-stdout.log
+stdout: $(inputs.file.nameroot)
 stderr: gunzip-stderr.log

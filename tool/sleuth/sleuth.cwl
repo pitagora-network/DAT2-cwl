@@ -2,12 +2,11 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-id: sleuth
 baseCommand:
   - Rscript
 inputs:
   - id: sleuth.R
-    type: File
+    type: File?
     inputBinding:
       position: 0
   - id: sample.txt
@@ -19,13 +18,38 @@ inputs:
     inputBinding:
       position: 2
   - id: kallisto_out
-    type: 'Directory[]'
+    type: 'Directory[]?'
 outputs:
-  - id: output
-    type: Directory
+  - id: kallisto_res.txt
+    type: File
     outputBinding:
-      glob: output
+      glob: kallisto_res.txt
+  - id: LRT_res.sorted.txt
+    type: File
+    outputBinding:
+      glob: LRT_res.sorted.txt
+  - id: ENST00000503567.5.png
+    type: File
+    outputBinding:
+      glob: ENST00000503567.5.png
+  - id: heatmap.pdf
+    type: File
+    outputBinding:
+      glob: heatmap.pdf
+  - id: volcanoplot.png
+    type: File
+    outputBinding:
+      glob: volcanoplot.png
+  - id: WT_res.sorted.txt
+    type: File
+    outputBinding:
+      glob: WT_res.sorted.txt
+  - id: ENST00000503567.5.pdf
+    type: File
+    outputBinding:
+      glob: ENST00000503567.5.pdf
 label: sleuth
 requirements:
   - class: DockerRequirement
     dockerPull: dat2-cwl/sleuth
+  - class: InlineJavascriptRequirement

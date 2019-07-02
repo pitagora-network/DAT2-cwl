@@ -1,0 +1,6 @@
+fasta_files:
+  - class: File
+    path: /Users/yamada/cwl/local_data/Homo_sapiens.GRCh38.cdna.all.fa
+index_name: kallisto.idx
+kmer_size: null
+make_unique: null

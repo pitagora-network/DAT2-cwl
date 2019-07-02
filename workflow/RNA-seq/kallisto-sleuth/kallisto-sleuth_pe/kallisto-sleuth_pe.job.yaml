@@ -1,0 +1,25 @@
+SraRunTable:
+  class: File
+  path: /home/kyamada/cwl/data_cwl/SraRunTable.txt
+nthreads: 4
+out_dir_name: SRR1550989
+out_dir_name_1: SRR1551005
+out_dir_name_2: SRR1551011
+out_dir_name_3: SRR1551050
+out_dir_name_4: SRR1551057
+out_dir_name_5: SRR1551071
+out_dir_name_6: SRR1551091
+run_ids:
+  - SRR1550989
+run_ids_1:
+  - SRR1551005
+run_ids_2:
+  - SRR1551011
+run_ids_3:
+  - SRR1551050
+run_ids_4:
+  - SRR1551057
+run_ids_5:
+  - SRR1551071
+run_ids_6:
+  - SRR1551091

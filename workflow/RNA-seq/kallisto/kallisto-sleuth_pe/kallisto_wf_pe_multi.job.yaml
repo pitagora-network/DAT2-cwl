@@ -1,0 +1,12 @@
+bootstrap_samples: 100
+fasta_files:
+  - class: File
+    path: /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.cdna.all.fa
+nthreads: 8
+out_dir_name:
+  - SRR1551091
+  - SRR1551071
+repo: null
+run_ids:
+  - SRR1551091
+  - SRR1551071

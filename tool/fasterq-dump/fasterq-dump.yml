@@ -1,29 +1,33 @@
-bases: null
-bufsize: null
-concatenate_reads: null
-curcache: null
-details: null
-force_overwrite: null
-include_technical: null
-log_level: null
-mem: null
-min_read_len: null
-nthreads: 10
-option_file: null
-outfile: null
-print_help: null
-print_read_nr: null
-print_stdout: null
-print_version: null
-progress: null
-quiet: null
-rowid_as_name: null
-runid: SRR1550989
-skip_technical: false
-split_3: false
-split_files: true
-split_spot: false
-strict: null
-table: null
-temp: null
-verbose: null
+verbose: false # type "boolean" (optional)
+temp: # type "Directory" (optional)
+  class: Directory
+  path: a/directory/path
+table: a_string # type "string" (optional)
+strict: false # type "boolean" (optional)
+runid: a_string # type "string"
+split_spot: true # default value of type "boolean". (optional)
+split_files: true # default value of type "boolean". (optional)
+split_3: false # type "boolean" (optional)
+skip_technical: true # default value of type "boolean". (optional)
+rowid_as_name: false # type "boolean" (optional)
+quiet: false # type "boolean" (optional)
+progress: false # type "boolean" (optional)
+print_version: false # type "boolean" (optional)
+print_stdout: false # type "boolean" (optional)
+print_read_nr: false # type "boolean" (optional)
+print_help: false # type "boolean" (optional)
+outfile: a_string # type "string" (optional)
+option_file: # type "File" (optional)
+  class: File
+  path: a/file/path
+nthreads: 0 # type "int" (optional)
+min_read_len: false # type "boolean" (optional)
+mem: a_string # type "string" (optional)
+log_level: 0 # type "int" (optional)
+include_technical: false # type "boolean" (optional)
+force_overwrite: false # type "boolean" (optional)
+details: false # type "boolean" (optional)
+curcache: a_string # type "string" (optional)
+concatenate_reads: false # type "boolean" (optional)
+bufsize: a_string # type "string" (optional)
+bases: 0 # type "int" (optional)

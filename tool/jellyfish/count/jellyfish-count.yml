@@ -1,8 +1,0 @@
-threads: 4  # default value of type "int".
-size: 1000000000  # default value of type "int".
-output: "reads.jf"  # default value of type "string".
-mer_len: 21  # default value of type "int".
-input_file:  # type "File"
-    class: File
-    path: a/file/path
-both_strands: true  # default value of type "boolean".
