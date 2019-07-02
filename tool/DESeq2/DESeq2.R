@@ -1,3 +1,6 @@
+#! /usr/bin/Rscript
+
+args1 = commandArgs(trailingOnly=TRUE)[1] # sample2condition.txt
 
 # DESeq2、tximportのインストール・読み込み
 install.packages("BiocManager") # ミラーサイトを選択する（どこを選択しても問題ないが、地理的に近い場所を選ぶのがよい）
@@ -7,7 +10,7 @@ library(DESeq2)
 library(tximport) # 警告が出るがエラーではないので無視する
 
 # サンプル情報を記載したリストを読み込む
-s2c <- read.table("sample2condition.txt", header=T, sep="\t", stringsAsFactors=F)
+s2c <- read.table(args1, header=T, sep="\t", stringsAsFactors=F)
 s2c <- s2c[,c("sample", "group", "path")]
 s2c$group <- gsub(" ", "_", s2c$group) # スペースが含まれているので置換する
 

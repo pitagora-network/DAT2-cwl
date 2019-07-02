@@ -59,7 +59,11 @@ outputs:
   - id: genes_result
     type: File
     outputBinding:
-      glob: $(inputs.rsem_output_prefix+'.genes.results')
+      glob: |
+        ${
+          var p = inputs.rsem_output_prefix?inputs.rsem_output_prefix:"";
+          return p+".genes.results";
+        }
   - id: isoforms_result
     type: File
     outputBinding:
