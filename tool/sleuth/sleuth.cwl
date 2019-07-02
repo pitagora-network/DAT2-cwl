@@ -2,7 +2,7 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-id: sleuth
+#id: sleuth
 baseCommand:
   - Rscript
 inputs:
