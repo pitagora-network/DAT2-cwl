@@ -10,20 +10,28 @@ inputs:
   url:
     doc: Download target URL
     type: string
-  use_remote_name:
-    type: boolean
-    default: true
 
 steps:
   wget:
     run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/wget/wget.cwl
     in:
       url: url
-      use_remote_name: use_remote_name
+      use_remote_name:
+        default: true
     out:
       [downloaded]
+  tar:
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/tar/tar.cwl
+    in:
+      file: wget/downloaded
+      extract:
+        default: true
+      gzip:
+        default: true
+    out:
+      [output]
 
 outputs:
-  downloaded:
-    type: File
-    outputSource: wget/downloaded
+  output:
+    type: Directory
+    outputSource: tar/output
