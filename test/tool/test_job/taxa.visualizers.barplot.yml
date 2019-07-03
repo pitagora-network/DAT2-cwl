@@ -1,0 +1,10 @@
+taxonomy:  # type "File"
+    class: File
+    path: ../../data/qiime2/taxonomy.qza
+table:  # type "File"
+    class: File
+    path: ../../data/qiime2/table.qza
+output_name: taxa-bar-plots.qzv  # type "string"
+metadata:  # type "File"
+    class: File
+    path: ../../data/qiime2/metadata.txt
