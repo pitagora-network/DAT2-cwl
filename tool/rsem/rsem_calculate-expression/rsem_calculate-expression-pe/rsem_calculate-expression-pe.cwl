@@ -56,24 +56,7 @@ inputs:
       position: 0
       prefix: '--bam'
 outputs:
-  - id: genes_result
-    type: File
-    outputBinding:
-      glob: |
-        ${
-          var p = inputs.rsem_output_prefix?inputs.rsem_output_prefix:"";
-          return p+".genes.results";
-        }
-  - id: isoforms_result
-    type: File
-    outputBinding:
-      glob: |
-        $(inputs.rsem_output_prefix+'.isoforms.results')
-  - id: star_output
-    type: Directory
-    outputBinding:
-      glob: $(inputs.rsem_output_prefix.basename)
-  - id: stat
+  - id: result_dir
     type: Directory
     outputBinding:
       glob: $(inputs.rsem_output_prefix.basename)
