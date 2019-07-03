@@ -85,6 +85,7 @@ arguments:
   - position: 3
     valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
 requirements:
+  - class: ShellCommandRequirement
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.rsem_index_dir.basename)
