@@ -92,7 +92,7 @@ arguments:
 requirements:
   - class: InitialWorkDirRequirement
     listing:
-      - entry: $(inputs.bam)
+      - entry: $(inputs.bam.basename)
         writable: true
   - class: InlineJavascriptRequirement
 hints:
