@@ -60,10 +60,7 @@ outputs:
     type: File
     outputBinding:
       glob: |
-        ${
-          var p = inputs.rsem_output_prefix?inputs.rsem_output_prefix:"";
-          return p+".genes.results";
-        }
+        $(inputs.rsem_output_prefix+'.genes.results')
   - id: isoforms_result
     type: File
     outputBinding:
