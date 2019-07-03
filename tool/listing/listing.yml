@@ -1,0 +1,5 @@
+file_names:  # array of type "string"
+  - a_string
+dir:  # type "Directory"
+    class: Directory
+    path: a/directory/path
