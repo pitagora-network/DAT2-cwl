@@ -1,0 +1,6 @@
+genome_fasta:
+  class: File
+  path: ../../data/worm.wtdbg2.fa
+alinged_bam:
+  class: File
+  path: ../../data/aln.sorted.bam
