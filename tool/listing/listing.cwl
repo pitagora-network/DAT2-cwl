@@ -21,4 +21,4 @@ expression: |
     };
   }
 outputs:
-  files: string[]
+  files: File[]
