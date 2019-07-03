@@ -1,0 +1,5 @@
+pattern: ^>
+invert_match: false
+files:
+  - class: File
+    path: ../../data/chr22.fa
