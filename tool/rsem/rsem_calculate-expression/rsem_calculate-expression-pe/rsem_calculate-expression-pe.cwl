@@ -59,13 +59,11 @@ outputs:
   - id: genes_result
     type: File
     outputBinding:
-      glob: |
-        $(inputs.rsem_output_prefix+'.genes.results')
+      glob: $(inputs.rsem_output_prefix+'.genes.results')
   - id: isoforms_result
     type: File
     outputBinding:
-      glob: |
-        $(inputs.rsem_output_prefix+'.isoforms.results')
+      glob: $(inputs.rsem_output_prefix+'.isoforms.results')
   - id: star_output
     type: Directory
     outputBinding:
