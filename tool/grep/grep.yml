@@ -1,0 +1,5 @@
+pattern: a_string  # type "string"
+invert_match: false  # type "boolean"
+files:  # array of type "File"
+  - class: File
+    path: a/file/path
