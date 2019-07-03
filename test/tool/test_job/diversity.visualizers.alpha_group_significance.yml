@@ -1,0 +1,7 @@
+output_name: observed_otus-group-significance.qzv  # type "string"
+metadata:  # type "File"
+    class: File
+    path: ../../data/qiime2/metadata.txt
+alpha_diversity:  # type "File"
+    class: File
+    path: ../../data/qiime2/observed_otus_vector.qza

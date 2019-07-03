@@ -1,0 +1,9 @@
+METADATA:  # type "File"
+    class: File
+    path: a/file/path
+INPUT:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+CLASSIFIER:  # type "File"
+    class: File
+    path: a/file/path

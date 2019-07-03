@@ -1,0 +1,10 @@
+sequences:  # type "File"
+    class: File
+    path: ../../data/qiime2/rep-seqs.qza
+output_tree: unrooted-tree.qza  # type "string"
+output_rooted_tree: rooted-tree.qza  # type "string"
+output_masked_alignemnt: masked-aligned-rep-seqs.qza  # type "string"
+output_alignment: aligned-rep-seqs.qza  # type "string"
+n_threads: 0  # default value of type "long".
+mask_min_conservation: 0.4  # default value of type "double".
+mask_max_gap_frequency: 1.0  # default value of type "double".

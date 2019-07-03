@@ -1,0 +1,10 @@
+transform_function: clr  # default value of type "string".
+table:  # type "File"
+    class: File
+    path: ../../data/qiime2/comp_table_ob_l5.qza
+output_name: ancom_table_ob_l5_diet.qzv  # type "string"
+metadata_column: host_diet  # type "string"
+metadata:  # type "File"
+    class: File
+    path: ../../data/qiime2/metadata.txt
+difference_function: # type "string" (optional)

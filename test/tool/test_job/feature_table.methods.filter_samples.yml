@@ -1,0 +1,13 @@
+where: "host_genotype='ob'"  # type "string" (optional)
+table:  # type "File"
+    class: File
+    path: ../../data/qiime2/table.qza
+output_name: table_ob.qza  # type "string"
+min_frequency:   # type "long"
+min_features:   # type "long"
+metadata:  # type "File"
+    class: File
+    path: ../../data/qiime2/metadata.txt
+max_frequency:   # type "long" (optional)
+max_features:   # type "long" (optional)
+exclude_ids: false  # type "boolean"
