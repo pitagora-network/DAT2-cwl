@@ -1,3 +1,6 @@
+sleuth.R:
+  class: File
+  path: ./sleuth.R
 sample.txt:
   class: File
   path: /home/kyamada/cwl/data_cwl/sample.txt
