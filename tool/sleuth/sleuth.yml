@@ -6,4 +6,5 @@ target2gene.txt:
   path: /home/kyamada/cwl/data_cwl/target2gene.txt
 kallisto_out:
   class: Directory
-  path: [/home/kyamada/cwl/out_test/kallisto/kallisto_quant_pe/SRR1550989, /home/kyamada/cwl/out_test/kallisto/kallisto_quant_pe/SRR1551091]
+  #path: [/home/kyamada/cwl/out_test/kallisto/kallisto_quant_pe/SRR1550989, /home/kyamada/cwl/out_test/kallisto/kallisto_quant_pe/SRR1551091]
+  path: /home/kyamada/cwl/out_test/kallisto/kallisto_quant_pe/SRR1550989
