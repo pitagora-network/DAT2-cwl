@@ -35,3 +35,4 @@ outputs:
   stderr: stderr
 stdout: trim_galore-stdout.log
 stderr: trim_galore-stderr.log
+
