@@ -1,0 +1,4 @@
+quality: 20
+rrbs:
+  class: File
+  path: ../../data/DRR024501_1.fastq
