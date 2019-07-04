@@ -2,7 +2,6 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-#id: sleuth
 baseCommand:
   - Rscript
 inputs:
@@ -22,7 +21,7 @@ inputs:
     type: 'Directory[]'
 outputs:
   - id: output
-    type: Directory
+    type: 'Directory[]'
     outputBinding:
       glob: output
 label: sleuth
