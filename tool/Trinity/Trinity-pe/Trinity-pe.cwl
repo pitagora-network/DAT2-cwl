@@ -64,8 +64,8 @@ label: Trinity
 requirements:
   - class: InitialWorkDirRequirement
     listing:
-      - $(inputs.fq1)
-      - $(inputs.fq2)
+      - entry: $(inputs.fq1)
+      - entry: $(inputs.fq2)
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement

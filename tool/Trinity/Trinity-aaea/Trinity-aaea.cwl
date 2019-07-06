@@ -66,5 +66,5 @@ requirements:
     dockerPull: 'trinityrnaseq/trinityrnaseq:2.8.5'
   - class: InitialWorkDirRequirement
     listing:
-      - $(inputs.transcripts)
+    - entry: $(inputs.transcripts)
   - class: InlineJavascriptRequirement
