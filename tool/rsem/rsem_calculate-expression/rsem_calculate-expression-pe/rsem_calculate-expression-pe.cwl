@@ -8,22 +8,6 @@ baseCommand:
   - rsem-calculate-expression
   - '--paired-end'
 inputs:
-  - id: input_fastq_fw
-    type: File?
-    inputBinding:
-      position: 1
-    label: Upstream reads for paired-end data
-    doc: >-
-      Upstream reads for paired-end data. By default, these files are assumed to
-      be in FASTQ format.
-  - id: input_fastq_rv
-    type: File?
-    inputBinding:
-      position: 2
-    label: Downstream reads for paired-end data
-    doc: >-
-      Downstream reads for paired-end data. By default, these files are assumed
-      to be in FASTQ format.
   - id: nthreads
     type: int
     inputBinding:
