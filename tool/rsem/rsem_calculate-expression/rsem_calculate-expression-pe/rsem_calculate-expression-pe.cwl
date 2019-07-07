@@ -6,7 +6,6 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 baseCommand:
   - rsem-calculate-expression
-  - '--star'
   - '--paired-end'
 inputs:
   - id: input_fastq_fw
@@ -85,11 +84,11 @@ arguments:
   - position: 3
     valueFrom: $(inputs.rsem_index_dir.path)/$(inputs.rsem_index_prefix)
 requirements:
-  - class: InlineJavascriptRequirement
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.rsem_index_dir.basename)
         writable: true
+  - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
