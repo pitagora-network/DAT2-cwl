@@ -21,7 +21,7 @@ outputs:
   renamed_file:
     type: File
     outputBinding:
-      glob: $(runtime.outdir)/$(inputs.renamed_name)
+      glob: $(inputs.renamed_name)
   stdout: stdout
   stderr: stderr
 stdout: cp-stdout.log
