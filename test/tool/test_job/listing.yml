@@ -1,0 +1,7 @@
+file_names:
+  - chr22.fa
+  - DRR024501_1.fastq
+  - DRR024501_2.fastq
+dir:
+    class: Directory
+    path: ../../data
