@@ -56,11 +56,11 @@ outputs:
     outputBinding:
       glob: $(inputs.rsem_output_prefix+'.transcript.bam')
   - id: transcript_sorted_bam
-    type: File
+    type: File?
     outputBinding:
       glob: $(inputs.rsem_output_prefix+'.transcript.sorted.bam')
   - id: transcript_sorted_bam_bai
-    type: File
+    type: File?
     outputBinding:
       glob: $(inputs.rsem_output_prefix+'.transcript.sorted.bam.bai')
 doc: >-
