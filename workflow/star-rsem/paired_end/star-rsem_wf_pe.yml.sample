@@ -1,0 +1,7 @@
+nthreads: _NTHREADS_
+run_ids: [_RUN_ID_]
+rsem_index_dir:
+  class: Directory
+  path: _RSEM_INDEX_DIR_PATH_
+rsem_index_prefix: _RSEM_INDEX_PREFIX_
+rsem_output_prefix: _RSEM_OUT_PREFIX_
