@@ -7,8 +7,8 @@ $namespaces:
 inputs:
   - id: bootstrap_samples
     type: int?
-    'sbg:x': 422.5072326660156
-    'sbg:y': 414.0433654785156
+    'sbg:x': 422
+    'sbg:y': 404.3460998535156
   - id: nthreads
     type: int
     'sbg:x': 153.67849731445312
@@ -60,8 +60,7 @@ steps:
       - id: fq2
         source: pfastq_dump/reverse
       - id: index_file
-        source:
-          - kallisto_index/index_file
+        source: kallisto_index/index_file
       - id: out_dir_name
         source: out_dir_name
     out:
@@ -87,8 +86,8 @@ steps:
     label: >-
       pfastq-dump: A bash implementation of parallel-fastq-dump, parallel
       fastq-dump wrapper
-    'sbg:x': 409.0354919433594
-    'sbg:y': -113.46430206298828
+    'sbg:x': 383.2562255859375
+    'sbg:y': -125.87187957763672
   - id: kallisto_index
     in:
       - id: fasta_files
@@ -100,10 +99,9 @@ steps:
     label: >-
       kallisto index: builds an index from a FASTA formatted file of target
       sequences
-    'sbg:x': 263.2339172363281
-    'sbg:y': -437.0223388671875
-requirements:
-  - class: MultipleInputFeatureRequirement
+    'sbg:x': 297.17254638671875
+    'sbg:y': -444.7664794921875
+requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
