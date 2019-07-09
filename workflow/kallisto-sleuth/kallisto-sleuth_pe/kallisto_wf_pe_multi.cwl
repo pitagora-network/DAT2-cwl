@@ -61,7 +61,6 @@ steps:
         source: pfastq_dump/reverse
       - id: index_file
         source:
-          - index_file
           - kallisto_index/index_file
       - id: out_dir_name
         source: out_dir_name
