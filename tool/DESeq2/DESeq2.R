@@ -3,9 +3,10 @@
 args1 = commandArgs(trailingOnly=TRUE)[1] # sample2condition.txt
 
 # DESeq2、tximportのインストール・読み込み
-install.packages("BiocManager") # ミラーサイトを選択する（どこを選択しても問題ないが、地理的に近い場所を選ぶのがよい）
-BiocManager::install("DESeq2", version="3.8")
-BiocManager::install("tximport", version="3.8")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+   install.packages("BiocManager")
+BiocManager::install("DESeq2")
+BiocManager::install("tximport")
 library(DESeq2)
 library(tximport) # 警告が出るがエラーではないので無視する
 
@@ -20,7 +21,7 @@ names(files) <- s2c$sample
 # gene-levelの解析では以下コマンド
 txi <- tximport(files, type="rsem", txIn=F, txOut=F)
 # isoform-levelの解析では以下コマンド
-txi <- tximport(files, type="rsem", txIn=T, txOut=T)
+#txi <- tximport(files, type="rsem", txIn=T, txOut=T)
 
 # length=0を1に置換
 txi$length[txi$length==0] <- 1
