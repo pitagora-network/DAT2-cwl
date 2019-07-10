@@ -18,7 +18,7 @@ inputs:
     inputBinding:
       position: 2
   - id: kallisto_out
-    type: 'Directory[]?'
+    type: 'Directory[]'
 outputs:
   - id: output
     type: 'Directory[]'

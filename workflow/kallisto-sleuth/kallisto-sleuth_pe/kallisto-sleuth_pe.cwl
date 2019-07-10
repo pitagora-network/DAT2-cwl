@@ -1,71 +1,111 @@
-cwlVersion: v1.0
 class: Workflow
-
-inputs:
-  ## Common inputs
-  nthreads: int
-
-  ## Inputs for download-sra
-  run_ids: string[]
-  repo: string?
-
-  ## Inputs for kallisto quant
-  index_file: File
-  out_dir_name: string?
-  bootstrap_samples: int?
-
-outputs:
-  quant_output:
-    type: Directory
-    outputSource: kallisto_quant/quant_output
-
-steps:
-  download_sra:
-    run: https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/master/tools/download-sra/download-sra.cwl
-    in:
-      repo: repo
-      run_ids: run_ids
-    out:
-      [sraFiles]
-  pfastq_dump:
-    run: https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/master/tools/pfastq-dump/pfastq-dump.cwl
-    in:
-      sraFiles: download_sra/sraFiles
-      nthreads: nthreads
-    out:
-      [forward, reverse]
-  kallisto_quant:
-    run: https://github.com/ykohki/DAT2-cwl/blob/master/tool/kallisto/kallisto_quant/kallisto_quant_pe/kallisto_quant_pe.cwl
-    in:
-      index_file: index_file
-      out_dir_name: out_dir_name
-      bootstrap_samples: bootstrap_samples
-      fq1: pfastq_dump/forward
-      fq2: pfastq_dump/reverse
-    out:
-      [quant_output]
-  sleuth:
-    run: https://github.com/ykohki/DAT2-cwl/blob/master/tool/sleuth/sleuth.cwl
-    in:
-      sample.txt: sample.txt
-      target2gene.txt: target2gene.txt
-      sleuth.R: sleuth.R
-      kallisto_out: kallisto_quant/quant_output
-    out:
-      
-
+cwlVersion: v1.0
 $namespaces:
-  s: https://schema.org/
-  edam: http://edamontology.org/
-
-s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
-s:author:
-  - class: s:Person
-    s:identifier: https://orcid.org/0000-0003-3777-5945
-    s:email: mailto:inutano@gmail.com
-    s:name: Tazro Ohta
-
+  edam: 'http://edamontology.org/'
+  s: 'https://schema.org/'
+  sbg: 'https://www.sevenbridges.com/'
+inputs: []
+outputs:
+  - id: stderr
+    outputSource:
+      - wget/stderr
+    type: stderr
+    'sbg:x': -895.8462524414062
+    'sbg:y': -216
+steps:
+  - id: kallisto_wf_pe
+    in:
+      - id: index_file
+        source: kallisto_index/index_file
+    out:
+      - id: quant_output
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 331.26568603515625
+    'sbg:y': -441.1703796386719
+  - id: kallisto_wf_pe_1
+    in:
+      - id: index_file
+        source: kallisto_index/index_file
+    out:
+      - id: quant_output
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 328
+    'sbg:y': -275.7414245605469
+  - id: kallisto_wf_pe_2
+    in:
+      - id: index_file
+        source: kallisto_index/index_file
+    out:
+      - id: quant_output
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 326
+    'sbg:y': -110.04714965820312
+  - id: kallisto_index
+    in:
+      - id: fasta_files
+        source:
+          - wget/downloaded
+    out:
+      - id: index_file
+    run: ../../../tool/kallisto/kallisto_index/kallisto_index.cwl
+    label: >-
+      kallisto index: builds an index from a FASTA formatted file of target
+      sequences
+    'sbg:x': -336.38897705078125
+    'sbg:y': 59.96583557128906
+  - id: kallisto_wf_pe_3
+    in:
+      - id: index_file
+        source: kallisto_index/index_file
+    out:
+      - id: quant_output
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 328.6522216796875
+    'sbg:y': 76.86495208740234
+  - id: kallisto_wf_pe_4
+    in:
+      - id: index_file
+        source: kallisto_index/index_file
+    out:
+      - id: quant_output
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 329.78216552734375
+    'sbg:y': 247.4292755126953
+  - id: kallisto_wf_pe_5
+    in:
+      - id: index_file
+        source: kallisto_index/index_file
+    out:
+      - id: quant_output
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 342.7388610839844
+    'sbg:y': 429.03692626953125
+  - id: kallisto_wf_pe_6
+    in:
+      - id: index_file
+        source: kallisto_index/index_file
+    out:
+      - id: quant_output
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 350.08660888671875
+    'sbg:y': 600.6012573242188
+  - id: wget
+    in: []
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../tool/wget/wget.cwl
+    'sbg:x': -939.350830078125
+    'sbg:y': 69.38896179199219
+requirements:
+  - class: SubworkflowFeatureRequirement
 $schemas:
-  - https://schema.org/docs/schema_org_rdfa.html
-  - http://edamontology.org/EDAM_1.18.owl
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+  - 'http://edamontology.org/EDAM_1.18.owl'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:inutano@gmail.com'
+    's:identifier': 'https://orcid.org/0000-0003-3777-5945'
+    's:name': Tazro Ohta
+'s:codeRepository': 'https://github.com/pitagora-network/pitagora-cwl'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
