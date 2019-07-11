@@ -21,28 +21,18 @@ steps:
     in:
       split_files:
         default: true
+      gzip:
+        default: true
       sraFiles:
         source: [download/downloaded]
         linkMerge: merge_flattened
     out:
       - forward
       - reverse
-  archive-forward:
-    run: gzip.cwl
-    in:
-      file: sra2fastq/forward
-    out:
-      - compressed
-  archive-reverse:
-    run: gzip.cwl
-    in:
-      file: sra2fastq/reverse
-    out:
-      - compressed
 outputs:
   fastq-forward:
     type: File
-    outputSource: archive-forward/compressed
+    outputSource: sra2fastq/forward
   fastq-reverse:
     type: File
-    outputSource: archive-reverse/compressed
+    outputSource: sra2fastq/reverse
