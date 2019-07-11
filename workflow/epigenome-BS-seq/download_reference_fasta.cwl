@@ -81,6 +81,6 @@ steps:
       - renamed_file
 
 outputs:
-  output:
+  output_fasta:
     type: File
     outputSource: cp/renamed_file
