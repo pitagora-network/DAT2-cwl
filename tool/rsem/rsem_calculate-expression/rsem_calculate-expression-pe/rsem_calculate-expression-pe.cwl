@@ -34,7 +34,7 @@ inputs:
       The name of the sample analyzed. All output files are prefixed by this
       name (e.g., sample_name.genes.results)
   - id: bam
-    type: File?
+    type: File
     inputBinding:
       position: 0
       prefix: '--bam'

@@ -18,15 +18,15 @@ inputs:
     'sbg:x': 153.67849731445312
     'sbg:y': -243
   - id: out_dir_name
-    type: string?
-    'sbg:x': 63.07179260253906
-    'sbg:y': 364.6784973144531
+    type: File?
+    'sbg:x': 111
+    'sbg:y': 364
   - id: repo
     type: string?
     'sbg:x': -12.089348793029785
     'sbg:y': 63
   - id: run_ids
-    type: 'string[]'
+    type: 'File'
     'sbg:x': 3.6951067447662354
     'sbg:y': -155.9748992919922
 outputs:
@@ -34,8 +34,8 @@ outputs:
     outputSource:
       - kallisto_quant/quant_output
     type: Directory
-    'sbg:x': 1100.9803466796875
-    'sbg:y': 118.53569793701172
+    'sbg:x': 1052
+    'sbg:y': 108
 steps:
   - id: download_sra
     in:
@@ -62,7 +62,8 @@ steps:
       - id: index_file
         source: index_file
       - id: out_dir_name
-        source: out_dir_name
+        source:
+          - out_dir_name
     out:
       - id: quant_output
     run: >-

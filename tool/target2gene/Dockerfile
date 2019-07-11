@@ -1,10 +1,12 @@
-FROM r-base
+FROM bioconductor/release_base2:R3.6.0_Bioc3.9
 
-RUN apt-get update \
-     && apt-get install -y libmysqlclient-dev libxml2-dev libcurl4-gnutls-dev libssl-dev
 
-RUN mkdir test_output
-COPY target2gene.R  /test_output/target2gene.R
-#COPY test/test.R  /test_output/test.R
+WORKDIR /workdir
 
-RUN R -f /test_output/target2gene.R
+
+COPY target2gene.R  /workdir
+RUN chmod 777 target2gene.R
+
+RUN chmod 0777 /usr/local/lib/R/site-library
+
+#RUN R -f target2gene.R

@@ -5,26 +5,16 @@ $namespaces:
 baseCommand:
   - Rscript
 inputs:
-  - id: sleuth.R
+  - id: target2gene.R
     type: File?
     inputBinding:
       position: 0
-  - id: sample.txt
-    type: File
-    inputBinding:
-      position: 1
+outputs:
   - id: target2gene.txt
     type: File
-    inputBinding:
-      position: 2
-  - id: kallisto_out
-    type: 'Directory[]'
-outputs:
-  - id: output
-    type: 'Directory[]'
     outputBinding:
       glob: output
-label: sleuth
+label: target2gene
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/sleuth
+    dockerPull: dat2-cwl/target2gene

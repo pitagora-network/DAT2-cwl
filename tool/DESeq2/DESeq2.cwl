@@ -2,7 +2,7 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-id: DESeq2
+id: _d_e_seq2
 baseCommand:
   - Rscript
 inputs:
@@ -14,8 +14,6 @@ inputs:
     type: File
     inputBinding:
       position: 1
-  - id: rsem_out
-    type: 'Directory[]'
 outputs:
   - id: output
     type: Directory
