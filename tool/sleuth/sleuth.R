@@ -3,9 +3,10 @@
 args1 = commandArgs(trailingOnly=TRUE)[1] # sample.txt
 args2 = commandArgs(trailingOnly=TRUE)[2] # target2gene.txt
 
-install.packages('BiocManager',dependencies=TRUE, repos='http://cran.rstudio.com/')
+if (!requireNamespace("BiocManager", quietly = TRUE))
+   install.packages("BiocManager")
 BiocManager::install('rhdf5')
-install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/')
+install.packages('devtools',dependencies=TRUE)
 devtools::install_github('pachterlab/sleuth')
 # sleuthパッケージを読み込む
 library("sleuth")
