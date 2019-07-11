@@ -1,18 +1,18 @@
 kallisto_out:
   - class: Directory
-    path: /home/kyamada/cwl/rna-seq/kallistoSRR1550989
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1550989
   - class: Directory
-    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551005
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551005
   - class: Directory
-    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551011
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551011
   - class: Directory
-    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551050
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551050
   - class: Directory
-    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551057
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551057
   - class: Directory
-    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551071
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551071
   - class: Directory
-    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551091
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551091
 sample.txt:
   class: File
   path: /home/kyamada/cwl/data_cwl/sample_full.txt
