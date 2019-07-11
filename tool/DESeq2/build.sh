@@ -2,4 +2,4 @@
 set -eux
 cd .
 
-docker image build -t dat2-cwl/DESeq2 .
+docker build -t dat2-cwl/deseq2 .
