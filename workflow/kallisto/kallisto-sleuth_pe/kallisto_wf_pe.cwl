@@ -11,22 +11,22 @@ inputs:
     'sbg:y': 438.946533203125
   - id: index_file
     type: File
-    'sbg:x': 418.7678527832031
-    'sbg:y': 90.66055297851562
+    'sbg:x': 386.97637939453125
+    'sbg:y': 97.44567108154297
   - id: nthreads
     type: int
     'sbg:x': 153.67849731445312
     'sbg:y': -243
   - id: out_dir_name
-    type: File?
-    'sbg:x': 111
-    'sbg:y': 364
+    type: string?
+    'sbg:x': 154.85536193847656
+    'sbg:y': 314.828857421875
   - id: repo
     type: string?
-    'sbg:x': -12.089348793029785
-    'sbg:y': 63
+    'sbg:x': -18.20472526550293
+    'sbg:y': 51.83149719238281
   - id: run_ids
-    type: 'File'
+    type: string
     'sbg:x': 3.6951067447662354
     'sbg:y': -155.9748992919922
 outputs:
@@ -49,8 +49,8 @@ steps:
     run: >-
       https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/master/tools/download-sra/download-sra.cwl
     label: 'download-sra: A simple download tool to get .sra file'
-    'sbg:x': 160.74465942382812
-    'sbg:y': 160.95127868652344
+    'sbg:x': 160
+    'sbg:y': 48.36818313598633
   - id: kallisto_quant
     in:
       - id: bootstrap_samples

@@ -1,0 +1,24 @@
+kallisto_out:
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallistoSRR1550989
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551005
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551011
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551050
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551057
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551071
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallistoSRR1551091
+sample.txt:
+  class: File
+  path: /home/kyamada/cwl/data_cwl/sample_full.txt
+sleuth.R:
+  class: File
+  path: /home/kyamada/cwl/DAT2-cwl_kyamada/tool/sleuth/sleuth.R
+target2gene.txt:
+  class: File
+  path: /home/kyamada/cwl/data_cwl/target2gene.txt
