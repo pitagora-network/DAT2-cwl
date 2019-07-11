@@ -93,8 +93,7 @@ steps:
       - id: out_dir_name
         source: out_dir_name
       - id: run_ids
-        source:
-          - run_ids
+        source: run_ids
     out:
       - id: quant_output
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
@@ -109,8 +108,7 @@ steps:
       - id: out_dir_name
         source: out_dir_name_1
       - id: run_ids
-        source:
-          - run_ids_1
+        source: run_ids_1
     out:
       - id: quant_output
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
@@ -125,8 +123,7 @@ steps:
       - id: out_dir_name
         source: out_dir_name_2
       - id: run_ids
-        source:
-          - run_ids_2
+        source: run_ids_2
     out:
       - id: quant_output
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
@@ -154,8 +151,7 @@ steps:
       - id: out_dir_name
         source: out_dir_name_3
       - id: run_ids
-        source:
-          - run_ids_3
+        source: run_ids_3
     out:
       - id: quant_output
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
@@ -170,8 +166,7 @@ steps:
       - id: out_dir_name
         source: out_dir_name_4
       - id: run_ids
-        source:
-          - run_ids_4
+        source: run_ids_4
     out:
       - id: quant_output
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
@@ -186,8 +181,7 @@ steps:
       - id: out_dir_name
         source: out_dir_name_5
       - id: run_ids
-        source:
-          - run_ids_5
+        source: run_ids_5
     out:
       - id: quant_output
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
@@ -202,8 +196,7 @@ steps:
       - id: out_dir_name
         source: out_dir_name_6
       - id: run_ids
-        source:
-          - run_ids_6
+        source: run_ids_6
     out:
       - id: quant_output
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
@@ -218,16 +211,16 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../../tool/wget/wget.cwl
-    'sbg:x': -772.8248291015625
-    'sbg:y': 66
+    'sbg:x': -821.10693359375
+    'sbg:y': 174.03521728515625
   - id: target2gene
     in: []
     out:
       - id: target2gene.txt
     run: ../../../tool/target2gene/target2gene.cwl
     label: target2gene
-    'sbg:x': 549.2106323242188
-    'sbg:y': -510.7872009277344
+    'sbg:x': 578.4641723632812
+    'sbg:y': -510
   - id: sleuth
     in:
       - id: sample.txt
