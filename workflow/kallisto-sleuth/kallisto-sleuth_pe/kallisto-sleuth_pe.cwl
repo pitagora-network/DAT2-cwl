@@ -14,7 +14,7 @@ inputs:
     'sbg:x': -216.7962188720703
     'sbg:y': -493.84906005859375
   - id: run_ids
-    type: 'string[]'
+    type: string
     'sbg:x': -453.173583984375
     'sbg:y': -574.525390625
   - id: out_dir_name
@@ -22,7 +22,7 @@ inputs:
     'sbg:x': -238.71322631835938
     'sbg:y': -338.7886657714844
   - id: run_ids_1
-    type: 'string[]'
+    type: string
     'sbg:x': -440.4867858886719
     'sbg:y': -215.7811279296875
   - id: out_dir_name_1
@@ -30,7 +30,7 @@ inputs:
     'sbg:x': -326.8421630859375
     'sbg:y': -96.69364929199219
   - id: run_ids_2
-    type: 'string[]'
+    type: string
     'sbg:x': -412.1515808105469
     'sbg:y': 239.0988006591797
   - id: out_dir_name_2
@@ -38,7 +38,7 @@ inputs:
     'sbg:x': -312.3214111328125
     'sbg:y': 344.374267578125
   - id: run_ids_3
-    type: 'string[]'
+    type: string
     'sbg:x': -354.0685729980469
     'sbg:y': 544.03466796875
   - id: out_dir_name_3
@@ -46,7 +46,7 @@ inputs:
     'sbg:x': -207.04592895507812
     'sbg:y': 618.4535522460938
   - id: run_ids_4
-    type: 'string[]'
+    type: string
     'sbg:x': -404.8912048339844
     'sbg:y': 865.3063354492188
   - id: out_dir_name_4
@@ -54,7 +54,7 @@ inputs:
     'sbg:x': -286.1849060058594
     'sbg:y': 921.3320922851562
   - id: run_ids_5
-    type: 'string[]'
+    type: string
     'sbg:x': -107.21573638916016
     'sbg:y': 1003.2450561523438
   - id: out_dir_name_5
@@ -62,7 +62,7 @@ inputs:
     'sbg:x': -118.1063003540039
     'sbg:y': 1141.192138671875
   - id: run_ids_6
-    type: 'string[]'
+    type: string
     'sbg:x': 72
     'sbg:y': 1108.188720703125
   - id: out_dir_name_6
@@ -70,12 +70,6 @@ inputs:
     'sbg:x': 95.80000305175781
     'sbg:y': 1271.562255859375
 outputs:
-  - id: stderr
-    outputSource:
-      - wget/stderr
-    type: stderr
-    'sbg:x': -767.1181030273438
-    'sbg:y': -171.5193328857422
   - id: output
     outputSource:
       - sleuth/output
@@ -211,8 +205,8 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../../tool/wget/wget.cwl
-    'sbg:x': -821.10693359375
-    'sbg:y': 174.03521728515625
+    'sbg:x': -821
+    'sbg:y': 154.35723876953125
   - id: target2gene
     in: []
     out:

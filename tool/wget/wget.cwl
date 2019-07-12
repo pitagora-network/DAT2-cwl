@@ -1,39 +1,49 @@
-#!/usr/bin/env cwl-runner
-cwlVersion: v1.0
 class: CommandLineTool
-doc: The non-interactive network downloader
-requirements:
-  DockerRequirement:
-    dockerPull: alpine:3.9
-  InlineJavascriptRequirement: {}
-baseCommand: wget
+cwlVersion: v1.0
+$namespaces:
+  sbg: 'https://www.sevenbridges.com/'
+baseCommand:
+  - wget
 inputs:
-  url:
-    doc: Download target URL
+  - default: wget-stdout.txt
+    id: output_name
     type: string
-    inputBinding: {}
-  output_name:
-    doc: Output file name (use `wget-stdout.txt` by default)
-    type: string
-    default: wget-stdout.txt
     inputBinding:
-      prefix: --output-document=
+      position: 0
+      prefix: '--output-document='
       separate: false
-      valueFrom: "$(inputs.use_remote_name ? inputs.url.split('/').pop() : self)"
-  use_remote_name:
-    doc: Use the basename of `url` parameter as an output file name. It is equivalent to `curl -O`.
+      valueFrom: '$(inputs.use_remote_name ? inputs.url.split(''/'').pop() : self)'
+    doc: Output file name (use `wget-stdout.txt` by default)
+  - default: false
+    id: track_location
     type: boolean
-    default: false
-  track_location:
-    doc: Equivalent to `curl -L`
-    type: boolean
-    default: false
     inputBinding:
-      prefix: --trusted-server-names
+      position: 0
+      prefix: '--trusted-server-names'
+    doc: Equivalent to `curl -L`
+  - id: url
+    type: string
+    inputBinding:
+      position: 0
+    doc: Download target URL
+  - default: false
+    id: use_remote_name
+    type: boolean
+    doc: >-
+      Use the basename of `url` parameter as an output file name. It is
+      equivalent to `curl -O`.
 outputs:
-  downloaded:
+  - id: downloaded
     type: File
     outputBinding:
-      glob: "$(inputs.use_remote_name ? inputs.url.split('/').pop() : inputs.output_name)"
-  stderr: stderr
+      glob: >-
+        $(inputs.use_remote_name ? inputs.url.split('/').pop() :
+        inputs.output_name)
+  - id: stderr
+    type: stderr?
+doc: The non-interactive network downloader
+requirements:
+  - class: DockerRequirement
+    dockerPull: 'alpine:3.9'
+  - class: InlineJavascriptRequirement
 stderr: wget-stderr.log
