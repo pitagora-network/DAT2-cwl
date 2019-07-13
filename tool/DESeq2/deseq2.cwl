@@ -7,13 +7,17 @@ baseCommand:
   - Rscript
 inputs:
   - id: deseq2.R
-    type: File
+    type: File?
     inputBinding:
       position: 0
   - id: sample2condition.txt
     type: File
     inputBinding:
       position: 1
+  - id: target2gene.txt
+    type: File?
+    inputBinding:
+      position: 2
 outputs:
   - id: output
     type: Directory

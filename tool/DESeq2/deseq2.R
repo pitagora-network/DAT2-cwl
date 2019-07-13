@@ -1,6 +1,7 @@
 #! /usr/bin/Rscript
 
 args1 = commandArgs(trailingOnly=TRUE)[1] # sample2condition.txt
+args2 = commandArgs(trailingOnly=TRUE)[2] # target2gene.txt
 
 # DESeq2、tximportのインストール・読み込み
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -40,7 +41,7 @@ res_lrt <- results(dds_lrt)
 res_lrt_naomit <- na.omit(res_lrt)
 
 # 遺伝子名の付与（アノテーション）
-t2g <- read.table("../ref/target2gene.txt",header=T,stringsAsFactors=F)
+t2g <- read.table(args2,header=T,stringsAsFactors=F)
 res_wt_naomit$ens_gene <- row.names(res_wt_naomit)
 res_wt_naomit_annot <- merge(as.data.frame(res_wt_naomit), unique(t2g[,2:3]), by="ens_gene")
 
