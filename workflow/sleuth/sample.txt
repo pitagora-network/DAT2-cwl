@@ -1,0 +1,8 @@
+sample	condition	path
+SRR1550989	Healthy Control	/home/kyamada/cwl/rna-seq/kallisto/SRR1550989
+SRR1551005	Type 1 Diabetes	/home/kyamada/cwl/rna-seq/kallisto/SRR1551005
+SRR1551011	Type 1 Diabetes	/home/kyamada/cwl/rna-seq/kallisto/SRR1551011
+SRR1551050	Healthy Control	/home/kyamada/cwl/rna-seq/kallisto/SRR1551050
+SRR1551057	Healthy Control	/home/kyamada/cwl/rna-seq/kallisto/SRR1551057
+SRR1551071	Healthy Control	/home/kyamada/cwl/rna-seq/kallisto/SRR1551071
+SRR1551091	Type 1 Diabetes	/home/kyamada/cwl/rna-seq/kallisto/SRR1551091

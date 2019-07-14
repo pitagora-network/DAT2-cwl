@@ -18,7 +18,7 @@ inputs:
     inputBinding:
       position: 2
   - id: kallisto_out
-    type: 'Directory[]'
+    type: 'Directory[]?'
 outputs:
   - id: kallisto_res.txt
     type: File
