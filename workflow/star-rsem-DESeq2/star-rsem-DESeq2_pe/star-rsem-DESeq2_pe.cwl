@@ -4,99 +4,151 @@ $namespaces:
   edam: 'http://edamontology.org/'
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
-inputs: []
+inputs:
+  - id: reference_dir
+    type: Directory
+    'sbg:x': -841.2445068359375
+    'sbg:y': 287.9293212890625
 outputs:
   - id: stderr
     outputSource:
       - wget/stderr
     type: stderr
-    'sbg:x': -895.8462524414062
-    'sbg:y': -216
+    'sbg:x': -821.9163208007812
+    'sbg:y': -506.50213623046875
+  - id: stderr_1
+    outputSource:
+      - wget_1/stderr
+    type: stderr
+    'sbg:x': -1136.888427734375
+    'sbg:y': 258.888427734375
 steps:
-  - id: kallisto_wf_pe
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 331.26568603515625
-    'sbg:y': -441.1703796386719
-  - id: kallisto_wf_pe_1
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 328
-    'sbg:y': -275.7414245605469
-  - id: kallisto_wf_pe_2
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 326
-    'sbg:y': -110.04714965820312
-  - id: kallisto_index
-    in:
-      - id: fasta_files
-        source:
-          - wget/downloaded
-    out:
-      - id: index_file
-    run: ../../../tool/kallisto/kallisto_index/kallisto_index.cwl
-    label: >-
-      kallisto index: builds an index from a FASTA formatted file of target
-      sequences
-    'sbg:x': -336.38897705078125
-    'sbg:y': 59.96583557128906
-  - id: kallisto_wf_pe_3
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 328.6522216796875
-    'sbg:y': 76.86495208740234
-  - id: kallisto_wf_pe_4
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 329.78216552734375
-    'sbg:y': 247.4292755126953
-  - id: kallisto_wf_pe_5
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 342.7388610839844
-    'sbg:y': 429.03692626953125
-  - id: kallisto_wf_pe_6
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 350.08660888671875
-    'sbg:y': 600.6012573242188
   - id: wget
     in: []
     out:
       - id: downloaded
       - id: stderr
     run: ../../../tool/wget/wget.cwl
-    'sbg:x': -939.350830078125
-    'sbg:y': 69.38896179199219
+    'sbg:x': -1084.6492919921875
+    'sbg:y': -337.3507385253906
+  - id: wget_1
+    in: []
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../tool/wget/wget.cwl
+    'sbg:x': -1126.6416015625
+    'sbg:y': -52.944210052490234
+  - id: star_index
+    in:
+      - id: genomeFastaFiles
+        source: wget_1/downloaded
+      - id: sjdbGTFfile
+        source: wget/downloaded
+    out:
+      - id: starIndex
+    run: ../../../tool/star_pre/star_index/star_index.cwl
+    label: 'STAR genomeGenerate: Generating genome indexes.'
+    'sbg:x': -602.9925537109375
+    'sbg:y': -322.55224609375
+  - id: rsem_index
+    in:
+      - id: gtf
+        source: wget/downloaded
+      - id: reference_fasta
+        source: wget_1/downloaded
+      - id: reference_dir
+        source: reference_dir
+    out:
+      - id: rsem_index
+    run: ../../../tool/rsem/rsem_index/rsem_index.cwl
+    label: 'rsem-prepare-reference: preparing reference sequences'
+    'sbg:x': -576.1394653320312
+    'sbg:y': 7.4860520362854
+  - id: star_rsem_wf_pe
+    in:
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+    out:
+      - id: isoforms_result
+      - id: genes_result
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -191.45816040039062
+    'sbg:y': -637.2393798828125
+  - id: star_rsem_wf_pe_1
+    in:
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+    out:
+      - id: isoforms_result
+      - id: genes_result
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -194.3228302001953
+    'sbg:y': -412.65234375
+  - id: star_rsem_wf_pe_2
+    in:
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+    out:
+      - id: isoforms_result
+      - id: genes_result
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -192.1337127685547
+    'sbg:y': -229.33714294433594
+  - id: star_rsem_wf_pe_3
+    in:
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+    out:
+      - id: isoforms_result
+      - id: genes_result
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -184.81088256835938
+    'sbg:y': -46.79368209838867
+  - id: star_rsem_wf_pe_4
+    in:
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+    out:
+      - id: isoforms_result
+      - id: genes_result
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -180.47776794433594
+    'sbg:y': 153.91380310058594
+  - id: star_rsem_wf_pe_5
+    in:
+      - id: genomeDir
+        source: rsem_index/rsem_index
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+    out:
+      - id: isoforms_result
+      - id: genes_result
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -164.60385131835938
+    'sbg:y': 335.14111328125
+  - id: star_rsem_wf_pe_6
+    in:
+      - id: genomeDir
+        source: rsem_index/rsem_index
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+    out:
+      - id: isoforms_result
+      - id: genes_result
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -159.25979614257812
+    'sbg:y': 484
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:

@@ -1,0 +1,9 @@
+bootstrap_samples: 100
+index_name: kallisto.idx
+nthreads: 4
+out_dir_name: SRR1550989
+runid: SRR1550989
+split_files: true
+url: >-
+  wget
+  ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens//cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
