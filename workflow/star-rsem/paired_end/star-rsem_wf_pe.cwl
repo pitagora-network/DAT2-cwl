@@ -5,31 +5,50 @@ $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: gzip
-    type: boolean
-    default: false
-    'sbg:x': 52.37401580810547
-    'sbg:y': 564.7362060546875
-  - id: nthreads
-    type: int
-    'sbg:x': -7.204724311828613
-    'sbg:y': 408.9173278808594
-  - id: repo
-    type: string?
-    'sbg:x': -130.88583374023438
-    'sbg:y': 287.50787353515625
-  - id: run_ids
-    type: 'string[]'
-    'sbg:x': -112.87401580810547
-    'sbg:y': -1.2007874250411987
   - id: genomeDir
     type: Directory
     'sbg:x': 286.9881896972656
     'sbg:y': -21.811023712158203
   - id: rsem_index_dir
     type: Directory
-    'sbg:x': 545.1929321289062
-    'sbg:y': 566.3976440429688
+    'sbg:x': 617.8842163085938
+    'sbg:y': 600.9019775390625
+  - id: runid
+    type: string
+    'sbg:x': -86
+    'sbg:y': 208.0264129638672
+  - id: split_files
+    type: boolean?
+    'sbg:x': -50.37736129760742
+    'sbg:y': 59.1987419128418
+  - id: nthreads
+    type: int
+    'sbg:x': 362.7591247558594
+    'sbg:y': -111.05148315429688
+  - id: quantMode
+    type: string
+    'sbg:x': 728.74072265625
+    'sbg:y': -177.4481201171875
+  - id: outFileNamePrefix
+    type: string?
+    'sbg:x': 392.72418212890625
+    'sbg:y': -254
+  - id: outSAMtype
+    type: 'string[]'
+    'sbg:x': 507.32781982421875
+    'sbg:y': -356.18963623046875
+  - id: nthreads_1
+    type: int
+    'sbg:x': 846.3884887695312
+    'sbg:y': 603.825927734375
+  - id: rsem_index_prefix
+    type: string
+    'sbg:x': 575.6548461914062
+    'sbg:y': 472.1379089355469
+  - id: rsem_output_prefix
+    type: string
+    'sbg:x': 383.0170593261719
+    'sbg:y': 439.4827880859375
 outputs:
   - id: isoforms_result
     outputSource:
@@ -43,49 +62,30 @@ outputs:
     type: File
     'sbg:x': 1314.0760498046875
     'sbg:y': 276.3108215332031
+  - id: fastqFiles
+    outputSource:
+      - fasterq_dump/fastqFiles
+    type: 'File[]'
+    'sbg:x': 202.89132690429688
+    'sbg:y': 382.14996337890625
 steps:
-  - id: download-sra
-    in:
-      - id: repo
-        source: repo
-      - id: run_ids
-        source:
-          - run_ids
-    out:
-      - id: sraFiles
-    run: >-
-      https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/master/tools/download-sra/download-sra.cwl
-    label: 'download-sra: A simple download tool to get .sra file'
-    'sbg:x': 22.64751434326172
-    'sbg:y': 157.15748596191406
-  - id: pfastq-dump
-    in:
-      - id: gzip
-        source: gzip
-      - id: nthreads
-        source: nthreads
-      - id: sraFiles
-        source:
-          - download-sra/sraFiles
-    out:
-      - id: fastqFiles
-      - id: forward
-      - id: reverse
-    run: >-
-      https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/master/tools/pfastq-dump/pfastq-dump.cwl
-    label: >-
-      pfastq-dump: A bash implementation of parallel-fastq-dump, parallel
-      fastq-dump wrapper
-    'sbg:x': 267.3858337402344
-    'sbg:y': 215.3385772705078
   - id: star_mapping_pe
     in:
       - id: fq1
-        source: pfastq-dump/forward
+        source: fasterq_dump/forward
       - id: fq2
-        source: pfastq-dump/reverse
+        source: fasterq_dump/reverse
       - id: genomeDir
         source: genomeDir
+      - id: nthreads
+        source: nthreads
+      - id: outSAMtype
+        source:
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: outFileNamePrefix
+        source: outFileNamePrefix
     out:
       - id: aligned
       - id: bamRemDups
@@ -94,12 +94,18 @@ steps:
       - id: transcriptomesam
     run: ../../../tool/star_pre/star_mapping/star_mapping_pe/star_mapping_pe.cwl
     label: 'STAR mapping: running mapping jobs.'
-    'sbg:x': 599.2125854492188
-    'sbg:y': 214.60630798339844
+    'sbg:x': 602.6754760742188
+    'sbg:y': 169.8943328857422
   - id: rsem_calculate_expression_pe
     in:
+      - id: nthreads
+        source: nthreads_1
       - id: rsem_index_dir
         source: rsem_index_dir
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
+      - id: rsem_output_prefix
+        source: rsem_output_prefix
       - id: bam
         source: star_mapping_pe/transcriptomesam
     out:
@@ -116,6 +122,20 @@ steps:
       CWL)
     'sbg:x': 948.2125854492188
     'sbg:y': 259
+  - id: fasterq_dump
+    in:
+      - id: split_files
+        source: split_files
+      - id: runid
+        source: runid
+    out:
+      - id: fastqFiles
+      - id: forward
+      - id: reverse
+    run: ../../../tool/fasterq-dump/fasterq-dump.cwl
+    label: 'fasterq-dump: dump .sra format file to generate fastq file'
+    'sbg:x': 163.41006469726562
+    'sbg:y': 204.14590454101562
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
