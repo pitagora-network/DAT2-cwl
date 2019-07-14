@@ -29,6 +29,10 @@ inputs:
     type: boolean?
     'sbg:x': 116
     'sbg:y': -226
+  - id: nthreads_1
+    type: int?
+    'sbg:x': 666.5654907226562
+    'sbg:y': 372.7088623046875
 outputs:
   - id: quant_output
     outputSource:
@@ -53,10 +57,11 @@ steps:
         source: fasterq_dump/reverse
       - id: index_file
         source: index_file
+      - id: nthreads
+        source: nthreads_1
       - id: out_dir_name
         default: []
-        source:
-          - out_dir_name
+        source: out_dir_name
     out:
       - id: quant_output
     run: >-

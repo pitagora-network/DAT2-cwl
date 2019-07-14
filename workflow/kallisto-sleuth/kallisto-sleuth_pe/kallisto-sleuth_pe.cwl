@@ -7,12 +7,12 @@ $namespaces:
 inputs:
   - id: url
     type: string
-    'sbg:x': -1038.7169189453125
-    'sbg:y': -22.143505096435547
+    'sbg:x': -1134.208984375
+    'sbg:y': -94.1567153930664
   - id: output_name
     type: string
-    'sbg:x': -1051.52392578125
-    'sbg:y': 141.50135803222656
+    'sbg:x': -1158.141845703125
+    'sbg:y': 156.30596923828125
   - id: index_name
     type: string?
     'sbg:x': -791.115234375
@@ -53,13 +53,17 @@ inputs:
     type: string
     'sbg:x': 2.1716418266296387
     'sbg:y': 1070.537353515625
+  - id: nthreads_1
+    type: int?
+    'sbg:x': -724.1057739257812
+    'sbg:y': 865.9691772460938
 outputs:
   - id: downloaded
     outputSource:
       - wget/downloaded
     type: File
-    'sbg:x': -813.8831176757812
-    'sbg:y': 185.6143341064453
+    'sbg:x': -869.8507690429688
+    'sbg:y': 198.11940002441406
   - id: index_file
     outputSource:
       - kallisto_index/index_file
@@ -161,8 +165,8 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../../tool/wget/wget.cwl
-    'sbg:x': -875
-    'sbg:y': -16.73819351196289
+    'sbg:x': -1010.567138671875
+    'sbg:y': 12.425372123718262
   - id: kallisto_index
     in:
       - id: fasta_files
@@ -189,6 +193,8 @@ steps:
         source: runid
       - id: nthreads
         source: nthreads
+      - id: nthreads_1
+        source: nthreads_1
     out:
       - id: quant_output
       - id: fastqFiles
@@ -207,6 +213,8 @@ steps:
         source: runid_1
       - id: nthreads
         source: nthreads
+      - id: nthreads_1
+        source: nthreads_1
     out:
       - id: quant_output
       - id: fastqFiles
@@ -225,6 +233,8 @@ steps:
         source: runid_2
       - id: nthreads
         source: nthreads
+      - id: nthreads_1
+        source: nthreads_1
     out:
       - id: quant_output
       - id: fastqFiles
@@ -243,6 +253,8 @@ steps:
         source: runid_3
       - id: nthreads
         source: nthreads
+      - id: nthreads_1
+        source: nthreads_1
     out:
       - id: quant_output
       - id: fastqFiles
@@ -261,6 +273,8 @@ steps:
         source: runid_4
       - id: nthreads
         source: nthreads
+      - id: nthreads_1
+        source: nthreads_1
     out:
       - id: quant_output
       - id: fastqFiles
@@ -279,6 +293,8 @@ steps:
         source: runid_5
       - id: nthreads
         source: nthreads
+      - id: nthreads_1
+        source: nthreads_1
     out:
       - id: quant_output
       - id: fastqFiles
@@ -297,6 +313,8 @@ steps:
         source: runid_6
       - id: nthreads
         source: nthreads
+      - id: nthreads_1
+        source: nthreads_1
     out:
       - id: quant_output
       - id: fastqFiles
