@@ -2,6 +2,7 @@ bootstrap_samples: 100
 index_name: kallisto.idx
 nthreads: 4
 out_dir_name: SRR1550989
+output_name: Homo_sapiens.GRCh38.cdna.all.fa.gz
 runid: SRR1550989
 split_files: true
 url: >-
