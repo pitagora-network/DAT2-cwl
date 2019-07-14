@@ -51,7 +51,7 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/star:2.7.1a-0'
+    dockerPull: 'quay.io/biocontainers/star:2.7.1a--0'
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
