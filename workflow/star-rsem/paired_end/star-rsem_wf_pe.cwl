@@ -27,8 +27,8 @@ inputs:
     'sbg:y': -111.05148315429688
   - id: quantMode
     type: string
-    'sbg:x': 728.74072265625
-    'sbg:y': -177.4481201171875
+    'sbg:x': 633.8631591796875
+    'sbg:y': -345.37554931640625
   - id: outFileNamePrefix
     type: string?
     'sbg:x': 392.72418212890625
@@ -54,20 +54,44 @@ outputs:
     outputSource:
       - rsem_calculate_expression_pe/isoforms_result
     type: File
-    'sbg:x': 1303.2689208984375
-    'sbg:y': 143.02340698242188
+    'sbg:x': 1281.7860107421875
+    'sbg:y': 396.2413024902344
   - id: genes_result
     outputSource:
       - rsem_calculate_expression_pe/genes_result
     type: File
-    'sbg:x': 1314.0760498046875
-    'sbg:y': 276.3108215332031
+    'sbg:x': 1205.278564453125
+    'sbg:y': 498.74627685546875
   - id: fastqFiles
     outputSource:
       - fasterq_dump/fastqFiles
     type: 'File[]'
     'sbg:x': 202.89132690429688
     'sbg:y': 382.14996337890625
+  - id: transcriptomesam
+    outputSource:
+      - star_mapping_pe/transcriptomesam
+    type: File?
+    'sbg:x': 947.6417846679688
+    'sbg:y': -275.01739501953125
+  - id: readspergene
+    outputSource:
+      - star_mapping_pe/readspergene
+    type: File?
+    'sbg:x': 1025.3607177734375
+    'sbg:y': -155.723876953125
+  - id: mappingstats
+    outputSource:
+      - star_mapping_pe/mappingstats
+    type: File?
+    'sbg:x': 997.5596923828125
+    'sbg:y': -36.360694885253906
+  - id: bamRemDups
+    outputSource:
+      - star_mapping_pe/bamRemDups
+    type: File?
+    'sbg:x': 1091.27490234375
+    'sbg:y': 20.825227737426758
 steps:
   - id: star_mapping_pe
     in:
@@ -94,8 +118,8 @@ steps:
       - id: transcriptomesam
     run: ../../../tool/star_pre/star_mapping/star_mapping_pe/star_mapping_pe.cwl
     label: 'STAR mapping: running mapping jobs.'
-    'sbg:x': 602.6754760742188
-    'sbg:y': 169.8943328857422
+    'sbg:x': 603.3258666992188
+    'sbg:y': 133.2014923095703
   - id: rsem_calculate_expression_pe
     in:
       - id: nthreads

@@ -1,7 +1,7 @@
 nthreads: 8
 genomeDir:
   class: Directory
-  path: /home/kyamada/cwl/DAT2-cwl_kyamada/tool/star_pre/index/STAR_reference
+  path: /home/kyamada/cwl/rna-seq/ref/STAR_reference
 fq1:
   class: File
   path: /home/kyamada/cwl/data_cwl/seq/SRR1550989_1.fastq.gz
