@@ -46,12 +46,6 @@ outputs:
     type: 'File[]'
     'sbg:x': 487
     'sbg:y': -209
-  - id: stderr
-    outputSource:
-      - wget/stderr
-    type: stderr?
-    'sbg:x': -192.7574462890625
-    'sbg:y': 386.2242736816406
 steps:
   - id: kallisto_quant
     in:
@@ -111,8 +105,8 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../../../tool/wget/wget.cwl
-    'sbg:x': -197.8097686767578
-    'sbg:y': 534.78759765625
+    'sbg:x': -191.04071044921875
+    'sbg:y': 495.8605651855469
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
