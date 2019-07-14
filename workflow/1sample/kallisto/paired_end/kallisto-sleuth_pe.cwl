@@ -33,6 +33,10 @@ inputs:
     type: string
     'sbg:x': -333.5840148925781
     'sbg:y': 512.977783203125
+  - id: output_name
+    type: string
+    'sbg:x': -321.46368408203125
+    'sbg:y': 666.7991943359375
 outputs:
   - id: quant_output
     outputSource:
@@ -99,6 +103,8 @@ steps:
     'sbg:y': 276.3982238769531
   - id: wget
     in:
+      - id: output_name
+        source: output_name
       - id: url
         source: url
     out:
