@@ -60,8 +60,8 @@ outputs:
     outputSource:
       - wget/downloaded
     type: File
-    'sbg:x': -75.02216339111328
-    'sbg:y': 625.9910278320312
+    'sbg:x': -75
+    'sbg:y': 631.6355590820312
 steps:
   - id: kallisto_quant
     in:

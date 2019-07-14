@@ -5,250 +5,306 @@ $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: SraRunTable
-    type: File
-    'sbg:x': -929.7924194335938
-    'sbg:y': 635.075439453125
+  - id: url
+    type: string
+    'sbg:x': -1038.7169189453125
+    'sbg:y': -22.143505096435547
+  - id: output_name
+    type: string
+    'sbg:x': -1051.52392578125
+    'sbg:y': 141.50135803222656
+  - id: index_name
+    type: string?
+    'sbg:x': -791.115234375
+    'sbg:y': -221.36343383789062
+  - id: runid
+    type: string
+    'sbg:x': -115.58671569824219
+    'sbg:y': -239.21145629882812
   - id: nthreads
-    type: int
-    'sbg:x': -216.7962188720703
-    'sbg:y': -493.84906005859375
-  - id: run_ids
+    type: int?
+    'sbg:x': -522.3429565429688
+    'sbg:y': 427.2962951660156
+  - id: bootstrap_samples
+    type: int?
+    'sbg:x': -506.6899719238281
+    'sbg:y': 579.25927734375
+  - id: runid_1
     type: string
-    'sbg:x': -453.173583984375
-    'sbg:y': -574.525390625
-  - id: out_dir_name
-    type: string?
-    'sbg:x': -238.71322631835938
-    'sbg:y': -338.7886657714844
-  - id: run_ids_1
+    'sbg:x': -62.22795867919922
+    'sbg:y': 162.2218780517578
+  - id: runid_2
     type: string
-    'sbg:x': -440.4867858886719
-    'sbg:y': -215.7811279296875
-  - id: out_dir_name_1
-    type: string?
-    'sbg:x': -326.8421630859375
-    'sbg:y': -96.69364929199219
-  - id: run_ids_2
+    'sbg:x': -46.88682556152344
+    'sbg:y': 299.4562683105469
+  - id: runid_3
     type: string
-    'sbg:x': -412.1515808105469
-    'sbg:y': 239.0988006591797
-  - id: out_dir_name_2
-    type: string?
-    'sbg:x': -312.3214111328125
-    'sbg:y': 344.374267578125
-  - id: run_ids_3
+    'sbg:x': -51.81343460083008
+    'sbg:y': 418.64178466796875
+  - id: runid_4
     type: string
-    'sbg:x': -354.0685729980469
-    'sbg:y': 544.03466796875
-  - id: out_dir_name_3
-    type: string?
-    'sbg:x': -207.04592895507812
-    'sbg:y': 618.4535522460938
-  - id: run_ids_4
+    'sbg:x': -35.25373077392578
+    'sbg:y': 610.8955078125
+  - id: runid_5
     type: string
-    'sbg:x': -404.8912048339844
-    'sbg:y': 865.3063354492188
-  - id: out_dir_name_4
-    type: string?
-    'sbg:x': -286.1849060058594
-    'sbg:y': 921.3320922851562
-  - id: run_ids_5
+    'sbg:x': -7.45522403717041
+    'sbg:y': 826.2835693359375
+  - id: runid_6
     type: string
-    'sbg:x': -107.21573638916016
-    'sbg:y': 1003.2450561523438
-  - id: out_dir_name_5
-    type: string?
-    'sbg:x': -118.1063003540039
-    'sbg:y': 1141.192138671875
-  - id: run_ids_6
-    type: string
-    'sbg:x': 72
-    'sbg:y': 1108.188720703125
-  - id: out_dir_name_6
-    type: string?
-    'sbg:x': 95.80000305175781
-    'sbg:y': 1271.562255859375
+    'sbg:x': 2.1716418266296387
+    'sbg:y': 1070.537353515625
 outputs:
-  - id: output
+  - id: downloaded
     outputSource:
-      - sleuth/output
-    type: 'Directory[]'
-    'sbg:x': 1227.24462890625
-    'sbg:y': 136.96673583984375
+      - wget/downloaded
+    type: File
+    'sbg:x': -813.8831176757812
+    'sbg:y': 185.6143341064453
+  - id: index_file
+    outputSource:
+      - kallisto_index/index_file
+    type: File
+    'sbg:x': -519.322509765625
+    'sbg:y': 243.95721435546875
+  - id: fastqFiles
+    outputSource:
+      - kallisto_wf_pe/fastqFiles
+    type: 'File[]'
+    'sbg:x': 310.76190185546875
+    'sbg:y': -338.2856750488281
+  - id: quant_output
+    outputSource:
+      - kallisto_wf_pe/quant_output
+    type: Directory
+    'sbg:x': 416.344970703125
+    'sbg:y': -123
+  - id: quant_output_1
+    outputSource:
+      - kallisto_wf_pe_2/quant_output
+    type: Directory
+    'sbg:x': 348.70684814453125
+    'sbg:y': 151.4735870361328
+  - id: fastqFiles_1
+    outputSource:
+      - kallisto_wf_pe_2/fastqFiles
+    type: 'File[]'
+    'sbg:x': 442.6247863769531
+    'sbg:y': 312.2724609375
+  - id: quant_output_2
+    outputSource:
+      - kallisto_wf_pe_3/quant_output
+    type: Directory
+    'sbg:x': 330.2078857421875
+    'sbg:y': 446.03436279296875
+  - id: fastqFiles_2
+    outputSource:
+      - kallisto_wf_pe_3/fastqFiles
+    type: 'File[]'
+    'sbg:x': 432.6637878417969
+    'sbg:y': 564.1432495117188
+  - id: quant_output_3
+    outputSource:
+      - kallisto_wf_pe_4/quant_output
+    type: Directory
+    'sbg:x': 333.0538635253906
+    'sbg:y': 682.252197265625
+  - id: fastqFiles_3
+    outputSource:
+      - kallisto_wf_pe_4/fastqFiles
+    type: 'File[]'
+    'sbg:x': 344.4378662109375
+    'sbg:y': 797.5150756835938
+  - id: quant_output_4
+    outputSource:
+      - kallisto_wf_pe_5/quant_output
+    type: Directory
+    'sbg:x': 348.70684814453125
+    'sbg:y': 918.469970703125
+  - id: fastqFiles_4
+    outputSource:
+      - kallisto_wf_pe_5/fastqFiles
+    type: 'File[]'
+    'sbg:x': 362.9368591308594
+    'sbg:y': 1055.077880859375
+  - id: quant_output_5
+    outputSource:
+      - kallisto_wf_pe_6/quant_output
+    type: Directory
+    'sbg:x': 402.78082275390625
+    'sbg:y': 1177.455810546875
+  - id: fastqFiles_5
+    outputSource:
+      - kallisto_wf_pe_6/fastqFiles
+    type: 'File[]'
+    'sbg:x': 409.15399169921875
+    'sbg:y': 1313.55224609375
+  - id: quant_output_6
+    outputSource:
+      - kallisto_wf_pe_1/quant_output
+    type: Directory
+    'sbg:x': 559.3106689453125
+    'sbg:y': -53.44746398925781
+  - id: fastqFiles_6
+    outputSource:
+      - kallisto_wf_pe_1/fastqFiles
+    type: 'File[]'
+    'sbg:x': 546.5037231445312
+    'sbg:y': 90.27542114257812
 steps:
-  - id: kallisto_wf_pe
+  - id: wget
     in:
-      - id: index_file
-        source: kallisto_index/index_file
-      - id: nthreads
-        default: 4
-        source: nthreads
-      - id: out_dir_name
-        source: out_dir_name
-      - id: run_ids
-        source: run_ids
+      - id: output_name
+        source: output_name
+      - id: url
+        source: url
     out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 283.36981201171875
-    'sbg:y': -419.36981201171875
-  - id: kallisto_wf_pe_1
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-      - id: nthreads
-        source: nthreads
-      - id: out_dir_name
-        source: out_dir_name_1
-      - id: run_ids
-        source: run_ids_1
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 291.89056396484375
-    'sbg:y': -247.2603759765625
-  - id: kallisto_wf_pe_2
-    in:
-      - id: index_file
-        source: kallisto_index/index_file
-      - id: nthreads
-        source: nthreads
-      - id: out_dir_name
-        source: out_dir_name_2
-      - id: run_ids
-        source: run_ids_2
-    out:
-      - id: quant_output
-    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 276.2181396484375
-    'sbg:y': -90.38896179199219
+      - id: downloaded
+      - id: stderr
+    run: ../../../tool/wget/wget.cwl
+    'sbg:x': -875
+    'sbg:y': -16.73819351196289
   - id: kallisto_index
     in:
       - id: fasta_files
-        source:
-          - wget/downloaded
+        source: wget/downloaded
+      - id: index_name
+        source: index_name
     out:
       - id: index_file
     run: ../../../tool/kallisto/kallisto_index/kallisto_index.cwl
     label: >-
       kallisto index: builds an index from a FASTA formatted file of target
       sequences
-    'sbg:x': -414.6282043457031
-    'sbg:y': 60
+    'sbg:x': -594.0369873046875
+    'sbg:y': -31.201128005981445
+  - id: kallisto_wf_pe
+    in:
+      - id: bootstrap_samples
+        source: bootstrap_samples
+      - id: index_file
+        source: kallisto_index/index_file
+      - id: out_dir_name
+        source: runid
+      - id: runid
+        source: runid
+      - id: nthreads
+        source: nthreads
+    out:
+      - id: quant_output
+      - id: fastqFiles
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 121.716796875
+    'sbg:y': -135.70619201660156
+  - id: kallisto_wf_pe_1
+    in:
+      - id: bootstrap_samples
+        source: bootstrap_samples
+      - id: index_file
+        source: kallisto_index/index_file
+      - id: out_dir_name
+        source: runid_1
+      - id: runid
+        source: runid_1
+      - id: nthreads
+        source: nthreads
+    out:
+      - id: quant_output
+      - id: fastqFiles
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 150.9099884033203
+    'sbg:y': 73.20912170410156
+  - id: kallisto_wf_pe_2
+    in:
+      - id: bootstrap_samples
+        source: nthreads
+      - id: index_file
+        source: kallisto_index/index_file
+      - id: out_dir_name
+        source: runid_2
+      - id: runid
+        source: runid_2
+      - id: nthreads
+        source: nthreads
+    out:
+      - id: quant_output
+      - id: fastqFiles
+    run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
+    'sbg:x': 162.2940216064453
+    'sbg:y': 259.6216125488281
   - id: kallisto_wf_pe_3
     in:
+      - id: bootstrap_samples
+        source: bootstrap_samples
       - id: index_file
         source: kallisto_index/index_file
+      - id: out_dir_name
+        source: runid_3
+      - id: runid
+        source: runid_3
       - id: nthreads
         source: nthreads
-      - id: out_dir_name
-        source: out_dir_name_3
-      - id: run_ids
-        source: run_ids_3
     out:
       - id: quant_output
+      - id: fastqFiles
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 277.9009704589844
-    'sbg:y': 88
+    'sbg:x': 150.9100341796875
+    'sbg:y': 467.37945556640625
   - id: kallisto_wf_pe_4
     in:
+      - id: bootstrap_samples
+        source: bootstrap_samples
       - id: index_file
         source: kallisto_index/index_file
+      - id: out_dir_name
+        source: runid_4
+      - id: runid
+        source: runid_4
       - id: nthreads
         source: nthreads
-      - id: out_dir_name
-        source: out_dir_name_4
-      - id: run_ids
-        source: run_ids_4
     out:
       - id: quant_output
+      - id: fastqFiles
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 291.2864685058594
-    'sbg:y': 251.52561950683594
+    'sbg:x': 155.80699157714844
+    'sbg:y': 680.8070068359375
   - id: kallisto_wf_pe_5
     in:
+      - id: bootstrap_samples
+        source: bootstrap_samples
       - id: index_file
         source: kallisto_index/index_file
+      - id: out_dir_name
+        source: runid_5
+      - id: runid
+        source: runid_5
       - id: nthreads
         source: nthreads
-      - id: out_dir_name
-        source: out_dir_name_5
-      - id: run_ids
-        source: run_ids_5
     out:
       - id: quant_output
+      - id: fastqFiles
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 281.6583557128906
-    'sbg:y': 432.01708984375
+    'sbg:x': 167.98602294921875
+    'sbg:y': 917.0471801757812
   - id: kallisto_wf_pe_6
     in:
+      - id: bootstrap_samples
+        source: bootstrap_samples
       - id: index_file
         source: kallisto_index/index_file
+      - id: out_dir_name
+        source: runid_6
+      - id: runid
+        source: runid_6
       - id: nthreads
         source: nthreads
-      - id: out_dir_name
-        source: out_dir_name_6
-      - id: run_ids
-        source: run_ids_6
     out:
       - id: quant_output
+      - id: fastqFiles
     run: ../../kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
-    'sbg:x': 288.1498107910156
-    'sbg:y': 593.9658203125
-  - id: wget
-    in:
-      - id: url
-        default: >-
-          ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens//cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../../../tool/wget/wget.cwl
-    'sbg:x': -821
-    'sbg:y': 154.35723876953125
-  - id: target2gene
-    in: []
-    out:
-      - id: target2gene.txt
-    run: ../../../tool/target2gene/target2gene.cwl
-    label: target2gene
-    'sbg:x': 578.4641723632812
-    'sbg:y': -510
-  - id: sleuth
-    in:
-      - id: sample.txt
-        source: sample_for_sleuth/output1
-      - id: target2gene.txt
-        source: target2gene/target2gene.txt
-      - id: kallisto_out
-        source:
-          - kallisto_wf_pe/quant_output
-          - kallisto_wf_pe_1/quant_output
-          - kallisto_wf_pe_2/quant_output
-          - kallisto_wf_pe_3/quant_output
-          - kallisto_wf_pe_4/quant_output
-          - kallisto_wf_pe_5/quant_output
-          - kallisto_wf_pe_6/quant_output
-    out:
-      - id: output
-    run: ../../../tool/sleuth/sleuth.cwl
-    label: sleuth
-    'sbg:x': 875.9205932617188
-    'sbg:y': 142
-  - id: sample_for_sleuth
-    in:
-      - id: SraRunTable
-        source: SraRunTable
-    out:
-      - id: output1
-    run: ../../../tool/sample_for_sleuth/sample_for_sleuth.cwl
-    label: sample_for_sleuth
-    'sbg:x': 336.3584899902344
-    'sbg:y': 798.9244995117188
+    'sbg:x': 186.07598876953125
+    'sbg:y': 1198.0718994140625
 requirements:
   - class: SubworkflowFeatureRequirement
-  - class: MultipleInputFeatureRequirement
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
