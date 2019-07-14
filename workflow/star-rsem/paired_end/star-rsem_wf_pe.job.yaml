@@ -4,8 +4,7 @@ genomeDir:
 nthreads: 4
 nthreads_1: 4
 outFileNamePrefix: SRR1550989
-outSAMtype:
-  - BAM SortedByCoordinate
+outSAMtype: [BAM, SortedByCoordinate]
 quantMode: TranscriptomeSAM
 rsem_index_dir:
   class: Directory
