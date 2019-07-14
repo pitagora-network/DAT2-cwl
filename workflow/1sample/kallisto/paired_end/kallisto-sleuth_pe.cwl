@@ -37,6 +37,10 @@ inputs:
     type: string
     'sbg:x': -321.46368408203125
     'sbg:y': 666.7991943359375
+  - id: nthreads_1
+    type: int?
+    'sbg:x': 616.4044799804688
+    'sbg:y': -145.06246948242188
 outputs:
   - id: quant_output
     outputSource:
@@ -73,6 +77,8 @@ steps:
         source: fasterq_dump/reverse
       - id: index_file
         source: kallisto_index/index_file
+      - id: nthreads
+        source: nthreads_1
       - id: out_dir_name
         source: out_dir_name
     out:
