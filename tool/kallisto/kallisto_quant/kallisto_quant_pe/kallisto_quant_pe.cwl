@@ -99,7 +99,7 @@ inputs:
     doc: 'Number of threads to use (default: 1)'
   - default: kallisto_quant
     id: out_dir_name
-    type: 'string[]'
+    type: string
     label: Name of the directory to write output to
     doc: 'Name of the directory to write output to (default: kallisto_quant)'
   - id: plain_text
