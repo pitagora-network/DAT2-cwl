@@ -41,10 +41,6 @@ inputs:
     type: int
     'sbg:x': 846.3884887695312
     'sbg:y': 603.825927734375
-  - id: rsem_index_prefix
-    type: string
-    'sbg:x': 575.6548461914062
-    'sbg:y': 472.1379089355469
   - id: rsem_output_prefix
     type: string
     'sbg:x': 383.0170593261719
@@ -102,8 +98,6 @@ steps:
         source: nthreads_1
       - id: rsem_index_dir
         source: rsem_index_dir
-      - id: rsem_index_prefix
-        source: rsem_index_prefix
       - id: rsem_output_prefix
         source: rsem_output_prefix
       - id: bam

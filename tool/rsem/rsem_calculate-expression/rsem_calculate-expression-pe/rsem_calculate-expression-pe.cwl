@@ -22,7 +22,7 @@ inputs:
     label: A path to the directory contains RSEM index files
     doc: A path to the directory contains RSEM index files
   - id: rsem_index_prefix
-    type: string
+    type: string?
     label: The name of RSEM index files
     doc: The name of RSEM index files
   - id: rsem_output_prefix
