@@ -42,14 +42,20 @@ outputs:
     outputSource:
       - kallisto_quant/quant_output
     type: Directory
-    'sbg:x': 1069.9866943359375
-    'sbg:y': 58.836402893066406
+    'sbg:x': 1074.3084716796875
+    'sbg:y': 69.94403076171875
   - id: fastqFiles
     outputSource:
       - fasterq_dump/fastqFiles
     type: 'File[]'
-    'sbg:x': 487
-    'sbg:y': -209
+    'sbg:x': 387.4664306640625
+    'sbg:y': 41.82462692260742
+  - id: index_file
+    outputSource:
+      - kallisto_index/index_file
+    type: File
+    'sbg:x': 244.21517944335938
+    'sbg:y': 562
 steps:
   - id: kallisto_quant
     in:
@@ -89,8 +95,7 @@ steps:
   - id: kallisto_index
     in:
       - id: fasta_files
-        source:
-          - wget/downloaded
+        source: wget/downloaded
       - id: index_name
         source: index_name
     out:
@@ -100,7 +105,7 @@ steps:
       kallisto index: builds an index from a FASTA formatted file of target
       sequences
     'sbg:x': 181
-    'sbg:y': 313.1592102050781
+    'sbg:y': 306.36444091796875
   - id: wget
     in:
       - id: output_name
