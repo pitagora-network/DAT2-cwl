@@ -1,0 +1,8 @@
+genomeDir:
+  class: Directory
+  path: /home/kyamada/cwl/data/ref/STAR_reference
+rsem_index_dir:
+  class: Directory
+  path: /home/kyamada/cwl/data/ref/RSEM_reference
+runid: SRR1550989
+split_files: true
