@@ -1,7 +1,0 @@
-output_prefix: "canu"  # default value of type "string".
-maxThreads: 4  # default value of type "int".
-input_fastq:  # type "File"
-    class: File
-    path: a/file/path
-genomeSize: a_string  # type "string"
-assembly_directory: "canu"  # default value of type "string".
