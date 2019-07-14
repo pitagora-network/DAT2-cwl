@@ -1,0 +1,5 @@
+output_name: null
+track_location: null
+url: >-
+  ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens//cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
+use_remote_name: null
