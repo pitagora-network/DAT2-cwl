@@ -78,18 +78,6 @@ outputs:
     type: File
     'sbg:x': 166.30442810058594
     'sbg:y': 653.4480590820312
-  - id: decompressed
-    outputSource:
-      - gunzip/decompressed
-    type: stdout
-    'sbg:x': 345.7173767089844
-    'sbg:y': 136.4555206298828
-  - id: decompressed_1
-    outputSource:
-      - gunzip_1/decompressed
-    type: stdout
-    'sbg:x': 291.4213562011719
-    'sbg:y': 581.4468383789062
   - id: fastqFiles
     outputSource:
       - fasterq_dump/fastqFiles
@@ -180,6 +168,18 @@ outputs:
     type: File?
     'sbg:x': 1075.3731689453125
     'sbg:y': 216.52487182617188
+  - id: decompressed
+    outputSource:
+      - gunzip/decompressed
+    type: File
+    'sbg:x': 331.7512512207031
+    'sbg:y': 156.77114868164062
+  - id: decompressed_1
+    outputSource:
+      - gunzip_1/decompressed
+    type: File
+    'sbg:x': 300.74700927734375
+    'sbg:y': 607.0178833007812
 steps:
   - id: star_mapping_pe
     in:
