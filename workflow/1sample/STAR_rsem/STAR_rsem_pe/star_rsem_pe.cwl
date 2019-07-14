@@ -5,64 +5,264 @@ $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: bootstrap_samples
-    type: int?
-    'sbg:x': 407.0354919433594
-    'sbg:y': 438.946533203125
-  - id: index_file
-    type: File
-    'sbg:x': 407
-    'sbg:y': 97
-  - id: out_dir_name
-    type: string?
-    'sbg:x': 154.85536193847656
-    'sbg:y': 314.828857421875
-  - id: runid
-    type: string
-    'sbg:x': 71
-    'sbg:y': -95
-  - id: nthreads
-    type: int?
-    'sbg:x': 59
-    'sbg:y': 43
   - id: split_files
     type: boolean?
-    'sbg:x': 116
-    'sbg:y': -226
-outputs:
-  - id: quant_output
-    outputSource:
-      - kallisto_quant/quant_output
+    'sbg:x': 63.578125
+    'sbg:y': -170.5
+  - id: runid
+    type: string
+    'sbg:x': -53
+    'sbg:y': -51
+  - id: nthreads
+    type: int?
+    'sbg:x': 49
+    'sbg:y': 16
+  - id: url
+    type: string
+    'sbg:x': -66.4168701171875
+    'sbg:y': 268.5
+  - id: output_name
+    type: string
+    'sbg:x': -67.4168701171875
+    'sbg:y': 413.5
+  - id: url_1
+    type: string
+    'sbg:x': -69.4168701171875
+    'sbg:y': 540.5
+  - id: output_name_1
+    type: string
+    'sbg:x': 1.5831298828125
+    'sbg:y': 672.4910278320312
+  - id: genomeDir
     type: Directory
-    'sbg:x': 1052
-    'sbg:y': 108
+    'sbg:x': 442.7164001464844
+    'sbg:y': 576.263671875
+  - id: outSAMtype
+    type: 'string[]'
+    'sbg:x': 594.737548828125
+    'sbg:y': -139.2462615966797
+  - id: nthreads_1
+    type: int
+    'sbg:x': 442.49749755859375
+    'sbg:y': -188.26368713378906
+  - id: outFileNamePrefix
+    type: string?
+    'sbg:x': 702.6878051757812
+    'sbg:y': -279.81964111328125
+  - id: quantMode
+    type: string
+    'sbg:x': 863.7288818359375
+    'sbg:y': -276.7984924316406
+  - id: reference_dir
+    type: Directory
+    'sbg:x': 713.904052734375
+    'sbg:y': 738.223876953125
+  - id: rsem_output_prefix
+    type: string
+    'sbg:x': 1312.9659423828125
+    'sbg:y': 475.67462158203125
+  - id: nthreads_2
+    type: int
+    'sbg:x': 1172.3731689453125
+    'sbg:y': 347.144287109375
+outputs:
+  - id: downloaded
+    outputSource:
+      - wget/downloaded
+    type: File
+    'sbg:x': 84.86039733886719
+    'sbg:y': 177.76771545410156
+  - id: downloaded_1
+    outputSource:
+      - wget_1/downloaded
+    type: File
+    'sbg:x': 166.30442810058594
+    'sbg:y': 653.4480590820312
+  - id: decompressed
+    outputSource:
+      - gunzip/decompressed
+    type: stdout
+    'sbg:x': 345.7173767089844
+    'sbg:y': 136.4555206298828
+  - id: decompressed_1
+    outputSource:
+      - gunzip_1/decompressed
+    type: stdout
+    'sbg:x': 291.4213562011719
+    'sbg:y': 581.4468383789062
   - id: fastqFiles
     outputSource:
       - fasterq_dump/fastqFiles
     type: 'File[]'
-    'sbg:x': 487
-    'sbg:y': -209
+    'sbg:x': 397.6965026855469
+    'sbg:y': -337.4228820800781
+  - id: starIndex
+    outputSource:
+      - star_index/starIndex
+    type: Directory
+    'sbg:x': 555.8880615234375
+    'sbg:y': 866.5149536132812
+  - id: rsem_index_1
+    outputSource:
+      - rsem_index/rsem_index
+    type: Directory
+    'sbg:x': 1353.44140625
+    'sbg:y': 675.0596923828125
+  - id: transcript_sorted_bam_bai
+    outputSource:
+      - rsem_calculate_expression_pe/transcript_sorted_bam_bai
+    type: File?
+    'sbg:x': 1716.6353759765625
+    'sbg:y': -182.92042541503906
+  - id: transcript_sorted_bam
+    outputSource:
+      - rsem_calculate_expression_pe/transcript_sorted_bam
+    type: File?
+    'sbg:x': 1723.2149658203125
+    'sbg:y': -30.273653030395508
+  - id: transcript_bam
+    outputSource:
+      - rsem_calculate_expression_pe/transcript_bam
+    type: File
+    'sbg:x': 1746.901611328125
+    'sbg:y': 114.47759246826172
+  - id: stat
+    outputSource:
+      - rsem_calculate_expression_pe/stat
+    type: Directory
+    'sbg:x': 1739.006103515625
+    'sbg:y': 252.64923095703125
+  - id: isoforms_result
+    outputSource:
+      - rsem_calculate_expression_pe/isoforms_result
+    type: File
+    'sbg:x': 1731.110595703125
+    'sbg:y': 398.7164001464844
+  - id: genes_result
+    outputSource:
+      - rsem_calculate_expression_pe/genes_result
+    type: File
+    'sbg:x': 1727.1627197265625
+    'sbg:y': 539.5089721679688
+  - id: transcriptomesam
+    outputSource:
+      - star_mapping_pe/transcriptomesam
+    type: File?
+    'sbg:x': 1077.09814453125
+    'sbg:y': -435.57427978515625
+  - id: SJ.out.tab
+    outputSource:
+      - star_mapping_pe/SJ.out.tab
+    type: File?
+    'sbg:x': 1149.4737548828125
+    'sbg:y': -306.6141052246094
+  - id: mappingstats
+    outputSource:
+      - star_mapping_pe/mappingstats
+    type: File?
+    'sbg:x': 1183.6876220703125
+    'sbg:y': -178.96981811523438
+  - id: Log.progress.out
+    outputSource:
+      - star_mapping_pe/Log.progress.out
+    type: File?
+    'sbg:x': 1149.4737548828125
+    'sbg:y': -55.27329635620117
+  - id: Log.out
+    outputSource:
+      - star_mapping_pe/Log.out
+    type: File?
+    'sbg:x': 1109.99609375
+    'sbg:y': 78.9505844116211
+  - id: bamRemDups
+    outputSource:
+      - star_mapping_pe/bamRemDups
+    type: File?
+    'sbg:x': 1075.3731689453125
+    'sbg:y': 216.52487182617188
 steps:
-  - id: kallisto_quant
+  - id: star_mapping_pe
     in:
-      - id: bootstrap_samples
-        source: bootstrap_samples
       - id: fq1
         source: fasterq_dump/forward
       - id: fq2
         source: fasterq_dump/reverse
-      - id: index_file
-        source: index_file
-      - id: out_dir_name
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: nthreads
+        source: nthreads_1
+      - id: outSAMtype
         source:
-          - out_dir_name
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: outFileNamePrefix
+        source: outFileNamePrefix
     out:
-      - id: quant_output
+      - id: aligned
+      - id: bamRemDups
+      - id: mappingstats
+      - id: readspergene
+      - id: transcriptomesam
+      - id: Log.out
+      - id: Log.progress.out
+      - id: SJ.out.tab
+    run: ../../../../tool/star_pre/star_mapping/star_mapping_pe/star_mapping_pe.cwl
+    label: 'STAR mapping: running mapping jobs.'
+    'sbg:x': 838.7960205078125
+    'sbg:y': 21.890546798706055
+  - id: star_index
+    in:
+      - id: genomeDir
+        source: genomeDir
+      - id: genomeFastaFiles
+        source: gunzip_1/decompressed
+      - id: sjdbGTFfile
+        source: gunzip/decompressed
+    out:
+      - id: starIndex
+    run: ../../../../tool/star_pre/star_index/star_index.cwl
+    label: 'STAR genomeGenerate: Generating genome indexes.'
+    'sbg:x': 448
+    'sbg:y': 293
+  - id: rsem_index
+    in:
+      - id: gtf
+        source: gunzip/decompressed
+      - id: reference_fasta
+        source: gunzip_1/decompressed
+      - id: reference_dir
+        source: reference_dir
+    out:
+      - id: rsem_index
+    run: ../../../../tool/rsem/rsem_index/rsem_index.cwl
+    label: 'rsem-prepare-reference: preparing reference sequences'
+    'sbg:x': 1064.8458251953125
+    'sbg:y': 583.2686767578125
+  - id: rsem_calculate_expression_pe
+    in:
+      - id: nthreads
+        source: nthreads_2
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+      - id: rsem_output_prefix
+        source: rsem_output_prefix
+      - id: bam
+        source: star_mapping_pe/aligned
+    out:
+      - id: genes_result
+      - id: isoforms_result
+      - id: stat
+      - id: transcript_bam
+      - id: transcript_sorted_bam
+      - id: transcript_sorted_bam_bai
     run: >-
-      ../../../../tool/kallisto/kallisto_quant/kallisto_quant_pe/kallisto_quant_pe.cwl
-    label: 'kallisto quant: runs the quantification algorithm'
-    'sbg:x': 803
-    'sbg:y': 106
+      ../../../../tool/rsem/rsem_calculate-expression/rsem_calculate-expression-pe/rsem_calculate-expression-pe.cwl
+    label: >-
+      rsem-calculate-expression: calculate expression values (BAM input version
+      CWL)
+    'sbg:x': 1347.76123046875
+    'sbg:y': 59.47512435913086
   - id: fasterq_dump
     in:
       - id: nthreads
@@ -77,8 +277,52 @@ steps:
       - id: reverse
     run: ../../../../tool/fasterq-dump/fasterq-dump.cwl
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': 329
-    'sbg:y': -67
+    'sbg:x': 241
+    'sbg:y': -88.47512817382812
+  - id: wget
+    in:
+      - id: output_name
+        source: output_name
+      - id: url
+        source: url
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../../tool/wget/wget.cwl
+    'sbg:x': 71
+    'sbg:y': 330
+  - id: wget_1
+    in:
+      - id: output_name
+        source: output_name_1
+      - id: url
+        source: url_1
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../../tool/wget/wget.cwl
+    'sbg:x': 115
+    'sbg:y': 513
+  - id: gunzip
+    in:
+      - id: file
+        source: wget/downloaded
+    out:
+      - id: decompressed
+      - id: stderr
+    run: ../../../../tool/gunzip/gunzip.cwl
+    'sbg:x': 232.47264099121094
+    'sbg:y': 301.3756103515625
+  - id: gunzip_1
+    in:
+      - id: file
+        source: wget_1/downloaded
+    out:
+      - id: decompressed
+      - id: stderr
+    run: ../../../../tool/gunzip/gunzip.cwl
+    'sbg:x': 263.5733947753906
+    'sbg:y': 458.9490051269531
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
