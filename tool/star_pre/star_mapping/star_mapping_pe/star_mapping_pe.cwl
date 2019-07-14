@@ -314,12 +314,34 @@ outputs:
           var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
           return p+"Aligned.toTranscriptome.out.bam";
         }
+  - id: Log.out
+    type: File?
+    outputBinding:
+      glob: >-
+        ${   var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";  
+        return p+"Log.out"; }
+  - id: Log.progress.out
+    type: File?
+    outputBinding:
+      glob: |
+        ${
+          var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
+          return p+"Log.progress.out";
+        }
+  - id: SJ.out.tab
+    type: File?
+    outputBinding:
+      glob: |
+        ${
+          var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
+          return p+"SJ.out.tab";
+        }
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
 label: 'STAR mapping: running mapping jobs.'
 requirements:
-  - class: InlineJavascriptRequirement
+  - class: ShellCommandRequirement
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.genomeDir)
