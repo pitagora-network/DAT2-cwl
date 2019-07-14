@@ -99,8 +99,8 @@ steps:
     label: >-
       kallisto index: builds an index from a FASTA formatted file of target
       sequences
-    'sbg:x': 181.15472412109375
-    'sbg:y': 276.3982238769531
+    'sbg:x': 181
+    'sbg:y': 313.1592102050781
   - id: wget
     in:
       - id: output_name

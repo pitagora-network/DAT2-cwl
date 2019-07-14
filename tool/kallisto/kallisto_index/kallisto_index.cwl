@@ -9,7 +9,7 @@ baseCommand:
   - index
 inputs:
   - id: fasta_files
-    type: 'File[]'
+    type: File
     inputBinding:
       position: 10
     label: The Fasta file supplied can be either in plaintext or gzipped format
