@@ -13,7 +13,7 @@ outputs:
   - id: target2gene.txt
     type: File
     outputBinding:
-      glob: output
+      glob: target2gene.txt
 label: target2gene
 requirements:
   - class: DockerRequirement
