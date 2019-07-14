@@ -1,0 +1,13 @@
+bootstrap_samples: 100
+index_name: kallisto.idx
+nthreads: 4
+output_name: Homo_sapiens.GRCh38.cdna.all.fa.gz
+runid: SRR1550989
+runid_1: SRR1551005
+runid_2: SRR1551011
+runid_3: SRR1551050
+runid_4: SRR1551057
+runid_5: SRR1551071
+runid_6: SRR1551091
+url: >-
+  ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens//cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz

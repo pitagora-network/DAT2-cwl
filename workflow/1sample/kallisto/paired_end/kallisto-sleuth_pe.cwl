@@ -56,6 +56,12 @@ outputs:
     type: File
     'sbg:x': 244.21517944335938
     'sbg:y': 562
+  - id: downloaded
+    outputSource:
+      - wget/downloaded
+    type: File
+    'sbg:x': -75.02216339111328
+    'sbg:y': 625.9910278320312
 steps:
   - id: kallisto_quant
     in:

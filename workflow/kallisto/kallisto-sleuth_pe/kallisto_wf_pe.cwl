@@ -54,6 +54,7 @@ steps:
       - id: index_file
         source: index_file
       - id: out_dir_name
+        default: []
         source:
           - out_dir_name
     out:
@@ -61,8 +62,8 @@ steps:
     run: >-
       ../../../tool/kallisto/kallisto_quant/kallisto_quant_pe/kallisto_quant_pe.cwl
     label: 'kallisto quant: runs the quantification algorithm'
-    'sbg:x': 803
-    'sbg:y': 106
+    'sbg:x': 787.4363403320312
+    'sbg:y': 105.44190216064453
   - id: fasterq_dump
     in:
       - id: nthreads
@@ -77,8 +78,8 @@ steps:
       - id: reverse
     run: ../../../tool/fasterq-dump/fasterq-dump.cwl
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': 329
-    'sbg:y': -67
+    'sbg:x': 326.4195556640625
+    'sbg:y': -63.12933349609375
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
