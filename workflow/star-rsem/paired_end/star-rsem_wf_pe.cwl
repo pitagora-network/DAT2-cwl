@@ -45,6 +45,10 @@ inputs:
     type: string
     'sbg:x': 383.0170593261719
     'sbg:y': 439.4827880859375
+  - id: rsem_index_prefix
+    type: string?
+    'sbg:x': 429.6654357910156
+    'sbg:y': 584.3202514648438
 outputs:
   - id: isoforms_result
     outputSource:
@@ -98,6 +102,8 @@ steps:
         source: nthreads_1
       - id: rsem_index_dir
         source: rsem_index_dir
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
       - id: rsem_output_prefix
         source: rsem_output_prefix
       - id: bam

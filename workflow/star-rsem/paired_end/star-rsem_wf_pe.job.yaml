@@ -6,6 +6,7 @@ nthreads_1: 4
 outFileNamePrefix: SRR1550989
 outSAMtype: [BAM, SortedByCoordinate]
 quantMode: TranscriptomeSAM
+rsem_index_prefix: RSEM_reference
 rsem_index_dir:
   class: Directory
   path: /home/kyamada/cwl/data/ref/RSEM_reference
