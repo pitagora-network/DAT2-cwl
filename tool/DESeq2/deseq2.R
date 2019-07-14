@@ -2,6 +2,7 @@
 
 args1 = commandArgs(trailingOnly=TRUE)[1] # sample2condition.txt
 args2 = commandArgs(trailingOnly=TRUE)[2] # target2gene.txt
+print(args2)
 
 # DESeq2、tximportのインストール・読み込み
 if (!requireNamespace("BiocManager", quietly = TRUE))

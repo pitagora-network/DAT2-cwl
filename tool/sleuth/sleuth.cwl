@@ -44,7 +44,12 @@ outputs:
     type: File
     outputBinding:
       glob: WT_res.sorted.txt
+  - id: ENST00000503567.5.pdf
+    type: File
+    outputBinding:
+      glob: ENST00000503567.5.pdf
 label: sleuth
 requirements:
   - class: DockerRequirement
     dockerPull: dat2-cwl/sleuth
+  - class: InlineJavascriptRequirement
