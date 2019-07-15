@@ -1,7 +1,4 @@
 #!/bin/sh
-#set -eux
-
-#SraRunTable=$1
 
 # まずはヘッダーを作成
 echo 'sample\tgroup\tpath' > sample2condition.txt

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 set -eux
 
 # SraRunTable.txtの５項目目のサンプル名と12項目目にあるコンディション情報を抜き出す
