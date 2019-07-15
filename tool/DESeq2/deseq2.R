@@ -4,11 +4,11 @@ args1 = commandArgs(trailingOnly=TRUE)[1] # sample2condition.txt
 args2 = commandArgs(trailingOnly=TRUE)[2] # target2gene.txt
 print(args2)
 
-# DESeq2、tximportのインストール・読み込み
-if (!requireNamespace("BiocManager", quietly = TRUE))
-   install.packages("BiocManager")
-BiocManager::install("DESeq2")
-BiocManager::install("tximport")
+# DESeq2、tximportのインストール・読み込み→Dockerfileへ。
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+#   install.packages("BiocManager")
+#BiocManager::install("DESeq2")
+#BiocManager::install("tximport")
 library(DESeq2)
 library(tximport) # 警告が出るがエラーではないので無視する
 
