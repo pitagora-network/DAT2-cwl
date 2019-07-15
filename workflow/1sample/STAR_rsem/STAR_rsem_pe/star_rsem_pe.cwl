@@ -176,14 +176,14 @@ outputs:
     outputSource:
       - gunzip/decompressed
     type: File
-    'sbg:x': 331.7512512207031
-    'sbg:y': 156.77114868164062
+    'sbg:x': 311.7137451171875
+    'sbg:y': 152.9326171875
   - id: decompressed_1
     outputSource:
       - gunzip_1/decompressed
     type: File
-    'sbg:x': 300.74700927734375
-    'sbg:y': 607.0178833007812
+    'sbg:x': 298.83099365234375
+    'sbg:y': 731.3574829101562
 steps:
   - id: star_mapping_pe
     in:
@@ -311,26 +311,6 @@ steps:
     run: ../../../../tool/wget/wget.cwl
     'sbg:x': 115
     'sbg:y': 513
-  - id: gunzip
-    in:
-      - id: file
-        source: wget/downloaded
-    out:
-      - id: decompressed
-      - id: stderr
-    run: ../../../../tool/gunzip/gunzip.cwl
-    'sbg:x': 232.47264099121094
-    'sbg:y': 301.3756103515625
-  - id: gunzip_1
-    in:
-      - id: file
-        source: wget_1/downloaded
-    out:
-      - id: decompressed
-      - id: stderr
-    run: ../../../../tool/gunzip/gunzip.cwl
-    'sbg:x': 263.5733947753906
-    'sbg:y': 458.9490051269531
   - id: for_star_index_dir_sh
     in: []
     out:
@@ -339,6 +319,26 @@ steps:
     label: for_star_index_dir
     'sbg:x': 443.72637939453125
     'sbg:y': 640.2338256835938
+  - id: gunzip
+    in:
+      - id: file
+        source: wget/downloaded
+    out:
+      - id: decompressed
+      - id: stderr
+    run: ../../../../tool/gunzip/gunzip.cwl
+    'sbg:x': 286.28826904296875
+    'sbg:y': 299.0993347167969
+  - id: gunzip_1
+    in:
+      - id: file
+        source: wget_1/downloaded
+    out:
+      - id: decompressed
+      - id: stderr
+    run: ../../../../tool/gunzip/gunzip.cwl
+    'sbg:x': 314.4669189453125
+    'sbg:y': 570.039794921875
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'

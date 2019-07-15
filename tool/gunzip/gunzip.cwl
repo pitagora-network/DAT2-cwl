@@ -4,7 +4,6 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 baseCommand:
   - gunzip
-  - '--stdout'
 inputs:
   - id: file
     type: File
@@ -20,5 +19,4 @@ requirements:
   - class: DockerRequirement
     dockerPull: 'alpine:3.9'
   - class: InlineJavascriptRequirement
-stdout: $(inputs.file.nameroot)
 stderr: gunzip-stderr.log
