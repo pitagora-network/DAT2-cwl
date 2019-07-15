@@ -1,0 +1,14 @@
+sleuth.R:
+  class: File
+  path: ./sleuth.R
+sample.txt:
+  class: File
+  path: /home/kyamada/cwl/data_cwl/sample.txt
+target2gene.txt:
+  class: File
+  path: /home/kyamada/cwl/data_cwl/target2gene.txt
+#kallisto_out: 
+  #class: Directory
+  #path: /home/kyamada/cwl/out_test/kallisto/kallisto_quant_pe/SRR1550989
+  #class: Directory
+  #path: /home/kyamada/cwl/out_test/kallisto/kallisto_quant_pe/SRR1551091

@@ -1,0 +1,3 @@
+SraRunTable:
+  class: File
+  path: /Users/yamada/cwl/local_data/SraRunTable.txt
