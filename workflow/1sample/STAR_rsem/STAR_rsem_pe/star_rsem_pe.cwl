@@ -176,8 +176,8 @@ outputs:
     outputSource:
       - gunzip/decompressed
     type: File
-    'sbg:x': 311.7137451171875
-    'sbg:y': 152.9326171875
+    'sbg:x': 332.8544921875
+    'sbg:y': 397.69403076171875
   - id: decompressed_1
     outputSource:
       - gunzip_1/decompressed
@@ -327,8 +327,8 @@ steps:
       - id: decompressed
       - id: stderr
     run: ../../../../tool/gunzip/gunzip.cwl
-    'sbg:x': 286.28826904296875
-    'sbg:y': 299.0993347167969
+    'sbg:x': 235.87713623046875
+    'sbg:y': 312.9230041503906
   - id: gunzip_1
     in:
       - id: file

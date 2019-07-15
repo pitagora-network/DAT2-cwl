@@ -41,8 +41,8 @@ steps:
       - id: decompressed
       - id: stderr
     run: ../../tool/gunzip/gunzip.cwl
-    'sbg:x': -62
-    'sbg:y': -43
+    'sbg:x': -75
+    'sbg:y': -36
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
