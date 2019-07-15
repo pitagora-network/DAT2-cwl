@@ -17,9 +17,9 @@ outputs:
   - id: decompressed
     outputSource:
       - gunzip/decompressed
-    type: stdout
-    'sbg:x': 204
-    'sbg:y': -23
+    type: File
+    'sbg:x': 145
+    'sbg:y': 59
 steps:
   - id: wget
     in:
@@ -42,7 +42,7 @@ steps:
       - id: stderr
     run: ../../tool/gunzip/gunzip.cwl
     'sbg:x': -62
-    'sbg:y': -20
+    'sbg:y': -43
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
