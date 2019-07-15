@@ -51,12 +51,12 @@ inputs:
     'sbg:y': -276.7984924316406
   - id: rsem_output_prefix
     type: string
-    'sbg:x': 1312.9659423828125
-    'sbg:y': 475.67462158203125
+    'sbg:x': 1351.030517578125
+    'sbg:y': -117.96273803710938
   - id: nthreads_2
     type: int
-    'sbg:x': 1172.3731689453125
-    'sbg:y': 347.144287109375
+    'sbg:x': 1214.0328369140625
+    'sbg:y': 306.4683837890625
   - id: reference_prefix
     type: string
     'sbg:x': 897.921142578125
@@ -239,14 +239,16 @@ steps:
         source: gunzip_1/decompressed
       - id: num_threads
         source: num_threads
+      - id: reference_dir
+        source: for_rsem_index_dir_sh/RSEM_reference
       - id: reference_prefix
         source: reference_prefix
     out:
       - id: rsem_index
     run: ../../../../tool/rsem/rsem_index/rsem_index.cwl
     label: 'rsem-prepare-reference: preparing reference sequences'
-    'sbg:x': 1064.8458251953125
-    'sbg:y': 583.2686767578125
+    'sbg:x': 1064
+    'sbg:y': 581.4988403320312
   - id: rsem_calculate_expression_pe
     in:
       - id: nthreads
@@ -269,8 +271,8 @@ steps:
     label: >-
       rsem-calculate-expression: calculate expression values (BAM input version
       CWL)
-    'sbg:x': 1347.76123046875
-    'sbg:y': 59.47512435913086
+    'sbg:x': 1474.599609375
+    'sbg:y': 78.51522827148438
   - id: fasterq_dump
     in:
       - id: nthreads
@@ -339,6 +341,14 @@ steps:
     run: ../../../../tool/gunzip/gunzip.cwl
     'sbg:x': 314.4669189453125
     'sbg:y': 570.039794921875
+  - id: for_rsem_index_dir_sh
+    in: []
+    out:
+      - id: RSEM_reference
+    run: ../../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
+    label: for_rsem_index_dir
+    'sbg:x': 711.541015625
+    'sbg:y': 924.6641845703125
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
