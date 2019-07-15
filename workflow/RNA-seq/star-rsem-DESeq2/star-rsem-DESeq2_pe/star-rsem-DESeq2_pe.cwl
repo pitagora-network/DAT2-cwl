@@ -1013,7 +1013,7 @@ steps:
     out:
       - id: downloaded
       - id: stderr
-    run: ../../../tool/wget/wget.cwl
+    run: ../../../../tool/wget/wget.cwl
     'sbg:x': -2117.332275390625
     'sbg:y': -423.4134826660156
   - id: wget_1
@@ -1025,7 +1025,7 @@ steps:
     out:
       - id: downloaded
       - id: stderr
-    run: ../../../tool/wget/wget.cwl
+    run: ../../../../tool/wget/wget.cwl
     'sbg:x': -2153.620361328125
     'sbg:y': 89.62873840332031
   - id: gunzip
@@ -1035,7 +1035,7 @@ steps:
     out:
       - id: decompressed
       - id: stderr
-    run: ../../../tool/gunzip/gunzip.cwl
+    run: ../../../../tool/gunzip/gunzip.cwl
     'sbg:x': -1834.89697265625
     'sbg:y': -422.5365295410156
   - id: gunzip_1
@@ -1045,7 +1045,7 @@ steps:
     out:
       - id: decompressed
       - id: stderr
-    run: ../../../tool/gunzip/gunzip.cwl
+    run: ../../../../tool/gunzip/gunzip.cwl
     'sbg:x': -1820.98828125
     'sbg:y': 168.24818420410156
   - id: star_index
@@ -1060,7 +1060,7 @@ steps:
         source: gunzip/decompressed
     out:
       - id: starIndex
-    run: ../../../tool/star_pre/star_index/star_index.cwl
+    run: ../../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': -1420.1297607421875
     'sbg:y': -425.753173828125
@@ -1078,7 +1078,7 @@ steps:
         source: reference_prefix
     out:
       - id: rsem_index
-    run: ../../../tool/rsem/rsem_index/rsem_index.cwl
+    run: ../../../../tool/rsem/rsem_index/rsem_index.cwl
     label: 'rsem-prepare-reference: preparing reference sequences'
     'sbg:x': -1378.09716796875
     'sbg:y': 197.94418334960938
@@ -1086,7 +1086,7 @@ steps:
     in: []
     out:
       - id: STAR_reference
-    run: ../../../tool/for_star_index_dir/for_star_index_dir.cwl
+    run: ../../../../tool/for_star_index_dir/for_star_index_dir.cwl
     label: for_star_index_dir
     'sbg:x': -1872.7210693359375
     'sbg:y': -127.8011474609375
@@ -1094,7 +1094,7 @@ steps:
     in: []
     out:
       - id: RSEM_reference
-    run: ../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
+    run: ../../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
     label: for_rsem_index_dir
     'sbg:x': -1730.2900390625
     'sbg:y': 543.0032958984375
