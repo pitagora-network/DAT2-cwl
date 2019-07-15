@@ -2,14 +2,11 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
+id: target2gene
 baseCommand:
   - Rscript
-  - target2gene.R
-inputs:
-  - id: target2gene.R
-    type: File?
-    inputBinding:
-      position: 0
+  - /workdir/target2gene.R
+inputs: []
 outputs:
   - id: target2gene.txt
     type: File
