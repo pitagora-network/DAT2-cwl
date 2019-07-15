@@ -176,8 +176,8 @@ outputs:
     outputSource:
       - gunzip/decompressed
     type: File
-    'sbg:x': 332.8544921875
-    'sbg:y': 397.69403076171875
+    'sbg:x': 328.63433837890625
+    'sbg:y': 430.6567077636719
   - id: decompressed_1
     outputSource:
       - gunzip_1/decompressed
