@@ -1,3 +1,3 @@
--file:
-    class: File
-    path: /home/kyamada/cwl/DAT2-cwl_kyamada/tool/wget/test/Homo_sapiens.GRCh38.cdna.all.fa.gz
+file:
+  class: File
+  path: /home/kyamada/cwl/DAT2-cwl_kyamada/tool/wget/test/Homo_sapiens.GRCh38.cdna.all.fa.gz
