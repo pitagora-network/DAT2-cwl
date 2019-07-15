@@ -11,12 +11,14 @@ inputs:
     inputBinding:
       position: 0
 outputs:
-  - id: output1
+  - id: sample.txt
     type: File
+    outputBinding:
+      glob: sample.txt
 label: sample_for_sleuth
 arguments:
   - position: 0
 requirements:
-  - class: InlineJavascriptRequirement
   - class: DockerRequirement
     dockerPull: dat2-cwl/sample_for_sleuth
+  - class: InlineJavascriptRequirement
