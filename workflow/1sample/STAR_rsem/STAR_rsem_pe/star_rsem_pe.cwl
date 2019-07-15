@@ -33,10 +33,6 @@ inputs:
     type: string
     'sbg:x': 1.5831298828125
     'sbg:y': 672.4910278320312
-  - id: genomeDir
-    type: Directory
-    'sbg:x': 442.7164001464844
-    'sbg:y': 576.263671875
   - id: outSAMtype
     type: 'string[]'
     'sbg:x': 594.737548828125
@@ -53,10 +49,6 @@ inputs:
     type: string
     'sbg:x': 863.7288818359375
     'sbg:y': -276.7984924316406
-  - id: reference_dir
-    type: Directory
-    'sbg:x': 713.904052734375
-    'sbg:y': 738.223876953125
   - id: rsem_output_prefix
     type: string
     'sbg:x': 1312.9659423828125
@@ -69,6 +61,10 @@ inputs:
     type: string
     'sbg:x': 897.921142578125
     'sbg:y': 498.4407653808594
+  - id: num_threads
+    type: int?
+    'sbg:x': 898.9850463867188
+    'sbg:y': 783.0050048828125
 outputs:
   - id: downloaded
     outputSource:
@@ -92,8 +88,8 @@ outputs:
     outputSource:
       - star_index/starIndex
     type: Directory
-    'sbg:x': 555.8880615234375
-    'sbg:y': 866.5149536132812
+    'sbg:x': 623.2985229492188
+    'sbg:y': 811.71142578125
   - id: rsem_index_1
     outputSource:
       - rsem_index/rsem_index
@@ -218,7 +214,7 @@ steps:
   - id: star_index
     in:
       - id: genomeDir
-        source: genomeDir
+        source: for_star_index_dir_sh/STAR_reference
       - id: genomeFastaFiles
         source: gunzip_1/decompressed
       - id: sjdbGTFfile
@@ -227,16 +223,16 @@ steps:
       - id: starIndex
     run: ../../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
-    'sbg:x': 530.3084716796875
-    'sbg:y': 294.7512512207031
+    'sbg:x': 600.0497436523438
+    'sbg:y': 295.7512512207031
   - id: rsem_index
     in:
       - id: gtf
         source: gunzip/decompressed
       - id: reference_fasta
         source: gunzip_1/decompressed
-      - id: reference_dir
-        source: reference_dir
+      - id: num_threads
+        source: num_threads
       - id: reference_prefix
         source: reference_prefix
     out:
@@ -329,6 +325,14 @@ steps:
     run: ../../../../tool/gunzip/gunzip.cwl
     'sbg:x': 263.5733947753906
     'sbg:y': 458.9490051269531
+  - id: for_star_index_dir_sh
+    in: []
+    out:
+      - id: STAR_reference
+    run: ../../../../tool/for_star_index_dir/for_star_index_dir.cwl
+    label: for_star_index_dir
+    'sbg:x': 443.72637939453125
+    'sbg:y': 640.2338256835938
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'

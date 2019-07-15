@@ -1,9 +1,9 @@
 #target2gene.txtを作成
 
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
+#if (!requireNamespace("BiocManager", quietly = TRUE))
+#    install.packages("BiocManager")
 #BiocManager::install("biomaRt", version = "3.8")
-BiocManager::install("biomaRt")
+#BiocManager::install("biomaRt")
 
 install.packages("dplyr")
 

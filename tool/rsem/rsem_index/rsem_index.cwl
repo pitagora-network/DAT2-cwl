@@ -37,7 +37,7 @@ inputs:
       position: 1
       prefix: '--num-threads'
   - id: reference_dir
-    type: Directory
+    type: Directory?
   - id: reference_prefix
     type: string
 outputs:

@@ -4,6 +4,7 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 baseCommand:
   - Rscript
+  - target2gene.R
 inputs:
   - id: target2gene.R
     type: File?
