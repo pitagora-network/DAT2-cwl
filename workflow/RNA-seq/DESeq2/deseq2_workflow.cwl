@@ -1,136 +1,86 @@
-cwlVersion: v1.0
 class: Workflow
-
-requirements:
-  - class: InlineJavascriptRequirement
-  - class: StepInputExpressionRequirement
-
-inputs:
-
-  run_id: string
-  read_type: string
-
-  genome_directory: Directory
-  gtf: File
-  output_sam_type: string
-  output_name_prefix: string
-  output_sam_strand_field: string
-
-  annotation_file: File
-
-  stringtie_result_file: string
-
-  thread: int?
-
-outputs:
-  pfastq-dump_fq1_result:
-    type: File
-    outputSource: pfastq-dump/dump_fq1
-  pfastq-dump_fq2_result:
-    type: File
-    outputSource: pfastq-dump/dump_fq2
-  pfastq-dump_version_result:
-    type: File
-    outputSource: pfastq-dump/pfastq-dump_version
-  star_version_stdout_result:
-    type: File
-    outputSource: star_stdout/star_version_stdout
-  star_version_result:
-    type: File
-    outputSource: star_version/version_output
-  star_result:
-    type: File
-    outputSource: star/star_bam
-  cufflinks_version_stderr_result:
-    type: File
-    outputSource: cufflinks_stderr/cufflinks_version_stderr
-  cufflinks_version_result:
-    type: File
-    outputSource: cufflinks_version/version_output
-  cufflinks_result:
-    type:
-      type: array
-      items: File
-    outputSource: cufflinks/cufflinks_result
-  stringtie_version_stdout_result:
-    type: File
-    outputSource: stringtie_stdout/stringtie_version_stdout
-  stringtie_version_result:
-    type: File
-    outputSource: stringtie_version/version_output
-  stringtie_result:
-    type: File
-    outputSource: stringtie/stringtie_result
-
-steps:
-  pfastq-dump:
-    run: prefetch_pfastq-dump.cwl
-    in:
-      run_id: run_id
-      read_type: read_type
-      thread: thread
-    out: [dump_fq1, dump_fq2, pfastq-dump_version]
-  star_stdout:
-    run: star-version.cwl
-    in: []
-    out: [star_version_stdout]
-  star_version:
-    run: ngs-version.cwl
-    in:
-      infile: star_stdout/star_version_stdout
-    out: [version_output]
-  star:
-    run: star-pe.cwl
-    in:
-      fq1: pfastq-dump/dump_fq1
-      fq2: pfastq-dump/dump_fq2
-      genome_directory: genome_directory
-      gtf: gtf
-      out_sam_type: output_sam_type
-      out_name_prefix: output_name_prefix
-      out_sam_strand_field: output_sam_strand_field
-      process: thread
-    out: [star_bam]
-  cufflinks_stderr:
-    run: cufflinks-version.cwl
-    in: []
-    out: [cufflinks_version_stderr]
-  cufflinks_version:
-    run: ngs-version.cwl
-    in:
-      infile: cufflinks_stderr/cufflinks_version_stderr
-    out: [version_output]
-  cufflinks:
-    run: cufflinks.cwl
-    in:
-      annotation: annotation_file
-      bam: star/star_bam
-      process: thread
-    out: [cufflinks_result]
-  stringtie_stdout:
-    run: stringtie-version.cwl
-    in: []
-    out: [stringtie_version_stdout]
-  stringtie_version:
-    run: ngs-version.cwl
-    in:
-      infile: stringtie_stdout/stringtie_version_stdout
-    out: [version_output]
-  stringtie:
-    run: stringtie.cwl
-    in:
-      bam: star/star_bam
-      annotation: annotation_file
-      output: stringtie_result_file
-    out: [stringtie_result]
-
+cwlVersion: v1.0
 $namespaces:
-  s: https://schema.org/
-  edam: http://edamontology.org/
-
-s:license: https://spdx.org/licenses/Apache-2.0
-s:codeRepository: https://github.com/pitagora-network/pitagora-cwl
-
+  edam: 'http://edamontology.org/'
+  s: 'https://schema.org/'
+  sbg: 'https://www.sevenbridges.com/'
+inputs:
+  - id: sample.txt
+    type: File?
+    'sbg:x': -262
+    'sbg:y': 50
+outputs:
+  - id: WT_res.sorted.txt
+    outputSource:
+      - sleuth/WT_res.sorted.txt
+    type: File
+    'sbg:x': 370
+    'sbg:y': -378.9877624511719
+  - id: volcanoplot.png
+    outputSource:
+      - sleuth/volcanoplot.png
+    type: File
+    'sbg:x': 511
+    'sbg:y': -294
+  - id: LRT_res.sorted.txt
+    outputSource:
+      - sleuth/LRT_res.sorted.txt
+    type: File
+    'sbg:x': 394
+    'sbg:y': -159
+  - id: kallisto_res.txt
+    outputSource:
+      - sleuth/kallisto_res.txt
+    type: File
+    'sbg:x': 520
+    'sbg:y': -58
+  - id: heatmap.pdf
+    outputSource:
+      - sleuth/heatmap.pdf
+    type: File
+    'sbg:x': 395
+    'sbg:y': 16
+  - id: ENST00000503567.5.png
+    outputSource:
+      - sleuth/ENST00000503567.5.png
+    type: File
+    'sbg:x': 526.6065063476562
+    'sbg:y': 88.00071716308594
+  - id: ENST00000503567.5.pdf
+    outputSource:
+      - sleuth/ENST00000503567.5.pdf
+    type: File
+    'sbg:x': 384.60650634765625
+    'sbg:y': 179.00071716308594
+steps:
+  - id: sleuth
+    in:
+      - id: sample.txt
+        source: sample.txt
+      - id: target2gene.txt
+        source: target2gene/target2gene.txt
+    out:
+      - id: output
+    run: ../../../tool/sleuth/sleuth.cwl
+    label: sleuth
+    'sbg:x': 16
+    'sbg:y': -26
+  - id: target2gene
+    in: []
+    out:
+      - id: target2gene.txt
+    run: ../../../tool/target2gene/target2gene.cwl
+    label: target2gene
+    'sbg:x': -297
+    'sbg:y': -152
+requirements: []
 $schemas:
-  - https://schema.org/docs/schema_org_rdfa.html
-  - http://edamontology.org/EDAM_1.18.owl
+  - 'https://schema.org/docs/schema_org_rdfa.html'
+  - 'http://edamontology.org/EDAM_1.18.owl'
+'s:author':
+  - class: 's:Person'
+    's:email': 'mailto:inutano@gmail.com'
+    's:identifier': 'https://orcid.org/0000-0003-3777-5945'
+    's:name': Tazro Ohta
+'s:codeRepository': 'https://github.com/pitagora-network/pitagora-cwl'
+'s:license': 'https://spdx.org/licenses/Apache-2.0'
