@@ -1,8 +1,9 @@
 #! /usr/bin/Rscript
 
-args1 = commandArgs(trailingOnly=TRUE)[1] # sample2condition.txt
-args2 = commandArgs(trailingOnly=TRUE)[2] # target2gene.txt
-print(args2)
+args1 <- commandArgs(trailingOnly=TRUE)[1] # sample2condition.txt
+args2 <- commandArgs(trailingOnly=TRUE)[2] # target2gene.txt
+
+dir.create('output')
 
 # DESeq2、tximportのインストール・読み込み→Dockerfileへ。
 #if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -56,13 +57,13 @@ head(res_wt_naomit_annot_sort, 20)
 mcols(res_wt_naomit)
 
 # データフレームの保存
-write.table(res_wt_naomit_annot_sort, "Wald-test.result.txt", sep="\t", quote=F, row.names=F)
+write.table(res_wt_naomit_annot_sort, "output/Wald-test.result.txt", sep="\t", quote=F, row.names=F)
 
 # 作図して表示させるコマンド
 plotMA(res_wt, ylim=c(-2, 2))
 
 # 保存するには下記コマンド
-png("MAplot.png") # EPS形式にしたい場合はpostscript("MAplot.eps")を使う
+png("output/MAplot.png") # EPS形式にしたい場合はpostscript("MAplot.eps")を使う
 plotMA(res_wt, ylim=c(-2, 2))
 dev.off()
 
@@ -74,7 +75,7 @@ head(res_wt_naomit_annot_sort)
 plotCounts(dds, gene="ENSG00000169710", intgroup="condition")
 
 # 保存する際はMA-plotと同様に
-png("ENSG00000169710.png")
+png("output/ENSG00000169710.png")
 plotCounts(dds, gene="ENSG00000169710", intgroup="condition")
 dev.off()
 
