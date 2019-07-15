@@ -69,6 +69,10 @@ inputs:
     type: string?
     'sbg:x': 496.88629150390625
     'sbg:y': 128.92861938476562
+  - id: rsem_index_prefix
+    type: string?
+    'sbg:x': 1298.7064208984375
+    'sbg:y': 57.05970001220703
 outputs:
   - id: downloaded
     outputSource:
@@ -211,7 +215,8 @@ steps:
       - id: Log.out
       - id: Log.progress.out
       - id: SJ.out.tab
-    run: ../../../../tool/star_pre/star_mapping/star_mapping_pe/star_mapping_pe.cwl
+    run: >-
+      ../../../../../tool/star_pre/star_mapping/star_mapping_pe/star_mapping_pe.cwl
     label: 'STAR mapping: running mapping jobs.'
     'sbg:x': 838.7960205078125
     'sbg:y': 21.890546798706055
@@ -227,7 +232,7 @@ steps:
         source: gunzip/decompressed
     out:
       - id: starIndex
-    run: ../../../../tool/star_pre/star_index/star_index.cwl
+    run: ../../../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': 600.0497436523438
     'sbg:y': 295.7512512207031
@@ -245,7 +250,7 @@ steps:
         source: reference_prefix
     out:
       - id: rsem_index
-    run: ../../../../tool/rsem/rsem_index/rsem_index.cwl
+    run: ../../../../../tool/rsem/rsem_index/rsem_index.cwl
     label: 'rsem-prepare-reference: preparing reference sequences'
     'sbg:x': 1064
     'sbg:y': 581.4988403320312
@@ -255,6 +260,8 @@ steps:
         source: nthreads_2
       - id: rsem_index_dir
         source: rsem_index/rsem_index
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
       - id: rsem_output_prefix
         source: rsem_output_prefix
       - id: bam
@@ -267,12 +274,12 @@ steps:
       - id: transcript_sorted_bam
       - id: transcript_sorted_bam_bai
     run: >-
-      ../../../../tool/rsem/rsem_calculate-expression/rsem_calculate-expression-pe/rsem_calculate-expression-pe.cwl
+      ../../../../../tool/rsem/rsem_calculate-expression/rsem_calculate-expression-pe/rsem_calculate-expression-pe.cwl
     label: >-
       rsem-calculate-expression: calculate expression values (BAM input version
       CWL)
-    'sbg:x': 1474.599609375
-    'sbg:y': 78.51522827148438
+    'sbg:x': 1466.7064208984375
+    'sbg:y': 145.46517944335938
   - id: fasterq_dump
     in:
       - id: nthreads
@@ -285,7 +292,7 @@ steps:
       - id: fastqFiles
       - id: forward
       - id: reverse
-    run: ../../../../tool/fasterq-dump/fasterq-dump.cwl
+    run: ../../../../../tool/fasterq-dump/fasterq-dump.cwl
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
     'sbg:x': 241
     'sbg:y': -88.47512817382812
@@ -298,7 +305,7 @@ steps:
     out:
       - id: downloaded
       - id: stderr
-    run: ../../../../tool/wget/wget.cwl
+    run: ../../../../../tool/wget/wget.cwl
     'sbg:x': 71
     'sbg:y': 330
   - id: wget_1
@@ -310,14 +317,14 @@ steps:
     out:
       - id: downloaded
       - id: stderr
-    run: ../../../../tool/wget/wget.cwl
+    run: ../../../../../tool/wget/wget.cwl
     'sbg:x': 115
     'sbg:y': 513
   - id: for_star_index_dir_sh
     in: []
     out:
       - id: STAR_reference
-    run: ../../../../tool/for_star_index_dir/for_star_index_dir.cwl
+    run: ../../../../../tool/for_star_index_dir/for_star_index_dir.cwl
     label: for_star_index_dir
     'sbg:x': 443.72637939453125
     'sbg:y': 640.2338256835938
@@ -328,7 +335,7 @@ steps:
     out:
       - id: decompressed
       - id: stderr
-    run: ../../../../tool/gunzip/gunzip.cwl
+    run: ../../../../../tool/gunzip/gunzip.cwl
     'sbg:x': 235.87713623046875
     'sbg:y': 312.9230041503906
   - id: gunzip_1
@@ -338,14 +345,14 @@ steps:
     out:
       - id: decompressed
       - id: stderr
-    run: ../../../../tool/gunzip/gunzip.cwl
+    run: ../../../../../tool/gunzip/gunzip.cwl
     'sbg:x': 314.4669189453125
     'sbg:y': 570.039794921875
   - id: for_rsem_index_dir_sh
     in: []
     out:
       - id: RSEM_reference
-    run: ../../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
+    run: ../../../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
     label: for_rsem_index_dir
     'sbg:x': 711.541015625
     'sbg:y': 924.6641845703125

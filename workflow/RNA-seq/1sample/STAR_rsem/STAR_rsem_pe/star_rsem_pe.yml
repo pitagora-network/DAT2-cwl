@@ -10,6 +10,7 @@ output_name: Homo_sapiens.GRCh38.95.gtf.gz
 output_name_1: Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 quantMode: TranscriptomeSAM
 reference_prefix: RSEM_reference
+rsem_index_prefix: RSEM_reference
 rsem_output_prefix: SRR1550989
 runThreadN: '4'
 runid: SRR1550989
