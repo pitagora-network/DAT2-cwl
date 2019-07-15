@@ -13,10 +13,12 @@ inputs:
 outputs:
   - id: output1
     type: File
+    outputBinding:
+      glob: sample2condition.txt
 label: sample2condition
 arguments:
   - position: 0
 requirements:
-  - class: InlineJavascriptRequirement
   - class: DockerRequirement
     dockerPull: dat2-cwl/sample2condition
+  - class: InlineJavascriptRequirement

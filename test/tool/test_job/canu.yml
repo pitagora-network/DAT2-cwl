@@ -1,4 +1,0 @@
-input_fastq:
-  class: File
-  path: ../../data/ERR034597_1.fastq
-genomeSize: 100m

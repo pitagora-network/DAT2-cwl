@@ -1,0 +1,20 @@
+extract: false  # type "boolean"
+file:  # type "File"
+    class: File
+    path: a/file/path
+gzip: false  # type "boolean"
+verbose: false  # type "boolean"
+rsem_index_prefix: a_string  # type "string" (optional)
+nthreads_2: 0  # type "int"
+rsem_output_prefix: a_string  # type "string"
+rsem_index_dir:  # type "Directory"
+    class: Directory
+    path: a/directory/path
+quantMode: a_string  # type "string"
+outSAMtype:  # array of type "string"
+  - a_string
+outFileNamePrefix: a_string  # type "string" (optional)
+nthreads_1: 0  # type "int"
+nthreads: 0  # type "int" (optional)
+runid: a_string  # type "string"
+split_files: false  # type "boolean" (optional)

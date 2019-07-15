@@ -1,3 +1,3 @@
-file:
+file: # type "File"
   class: File
-  location: ../../data/test.tar.gz
+  path: ../../data/Homo_sapiens.GRCh38.cdna.all.chr22.fa.gz

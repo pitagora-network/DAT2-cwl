@@ -41,7 +41,7 @@ LRT_table <- sleuth_results(LRT, 'reduced:full', 'lrt', show_all=F)
 LRT_table <- LRT_table[order(LRT_table$pval),]
 
 # 結果を保存する
-write.table(LRT_table, "LRT_res.sorted.txt", row.names=F, quote=F, sep="\t")
+write.table(LRT_table, "output/LRT_res.sorted.txt", row.names=F, quote=F, sep="\t")
 
 #発現量をボックスプロットおよびヒートマップで図示する
 library(ggplot2)

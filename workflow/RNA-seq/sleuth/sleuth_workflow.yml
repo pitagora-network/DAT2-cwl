@@ -1,3 +1,0 @@
-sample.txt:
-  class: File
-  path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/sleuth/sample.txt

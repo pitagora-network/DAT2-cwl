@@ -1,14 +1,11 @@
-gtf:
-  class: File
-  path: >-
-    /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.95.gtf
-num_threads: 4
-reference_dir:
-  class: Directory
-  path: >-
-    RSEM_reference/
-reference_fasta:
-  class: File
-  path: >-
-    /home/kyamada/cwl/data/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa
-reference_prefix: RSEM_reference
+reference_prefix: a_string  # type "string"
+reference_dir:  # type "Directory" (optional)
+    class: Directory
+    path: a/directory/path
+num_threads: 0  # type "int" (optional)
+reference_fasta:  # type "File"
+    class: File
+    path: a/file/path
+gtf:  # type "File"
+    class: File
+    path: a/file/path
