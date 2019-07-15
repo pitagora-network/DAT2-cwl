@@ -5,3 +5,6 @@ RUN mkdir output
 
 COPY deseq2.R /workdir
 RUN chmod 777 deseq2.R
+
+RUN Rscript -e 'BiocManager::install("DESeq2")'
+RUN Rscript -e 'BiocManager::install("tximport")'

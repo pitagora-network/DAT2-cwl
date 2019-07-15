@@ -6,7 +6,8 @@ num_threads: 4
 reference_dir:
   class: Directory
   path: >-
-    /home/kyamada/cwl/DAT2-cwl_kyamada/tool/rsem/index/RSEM_reference
+    #/home/kyamada/cwl/DAT2-cwl_kyamada/tool/rsem/index/RSEM_reference
+    RSEM_reference/
 reference_fasta:
   class: File
   path: >-
