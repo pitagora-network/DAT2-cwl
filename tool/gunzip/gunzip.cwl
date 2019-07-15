@@ -1,22 +1,17 @@
-class: CommandLineTool
+#!/usr/bin/env cwl-runner
 cwlVersion: v1.0
-$namespaces:
-  sbg: 'https://www.sevenbridges.com/'
-baseCommand:
-  - gunzip
-inputs:
-  - id: file
-    type: File
-    inputBinding:
-      position: 0
-outputs:
-  - id: decompressed
-    type: File
-  - id: stderr
-    type: stderr
+class: CommandLineTool
 doc: decompression tool using Lempel-Ziv coding (LZ77)
 requirements:
-  - class: DockerRequirement
-    dockerPull: 'alpine:3.9'
-  - class: InlineJavascriptRequirement
-#stderr: gunzip-stderr.log
+  DockerRequirement:
+    dockerPull: alpine:3.9
+baseCommand: [gunzip, --stdout]
+inputs:
+  file:
+    type: File
+    inputBinding: {}
+outputs:
+  decompressed: stdout
+  stderr: stderr
+stdout: $(inputs.file.nameroot)
+stderr: gunzip-stderr.log
