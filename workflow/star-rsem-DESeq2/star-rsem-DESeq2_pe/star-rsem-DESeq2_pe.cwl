@@ -65,6 +65,18 @@ inputs:
     type: int
     'sbg:x': -1297.6160888671875
     'sbg:y': 831.091064453125
+  - id: runThreadN
+    type: string?
+    'sbg:x': -1539.2545166015625
+    'sbg:y': -609.5090942382812
+  - id: reference_prefix
+    type: string
+    'sbg:x': -1455.0606689453125
+    'sbg:y': 34.887454986572266
+  - id: num_threads
+    type: int?
+    'sbg:x': -1462.75927734375
+    'sbg:y': 400.5768737792969
 outputs:
   - id: downloaded
     outputSource:
@@ -84,12 +96,6 @@ outputs:
     type: stdout
     'sbg:x': -1716
     'sbg:y': -570.3131713867188
-  - id: decompressed_1
-    outputSource:
-      - gunzip_1/decompressed
-    type: stdout
-    'sbg:x': -1781.7138671875
-    'sbg:y': 329.3472595214844
   - id: starIndex
     outputSource:
       - star_index/starIndex
@@ -690,6 +696,12 @@ outputs:
     type: File?
     'sbg:x': 340.52288818359375
     'sbg:y': 2120.9208984375
+  - id: decompressed_1
+    outputSource:
+      - gunzip_1/decompressed
+    type: stdout
+    'sbg:x': -1788.1802978515625
+    'sbg:y': 340.03179931640625
 steps:
   - id: star_rsem_wf_pe
     in:
@@ -1042,20 +1054,28 @@ steps:
         source: for_star_index_dir_sh/STAR_reference
       - id: genomeFastaFiles
         source: gunzip_1/decompressed
+      - id: runThreadN
+        source: runThreadN
       - id: sjdbGTFfile
         source: gunzip/decompressed
     out:
       - id: starIndex
     run: ../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
-    'sbg:x': -1449.165283203125
-    'sbg:y': -445.2682800292969
+    'sbg:x': -1420.1297607421875
+    'sbg:y': -425.753173828125
   - id: rsem_index
     in:
       - id: gtf
         source: gunzip/decompressed
       - id: reference_fasta
         source: gunzip_1/decompressed
+      - id: num_threads
+        source: num_threads
+      - id: reference_dir
+        source: for_rsem_index_dir_sh/RSEM_reference
+      - id: reference_prefix
+        source: reference_prefix
     out:
       - id: rsem_index
     run: ../../../tool/rsem/rsem_index/rsem_index.cwl
@@ -1070,6 +1090,14 @@ steps:
     label: for_star_index_dir
     'sbg:x': -1872.7210693359375
     'sbg:y': -127.8011474609375
+  - id: for_rsem_index_dir_sh
+    in: []
+    out:
+      - id: RSEM_reference
+    run: ../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
+    label: for_rsem_index_dir
+    'sbg:x': -1730.2900390625
+    'sbg:y': 543.0032958984375
 requirements:
   - class: SubworkflowFeatureRequirement
 $schemas:

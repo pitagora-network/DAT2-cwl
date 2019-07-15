@@ -18,8 +18,14 @@ outputs:
     outputSource:
       - gunzip/decompressed
     type: File
-    'sbg:x': 145
-    'sbg:y': 59
+    'sbg:x': 142
+    'sbg:y': 53
+  - id: stderr
+    outputSource:
+      - gunzip/stderr
+    type: stderr
+    'sbg:x': 153
+    'sbg:y': -131
 steps:
   - id: wget
     in:
