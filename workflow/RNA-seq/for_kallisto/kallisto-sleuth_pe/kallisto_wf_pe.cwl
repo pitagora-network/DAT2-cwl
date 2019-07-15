@@ -65,7 +65,7 @@ steps:
     out:
       - id: quant_output
     run: >-
-      ../../../tool/kallisto/kallisto_quant/kallisto_quant_pe/kallisto_quant_pe.cwl
+      ../../../../tool/kallisto/kallisto_quant/kallisto_quant_pe/kallisto_quant_pe.cwl
     label: 'kallisto quant: runs the quantification algorithm'
     'sbg:x': 787.4363403320312
     'sbg:y': 105.44190216064453
@@ -81,7 +81,7 @@ steps:
       - id: fastqFiles
       - id: forward
       - id: reverse
-    run: ../../../tool/fasterq-dump/fasterq-dump.cwl
+    run: ../../../../tool/fasterq-dump/fasterq-dump.cwl
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
     'sbg:x': 326.4195556640625
     'sbg:y': -63.12933349609375

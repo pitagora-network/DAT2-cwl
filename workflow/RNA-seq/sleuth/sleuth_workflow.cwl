@@ -60,14 +60,8 @@ steps:
       - id: target2gene.txt
         source: target2gene/target2gene.txt
     out:
-      - id: kallisto_res.txt
-      - id: LRT_res.sorted.txt
-      - id: ENST00000503567.5.png
-      - id: heatmap.pdf
-      - id: volcanoplot.png
-      - id: WT_res.sorted.txt
-      - id: ENST00000503567.5.pdf
-    run: ../../tool/sleuth/sleuth.cwl
+      - id: output
+    run: ../../../tool/sleuth/sleuth.cwl
     label: sleuth
     'sbg:x': 16
     'sbg:y': -26
@@ -75,7 +69,7 @@ steps:
     in: []
     out:
       - id: target2gene.txt
-    run: ../../tool/target2gene/target2gene.cwl
+    run: ../../../tool/target2gene/target2gene.cwl
     label: target2gene
     'sbg:x': -297
     'sbg:y': -152

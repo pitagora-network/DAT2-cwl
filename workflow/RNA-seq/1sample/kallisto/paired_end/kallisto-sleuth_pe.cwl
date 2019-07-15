@@ -84,7 +84,7 @@ steps:
     out:
       - id: quant_output
     run: >-
-      ../../../../tool/kallisto/kallisto_quant/kallisto_quant_pe/kallisto_quant_pe.cwl
+      ../../../../../tool/kallisto/kallisto_quant/kallisto_quant_pe/kallisto_quant_pe.cwl
     label: 'kallisto quant: runs the quantification algorithm'
     'sbg:x': 789.8097534179688
     'sbg:y': 64.03107452392578
@@ -100,7 +100,7 @@ steps:
       - id: fastqFiles
       - id: forward
       - id: reverse
-    run: ../../../../tool/fasterq-dump/fasterq-dump.cwl
+    run: ../../../../../tool/fasterq-dump/fasterq-dump.cwl
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
     'sbg:x': 329
     'sbg:y': -118.56182098388672
@@ -112,7 +112,7 @@ steps:
         source: index_name
     out:
       - id: index_file
-    run: ../../../../tool/kallisto/kallisto_index/kallisto_index.cwl
+    run: ../../../../../tool/kallisto/kallisto_index/kallisto_index.cwl
     label: >-
       kallisto index: builds an index from a FASTA formatted file of target
       sequences
@@ -127,7 +127,7 @@ steps:
     out:
       - id: downloaded
       - id: stderr
-    run: ../../../../tool/wget/wget.cwl
+    run: ../../../../../tool/wget/wget.cwl
     'sbg:x': -191.04071044921875
     'sbg:y': 495.8605651855469
 requirements: []
