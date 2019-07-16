@@ -8,6 +8,3 @@ runid: SRR1550989
 split_files: true
 url: >-
   ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens//cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
-SraRunTable:
-  class: File
-  path: /home/kyamada/cwl/data_cwl/SraRunTable.txt
