@@ -57,6 +57,10 @@ inputs:
     type: int?
     'sbg:x': -724.1057739257812
     'sbg:y': 865.9691772460938
+  - id: SraRunTable
+    type: File
+    'sbg:x': 856
+    'sbg:y': 902.8764038085938
 outputs:
   - id: downloaded
     outputSource:
@@ -76,84 +80,48 @@ outputs:
     type: 'File[]'
     'sbg:x': 310.76190185546875
     'sbg:y': -338.2856750488281
-  - id: quant_output
-    outputSource:
-      - kallisto_wf_pe/quant_output
-    type: Directory
-    'sbg:x': 416.344970703125
-    'sbg:y': -123
-  - id: quant_output_1
-    outputSource:
-      - kallisto_wf_pe_2/quant_output
-    type: Directory
-    'sbg:x': 348.70684814453125
-    'sbg:y': 151.4735870361328
   - id: fastqFiles_1
     outputSource:
       - kallisto_wf_pe_2/fastqFiles
     type: 'File[]'
     'sbg:x': 442.6247863769531
     'sbg:y': 312.2724609375
-  - id: quant_output_2
-    outputSource:
-      - kallisto_wf_pe_3/quant_output
-    type: Directory
-    'sbg:x': 330.2078857421875
-    'sbg:y': 446.03436279296875
   - id: fastqFiles_2
     outputSource:
       - kallisto_wf_pe_3/fastqFiles
     type: 'File[]'
     'sbg:x': 432.6637878417969
     'sbg:y': 564.1432495117188
-  - id: quant_output_3
-    outputSource:
-      - kallisto_wf_pe_4/quant_output
-    type: Directory
-    'sbg:x': 333.0538635253906
-    'sbg:y': 682.252197265625
   - id: fastqFiles_3
     outputSource:
       - kallisto_wf_pe_4/fastqFiles
     type: 'File[]'
     'sbg:x': 344.4378662109375
     'sbg:y': 797.5150756835938
-  - id: quant_output_4
-    outputSource:
-      - kallisto_wf_pe_5/quant_output
-    type: Directory
-    'sbg:x': 348.70684814453125
-    'sbg:y': 918.469970703125
   - id: fastqFiles_4
     outputSource:
       - kallisto_wf_pe_5/fastqFiles
     type: 'File[]'
     'sbg:x': 362.9368591308594
     'sbg:y': 1055.077880859375
-  - id: quant_output_5
-    outputSource:
-      - kallisto_wf_pe_6/quant_output
-    type: Directory
-    'sbg:x': 402.78082275390625
-    'sbg:y': 1177.455810546875
   - id: fastqFiles_5
     outputSource:
       - kallisto_wf_pe_6/fastqFiles
     type: 'File[]'
     'sbg:x': 409.15399169921875
     'sbg:y': 1313.55224609375
-  - id: quant_output_6
-    outputSource:
-      - kallisto_wf_pe_1/quant_output
-    type: Directory
-    'sbg:x': 559.3106689453125
-    'sbg:y': -53.44746398925781
   - id: fastqFiles_6
     outputSource:
       - kallisto_wf_pe_1/fastqFiles
     type: 'File[]'
     'sbg:x': 546.5037231445312
     'sbg:y': 90.27542114257812
+  - id: output
+    outputSource:
+      - sleuth/output
+    type: Directory
+    'sbg:x': 1348.909423828125
+    'sbg:y': 316.36029052734375
 steps:
   - id: wget
     in:
@@ -321,8 +289,48 @@ steps:
     run: ../../for_kallisto/kallisto-sleuth_pe/kallisto_wf_pe.cwl
     'sbg:x': 186.07598876953125
     'sbg:y': 1198.0718994140625
+  - id: sleuth
+    in:
+      - id: sample.txt
+        source: sample_for_sleuth/sample.txt
+      - id: target2gene.txt
+        source: target2gene/target2gene.txt
+      - id: kallisto_out
+        source:
+          - kallisto_wf_pe/quant_output
+          - kallisto_wf_pe_1/quant_output
+          - kallisto_wf_pe_2/quant_output
+          - kallisto_wf_pe_3/quant_output
+          - kallisto_wf_pe_4/quant_output
+          - kallisto_wf_pe_5/quant_output
+          - kallisto_wf_pe_6/quant_output
+    out:
+      - id: output
+    run: ../../../../tool/sleuth/sleuth.cwl
+    label: sleuth
+    'sbg:x': 1143.80908203125
+    'sbg:y': 322.94586181640625
+  - id: target2gene
+    in: []
+    out:
+      - id: target2gene.txt
+    run: ../../../../tool/target2gene/target2gene.cwl
+    label: target2gene
+    'sbg:x': 931.1271362304688
+    'sbg:y': -57.742576599121094
+  - id: sample_for_sleuth
+    in:
+      - id: SraRunTable
+        source: SraRunTable
+    out:
+      - id: sample.txt
+    run: ../../../../tool/sample_for_sleuth/sample_for_sleuth.cwl
+    label: sample_for_sleuth
+    'sbg:x': 1047.9063720703125
+    'sbg:y': 636.7926635742188
 requirements:
   - class: SubworkflowFeatureRequirement
+  - class: MultipleInputFeatureRequirement
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'

@@ -252,8 +252,8 @@ steps:
       - id: rsem_index
     run: ../../../../../tool/rsem/rsem_index/rsem_index.cwl
     label: 'rsem-prepare-reference: preparing reference sequences'
-    'sbg:x': 1064
-    'sbg:y': 581.4988403320312
+    'sbg:x': 1066.9779052734375
+    'sbg:y': 564.1251831054688
   - id: rsem_calculate_expression_pe
     in:
       - id: nthreads
