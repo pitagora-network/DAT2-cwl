@@ -1,6 +1,3 @@
 SraRunTable:
   class: File
   path: /home/kyamada/cwl/data_cwl/SraRunTable.txt
-target2gene.txt:
-  class: File
-  path: /home/kyamada/cwl/data_cwl/target2gene.txt
