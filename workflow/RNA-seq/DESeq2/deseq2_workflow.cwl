@@ -5,74 +5,55 @@ $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: sample.txt
-    type: File?
-    'sbg:x': -262
-    'sbg:y': 50
+  - id: SraRunTable
+    type: File
+    'sbg:x': -302.41400146484375
+    'sbg:y': 82
+  - id: rsem_out
+    type: 'File[]'
+    'sbg:x': 51
+    'sbg:y': 198
 outputs:
-  - id: WT_res.sorted.txt
+  - id: output
     outputSource:
-      - sleuth/WT_res.sorted.txt
-    type: File
-    'sbg:x': 370
-    'sbg:y': -378.9877624511719
-  - id: volcanoplot.png
-    outputSource:
-      - sleuth/volcanoplot.png
-    type: File
-    'sbg:x': 511
-    'sbg:y': -294
-  - id: LRT_res.sorted.txt
-    outputSource:
-      - sleuth/LRT_res.sorted.txt
-    type: File
-    'sbg:x': 394
-    'sbg:y': -159
-  - id: kallisto_res.txt
-    outputSource:
-      - sleuth/kallisto_res.txt
-    type: File
-    'sbg:x': 520
-    'sbg:y': -58
-  - id: heatmap.pdf
-    outputSource:
-      - sleuth/heatmap.pdf
-    type: File
-    'sbg:x': 395
-    'sbg:y': 16
-  - id: ENST00000503567.5.png
-    outputSource:
-      - sleuth/ENST00000503567.5.png
-    type: File
-    'sbg:x': 526.6065063476562
-    'sbg:y': 88.00071716308594
-  - id: ENST00000503567.5.pdf
-    outputSource:
-      - sleuth/ENST00000503567.5.pdf
-    type: File
-    'sbg:x': 384.60650634765625
-    'sbg:y': 179.00071716308594
+      - deseq2/output
+    type: Directory
+    'sbg:x': 459.58599853515625
+    'sbg:y': -75
 steps:
-  - id: sleuth
+  - id: sample2condition
     in:
-      - id: sample.txt
-        source: sample.txt
+      - id: SraRunTable
+        source: SraRunTable
+    out:
+      - id: output1
+    run: ../../../tool/sample2condition/sample2condition.cwl
+    label: sample2condition
+    'sbg:x': -96
+    'sbg:y': 85
+  - id: deseq2
+    in:
+      - id: sample2condition.txt
+        source: sample2condition/output1
       - id: target2gene.txt
         source: target2gene/target2gene.txt
+      - id: rsem_out
+        source:
+          - rsem_out
     out:
       - id: output
-    run: ../../../tool/sleuth/sleuth.cwl
-    label: sleuth
-    'sbg:x': 16
-    'sbg:y': -26
+    run: ../../../tool/DESeq2/deseq2.cwl
+    label: deseq2
+    'sbg:x': 274
+    'sbg:y': -75
   - id: target2gene
     in: []
     out:
       - id: target2gene.txt
     run: ../../../tool/target2gene/target2gene.cwl
     label: target2gene
-    'sbg:x': -297
-    'sbg:y': -152
+    'sbg:x': -93
+    'sbg:y': -161
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'

@@ -1,3 +1,18 @@
 SraRunTable:
   class: File
   path: /home/kyamada/cwl/data_cwl/SraRunTable.txt
+rsem_out:
+  -class: File
+   path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/RNA-seq/DESeq2/SRR1550989
+  -class: File
+   path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/RNA-seq/DESeq2/SRR1551005
+  -class: File
+   path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/RNA-seq/DESeq2/SRR1551011
+  -class: File
+   path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/RNA-seq/DESeq2/SRR1551050
+  -class: File
+   path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/RNA-seq/DESeq2/SRR1551057
+  -class: File
+   path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/RNA-seq/DESeq2/SRR1551071
+  -class: File
+   path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/RNA-seq/DESeq2/SRR1551091
