@@ -5,7 +5,7 @@
 #BiocManager::install("biomaRt", version = "3.8")
 #BiocManager::install("biomaRt")
 
-install.packages("dplyr")
+#install.packages("dplyr")
 
 # 下記コマンドで対象種のDataset名を確認する
 ensembl = biomaRt::useEnsembl(biomart="ensembl")
