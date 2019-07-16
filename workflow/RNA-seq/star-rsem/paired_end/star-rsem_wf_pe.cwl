@@ -49,6 +49,10 @@ inputs:
     type: int
     'sbg:x': 772.1691284179688
     'sbg:y': 393.73382568359375
+  - id: rsem_index_prefix
+    type: string?
+    'sbg:x': 607
+    'sbg:y': 507.3333435058594
 outputs:
   - id: fastqFiles
     outputSource:
@@ -157,6 +161,8 @@ steps:
         source: nthreads_2
       - id: rsem_index_dir
         source: rsem_index_dir
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
       - id: rsem_output_prefix
         source: rsem_output_prefix
       - id: bam

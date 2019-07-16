@@ -77,6 +77,10 @@ inputs:
     type: int?
     'sbg:x': -1462.75927734375
     'sbg:y': 400.5768737792969
+  - id: rsem_index_prefix
+    type: string?
+    'sbg:x': -1215.6456298828125
+    'sbg:y': 1108.1956787109375
 outputs:
   - id: downloaded
     outputSource:
@@ -728,6 +732,8 @@ steps:
         source: runid
       - id: nthreads_2
         source: nthreads_2
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
     out:
       - id: fastqFiles
       - id: transcriptomesam
@@ -771,6 +777,8 @@ steps:
         source: runid_1
       - id: nthreads_2
         source: nthreads_2
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
     out:
       - id: fastqFiles
       - id: transcriptomesam
@@ -814,6 +822,8 @@ steps:
         source: runid_2
       - id: nthreads_2
         source: nthreads_2
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
     out:
       - id: fastqFiles
       - id: transcriptomesam
@@ -857,6 +867,8 @@ steps:
         source: runid_3
       - id: nthreads_2
         source: nthreads_2
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
     out:
       - id: fastqFiles
       - id: transcriptomesam
@@ -900,6 +912,8 @@ steps:
         source: runid_4
       - id: nthreads_2
         source: nthreads_2
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
     out:
       - id: fastqFiles
       - id: transcriptomesam
@@ -943,6 +957,8 @@ steps:
         source: runid_5
       - id: nthreads_2
         source: nthreads_2
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
     out:
       - id: fastqFiles
       - id: transcriptomesam
@@ -986,6 +1002,8 @@ steps:
         source: runid_6
       - id: nthreads_2
         source: nthreads_2
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
     out:
       - id: fastqFiles
       - id: transcriptomesam

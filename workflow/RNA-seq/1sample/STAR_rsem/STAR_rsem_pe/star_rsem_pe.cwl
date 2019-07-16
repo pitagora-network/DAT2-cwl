@@ -63,8 +63,8 @@ inputs:
     'sbg:y': 498.4407653808594
   - id: num_threads
     type: int?
-    'sbg:x': 898.9850463867188
-    'sbg:y': 783.0050048828125
+    'sbg:x': 1015.3621826171875
+    'sbg:y': 822.696044921875
   - id: runThreadN
     type: string?
     'sbg:x': 496.88629150390625
@@ -354,8 +354,8 @@ steps:
       - id: RSEM_reference
     run: ../../../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
     label: for_rsem_index_dir
-    'sbg:x': 711.541015625
-    'sbg:y': 924.6641845703125
+    'sbg:x': 750.696044921875
+    'sbg:y': 917.0963134765625
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
