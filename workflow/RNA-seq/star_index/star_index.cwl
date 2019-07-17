@@ -32,6 +32,30 @@ outputs:
     type: Directory
     'sbg:x': 313
     'sbg:y': -55
+  - id: decompressed
+    outputSource:
+      - gunzip_1/decompressed
+    type: stdout
+    'sbg:x': -352.08599853515625
+    'sbg:y': 209.5
+  - id: decompressed_1
+    outputSource:
+      - gunzip/decompressed
+    type: stdout
+    'sbg:x': 1.91400146484375
+    'sbg:y': -341.5
+  - id: downloaded
+    outputSource:
+      - wget/downloaded
+    type: File
+    'sbg:x': -354.08599853515625
+    'sbg:y': -405.5
+  - id: downloaded_1
+    outputSource:
+      - wget_1/downloaded
+    type: File
+    'sbg:x': -537.0859985351562
+    'sbg:y': 134.5
 steps:
   - id: for_star_index_dir_sh
     in: []
@@ -46,11 +70,11 @@ steps:
       - id: genomeDir
         source: for_star_index_dir_sh/STAR_reference
       - id: genomeFastaFiles
-        source: wget_1/downloaded
+        source: gunzip_1/decompressed
       - id: runThreadN
         source: runThreadN
       - id: sjdbGTFfile
-        source: wget/downloaded
+        source: gunzip/decompressed
     out:
       - id: starIndex
     run: ../../../tool/star_pre/star_index/star_index.cwl
@@ -81,6 +105,26 @@ steps:
     run: ../../../tool/wget/wget.cwl
     'sbg:x': -538
     'sbg:y': -61
+  - id: gunzip
+    in:
+      - id: file
+        source: wget/downloaded
+    out:
+      - id: decompressed
+      - id: stderr
+    run: ../../../tool/gunzip/gunzip.cwl
+    'sbg:x': -188.0859375
+    'sbg:y': -261.5
+  - id: gunzip_1
+    in:
+      - id: file
+        source: wget_1/downloaded
+    out:
+      - id: decompressed
+      - id: stderr
+    run: ../../../tool/gunzip/gunzip.cwl
+    'sbg:x': -364
+    'sbg:y': 25
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
