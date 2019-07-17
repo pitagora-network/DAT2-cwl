@@ -12,7 +12,6 @@ quantMode: TranscriptomeSAM
 reference_prefix: RSEM_reference
 rsem_index_prefix: RSEM_reference
 rsem_output_prefix: SRR1550989
-runThreadN: '4'
 runid: SRR1550989
 split_files: true
 url: >-

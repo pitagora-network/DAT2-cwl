@@ -65,10 +65,6 @@ inputs:
     type: int?
     'sbg:x': 1015.3621826171875
     'sbg:y': 822.696044921875
-  - id: runThreadN
-    type: string?
-    'sbg:x': 496.88629150390625
-    'sbg:y': 128.92861938476562
   - id: rsem_index_prefix
     type: string?
     'sbg:x': 1298.7064208984375
@@ -220,16 +216,14 @@ steps:
         source: for_star_index_dir_sh/STAR_reference
       - id: genomeFastaFiles
         source: gunzip_1/decompressed
-      - id: runThreadN
-        source: runThreadN
       - id: sjdbGTFfile
         source: gunzip/decompressed
     out:
       - id: starIndex
     run: ../../../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
-    'sbg:x': 600.0497436523438
-    'sbg:y': 295.7512512207031
+    'sbg:x': 601.766357421875
+    'sbg:y': 323.2615051269531
   - id: rsem_index
     in:
       - id: gtf
