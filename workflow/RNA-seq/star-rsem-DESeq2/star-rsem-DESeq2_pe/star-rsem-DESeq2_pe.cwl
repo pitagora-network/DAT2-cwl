@@ -81,6 +81,10 @@ inputs:
     type: string?
     'sbg:x': -1215.6456298828125
     'sbg:y': 1108.1956787109375
+  - id: SraRunTable
+    type: File
+    'sbg:x': 1048.414306640625
+    'sbg:y': 326.6095275878906
 outputs:
   - id: downloaded
     outputSource:
@@ -106,12 +110,6 @@ outputs:
     type: Directory
     'sbg:x': -1360.5517578125
     'sbg:y': -623.029541015625
-  - id: rsem_index_1
-    outputSource:
-      - rsem_index/rsem_index
-    type: Directory
-    'sbg:x': -1315.04931640625
-    'sbg:y': 381.19891357421875
   - id: transcriptomesam
     outputSource:
       - star_rsem_wf_pe/transcriptomesam
@@ -178,12 +176,6 @@ outputs:
     type: File
     'sbg:x': 240.9922332763672
     'sbg:y': -849.0977172851562
-  - id: genes_result
-    outputSource:
-      - star_rsem_wf_pe/genes_result
-    type: File
-    'sbg:x': -21.195491790771484
-    'sbg:y': -1206.7276611328125
   - id: fastqFiles
     outputSource:
       - star_rsem_wf_pe/fastqFiles
@@ -262,12 +254,6 @@ outputs:
     type: File
     'sbg:x': 239.86331176757812
     'sbg:y': -498.6999206542969
-  - id: genes_result_1
-    outputSource:
-      - star_rsem_wf_pe_1/genes_result
-    type: File
-    'sbg:x': 505.6757507324219
-    'sbg:y': -484.2010498046875
   - id: fastqFiles_1
     outputSource:
       - star_rsem_wf_pe_1/fastqFiles
@@ -346,12 +332,6 @@ outputs:
     type: File
     'sbg:x': 552.7970581054688
     'sbg:y': -130.1872100830078
-  - id: genes_result_2
-    outputSource:
-      - star_rsem_wf_pe_2/genes_result
-    type: File
-    'sbg:x': -146.77297973632812
-    'sbg:y': -90.31534576416016
   - id: fastqFiles_2
     outputSource:
       - star_rsem_wf_pe_2/fastqFiles
@@ -430,12 +410,6 @@ outputs:
     type: File
     'sbg:x': 348.9111633300781
     'sbg:y': 452.9220275878906
-  - id: genes_result_3
-    outputSource:
-      - star_rsem_wf_pe_3/genes_result
-    type: File
-    'sbg:x': -158.998046875
-    'sbg:y': 431.90509033203125
   - id: fastqFiles_3
     outputSource:
       - star_rsem_wf_pe_3/fastqFiles
@@ -514,12 +488,6 @@ outputs:
     type: File
     'sbg:x': 585.252197265625
     'sbg:y': 755.0177612304688
-  - id: genes_result_4
-    outputSource:
-      - star_rsem_wf_pe_4/genes_result
-    type: File
-    'sbg:x': -10.485787391662598
-    'sbg:y': 956.2099609375
   - id: fastqFiles_4
     outputSource:
       - star_rsem_wf_pe_4/fastqFiles
@@ -598,12 +566,6 @@ outputs:
     type: File
     'sbg:x': 706.7514038085938
     'sbg:y': 1322.0140380859375
-  - id: genes_result_5
-    outputSource:
-      - star_rsem_wf_pe_5/genes_result
-    type: File
-    'sbg:x': 580.0264282226562
-    'sbg:y': 1141.724853515625
   - id: fastqFiles_5
     outputSource:
       - star_rsem_wf_pe_5/fastqFiles
@@ -682,12 +644,6 @@ outputs:
     type: File
     'sbg:x': 506.396484375
     'sbg:y': 1978.8984375
-  - id: genes_result_6
-    outputSource:
-      - star_rsem_wf_pe_6/genes_result
-    type: File
-    'sbg:x': -69.28243255615234
-    'sbg:y': 2047.1993408203125
   - id: fastqFiles_6
     outputSource:
       - star_rsem_wf_pe_6/fastqFiles
@@ -706,6 +662,60 @@ outputs:
     type: stdout
     'sbg:x': -1788.1802978515625
     'sbg:y': 340.03179931640625
+  - id: rsem_index_1
+    outputSource:
+      - rsem_index/rsem_index
+    type: Directory
+    'sbg:x': -1251.2496337890625
+    'sbg:y': 423.8552551269531
+  - id: output
+    outputSource:
+      - deseq2/output
+    type: Directory
+    'sbg:x': 1664.796630859375
+    'sbg:y': -159.45272827148438
+  - id: aligned
+    outputSource:
+      - star_rsem_wf_pe/aligned
+    type: File
+    'sbg:x': 458.2008361816406
+    'sbg:y': -1121.970703125
+  - id: aligned_1
+    outputSource:
+      - star_rsem_wf_pe_1/aligned
+    type: File
+    'sbg:x': 405.8953552246094
+    'sbg:y': -428.5212097167969
+  - id: aligned_2
+    outputSource:
+      - star_rsem_wf_pe_2/aligned
+    type: File
+    'sbg:x': -216.2845458984375
+    'sbg:y': -27.939626693725586
+  - id: aligned_3
+    outputSource:
+      - star_rsem_wf_pe_3/aligned
+    type: File
+    'sbg:x': -303.2192687988281
+    'sbg:y': 490.259521484375
+  - id: aligned_4
+    outputSource:
+      - star_rsem_wf_pe_4/aligned
+    type: File
+    'sbg:x': -236.73977661132812
+    'sbg:y': 984.5948486328125
+  - id: aligned_5
+    outputSource:
+      - star_rsem_wf_pe_5/aligned
+    type: File
+    'sbg:x': -180.48788452148438
+    'sbg:y': 1489.175537109375
+  - id: aligned_6
+    outputSource:
+      - star_rsem_wf_pe_6/aligned
+    type: File
+    'sbg:x': -236.73977661132812
+    'sbg:y': 2191.455810546875
 steps:
   - id: star_rsem_wf_pe
     in:
@@ -749,6 +759,7 @@ steps:
       - id: stat
       - id: isoforms_result
       - id: genes_result
+      - id: aligned
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
     'sbg:x': -442.5400390625
     'sbg:y': -907.251708984375
@@ -794,6 +805,7 @@ steps:
       - id: stat
       - id: isoforms_result
       - id: genes_result
+      - id: aligned
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
     'sbg:x': -406.7059020996094
     'sbg:y': -584.1411743164062
@@ -839,6 +851,7 @@ steps:
       - id: stat
       - id: isoforms_result
       - id: genes_result
+      - id: aligned
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
     'sbg:x': -380.3752746582031
     'sbg:y': -238.04119873046875
@@ -884,6 +897,7 @@ steps:
       - id: stat
       - id: isoforms_result
       - id: genes_result
+      - id: aligned
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
     'sbg:x': -406.21466064453125
     'sbg:y': 301.96051025390625
@@ -929,6 +943,7 @@ steps:
       - id: stat
       - id: isoforms_result
       - id: genes_result
+      - id: aligned
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
     'sbg:x': -325.3263854980469
     'sbg:y': 783.5361938476562
@@ -974,6 +989,7 @@ steps:
       - id: stat
       - id: isoforms_result
       - id: genes_result
+      - id: aligned
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
     'sbg:x': -291.1352844238281
     'sbg:y': 1275.9014892578125
@@ -1019,6 +1035,7 @@ steps:
       - id: stat
       - id: isoforms_result
       - id: genes_result
+      - id: aligned
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
     'sbg:x': -316.378662109375
     'sbg:y': 1836.4862060546875
@@ -1116,8 +1133,48 @@ steps:
     label: for_rsem_index_dir
     'sbg:x': -1730.2900390625
     'sbg:y': 543.0032958984375
+  - id: deseq2
+    in:
+      - id: sample2condition.txt
+        source: sample2condition/output1
+      - id: target2gene.txt
+        source: target2gene/target2gene.txt
+      - id: rsem_out
+        source:
+          - star_rsem_wf_pe/genes_result
+          - star_rsem_wf_pe_1/genes_result
+          - star_rsem_wf_pe_2/genes_result
+          - star_rsem_wf_pe_3/genes_result
+          - star_rsem_wf_pe_4/genes_result
+          - star_rsem_wf_pe_5/genes_result
+          - star_rsem_wf_pe_6/genes_result
+    out:
+      - id: output
+    run: ../../../../tool/DESeq2/deseq2.cwl
+    label: deseq2
+    'sbg:x': 1379.4359130859375
+    'sbg:y': -194.1349334716797
+  - id: target2gene
+    in: []
+    out:
+      - id: target2gene.txt
+    run: ../../../../tool/target2gene/target2gene.cwl
+    label: target2gene
+    'sbg:x': 1005.1517333984375
+    'sbg:y': -548.1040649414062
+  - id: sample2condition
+    in:
+      - id: SraRunTable
+        source: SraRunTable
+    out:
+      - id: output1
+    run: ../../../../tool/sample2condition/sample2condition.cwl
+    label: sample2condition
+    'sbg:x': 1148.21044921875
+    'sbg:y': 52.8286018371582
 requirements:
   - class: SubworkflowFeatureRequirement
+  - class: MultipleInputFeatureRequirement
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'

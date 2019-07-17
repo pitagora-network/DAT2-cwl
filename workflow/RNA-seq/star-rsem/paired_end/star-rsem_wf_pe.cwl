@@ -138,6 +138,12 @@ outputs:
     type: File
     'sbg:x': 1449.322265625
     'sbg:y': 438.4735107421875
+  - id: aligned
+    outputSource:
+      - star_mapping_pe/aligned
+    type: File
+    'sbg:x': 592.5216674804688
+    'sbg:y': 358.278076171875
 steps:
   - id: fasterq_dump
     in:
@@ -179,8 +185,8 @@ steps:
     label: >-
       rsem-calculate-expression: calculate expression values (BAM input version
       CWL)
-    'sbg:x': 1151.37060546875
-    'sbg:y': 288.4154357910156
+    'sbg:x': 1161.36083984375
+    'sbg:y': 374.3402099609375
   - id: star_mapping_pe
     in:
       - id: fq1

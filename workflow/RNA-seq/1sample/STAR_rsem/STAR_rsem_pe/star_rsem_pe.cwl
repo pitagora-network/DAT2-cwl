@@ -176,6 +176,12 @@ outputs:
     type: File?
     'sbg:x': 1075.3731689453125
     'sbg:y': 216.52487182617188
+  - id: aligned
+    outputSource:
+      - star_mapping_pe/aligned
+    type: File
+    'sbg:x': 887.6240234375
+    'sbg:y': 174.61489868164062
 steps:
   - id: star_mapping_pe
     in:
@@ -206,8 +212,8 @@ steps:
     run: >-
       ../../../../../tool/star_pre/star_mapping/star_mapping_pe/star_mapping_pe.cwl
     label: 'STAR mapping: running mapping jobs.'
-    'sbg:x': 838.7960205078125
-    'sbg:y': 21.890546798706055
+    'sbg:x': 841.53271484375
+    'sbg:y': -26.69127655029297
   - id: star_index
     in:
       - id: genomeDir
