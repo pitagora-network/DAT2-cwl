@@ -98,12 +98,6 @@ outputs:
     type: File
     'sbg:x': -2111.224853515625
     'sbg:y': 206.3255615234375
-  - id: decompressed
-    outputSource:
-      - gunzip/decompressed
-    type: stdout
-    'sbg:x': -1716
-    'sbg:y': -570.3131713867188
   - id: starIndex
     outputSource:
       - star_index/starIndex
@@ -656,12 +650,6 @@ outputs:
     type: File?
     'sbg:x': 340.52288818359375
     'sbg:y': 2120.9208984375
-  - id: decompressed_1
-    outputSource:
-      - gunzip_1/decompressed
-    type: stdout
-    'sbg:x': -1788.1802978515625
-    'sbg:y': 340.03179931640625
   - id: rsem_index_1
     outputSource:
       - rsem_index/rsem_index
