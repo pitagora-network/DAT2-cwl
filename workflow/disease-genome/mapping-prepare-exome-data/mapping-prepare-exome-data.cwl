@@ -29,10 +29,22 @@ steps:
     out:
       - forward
       - reverse
+  unwrap-forward:
+    run: unwrap.cwl
+    in:
+      input: sra2fastq/forward
+    out:
+      - unwrapped
+  unwrap-reverse:
+    run: unwrap.cwl
+    in:
+      input: sra2fastq/reverse
+    out:
+      - unwrapped
 outputs:
   fastq-forward:
     type: File
-    outputSource: sra2fastq/forward
+    outputSource: unwrap-forward/unwrapped
   fastq-reverse:
     type: File
-    outputSource: sra2fastq/reverse
+    outputSource: unwrap-reverse/unwrapped
