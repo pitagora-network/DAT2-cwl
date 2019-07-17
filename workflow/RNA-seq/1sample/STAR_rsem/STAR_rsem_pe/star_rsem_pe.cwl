@@ -176,18 +176,6 @@ outputs:
     type: File?
     'sbg:x': 1075.3731689453125
     'sbg:y': 216.52487182617188
-  - id: decompressed
-    outputSource:
-      - gunzip/decompressed
-    type: File
-    'sbg:x': 328.63433837890625
-    'sbg:y': 430.6567077636719
-  - id: decompressed_1
-    outputSource:
-      - gunzip_1/decompressed
-    type: File
-    'sbg:x': 298.83099365234375
-    'sbg:y': 731.3574829101562
 steps:
   - id: star_mapping_pe
     in:
