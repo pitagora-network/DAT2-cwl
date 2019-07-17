@@ -65,10 +65,6 @@ inputs:
     type: int
     'sbg:x': -1297.6160888671875
     'sbg:y': 831.091064453125
-  - id: runThreadN
-    type: string?
-    'sbg:x': -1539.2545166015625
-    'sbg:y': -609.5090942382812
   - id: reference_prefix
     type: string
     'sbg:x': -1455.0606689453125
@@ -1077,8 +1073,6 @@ steps:
         source: for_star_index_dir_sh/STAR_reference
       - id: genomeFastaFiles
         source: gunzip_1/decompressed
-      - id: runThreadN
-        source: runThreadN
       - id: sjdbGTFfile
         source: gunzip/decompressed
     out:
