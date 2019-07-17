@@ -37,7 +37,7 @@ steps:
     in: []
     out:
       - id: STAR_reference
-    run: ../../tool/for_star_index_dir/for_star_index_dir.cwl
+    run: ../../../tool/for_star_index_dir/for_star_index_dir.cwl
     label: for_star_index_dir
     'sbg:x': -249
     'sbg:y': 81
@@ -53,7 +53,7 @@ steps:
         source: wget/downloaded
     out:
       - id: starIndex
-    run: ../../tool/star_pre/star_index/star_index.cwl
+    run: ../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': 57
     'sbg:y': -54
@@ -66,7 +66,7 @@ steps:
     out:
       - id: downloaded
       - id: stderr
-    run: ../../tool/wget/wget.cwl
+    run: ../../../tool/wget/wget.cwl
     'sbg:x': -450
     'sbg:y': -265
   - id: wget_1
@@ -78,7 +78,7 @@ steps:
     out:
       - id: downloaded
       - id: stderr
-    run: ../../tool/wget/wget.cwl
+    run: ../../../tool/wget/wget.cwl
     'sbg:x': -538
     'sbg:y': -61
 requirements: []
