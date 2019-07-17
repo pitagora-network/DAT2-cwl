@@ -14,18 +14,18 @@ inputs:
     'sbg:x': -444.39886474609375
     'sbg:y': 27
 outputs:
-  - id: decompressed
-    outputSource:
-      - gunzip/decompressed
-    type: File
-    'sbg:x': 142
-    'sbg:y': 53
   - id: stderr
     outputSource:
       - gunzip/stderr
     type: stderr
     'sbg:x': 153
     'sbg:y': -131
+  - id: decompressed
+    outputSource:
+      - gunzip/decompressed
+    type: stdout
+    'sbg:x': 154.03125
+    'sbg:y': 61.5
 steps:
   - id: wget
     in:
@@ -36,7 +36,7 @@ steps:
     out:
       - id: downloaded
       - id: stderr
-    run: ../../tool/wget/wget.cwl
+    run: ../../../tool/wget/wget.cwl
     'sbg:x': -306.3984375
     'sbg:y': -6
   - id: gunzip
@@ -46,7 +46,7 @@ steps:
     out:
       - id: decompressed
       - id: stderr
-    run: ../../tool/gunzip/gunzip.cwl
+    run: ../../../tool/gunzip/gunzip.cwl
     'sbg:x': -75
     'sbg:y': -36
 requirements: []

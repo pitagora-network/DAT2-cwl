@@ -32,18 +32,6 @@ outputs:
     type: Directory
     'sbg:x': 313
     'sbg:y': -55
-  - id: decompressed
-    outputSource:
-      - gunzip_1/decompressed
-    type: stdout
-    'sbg:x': -352.08599853515625
-    'sbg:y': 209.5
-  - id: decompressed_1
-    outputSource:
-      - gunzip/decompressed
-    type: stdout
-    'sbg:x': 1.91400146484375
-    'sbg:y': -341.5
   - id: downloaded
     outputSource:
       - wget/downloaded
@@ -79,8 +67,8 @@ steps:
       - id: starIndex
     run: ../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
-    'sbg:x': 57
-    'sbg:y': -54
+    'sbg:x': 60
+    'sbg:y': -74
   - id: wget
     in:
       - id: output_name
