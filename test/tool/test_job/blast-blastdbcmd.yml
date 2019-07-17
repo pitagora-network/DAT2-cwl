@@ -1,0 +1,14 @@
+blastdb_dir:
+  class: Directory
+  path: >-
+    ../../data/blastdb_trinity_rslt
+db_flag: trinity_rslt
+entry_batch_flag:
+  class: File
+  path: >-
+    ../../data/sample.longest_orfs.SOD_Cu.ids
+entry_flag: null
+out_flag: sample.longest_orfs.SOD_Cu.pep
+outfmt_flag: null
+target_flag: null
+taxids_flag: null

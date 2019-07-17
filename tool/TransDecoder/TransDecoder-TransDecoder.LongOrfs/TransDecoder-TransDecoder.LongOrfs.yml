@@ -1,0 +1,4 @@
+minimum_protein_length: 0  # type "int"
+transcripts:  # type "File"
+    class: File
+    path: a/file/path

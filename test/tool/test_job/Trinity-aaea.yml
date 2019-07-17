@@ -1,0 +1,19 @@
+cpu: 6
+est_method: kallisto
+kallisto_add_opts: true
+left:
+  class: File
+  path: >-
+    ../../data/sample.DRR092257_1.fq.gz
+output_dir: kallisto_out
+prep_reference: true
+right:
+  class: File
+  path: >-
+    ../../data/sample.DRR092257_2.fq.gz
+seqType: fq
+thread_count: true
+transcripts:
+  class: File
+  path: >-
+    ../../data/sample.Trinity.fasta

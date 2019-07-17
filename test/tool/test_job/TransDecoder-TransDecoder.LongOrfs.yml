@@ -1,0 +1,5 @@
+minimum_protein_length: 30
+transcripts:
+  class: File
+  path: >-
+    ../../data/sample.Trinity.fasta

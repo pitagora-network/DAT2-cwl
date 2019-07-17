@@ -1,0 +1,6 @@
+IN2:  # type "File"
+    class: File
+    path: a/file/path
+IN1:  # type "File"
+    class: File
+    path: a/file/path
