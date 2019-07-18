@@ -17,22 +17,6 @@ inputs:
     type: int?
     'sbg:x': 49
     'sbg:y': 16
-  - id: url
-    type: string
-    'sbg:x': -66.4168701171875
-    'sbg:y': 268.5
-  - id: output_name
-    type: string
-    'sbg:x': -67.4168701171875
-    'sbg:y': 413.5
-  - id: url_1
-    type: string
-    'sbg:x': -69.4168701171875
-    'sbg:y': 540.5
-  - id: output_name_1
-    type: string
-    'sbg:x': 1.5831298828125
-    'sbg:y': 672.4910278320312
   - id: outSAMtype
     type: 'string[]'
     'sbg:x': 594.737548828125
@@ -69,19 +53,23 @@ inputs:
     type: string?
     'sbg:x': 1298.7064208984375
     'sbg:y': 57.05970001220703
+  - id: url
+    type: string
+    'sbg:x': -92.67952728271484
+    'sbg:y': 262.93231201171875
+  - id: output_name
+    type: string
+    'sbg:x': -92.67952728271484
+    'sbg:y': 418.37054443359375
+  - id: url_1
+    type: string
+    'sbg:x': -99.74490356445312
+    'sbg:y': 589.7058715820312
+  - id: output_name_1
+    type: string
+    'sbg:x': -82.08146667480469
+    'sbg:y': 746.9104614257812
 outputs:
-  - id: downloaded
-    outputSource:
-      - wget/downloaded
-    type: File
-    'sbg:x': 84.86039733886719
-    'sbg:y': 177.76771545410156
-  - id: downloaded_1
-    outputSource:
-      - wget_1/downloaded
-    type: File
-    'sbg:x': 166.30442810058594
-    'sbg:y': 653.4480590820312
   - id: fastqFiles
     outputSource:
       - fasterq_dump/fastqFiles
@@ -178,6 +166,18 @@ outputs:
     type: File
     'sbg:x': 887.6240234375
     'sbg:y': 174.61489868164062
+  - id: downloaded
+    outputSource:
+      - wget/downloaded
+    type: File
+    'sbg:x': 96.30142974853516
+    'sbg:y': 437.8003234863281
+  - id: downloaded_1
+    outputSource:
+      - wget_1/downloaded
+    type: File
+    'sbg:x': 181.08592224121094
+    'sbg:y': 752.20947265625
 steps:
   - id: star_mapping_pe
     in:
@@ -284,30 +284,6 @@ steps:
     label: 'fasterq-dump: dump .sra format file to generate fastq file'
     'sbg:x': 241
     'sbg:y': -88.47512817382812
-  - id: wget
-    in:
-      - id: output_name
-        source: output_name
-      - id: url
-        source: url
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../../../../../tool/wget/wget.cwl
-    'sbg:x': 71
-    'sbg:y': 330
-  - id: wget_1
-    in:
-      - id: output_name
-        source: output_name_1
-      - id: url
-        source: url_1
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../../../../../tool/wget/wget.cwl
-    'sbg:x': 115
-    'sbg:y': 513
   - id: for_star_index_dir_sh
     in: []
     out:
@@ -344,6 +320,30 @@ steps:
     label: for_rsem_index_dir
     'sbg:x': 750.696044921875
     'sbg:y': 917.0963134765625
+  - id: wget
+    in:
+      - id: output_name
+        source: output_name
+      - id: url
+        source: url
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../../../tool/wget/wget.cwl
+    'sbg:x': 20.349292755126953
+    'sbg:y': 337.1184997558594
+  - id: wget_1
+    in:
+      - id: output_name
+        source: output_name_1
+      - id: url
+        source: url_1
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../../../tool/wget/wget.cwl
+    'sbg:x': 38.01244354248047
+    'sbg:y': 647.9952392578125
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
