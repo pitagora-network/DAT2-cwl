@@ -86,8 +86,8 @@ outputs:
     outputSource:
       - wget/downloaded
     type: File
-    'sbg:x': -2073.74560546875
-    'sbg:y': -295.1795959472656
+    'sbg:x': -2023.2916259765625
+    'sbg:y': -297.48541259765625
   - id: downloaded_1
     outputSource:
       - wget_1/downloaded
