@@ -63,7 +63,7 @@ steps:
     out:
       - output
   bismark_exec:
-    run: https://raw.githubusercontent.com/manabuishii/DAT2-cwl/bismark/tool/bismark/bismark/bismark.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/bismark/bismark/bismark.cwl
     in:
       genome_folder: bismark_genome_preparation/output
       fq: trim_galore_rawdata/fq
