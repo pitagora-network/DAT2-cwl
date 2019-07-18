@@ -60,7 +60,7 @@ steps:
     run: ../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': 60
-    'sbg:y': -74
+    'sbg:y': -108
   - id: wget
     in:
       - id: output_name
