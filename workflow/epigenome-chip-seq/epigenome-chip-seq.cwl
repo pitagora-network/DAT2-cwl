@@ -37,8 +37,10 @@ inputs:
     type: int
     default: 42
   macs2_organism:
-    type: string
-    default: mm
+    type: enum
+    symbols:
+      - mm
+      - hs
     label: "mouse: mm, human: hs"
   macs2_p-value:
     type: float
