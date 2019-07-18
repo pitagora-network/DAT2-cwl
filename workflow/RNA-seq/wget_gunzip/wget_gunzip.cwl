@@ -26,6 +26,18 @@ outputs:
     type: File
     'sbg:x': -251.64801025390625
     'sbg:y': 91.5
+  - id: stderr
+    outputSource:
+      - gunzip/stderr
+    type: stderr
+    'sbg:x': 191.35198974609375
+    'sbg:y': -140.5
+  - id: stderr_1
+    outputSource:
+      - wget/stderr
+    type: stderr
+    'sbg:x': -203.64801025390625
+    'sbg:y': -228.5
 steps:
   - id: wget
     in:
