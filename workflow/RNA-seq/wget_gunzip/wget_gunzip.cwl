@@ -20,12 +20,6 @@ outputs:
     type: stdout
     'sbg:x': 154.03125
     'sbg:y': 61.5
-  - id: downloaded
-    outputSource:
-      - wget/downloaded
-    type: File
-    'sbg:x': -246.64801025390625
-    'sbg:y': 85.5
 steps:
   - id: gunzip
     in:
