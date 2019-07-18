@@ -138,12 +138,12 @@ steps:
     in:
       threads: num_process
       output_filename:
-        valueFrom: $(inputs.input_file.basename.replace('.sam', '')).uniq.bam
+        default: $(inputs.input_file.basename.replace('.sam', '')).uniq.bam
       input_file: bowtie2-fastq-posi1/sam
       include_header:
-        valueFrom: $(true)
+        default: $(true)
       ignore_previous_version:
-        valueFrom: $(true)
+        default: $(true)
       filter_alignments: samtools_filter_alignments
       skip_alignments: samtools_skip_alignments
     out:
@@ -153,12 +153,12 @@ steps:
     in:
       threads: num_process
       output_filename:
-        valueFrom: $(inputs.input_file.basename.replace('.sam', '')).uniq.bam
+        default: $(inputs.input_file.basename.replace('.sam', '')).uniq.bam
       input_file: bowtie2-fastq-posi2/sam
       include_header:
-        valueFrom: $(true)
+        default: $(true)
       ignore_previous_version:
-        valueFrom: $(true)
+        default: $(true)
       filter_alignments: samtools_filter_alignments
       skip_alignments: samtools_skip_alignments
     out:
@@ -168,12 +168,12 @@ steps:
     in:
       threads: num_process
       output_filename:
-        valueFrom: $(inputs.input_file.basename.replace('.sam', '')).uniq.bam
+        default: $(inputs.input_file.basename.replace('.sam', '')).uniq.bam
       input_file: bowtie2-fastq-nega/sam
       include_header:
-        valueFrom: $(true)
+        default: $(true)
       ignore_previous_version:
-        valueFrom: $(true)
+        default: $(true)
       filter_alignments: samtools_filter_alignments
       skip_alignments: samtools_skip_alignments
     out:
@@ -183,9 +183,9 @@ steps:
     in:
       threads: num_process
       tmpfile:
-        valueFrom: $(inputs.input_bamfile.basename).tmp
+        default: $(inputs.input_bamfile.basename).tmp
       output_bam:
-        valueFrom: $(inputs.input_bamfile.basename.replace('.bam', '')).sorted.bam
+        default: $(inputs.input_bamfile.basename.replace('.bam', '')).sorted.bam
       input_bamfile: sam2bam-fastq-posi1/output_bam
     out:
       - sorted_bam
@@ -194,9 +194,9 @@ steps:
     in:
       threads: num_process
       tmpfile:
-        valueFrom: $(inputs.input_bamfile.basename).tmp
+        default: $(inputs.input_bamfile.basename).tmp
       output_bam:
-        valueFrom: $(inputs.input_bamfile.basename.replace('.bam', '')).sorted.bam
+        default: $(inputs.input_bamfile.basename.replace('.bam', '')).sorted.bam
       input_bamfile: sam2bam-fastq-posi2/output_bam
     out:
       - sorted_bam
@@ -205,9 +205,9 @@ steps:
     in:
       threads: num_process
       tmpfile:
-        valueFrom: $(inputs.input_bamfile.basename).tmp
+        defualt: $(inputs.input_bamfile.basename).tmp
       output_bam:
-        valueFrom: $(inputs.input_bamfile.basename.replace('.bam', '')).sorted.bam
+        default: $(inputs.input_bamfile.basename.replace('.bam', '')).sorted.bam
       input_bamfile: sam2bam-fastq-nega/output_bam
     out:
       - sorted_bam
