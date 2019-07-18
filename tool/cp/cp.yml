@@ -1,4 +1,0 @@
-renamed_name: renamed_name # type "string"
-file: # type "File"
-  class: File
-  path: ../../data/DRR024501_1.fastq

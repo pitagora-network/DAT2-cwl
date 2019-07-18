@@ -1,4 +1,0 @@
-renamed_name: a_string  # type "string"
-file:  # type "File"
-    class: File
-    path: a/file/path
