@@ -31,7 +31,7 @@ inputs:
     inputBinding:
       position: 1
 outputs:
-  output_bam:
+  bam:
     type: File
     outputBinding:
       glob: "$(inputs.output_filename)"
