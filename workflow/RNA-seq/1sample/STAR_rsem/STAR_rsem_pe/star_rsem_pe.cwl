@@ -69,6 +69,10 @@ inputs:
     type: string
     'sbg:x': -82.08146667480469
     'sbg:y': 746.9104614257812
+  - id: runThreadN
+    type: string?
+    'sbg:x': 382.23968505859375
+    'sbg:y': 185.78221130371094
 outputs:
   - id: fastqFiles
     outputSource:
@@ -76,12 +80,6 @@ outputs:
     type: 'File[]'
     'sbg:x': 397.6965026855469
     'sbg:y': -337.4228820800781
-  - id: starIndex
-    outputSource:
-      - star_index/starIndex
-    type: Directory
-    'sbg:x': 623.2985229492188
-    'sbg:y': 811.71142578125
   - id: rsem_index_1
     outputSource:
       - rsem_index/rsem_index
@@ -210,20 +208,6 @@ steps:
     label: 'STAR mapping: running mapping jobs.'
     'sbg:x': 841.53271484375
     'sbg:y': -26.69127655029297
-  - id: star_index
-    in:
-      - id: genomeDir
-        source: for_star_index_dir_sh/STAR_reference
-      - id: genomeFastaFiles
-        source: gunzip_1/decompressed
-      - id: sjdbGTFfile
-        source: gunzip/decompressed
-    out:
-      - id: starIndex
-    run: ../../../../../tool/star_pre/star_index/star_index.cwl
-    label: 'STAR genomeGenerate: Generating genome indexes.'
-    'sbg:x': 604.53271484375
-    'sbg:y': 315.93463134765625
   - id: rsem_index
     in:
       - id: gtf
@@ -344,6 +328,22 @@ steps:
     run: ../../../../../tool/wget/wget.cwl
     'sbg:x': 38.01244354248047
     'sbg:y': 647.9952392578125
+  - id: star_index
+    in:
+      - id: genomeDir
+        source: for_star_index_dir_sh/STAR_reference
+      - id: genomeFastaFiles
+        source: gunzip_1/decompressed
+      - id: runThreadN
+        source: runThreadN
+      - id: sjdbGTFfile
+        source: gunzip/decompressed
+    out:
+      - id: starIndex
+    run: ../../../../../tool/star_pre/star_index/star_index.cwl
+    label: 'STAR genomeGenerate: Generating genome indexes.'
+    'sbg:x': 608.2809448242188
+    'sbg:y': 366.4420166015625
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'

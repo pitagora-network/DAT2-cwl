@@ -1,3 +1,4 @@
+runThreadN: '12'
 nthreads: 4
 nthreads_1: 4
 nthreads_2: 4
