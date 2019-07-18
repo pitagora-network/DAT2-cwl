@@ -2,9 +2,7 @@
 cwlVersion: v1.0
 class: Workflow
 doc: bismark genome preparation workflow
-requirements:
-  - class: ScatterFeatureRequirement
-  - class: SubworkflowFeatureRequirement
+requirements: {}
 
 inputs:
   fasta:
