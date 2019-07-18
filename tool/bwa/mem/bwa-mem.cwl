@@ -41,7 +41,7 @@ inputs:
     label: "input fastq file to map (forward)"
     inputBinding:
       position: 2
-  fastq_forward:
+  fastq_reverse:
     type: File?
     label: "input fastq file to map (erverse)"
     inputBinding:
