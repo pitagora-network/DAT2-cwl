@@ -222,8 +222,8 @@ steps:
       - id: starIndex
     run: ../../../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
-    'sbg:x': 601.766357421875
-    'sbg:y': 323.2615051269531
+    'sbg:x': 604.53271484375
+    'sbg:y': 315.93463134765625
   - id: rsem_index
     in:
       - id: gtf
@@ -290,8 +290,8 @@ steps:
       - id: STAR_reference
     run: ../../../../../tool/for_star_index_dir/for_star_index_dir.cwl
     label: for_star_index_dir
-    'sbg:x': 443.72637939453125
-    'sbg:y': 640.2338256835938
+    'sbg:x': 448.2990417480469
+    'sbg:y': 668.261474609375
   - id: gunzip
     in:
       - id: file
