@@ -25,6 +25,10 @@ inputs:
     type: string
     'sbg:x': -675
     'sbg:y': 50.00431823730469
+  - id: genomeDir
+    type: Directory
+    'sbg:x': -236
+    'sbg:y': 148
 outputs:
   - id: starIndex
     outputSource:
@@ -45,18 +49,10 @@ outputs:
     'sbg:x': -537.0859985351562
     'sbg:y': 134.5
 steps:
-  - id: for_star_index_dir_sh
-    in: []
-    out:
-      - id: STAR_reference
-    run: ../../../tool/for_star_index_dir/for_star_index_dir.cwl
-    label: for_star_index_dir
-    'sbg:x': -249
-    'sbg:y': 81
   - id: star_index
     in:
       - id: genomeDir
-        source: for_star_index_dir_sh/STAR_reference
+        source: genomeDir
       - id: genomeFastaFiles
         source: gunzip_1/decompressed
       - id: runThreadN
