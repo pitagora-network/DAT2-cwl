@@ -18,19 +18,15 @@ outputs:
     outputSource:
       - gunzip/decompressed
     type: stdout
-    'sbg:x': 154.03125
-    'sbg:y': 61.5
+    'sbg:x': 210.35198974609375
+    'sbg:y': 100.5
+  - id: downloaded
+    outputSource:
+      - wget/downloaded
+    type: File
+    'sbg:x': -251.64801025390625
+    'sbg:y': 91.5
 steps:
-  - id: gunzip
-    in:
-      - id: file
-        source: wget/downloaded
-    out:
-      - id: decompressed
-      - id: stderr
-    run: ../../../tool/gunzip/gunzip.cwl
-    'sbg:x': -75
-    'sbg:y': -36
   - id: wget
     in:
       - id: output_name
@@ -43,6 +39,16 @@ steps:
     run: ../../../tool/wget/wget.cwl
     'sbg:x': -335.6484375
     'sbg:y': -28.5
+  - id: gunzip
+    in:
+      - id: file
+        source: wget/downloaded
+    out:
+      - id: decompressed
+      - id: stderr
+    run: ../../../tool/gunzip/gunzip.cwl
+    'sbg:x': -47.64801025390625
+    'sbg:y': -15.5
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
