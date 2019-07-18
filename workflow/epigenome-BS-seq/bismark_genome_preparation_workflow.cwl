@@ -7,6 +7,8 @@ requirements: {}
 inputs:
   fasta:
     type: File
+    doc: fasta file
+    label: fasta file
 steps:
   mkdir_ref:
     run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/mkdir/mkdir.cwl
