@@ -29,14 +29,14 @@ inputs:
       prefix: -c
       position: 1
   organism:
-    type: string?
+    type: string
     default: mm
-    doc: "mouse: mm, human: hs"
+    label: "mouse: mm, human: hs"
     inputBinding:
       prefix: -g
       position: 3
   p-value:
-    type: float?
+    type: float
     default: 0.01
     inputBinding:
       prefix: -q
