@@ -1,0 +1,7 @@
+file:  # type "File"
+    class: File
+    path: ../../data/sample.txt
+dest_dir:  # type "Directory"
+    class: Directory
+    path: .
+
