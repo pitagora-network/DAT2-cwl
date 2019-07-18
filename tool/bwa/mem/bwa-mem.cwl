@@ -11,7 +11,7 @@ inputs:
   threads:
     type: int
     label: "number of threads"
-    defult: 4
+    default: 4
     inputBinding:
       prefix: -t
   output_sam:
@@ -20,6 +20,11 @@ inputs:
     default: "out.sam"
     inputBinding:
       prefix: -o
+  group_header_line:
+    type: string?
+    label: "read group header line such as '@RG\tID:foo\tSM:bar'"
+    inputBinding:
+      prefix: -R
   index_base:
     type: File
     label: "fasta file for index basename"
@@ -31,11 +36,16 @@ inputs:
       - .bwt
       - .pac
       - .sa
-  input_fastq:
+  fastq_forward:
     type: File
-    label: "input fastq file to map"
+    label: "input fastq file to map (single-end or forward for pair-end)"
     inputBinding:
       position: 2
+  fastq_reverse:
+    type: File?
+    label: "input fastq file to map (reverse for pair-end)"
+    inputBinding:
+      position: 3
 
 outputs:
   output:

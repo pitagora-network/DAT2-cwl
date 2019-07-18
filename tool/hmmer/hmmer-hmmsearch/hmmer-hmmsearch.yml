@@ -1,0 +1,8 @@
+pep:  # type "File" (optional)
+    class: File
+    path: a/file/path
+hmm:  # type "File"
+    class: File
+    path: a/file/path
+domtblout: a_string  # type "string"
+cpu: 0  # type "int" (optional)
