@@ -1,3 +1,7 @@
+# Required Memory
+
+32GB is better
+
 # How to execute
 
 ```
