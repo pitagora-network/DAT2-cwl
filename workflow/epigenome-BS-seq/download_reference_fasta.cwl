@@ -3,8 +3,6 @@ cwlVersion: v1.0
 class: Workflow
 doc: string
 requirements: {}
-#  - class: SubworkflowFeatureRequirement
-#  - class: ScatterFeatureRequirement
 
 inputs:
   url:
