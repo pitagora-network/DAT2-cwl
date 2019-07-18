@@ -25,10 +25,6 @@ inputs:
     type: string
     'sbg:x': -675
     'sbg:y': 50.00431823730469
-  - id: genomeDir
-    type: Directory
-    'sbg:x': -236
-    'sbg:y': 148
 outputs:
   - id: starIndex
     outputSource:
@@ -52,7 +48,7 @@ steps:
   - id: star_index
     in:
       - id: genomeDir
-        source: genomeDir
+        source: for_star_index_dir_sh/STAR_reference
       - id: genomeFastaFiles
         source: gunzip_1/decompressed
       - id: runThreadN
@@ -109,6 +105,14 @@ steps:
     run: ../../../tool/gunzip/gunzip.cwl
     'sbg:x': -364
     'sbg:y': 25
+  - id: for_star_index_dir_sh
+    in: []
+    out:
+      - id: STAR_reference
+    run: ../../../tool/for_star_index_dir/for_star_index_dir.cwl
+    label: for_star_index_dir
+    'sbg:x': -257
+    'sbg:y': 144
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
