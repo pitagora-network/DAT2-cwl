@@ -5,4 +5,6 @@ url: >-
   ftp://ftp.ensembl.org/pub/release-95/gtf/homo_sapiens/Homo_sapiens.GRCh38.95.gtf.gz
 url_1: >-
   ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna//Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
-genomeDir: STAR_reference/
+genomeDir:
+  class: Directory
+  path: STAR_reference/
