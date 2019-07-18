@@ -38,12 +38,12 @@ inputs:
       - .sa
   fastq_forward:
     type: File
-    label: "input fastq file to map (forward)"
+    label: "input fastq file to map (single-end or forward for pair-end)"
     inputBinding:
       position: 2
   fastq_reverse:
     type: File?
-    label: "input fastq file to map (erverse)"
+    label: "input fastq file to map (reverse for pair-end)"
     inputBinding:
       position: 3
 
