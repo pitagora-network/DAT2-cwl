@@ -36,11 +36,16 @@ inputs:
       - .bwt
       - .pac
       - .sa
-  input_fastq:
+  fastq_forward:
     type: File
-    label: "input fastq file to map"
+    label: "input fastq file to map (forward)"
     inputBinding:
       position: 2
+  fastq_forward:
+    type: File?
+    label: "input fastq file to map (erverse)"
+    inputBinding:
+      position: 3
 
 outputs:
   output:
