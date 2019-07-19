@@ -19,8 +19,8 @@ inputs:
     'sbg:y': 255
   - id: genomeDir
     type: Directory
-    'sbg:x': 406.9005126953125
-    'sbg:y': 389.4353332519531
+    'sbg:x': 368.01031494140625
+    'sbg:y': 404.5412292480469
   - id: nthreads_1
     type: int
     'sbg:x': 309.0735168457031
@@ -60,12 +60,6 @@ outputs:
     type: 'File[]'
     'sbg:x': 222.8919219970703
     'sbg:y': -201.9210662841797
-  - id: transcriptomesam
-    outputSource:
-      - star_mapping_pe/transcriptomesam
-    type: File?
-    'sbg:x': 859.309814453125
-    'sbg:y': -534.715576171875
   - id: SJ.out.tab
     outputSource:
       - star_mapping_pe/SJ.out.tab
@@ -144,6 +138,12 @@ outputs:
     type: File
     'sbg:x': 592.5216674804688
     'sbg:y': 358.278076171875
+  - id: transcriptomesam
+    outputSource:
+      - star_mapping_pe/transcriptomesam
+    type: File?
+    'sbg:x': 810.0989990234375
+    'sbg:y': -472.29791259765625
 steps:
   - id: fasterq_dump
     in:
@@ -172,7 +172,7 @@ steps:
       - id: rsem_output_prefix
         source: rsem_output_prefix
       - id: bam
-        source: star_mapping_pe/aligned
+        source: star_mapping_pe/transcriptomesam
     out:
       - id: genes_result
       - id: isoforms_result
@@ -185,8 +185,8 @@ steps:
     label: >-
       rsem-calculate-expression: calculate expression values (BAM input version
       CWL)
-    'sbg:x': 1161.36083984375
-    'sbg:y': 374.3402099609375
+    'sbg:x': 1261.5155029296875
+    'sbg:y': 229.28866577148438
   - id: star_mapping_pe
     in:
       - id: fq1
