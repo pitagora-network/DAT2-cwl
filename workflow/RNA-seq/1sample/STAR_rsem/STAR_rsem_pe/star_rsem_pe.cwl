@@ -170,18 +170,12 @@ outputs:
     type: File
     'sbg:x': 57.46524429321289
     'sbg:y': 390.6058044433594
-  - id: stderr
+  - id: downloaded_1
     outputSource:
-      - wget/stderr
-    type: stderr
-    'sbg:x': 86.29705047607422
-    'sbg:y': 205.2584686279297
-  - id: stderr_1
-    outputSource:
-      - wget_1/stderr
-    type: stderr
-    'sbg:x': 64.32996368408203
-    'sbg:y': 527.900146484375
+      - wget_1/downloaded
+    type: File
+    'sbg:x': 93.07672119140625
+    'sbg:y': 740.7868041992188
 steps:
   - id: star_mapping_pe
     in:
