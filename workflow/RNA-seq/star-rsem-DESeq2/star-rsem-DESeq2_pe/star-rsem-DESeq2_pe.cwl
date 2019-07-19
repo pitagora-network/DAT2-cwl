@@ -5,66 +5,6 @@ $namespaces:
   s: 'https://schema.org/'
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: url
-    type: string
-    'sbg:x': -2293.265869140625
-    'sbg:y': -555.7481079101562
-  - id: output_name
-    type: string
-    'sbg:x': -2293.265869140625
-    'sbg:y': -364.78350830078125
-  - id: url_1
-    type: string
-    'sbg:x': -2309.328125
-    'sbg:y': -43.53466033935547
-  - id: output_name_1
-    type: string
-    'sbg:x': -2296.835205078125
-    'sbg:y': 177.77011108398438
-  - id: split_files
-    type: boolean?
-    'sbg:x': -1005.0123291015625
-    'sbg:y': -125.13037109375
-  - id: runid
-    type: string
-    'sbg:x': -901.1580200195312
-    'sbg:y': -1059.9879150390625
-  - id: runid_1
-    type: string
-    'sbg:x': -874.29150390625
-    'sbg:y': -705.6830444335938
-  - id: runid_2
-    type: string
-    'sbg:x': -860.0615234375
-    'sbg:y': -402.5841979980469
-  - id: runid_3
-    type: string
-    'sbg:x': -780.24462890625
-    'sbg:y': 101.03105163574219
-  - id: runid_4
-    type: string
-    'sbg:x': -814.5255126953125
-    'sbg:y': 491.0593566894531
-  - id: runid_5
-    type: string
-    'sbg:x': -784.6425170898438
-    'sbg:y': 841.1171875
-  - id: runid_6
-    type: string
-    'sbg:x': -739.1065673828125
-    'sbg:y': 1181.2139892578125
-  - id: quantMode
-    type: string
-    'sbg:x': -1089.80029296875
-    'sbg:y': 616.7484741210938
-  - id: outSAMtype
-    type: 'string[]'
-    'sbg:x': -1072.260498046875
-    'sbg:y': 178.0520782470703
-  - id: nthreads_2
-    type: int
-    'sbg:x': -1297.6160888671875
-    'sbg:y': 831.091064453125
   - id: reference_prefix
     type: string
     'sbg:x': -1455.0606689453125
@@ -73,579 +13,109 @@ inputs:
     type: int?
     'sbg:x': -1462.75927734375
     'sbg:y': 400.5768737792969
-  - id: rsem_index_prefix
-    type: string?
-    'sbg:x': -1215.6456298828125
-    'sbg:y': 1108.1956787109375
   - id: SraRunTable
     type: File
     'sbg:x': 1048.414306640625
     'sbg:y': 326.6095275878906
+  - id: url
+    type: string
+    'sbg:x': -2450.151123046875
+    'sbg:y': -443.1516418457031
+  - id: output_name
+    type: string
+    'sbg:x': -2460.194091796875
+    'sbg:y': -276.43902587890625
+  - id: url_1
+    type: string
+    'sbg:x': -2450.151123046875
+    'sbg:y': -93.65771484375
+  - id: output_name_1
+    type: string
+    'sbg:x': -2407.970947265625
+    'sbg:y': 105.19227600097656
+  - id: runThreadN
+    type: string?
+    'sbg:x': -1614.5794677734375
+    'sbg:y': -611.8728637695312
+  - id: split_files
+    type: boolean?
+    'sbg:x': -1183.3447265625
+    'sbg:y': -1171.304931640625
+  - id: runid
+    type: string
+    'sbg:x': -711.1549072265625
+    'sbg:y': -1428.6533203125
+  - id: rsem_index_prefix
+    type: string?
+    'sbg:x': -1165.6346435546875
+    'sbg:y': -726.730712890625
+  - id: nthreads
+    type: int?
+    'sbg:x': -1026.7105712890625
+    'sbg:y': -1003.3120727539062
+  - id: runid_1
+    type: string
+    'sbg:x': -583.7657470703125
+    'sbg:y': -765.8656005859375
+  - id: runid_2
+    type: string
+    'sbg:x': -549.9524536132812
+    'sbg:y': -387.19525146484375
+  - id: runid_3
+    type: string
+    'sbg:x': -436.7086486816406
+    'sbg:y': 128.80181884765625
+  - id: runid_4
+    type: string
+    'sbg:x': -576.3072509765625
+    'sbg:y': 770.07470703125
+  - id: runid_5
+    type: string
+    'sbg:x': -570.891357421875
+    'sbg:y': 1179
+  - id: runid_6
+    type: string
+    'sbg:x': -525.4889526367188
+    'sbg:y': 1656.731689453125
+  - id: quantMode
+    type: string
+    'sbg:x': -1025.826904296875
+    'sbg:y': 1118.1317138671875
+  - id: outSAMtype
+    type: 'string[]'
+    'sbg:x': -1084.2711181640625
+    'sbg:y': 527.9520263671875
+  - id: nthreads_1
+    type: int?
+    'sbg:x': -1007.818115234375
+    'sbg:y': -566.8890991210938
+  - id: nthreads_2
+    type: int?
+    'sbg:x': -1064.4217529296875
+    'sbg:y': -98.62271881103516
+  - id: nthreads_3
+    type: int?
+    'sbg:x': -951.2144775390625
+    'sbg:y': 357.6368713378906
+  - id: nthreads_4
+    type: int?
+    'sbg:x': -944.3534545898438
+    'sbg:y': 918.5274047851562
+  - id: nthreads_5
+    type: int?
+    'sbg:x': -740.2373046875
+    'sbg:y': 1445.1126708984375
+  - id: nthreads_6
+    type: int?
+    'sbg:x': -568.711181640625
+    'sbg:y': 1927.1011962890625
 outputs:
-  - id: downloaded
-    outputSource:
-      - wget/downloaded
-    type: File
-    'sbg:x': -2023.2916259765625
-    'sbg:y': -297.48541259765625
-  - id: downloaded_1
-    outputSource:
-      - wget_1/downloaded
-    type: File
-    'sbg:x': -2111.224853515625
-    'sbg:y': 206.3255615234375
   - id: starIndex
     outputSource:
       - star_index/starIndex
     type: Directory
     'sbg:x': -1360.5517578125
     'sbg:y': -623.029541015625
-  - id: transcriptomesam
-    outputSource:
-      - star_rsem_wf_pe/transcriptomesam
-    type: File?
-    'sbg:x': -317.04119873046875
-    'sbg:y': -1190.2425537109375
-  - id: transcript_sorted_bam_bai
-    outputSource:
-      - star_rsem_wf_pe/transcript_sorted_bam_bai
-    type: File?
-    'sbg:x': -280.96673583984375
-    'sbg:y': -1078.6630859375
-  - id: transcript_sorted_bam
-    outputSource:
-      - star_rsem_wf_pe/transcript_sorted_bam
-    type: File?
-    'sbg:x': -166.78948974609375
-    'sbg:y': -1185.5286865234375
-  - id: transcript_bam
-    outputSource:
-      - star_rsem_wf_pe/transcript_bam
-    type: File
-    'sbg:x': -100.36844635009766
-    'sbg:y': -1058.908447265625
-  - id: stat
-    outputSource:
-      - star_rsem_wf_pe/stat
-    type: Directory
-    'sbg:x': 2.9692752361297607
-    'sbg:y': -989.25341796875
-  - id: SJ.out.tab
-    outputSource:
-      - star_rsem_wf_pe/SJ.out.tab
-    type: File?
-    'sbg:x': -162.55938720703125
-    'sbg:y': -926.4249877929688
-  - id: readspergene
-    outputSource:
-      - star_rsem_wf_pe/readspergene
-    type: File?
-    'sbg:x': 102.0448226928711
-    'sbg:y': -902.26025390625
-  - id: mappingstats
-    outputSource:
-      - star_rsem_wf_pe/mappingstats
-    type: File?
-    'sbg:x': -46.56849670410156
-    'sbg:y': -835.80712890625
-  - id: Log.progress.out
-    outputSource:
-      - star_rsem_wf_pe/Log.progress.out
-    type: File?
-    'sbg:x': 219.2439422607422
-    'sbg:y': -983.2122192382812
-  - id: Log.out
-    outputSource:
-      - star_rsem_wf_pe/Log.out
-    type: File?
-    'sbg:x': 88.75420379638672
-    'sbg:y': -1106.4525146484375
-  - id: isoforms_result
-    outputSource:
-      - star_rsem_wf_pe/isoforms_result
-    type: File
-    'sbg:x': 240.9922332763672
-    'sbg:y': -849.0977172851562
-  - id: fastqFiles
-    outputSource:
-      - star_rsem_wf_pe/fastqFiles
-    type: 'File[]'
-    'sbg:x': 262.74053955078125
-    'sbg:y': -1108.8603515625
-  - id: bamRemDups
-    outputSource:
-      - star_rsem_wf_pe/bamRemDups
-    type: File?
-    'sbg:x': 346.1089782714844
-    'sbg:y': -989.2446899414062
-  - id: transcriptomesam_1
-    outputSource:
-      - star_rsem_wf_pe_1/transcriptomesam
-    type: File?
-    'sbg:x': -173.43353271484375
-    'sbg:y': -724.6405029296875
-  - id: transcript_sorted_bam_bai_1
-    outputSource:
-      - star_rsem_wf_pe_1/transcript_sorted_bam_bai
-    type: File?
-    'sbg:x': -16.362539291381836
-    'sbg:y': -681.1439208984375
-  - id: transcript_sorted_bam_1
-    outputSource:
-      - star_rsem_wf_pe_1/transcript_sorted_bam
-    type: File?
-    'sbg:x': 108.08601379394531
-    'sbg:y': -728.2651977539062
-  - id: transcript_bam_1
-    outputSource:
-      - star_rsem_wf_pe_1/transcript_bam
-    type: File
-    'sbg:x': 267.573486328125
-    'sbg:y': -672.6862182617188
-  - id: stat_1
-    outputSource:
-      - star_rsem_wf_pe_1/stat
-    type: Directory
-    'sbg:x': 127.41783142089844
-    'sbg:y': -580.860107421875
-  - id: SJ.out.tab_1
-    outputSource:
-      - star_rsem_wf_pe_1/SJ.out.tab
-    type: File?
-    'sbg:x': 401.68792724609375
-    'sbg:y': -573.6107177734375
-  - id: readspergene_1
-    outputSource:
-      - star_rsem_wf_pe_1/readspergene
-    type: File?
-    'sbg:x': 407.7291259765625
-    'sbg:y': -731.8899536132812
-  - id: mappingstats_1
-    outputSource:
-      - star_rsem_wf_pe_1/mappingstats
-    type: File?
-    'sbg:x': 497.21807861328125
-    'sbg:y': -631.6061401367188
-  - id: Log.progress.out_1
-    outputSource:
-      - star_rsem_wf_pe_1/Log.progress.out
-    type: File?
-    'sbg:x': -147.98121643066406
-    'sbg:y': -530.1141357421875
-  - id: Log.out_1
-    outputSource:
-      - star_rsem_wf_pe_1/Log.out
-    type: File?
-    'sbg:x': -33.19856643676758
-    'sbg:y': -525.2811889648438
-  - id: isoforms_result_1
-    outputSource:
-      - star_rsem_wf_pe_1/isoforms_result
-    type: File
-    'sbg:x': 239.86331176757812
-    'sbg:y': -498.6999206542969
-  - id: fastqFiles_1
-    outputSource:
-      - star_rsem_wf_pe_1/fastqFiles
-    type: 'File[]'
-    'sbg:x': 82.79232025146484
-    'sbg:y': -421.3726501464844
-  - id: bamRemDups_1
-    outputSource:
-      - star_rsem_wf_pe_1/bamRemDups
-    type: File?
-    'sbg:x': 640.9984741210938
-    'sbg:y': -574.8189086914062
-  - id: transcriptomesam_2
-    outputSource:
-      - star_rsem_wf_pe_2/transcriptomesam
-    type: File?
-    'sbg:x': -205.97665405273438
-    'sbg:y': -345.2536315917969
-  - id: transcript_sorted_bam_bai_2
-    outputSource:
-      - star_rsem_wf_pe_2/transcript_sorted_bam_bai
-    type: File?
-    'sbg:x': -58.571571350097656
-    'sbg:y': -328.33831787109375
-  - id: transcript_sorted_bam_2
-    outputSource:
-      - star_rsem_wf_pe_2/transcript_sorted_bam
-    type: File?
-    'sbg:x': 146.82894897460938
-    'sbg:y': -295.71588134765625
-  - id: transcript_bam_2
-    outputSource:
-      - star_rsem_wf_pe_2/transcript_bam
-    type: File
-    'sbg:x': 322.0235290527344
-    'sbg:y': -307.7982482910156
-  - id: stat_2
-    outputSource:
-      - star_rsem_wf_pe_2/stat
-    type: Directory
-    'sbg:x': 500.8428039550781
-    'sbg:y': -272.75933837890625
-  - id: SJ.out.tab_2
-    outputSource:
-      - star_rsem_wf_pe_2/SJ.out.tab
-    type: File?
-    'sbg:x': 644.6231689453125
-    'sbg:y': -277.59228515625
-  - id: readspergene_2
-    outputSource:
-      - star_rsem_wf_pe_2/readspergene
-    type: File?
-    'sbg:x': -57.36333465576172
-    'sbg:y': -207.51446533203125
-  - id: mappingstats_2
-    outputSource:
-      - star_rsem_wf_pe_2/mappingstats
-    type: File?
-    'sbg:x': 70.70993041992188
-    'sbg:y': -167.64259338378906
-  - id: Log.progress.out_2
-    outputSource:
-      - star_rsem_wf_pe_2/Log.progress.out
-    type: File?
-    'sbg:x': 221.73973083496094
-    'sbg:y': -165.2261199951172
-  - id: Log.out_2
-    outputSource:
-      - star_rsem_wf_pe_2/Log.out
-    type: File?
-    'sbg:x': 383.6436767578125
-    'sbg:y': -153.14373779296875
-  - id: isoforms_result_2
-    outputSource:
-      - star_rsem_wf_pe_2/isoforms_result
-    type: File
-    'sbg:x': 552.7970581054688
-    'sbg:y': -130.1872100830078
-  - id: fastqFiles_2
-    outputSource:
-      - star_rsem_wf_pe_2/fastqFiles
-    type: 'File[]'
-    'sbg:x': 29.62982940673828
-    'sbg:y': -39.569332122802734
-  - id: bamRemDups_2
-    outputSource:
-      - star_rsem_wf_pe_2/bamRemDups
-    type: File?
-    'sbg:x': 273.6939697265625
-    'sbg:y': -50.443477630615234
-  - id: transcriptomesam_3
-    outputSource:
-      - star_rsem_wf_pe_3/transcriptomesam
-    type: File?
-    'sbg:x': -170.6741180419922
-    'sbg:y': 131.83001708984375
-  - id: transcript_sorted_bam_bai_3
-    outputSource:
-      - star_rsem_wf_pe_3/transcript_sorted_bam_bai
-    type: File?
-    'sbg:x': 4.466985702514648
-    'sbg:y': 152.84693908691406
-  - id: transcript_sorted_bam_3
-    outputSource:
-      - star_rsem_wf_pe_3/transcript_sorted_bam
-    type: File?
-    'sbg:x': 153.9207305908203
-    'sbg:y': 184.37234497070312
-  - id: transcript_bam_3
-    outputSource:
-      - star_rsem_wf_pe_3/transcript_bam
-    type: File
-    'sbg:x': 248.49691772460938
-    'sbg:y': 104.97504425048828
-  - id: stat_3
-    outputSource:
-      - star_rsem_wf_pe_3/stat
-    type: Directory
-    'sbg:x': 390.94500732421875
-    'sbg:y': 183.20474243164062
-  - id: SJ.out.tab_3
-    outputSource:
-      - star_rsem_wf_pe_3/SJ.out.tab
-    type: File?
-    'sbg:x': -8.376694679260254
-    'sbg:y': 284.78656005859375
-  - id: readspergene_3
-    outputSource:
-      - star_rsem_wf_pe_3/readspergene
-    type: File?
-    'sbg:x': 289.3631896972656
-    'sbg:y': 297.6302490234375
-  - id: mappingstats_3
-    outputSource:
-      - star_rsem_wf_pe_3/mappingstats
-    type: File?
-    'sbg:x': 451.66058349609375
-    'sbg:y': 332.6584777832031
-  - id: Log.progress.out_3
-    outputSource:
-      - star_rsem_wf_pe_3/Log.progress.out
-    type: File?
-    'sbg:x': 5.6345930099487305
-    'sbg:y': 410.8881530761719
-  - id: Log.out_3
-    outputSource:
-      - star_rsem_wf_pe_3/Log.out
-    type: File?
-    'sbg:x': 191.28416442871094
-    'sbg:y': 426.0670471191406
-  - id: isoforms_result_3
-    outputSource:
-      - star_rsem_wf_pe_3/isoforms_result
-    type: File
-    'sbg:x': 348.9111633300781
-    'sbg:y': 452.9220275878906
-  - id: fastqFiles_3
-    outputSource:
-      - star_rsem_wf_pe_3/fastqFiles
-    type: 'File[]'
-    'sbg:x': 536.887939453125
-    'sbg:y': 414.3909912109375
-  - id: bamRemDups_3
-    outputSource:
-      - star_rsem_wf_pe_3/bamRemDups
-    type: File?
-    'sbg:x': 583.5922241210938
-    'sbg:y': 245.08792114257812
-  - id: transcriptomesam_4
-    outputSource:
-      - star_rsem_wf_pe_4/transcriptomesam
-    type: File?
-    'sbg:x': -101.9367904663086
-    'sbg:y': 624.3734741210938
-  - id: transcript_sorted_bam_bai_4
-    outputSource:
-      - star_rsem_wf_pe_4/transcript_sorted_bam_bai
-    type: File?
-    'sbg:x': 87.49742889404297
-    'sbg:y': 660.953857421875
-  - id: transcript_sorted_bam_4
-    outputSource:
-      - star_rsem_wf_pe_4/transcript_sorted_bam
-    type: File?
-    'sbg:x': 293.9154052734375
-    'sbg:y': 621.7605590820312
-  - id: transcript_bam_4
-    outputSource:
-      - star_rsem_wf_pe_4/transcript_bam
-    type: File
-    'sbg:x': 20.86884307861328
-    'sbg:y': 540.7611083984375
-  - id: stat_4
-    outputSource:
-      - star_rsem_wf_pe_4/stat
-    type: Directory
-    'sbg:x': 296.5282897949219
-    'sbg:y': 755.0177612304688
-  - id: SJ.out.tab_4
-    outputSource:
-      - star_rsem_wf_pe_4/SJ.out.tab
-    type: File?
-    'sbg:x': 428.4790344238281
-    'sbg:y': 721.0502319335938
-  - id: readspergene_4
-    outputSource:
-      - star_rsem_wf_pe_4/readspergene
-    type: File?
-    'sbg:x': 466.3658752441406
-    'sbg:y': 608.6961669921875
-  - id: mappingstats_4
-    outputSource:
-      - star_rsem_wf_pe_4/mappingstats
-    type: File?
-    'sbg:x': 26.094614028930664
-    'sbg:y': 816.4205932617188
-  - id: Log.progress.out_4
-    outputSource:
-      - star_rsem_wf_pe_4/Log.progress.out
-    type: File?
-    'sbg:x': 175.02911376953125
-    'sbg:y': 842.5494384765625
-  - id: Log.out_4
-    outputSource:
-      - star_rsem_wf_pe_4/Log.out
-    type: File?
-    'sbg:x': 382.7535400390625
-    'sbg:y': 850.3881225585938
-  - id: isoforms_result_4
-    outputSource:
-      - star_rsem_wf_pe_4/isoforms_result
-    type: File
-    'sbg:x': 585.252197265625
-    'sbg:y': 755.0177612304688
-  - id: fastqFiles_4
-    outputSource:
-      - star_rsem_wf_pe_4/fastqFiles
-    type: 'File[]'
-    'sbg:x': 220.75460815429688
-    'sbg:y': 990.177490234375
-  - id: bamRemDups_4
-    outputSource:
-      - star_rsem_wf_pe_4/bamRemDups
-    type: File?
-    'sbg:x': 441.54345703125
-    'sbg:y': 970.5808715820312
-  - id: transcriptomesam_5
-    outputSource:
-      - star_rsem_wf_pe_5/transcriptomesam
-    type: File?
-    'sbg:x': -94.09813690185547
-    'sbg:y': 1137.8055419921875
-  - id: transcript_sorted_bam_bai_5
-    outputSource:
-      - star_rsem_wf_pe_5/transcript_sorted_bam_bai
-    type: File?
-    'sbg:x': 182.86776733398438
-    'sbg:y': 1175.6923828125
-  - id: transcript_sorted_bam_5
-    outputSource:
-      - star_rsem_wf_pe_5/transcript_sorted_bam
-    type: File?
-    'sbg:x': 376.2213134765625
-    'sbg:y': 1126.047607421875
-  - id: transcript_bam_5
-    outputSource:
-      - star_rsem_wf_pe_5/transcript_bam
-    type: File
-    'sbg:x': 35.239715576171875
-    'sbg:y': 1095.9993896484375
-  - id: stat_5
-    outputSource:
-      - star_rsem_wf_pe_5/stat
-    type: Directory
-    'sbg:x': 548.6717529296875
-    'sbg:y': 1247.5467529296875
-  - id: SJ.out.tab_5
-    outputSource:
-      - star_rsem_wf_pe_5/SJ.out.tab
-    type: File?
-    'sbg:x': 15.643071174621582
-    'sbg:y': 1307.64306640625
-  - id: readspergene_5
-    outputSource:
-      - star_rsem_wf_pe_5/readspergene
-    type: File?
-    'sbg:x': 241.65769958496094
-    'sbg:y': 1344.2235107421875
-  - id: mappingstats_5
-    outputSource:
-      - star_rsem_wf_pe_5/mappingstats
-    type: File?
-    'sbg:x': 555.2039794921875
-    'sbg:y': 1391.2554931640625
-  - id: Log.progress.out_5
-    outputSource:
-      - star_rsem_wf_pe_5/Log.progress.out
-    type: File?
-    'sbg:x': 84.8845443725586
-    'sbg:y': 1459.1905517578125
-  - id: Log.out_5
-    outputSource:
-      - star_rsem_wf_pe_5/Log.out
-    type: File?
-    'sbg:x': 342.2538146972656
-    'sbg:y': 1514.0611572265625
-  - id: isoforms_result_5
-    outputSource:
-      - star_rsem_wf_pe_5/isoforms_result
-    type: File
-    'sbg:x': 706.7514038085938
-    'sbg:y': 1322.0140380859375
-  - id: fastqFiles_5
-    outputSource:
-      - star_rsem_wf_pe_5/fastqFiles
-    type: 'File[]'
-    'sbg:x': 748.5575561523438
-    'sbg:y': 1175.6923828125
-  - id: bamRemDups_5
-    outputSource:
-      - star_rsem_wf_pe_5/bamRemDups
-    type: File?
-    'sbg:x': 547.3653564453125
-    'sbg:y': 1516.6739501953125
-  - id: transcriptomesam_6
-    outputSource:
-      - star_rsem_wf_pe_6/transcriptomesam
-    type: File?
-    'sbg:x': -124.14632415771484
-    'sbg:y': 1662.99560546875
-  - id: transcript_sorted_bam_bai_6
-    outputSource:
-      - star_rsem_wf_pe_6/transcript_sorted_bam_bai
-    type: File?
-    'sbg:x': 49.61058807373047
-    'sbg:y': 1669.52783203125
-  - id: transcript_sorted_bam_6
-    outputSource:
-      - star_rsem_wf_pe_6/transcript_sorted_bam
-    type: File?
-    'sbg:x': 241.65769958496094
-    'sbg:y': 1673.4471435546875
-  - id: transcript_bam_6
-    outputSource:
-      - star_rsem_wf_pe_6/transcript_bam
-    type: File
-    'sbg:x': 384.0599670410156
-    'sbg:y': 1717.8662109375
-  - id: stat_6
-    outputSource:
-      - star_rsem_wf_pe_6/stat
-    type: Directory
-    'sbg:x': 131.91648864746094
-    'sbg:y': 1788.4140625
-  - id: SJ.out.tab_6
-    outputSource:
-      - star_rsem_wf_pe_6/SJ.out.tab
-    type: File?
-    'sbg:x': 274.3187561035156
-    'sbg:y': 1822.381591796875
-  - id: readspergene_6
-    outputSource:
-      - star_rsem_wf_pe_6/readspergene
-    type: File?
-    'sbg:x': 522.5429077148438
-    'sbg:y': 1844.5911865234375
-  - id: mappingstats_6
-    outputSource:
-      - star_rsem_wf_pe_6/mappingstats
-    type: File?
-    'sbg:x': -0.03424416482448578
-    'sbg:y': 1899.4617919921875
-  - id: Log.progress.out_6
-    outputSource:
-      - star_rsem_wf_pe_6/Log.progress.out
-    type: File?
-    'sbg:x': 148.6299285888672
-    'sbg:y': 1982.15087890625
-  - id: Log.out_6
-    outputSource:
-      - star_rsem_wf_pe_6/Log.out
-    type: File?
-    'sbg:x': 344.8594665527344
-    'sbg:y': 1961.5521240234375
-  - id: isoforms_result_6
-    outputSource:
-      - star_rsem_wf_pe_6/isoforms_result
-    type: File
-    'sbg:x': 506.396484375
-    'sbg:y': 1978.8984375
-  - id: fastqFiles_6
-    outputSource:
-      - star_rsem_wf_pe_6/fastqFiles
-    type: 'File[]'
-    'sbg:x': 110.68498229980469
-    'sbg:y': 2120.9208984375
-  - id: bamRemDups_6
-    outputSource:
-      - star_rsem_wf_pe_6/bamRemDups
-    type: File?
-    'sbg:x': 340.52288818359375
-    'sbg:y': 2120.9208984375
   - id: rsem_index_1
     outputSource:
       - rsem_index/rsem_index
@@ -656,397 +126,651 @@ outputs:
     outputSource:
       - deseq2/output
     type: Directory
-    'sbg:x': 1664.796630859375
-    'sbg:y': -159.45272827148438
+    'sbg:x': 1664
+    'sbg:y': -212.76437377929688
+  - id: downloaded
+    outputSource:
+      - wget/downloaded
+    type: File
+    'sbg:x': -2124.76025390625
+    'sbg:y': -308.5763854980469
+  - id: downloaded_1
+    outputSource:
+      - wget_1/downloaded
+    type: File
+    'sbg:x': -2140.828857421875
+    'sbg:y': 107.20085906982422
+  - id: transcriptomesam
+    outputSource:
+      - star_rsem_wf_pe/transcriptomesam
+    type: File?
+    'sbg:x': -77.76531982421875
+    'sbg:y': -1494.5240478515625
+  - id: transcript_sorted_bam_bai
+    outputSource:
+      - star_rsem_wf_pe/transcript_sorted_bam_bai
+    type: File?
+    'sbg:x': 50.2076530456543
+    'sbg:y': -1436.9361572265625
+  - id: transcriptomesam_1
+    outputSource:
+      - star_rsem_wf_pe_1/transcriptomesam
+    type: File?
+    'sbg:x': 5.3536529541015625
+    'sbg:y': -997.7470092773438
+  - id: genes_result
+    outputSource:
+      - star_rsem_wf_pe/genes_result
+    type: File
+    'sbg:x': 97.81195068359375
+    'sbg:y': -1158.723876953125
+  - id: transcript_sorted_bam
+    outputSource:
+      - star_rsem_wf_pe/transcript_sorted_bam
+    type: File?
+    'sbg:x': 177.6976776123047
+    'sbg:y': -1407.6341552734375
+  - id: transcript_bam
+    outputSource:
+      - star_rsem_wf_pe/transcript_bam
+    type: File
+    'sbg:x': 188.62867736816406
+    'sbg:y': -1519.8153076171875
+  - id: stat
+    outputSource:
+      - star_rsem_wf_pe/stat
+    type: Directory
+    'sbg:x': 360.4168395996094
+    'sbg:y': -1418.6689453125
+  - id: SJ.out.tab
+    outputSource:
+      - star_rsem_wf_pe/SJ.out.tab
+    type: File?
+    'sbg:x': 464.7741394042969
+    'sbg:y': -1389.77001953125
+  - id: readspergene
+    outputSource:
+      - star_rsem_wf_pe/readspergene
+    type: File?
+    'sbg:x': 477.6181335449219
+    'sbg:y': -1278.99072265625
+  - id: mappingstats
+    outputSource:
+      - star_rsem_wf_pe/mappingstats
+    type: File?
+    'sbg:x': 196.65615844726562
+    'sbg:y': -1287.0181884765625
+  - id: Log.progress.out
+    outputSource:
+      - star_rsem_wf_pe/Log.progress.out
+    type: File?
+    'sbg:x': 276.9309997558594
+    'sbg:y': -1200.3214111328125
+  - id: Log.out
+    outputSource:
+      - star_rsem_wf_pe/Log.out
+    type: File?
+    'sbg:x': 368.4443359375
+    'sbg:y': -1160.1839599609375
+  - id: isoforms_result
+    outputSource:
+      - star_rsem_wf_pe/isoforms_result
+    type: File
+    'sbg:x': 530.5995483398438
+    'sbg:y': -1484.4942626953125
+  - id: fastqFiles
+    outputSource:
+      - star_rsem_wf_pe/fastqFiles
+    type: 'File[]'
+    'sbg:x': 19.27484703063965
+    'sbg:y': -1106.9725341796875
+  - id: bamRemDups
+    outputSource:
+      - star_rsem_wf_pe/bamRemDups
+    type: File?
+    'sbg:x': 259.2705383300781
+    'sbg:y': -1047.7991943359375
   - id: aligned
     outputSource:
       - star_rsem_wf_pe/aligned
     type: File
-    'sbg:x': 458.2008361816406
-    'sbg:y': -1121.970703125
+    'sbg:x': 540.2324829101562
+    'sbg:y': -1140.91796875
+  - id: transcript_sorted_bam_bai_1
+    outputSource:
+      - star_rsem_wf_pe_1/transcript_sorted_bam_bai
+    type: File?
+    'sbg:x': 64.01971435546875
+    'sbg:y': -905.8419799804688
+  - id: transcript_sorted_bam_1
+    outputSource:
+      - star_rsem_wf_pe_1/transcript_sorted_bam
+    type: File?
+    'sbg:x': 222.69415283203125
+    'sbg:y': -918.2062377929688
+  - id: transcript_bam_1
+    outputSource:
+      - star_rsem_wf_pe_1/transcript_bam
+    type: File
+    'sbg:x': 426.7041320800781
+    'sbg:y': -926.4490356445312
+  - id: stat_1
+    outputSource:
+      - star_rsem_wf_pe_1/stat
+    type: Directory
+    'sbg:x': 562.7108154296875
+    'sbg:y': -914.0847778320312
+  - id: SJ.out.tab_1
+    outputSource:
+      - star_rsem_wf_pe_1/SJ.out.tab
+    type: File?
+    'sbg:x': 301.0010070800781
+    'sbg:y': -813.1101684570312
+  - id: readspergene_1
+    outputSource:
+      - star_rsem_wf_pe_1/readspergene
+    type: File?
+    'sbg:x': 437.0076599121094
+    'sbg:y': -780.1388549804688
+  - id: mappingstats_1
+    outputSource:
+      - star_rsem_wf_pe_1/mappingstats
+    type: File?
+    'sbg:x': 610.1070556640625
+    'sbg:y': -776.0174560546875
+  - id: Log.progress.out_1
+    outputSource:
+      - star_rsem_wf_pe_1/Log.progress.out
+    type: File?
+    'sbg:x': 352.5186767578125
+    'sbg:y': -656.4963989257812
+  - id: Log.out_1
+    outputSource:
+      - star_rsem_wf_pe_1/Log.out
+    type: File?
+    'sbg:x': 505.0110168457031
+    'sbg:y': -640.0107421875
+  - id: isoforms_result_1
+    outputSource:
+      - star_rsem_wf_pe_1/isoforms_result
+    type: File
+    'sbg:x': 142.3265838623047
+    'sbg:y': -644.1322021484375
+  - id: genes_result_1
+    outputSource:
+      - star_rsem_wf_pe_1/genes_result
+    type: File
+    'sbg:x': 752.2958374023438
+    'sbg:y': -695.6498413085938
+  - id: fastqFiles_1
+    outputSource:
+      - star_rsem_wf_pe_1/fastqFiles
+    type: 'File[]'
+    'sbg:x': 247.42263793945312
+    'sbg:y': -530.7932739257812
+  - id: bamRemDups_1
+    outputSource:
+      - star_rsem_wf_pe_1/bamRemDups
+    type: File?
+    'sbg:x': 686.3532104492188
+    'sbg:y': -860.5064086914062
   - id: aligned_1
     outputSource:
       - star_rsem_wf_pe_1/aligned
     type: File
-    'sbg:x': 405.8953552246094
-    'sbg:y': -428.5212097167969
+    'sbg:x': 795.5706787109375
+    'sbg:y': -825.4744262695312
+  - id: transcriptomesam_2
+    outputSource:
+      - star_rsem_wf_pe_2/transcriptomesam
+    type: File?
+    'sbg:x': 47
+    'sbg:y': -455.6241760253906
+  - id: transcript_sorted_bam_bai_2
+    outputSource:
+      - star_rsem_wf_pe_2/transcript_sorted_bam_bai
+    type: File?
+    'sbg:x': 350.70953369140625
+    'sbg:y': -414.2627258300781
+  - id: transcript_sorted_bam_2
+    outputSource:
+      - star_rsem_wf_pe_2/transcript_sorted_bam
+    type: File?
+    'sbg:x': 177.65240478515625
+    'sbg:y': -351.5057678222656
+  - id: transcript_bam_2
+    outputSource:
+      - star_rsem_wf_pe_2/transcript_bam
+    type: File
+    'sbg:x': 497.1424865722656
+    'sbg:y': -412.36102294921875
+  - id: stat_2
+    outputSource:
+      - star_rsem_wf_pe_2/stat
+    type: Directory
+    'sbg:x': 552.2925415039062
+    'sbg:y': -296.3556823730469
+  - id: SJ.out.tab_2
+    outputSource:
+      - star_rsem_wf_pe_2/SJ.out.tab
+    type: File?
+    'sbg:x': 291.7560119628906
+    'sbg:y': -262.1246032714844
+  - id: readspergene_2
+    outputSource:
+      - star_rsem_wf_pe_2/readspergene
+    type: File?
+    'sbg:x': 630.2633056640625
+    'sbg:y': -372.42474365234375
+  - id: mappingstats_2
+    outputSource:
+      - star_rsem_wf_pe_2/mappingstats
+    type: File?
+    'sbg:x': 449.59930419921875
+    'sbg:y': -168.94000244140625
+  - id: Log.progress.out_2
+    outputSource:
+      - star_rsem_wf_pe_2/Log.progress.out
+    type: File?
+    'sbg:x': 723.4479370117188
+    'sbg:y': -239.30389404296875
+  - id: Log.out_2
+    outputSource:
+      - star_rsem_wf_pe_2/Log.out
+    type: File?
+    'sbg:x': 780.499755859375
+    'sbg:y': -380.0316467285156
+  - id: isoforms_result_2
+    outputSource:
+      - star_rsem_wf_pe_2/isoforms_result
+    type: File
+    'sbg:x': 168.14376831054688
+    'sbg:y': -127.1020278930664
+  - id: genes_result_2
+    outputSource:
+      - star_rsem_wf_pe_2/genes_result
+    type: File
+    'sbg:x': 835.6497802734375
+    'sbg:y': -252.61598205566406
+  - id: fastqFiles_2
+    outputSource:
+      - star_rsem_wf_pe_2/fastqFiles
+    type: 'File[]'
+    'sbg:x': 289.8542785644531
+    'sbg:y': -119.4951171875
+  - id: bamRemDups_2
+    outputSource:
+      - star_rsem_wf_pe_2/bamRemDups
+    type: File?
+    'sbg:x': 603.63916015625
+    'sbg:y': -102.37957763671875
   - id: aligned_2
     outputSource:
       - star_rsem_wf_pe_2/aligned
     type: File
-    'sbg:x': -216.2845458984375
-    'sbg:y': -27.939626693725586
+    'sbg:x': -10.618523597717285
+    'sbg:y': -70.05022430419922
+  - id: transcriptomesam_3
+    outputSource:
+      - star_rsem_wf_pe_3/transcriptomesam
+    type: File?
+    'sbg:x': -9.11553955078125
+    'sbg:y': 80.08100891113281
+  - id: transcript_sorted_bam_bai_3
+    outputSource:
+      - star_rsem_wf_pe_3/transcript_sorted_bam_bai
+    type: File?
+    'sbg:x': 221.39212036132812
+    'sbg:y': 53.5620002746582
+  - id: transcript_sorted_bam_3
+    outputSource:
+      - star_rsem_wf_pe_3/transcript_sorted_bam
+    type: File?
+    'sbg:x': 377.3337097167969
+    'sbg:y': 55.46372604370117
+  - id: transcript_bam_3
+    outputSource:
+      - star_rsem_wf_pe_3/transcript_bam
+    type: File
+    'sbg:x': 538.98046875
+    'sbg:y': 55.46372604370117
+  - id: stat_3
+    outputSource:
+      - star_rsem_wf_pe_3/stat
+    type: Directory
+    'sbg:x': 679.708251953125
+    'sbg:y': 57.36545181274414
+  - id: SJ.out.tab_3
+    outputSource:
+      - star_rsem_wf_pe_3/SJ.out.tab
+    type: File?
+    'sbg:x': 183.3575897216797
+    'sbg:y': 207.6018524169922
+  - id: readspergene_3
+    outputSource:
+      - star_rsem_wf_pe_3/readspergene
+    type: File?
+    'sbg:x': 312.67498779296875
+    'sbg:y': 199.9949493408203
+  - id: mappingstats_3
+    outputSource:
+      - star_rsem_wf_pe_3/mappingstats
+    type: File?
+    'sbg:x': 432.4837646484375
+    'sbg:y': 182.87940979003906
+  - id: Log.progress.out_3
+    outputSource:
+      - star_rsem_wf_pe_3/Log.progress.out
+    type: File?
+    'sbg:x': 559.8994750976562
+    'sbg:y': 198.0932159423828
+  - id: Log.out_3
+    outputSource:
+      - star_rsem_wf_pe_3/Log.out
+    type: File?
+    'sbg:x': 158.63514709472656
+    'sbg:y': 335.0175476074219
+  - id: isoforms_result_3
+    outputSource:
+      - star_rsem_wf_pe_3/isoforms_result
+    type: File
+    'sbg:x': 314.57672119140625
+    'sbg:y': 335.0175476074219
+  - id: genes_result_3
+    outputSource:
+      - star_rsem_wf_pe_3/genes_result
+    type: File
+    'sbg:x': 459.1079406738281
+    'sbg:y': 340.72271728515625
+  - id: fastqFiles_3
+    outputSource:
+      - star_rsem_wf_pe_3/fastqFiles
+    type: 'File[]'
+    'sbg:x': 73.05744171142578
+    'sbg:y': 464.3349304199219
+  - id: bamRemDups_3
+    outputSource:
+      - star_rsem_wf_pe_3/bamRemDups
+    type: File?
+    'sbg:x': 287.9525451660156
+    'sbg:y': 479.54876708984375
   - id: aligned_3
     outputSource:
       - star_rsem_wf_pe_3/aligned
     type: File
-    'sbg:x': -303.2192687988281
-    'sbg:y': 490.259521484375
+    'sbg:x': 466.71484375
+    'sbg:y': 466.2366638183594
+  - id: transcriptomesam_4
+    outputSource:
+      - star_rsem_wf_pe_4/transcriptomesam
+    type: File?
+    'sbg:x': -34.48770523071289
+    'sbg:y': 576.5924682617188
+  - id: transcript_sorted_bam_bai_4
+    outputSource:
+      - star_rsem_wf_pe_4/transcript_sorted_bam_bai
+    type: File?
+    'sbg:x': 173.8489532470703
+    'sbg:y': 622.17822265625
+  - id: transcript_sorted_bam_4
+    outputSource:
+      - star_rsem_wf_pe_4/transcript_sorted_bam
+    type: File?
+    'sbg:x': 289.4549255371094
+    'sbg:y': 602.760986328125
+  - id: transcript_bam_4
+    outputSource:
+      - star_rsem_wf_pe_4/transcript_bam
+    type: File
+    'sbg:x': 415.2477111816406
+    'sbg:y': 614.0260620117188
+  - id: stat_4
+    outputSource:
+      - star_rsem_wf_pe_4/stat
+    type: Directory
+    'sbg:x': 586.1006469726562
+    'sbg:y': 625.2910766601562
+  - id: SJ.out.tab_4
+    outputSource:
+      - star_rsem_wf_pe_4/SJ.out.tab
+    type: File?
+    'sbg:x': 657.44580078125
+    'sbg:y': 525.7833251953125
+  - id: readspergene_4
+    outputSource:
+      - star_rsem_wf_pe_4/readspergene
+    type: File?
+    'sbg:x': 694.9959106445312
+    'sbg:y': 670.3511962890625
+  - id: mappingstats_4
+    outputSource:
+      - star_rsem_wf_pe_4/mappingstats
+    type: File?
+    'sbg:x': 347.6575622558594
+    'sbg:y': 758.5938720703125
+  - id: Log.progress.out_4
+    outputSource:
+      - star_rsem_wf_pe_4/Log.progress.out
+    type: File?
+    'sbg:x': 507.2454528808594
+    'sbg:y': 781.1239624023438
+  - id: Log.out_4
+    outputSource:
+      - star_rsem_wf_pe_4/Log.out
+    type: File?
+    'sbg:x': 670.5883178710938
+    'sbg:y': 807.4089965820312
+  - id: isoforms_result_4
+    outputSource:
+      - star_rsem_wf_pe_4/isoforms_result
+    type: File
+    'sbg:x': 193.70217895507812
+    'sbg:y': 867.4891357421875
+  - id: genes_result_4
+    outputSource:
+      - star_rsem_wf_pe_4/genes_result
+    type: File
+    'sbg:x': 368.31011962890625
+    'sbg:y': 903.1617431640625
+  - id: fastqFiles_4
+    outputSource:
+      - star_rsem_wf_pe_4/fastqFiles
+    type: 'File[]'
+    'sbg:x': 32.236785888671875
+    'sbg:y': 940.7118530273438
+  - id: bamRemDups_4
+    outputSource:
+      - star_rsem_wf_pe_4/bamRemDups
+    type: File?
+    'sbg:x': 225.6197509765625
+    'sbg:y': 1015.81201171875
   - id: aligned_4
     outputSource:
       - star_rsem_wf_pe_4/aligned
     type: File
-    'sbg:x': -236.73977661132812
-    'sbg:y': 984.5948486328125
+    'sbg:x': 578.5906372070312
+    'sbg:y': 916.3042602539062
+  - id: transcriptomesam_5
+    outputSource:
+      - star_rsem_wf_pe_5/transcriptomesam
+    type: File?
+    'sbg:x': -7
+    'sbg:y': 1163.469970703125
+  - id: transcript_sorted_bam_bai_5
+    outputSource:
+      - star_rsem_wf_pe_5/transcript_sorted_bam_bai
+    type: File?
+    'sbg:x': 167.4171142578125
+    'sbg:y': 1173.5224609375
+  - id: transcript_sorted_bam_5
+    outputSource:
+      - star_rsem_wf_pe_5/transcript_sorted_bam
+    type: File?
+    'sbg:x': 368.31011962890625
+    'sbg:y': 1166.012451171875
+  - id: transcript_bam_5
+    outputSource:
+      - star_rsem_wf_pe_5/transcript_bam
+    type: File
+    'sbg:x': 511.0004577636719
+    'sbg:y': 1156.6248779296875
+  - id: stat_5
+    outputSource:
+      - star_rsem_wf_pe_5/stat
+    type: Directory
+    'sbg:x': 681.8533935546875
+    'sbg:y': 1143.4822998046875
+  - id: SJ.out.tab_5
+    outputSource:
+      - star_rsem_wf_pe_5/SJ.out.tab
+    type: File?
+    'sbg:x': 306.3524475097656
+    'sbg:y': 1316.2127685546875
+  - id: readspergene_5
+    outputSource:
+      - star_rsem_wf_pe_5/readspergene
+    type: File?
+    'sbg:x': 477.20538330078125
+    'sbg:y': 1295.5601806640625
+  - id: mappingstats_5
+    outputSource:
+      - star_rsem_wf_pe_5/mappingstats
+    type: File?
+    'sbg:x': 668.7108154296875
+    'sbg:y': 1308.7027587890625
+  - id: Log.progress.out_5
+    outputSource:
+      - star_rsem_wf_pe_5/Log.progress.out
+    type: File?
+    'sbg:x': 212.4772186279297
+    'sbg:y': 1425.1080322265625
+  - id: Log.out_5
+    outputSource:
+      - star_rsem_wf_pe_5/Log.out
+    type: File?
+    'sbg:x': 370.1876220703125
+    'sbg:y': 1438.2506103515625
+  - id: isoforms_result_5
+    outputSource:
+      - star_rsem_wf_pe_5/isoforms_result
+    type: File
+    'sbg:x': 586.1006469726562
+    'sbg:y': 1442.005615234375
+  - id: genes_result_5
+    outputSource:
+      - star_rsem_wf_pe_5/genes_result
+    type: File
+    'sbg:x': 749.4435424804688
+    'sbg:y': 1445.7606201171875
+  - id: fastqFiles_5
+    outputSource:
+      - star_rsem_wf_pe_5/fastqFiles
+    type: 'File[]'
+    'sbg:x': 161.78460693359375
+    'sbg:y': 1560.288330078125
+  - id: bamRemDups_5
+    outputSource:
+      - star_rsem_wf_pe_5/bamRemDups
+    type: File?
+    'sbg:x': 310.1074523925781
+    'sbg:y': 1569.6759033203125
   - id: aligned_5
     outputSource:
       - star_rsem_wf_pe_5/aligned
     type: File
-    'sbg:x': -180.48788452148438
-    'sbg:y': 1489.175537109375
+    'sbg:x': 527.8980102539062
+    'sbg:y': 1560.288330078125
+  - id: transcriptomesam_6
+    outputSource:
+      - star_rsem_wf_pe_6/transcriptomesam
+    type: File?
+    'sbg:x': 29.59244155883789
+    'sbg:y': 1689.164794921875
+  - id: transcript_sorted_bam_bai_6
+    outputSource:
+      - star_rsem_wf_pe_6/transcript_sorted_bam_bai
+    type: File?
+    'sbg:x': 191.82467651367188
+    'sbg:y': 1717.998779296875
+  - id: transcript_sorted_bam_6
+    outputSource:
+      - star_rsem_wf_pe_6/transcript_sorted_bam
+    type: File?
+    'sbg:x': 345.7800598144531
+    'sbg:y': 1712.3662109375
+  - id: transcript_bam_6
+    outputSource:
+      - star_rsem_wf_pe_6/transcript_bam
+    type: File
+    'sbg:x': 512.8779296875
+    'sbg:y': 1689.836181640625
+  - id: stat_6
+    outputSource:
+      - star_rsem_wf_pe_6/stat
+    type: Directory
+    'sbg:x': 663.0783081054688
+    'sbg:y': 1699.2237548828125
+  - id: SJ.out.tab_6
+    outputSource:
+      - star_rsem_wf_pe_6/SJ.out.tab
+    type: File?
+    'sbg:x': 803.8911743164062
+    'sbg:y': 1727.38623046875
+  - id: readspergene_6
+    outputSource:
+      - star_rsem_wf_pe_6/readspergene
+    type: File?
+    'sbg:x': 212.4772186279297
+    'sbg:y': 1834.404052734375
+  - id: mappingstats_6
+    outputSource:
+      - star_rsem_wf_pe_6/mappingstats
+    type: File?
+    'sbg:x': 340.14752197265625
+    'sbg:y': 1877.586669921875
+  - id: Log.progress.out_6
+    outputSource:
+      - star_rsem_wf_pe_6/Log.progress.out
+    type: File?
+    'sbg:x': 480.96038818359375
+    'sbg:y': 1873.8316650390625
+  - id: Log.out_6
+    outputSource:
+      - star_rsem_wf_pe_6/Log.out
+    type: File?
+    'sbg:x': 623.6507568359375
+    'sbg:y': 1933.9117431640625
+  - id: isoforms_result_6
+    outputSource:
+      - star_rsem_wf_pe_6/isoforms_result
+    type: File
+    'sbg:x': 280.0673828125
+    'sbg:y': 2014.6444091796875
+  - id: genes_result_6
+    outputSource:
+      - star_rsem_wf_pe_6/genes_result
+    type: File
+    'sbg:x': 446.63250732421875
+    'sbg:y': 2053.73486328125
+  - id: fastqFiles_6
+    outputSource:
+      - star_rsem_wf_pe_6/fastqFiles
+    type: 'File[]'
+    'sbg:x': 212.4772186279297
+    'sbg:y': 2153.579833984375
+  - id: bamRemDups_6
+    outputSource:
+      - star_rsem_wf_pe_6/bamRemDups
+    type: File?
+    'sbg:x': 445.28778076171875
+    'sbg:y': 2238.067626953125
   - id: aligned_6
     outputSource:
       - star_rsem_wf_pe_6/aligned
     type: File
-    'sbg:x': -236.73977661132812
-    'sbg:y': 2191.455810546875
+    'sbg:x': 659.3233032226562
+    'sbg:y': 2129.17236328125
 steps:
-  - id: star_rsem_wf_pe
-    in:
-      - id: split_files
-        source: split_files
-      - id: runid
-        source: runid
-      - id: nthreads
-        source: nthreads_2
-      - id: genomeDir
-        source: star_index/starIndex
-      - id: nthreads_1
-        source: nthreads_2
-      - id: outFileNamePrefix
-        source: runid
-      - id: outSAMtype
-        source:
-          - outSAMtype
-      - id: quantMode
-        source: quantMode
-      - id: rsem_index_dir
-        source: rsem_index/rsem_index
-      - id: rsem_output_prefix
-        source: runid
-      - id: nthreads_2
-        source: nthreads_2
-      - id: rsem_index_prefix
-        source: rsem_index_prefix
-    out:
-      - id: fastqFiles
-      - id: transcriptomesam
-      - id: SJ.out.tab
-      - id: readspergene
-      - id: mappingstats
-      - id: Log.progress.out
-      - id: Log.out
-      - id: bamRemDups
-      - id: transcript_sorted_bam_bai
-      - id: transcript_sorted_bam
-      - id: transcript_bam
-      - id: stat
-      - id: isoforms_result
-      - id: genes_result
-      - id: aligned
-    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
-    'sbg:x': -442.5400390625
-    'sbg:y': -907.251708984375
-  - id: star_rsem_wf_pe_1
-    in:
-      - id: split_files
-        source: split_files
-      - id: runid
-        source: runid_1
-      - id: nthreads
-        source: nthreads_2
-      - id: genomeDir
-        source: star_index/starIndex
-      - id: nthreads_1
-        source: nthreads_2
-      - id: outFileNamePrefix
-        source: runid_1
-      - id: outSAMtype
-        source:
-          - outSAMtype
-      - id: quantMode
-        source: quantMode
-      - id: rsem_index_dir
-        source: rsem_index/rsem_index
-      - id: rsem_output_prefix
-        source: runid_1
-      - id: nthreads_2
-        source: nthreads_2
-      - id: rsem_index_prefix
-        source: rsem_index_prefix
-    out:
-      - id: fastqFiles
-      - id: transcriptomesam
-      - id: SJ.out.tab
-      - id: readspergene
-      - id: mappingstats
-      - id: Log.progress.out
-      - id: Log.out
-      - id: bamRemDups
-      - id: transcript_sorted_bam_bai
-      - id: transcript_sorted_bam
-      - id: transcript_bam
-      - id: stat
-      - id: isoforms_result
-      - id: genes_result
-      - id: aligned
-    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
-    'sbg:x': -406.7059020996094
-    'sbg:y': -584.1411743164062
-  - id: star_rsem_wf_pe_2
-    in:
-      - id: split_files
-        source: split_files
-      - id: runid
-        source: runid_2
-      - id: nthreads
-        source: nthreads_2
-      - id: genomeDir
-        source: star_index/starIndex
-      - id: nthreads_1
-        source: nthreads_2
-      - id: outFileNamePrefix
-        source: runid_2
-      - id: outSAMtype
-        source:
-          - outSAMtype
-      - id: quantMode
-        source: quantMode
-      - id: rsem_index_dir
-        source: rsem_index/rsem_index
-      - id: rsem_output_prefix
-        source: runid_2
-      - id: nthreads_2
-        source: nthreads_2
-      - id: rsem_index_prefix
-        source: rsem_index_prefix
-    out:
-      - id: fastqFiles
-      - id: transcriptomesam
-      - id: SJ.out.tab
-      - id: readspergene
-      - id: mappingstats
-      - id: Log.progress.out
-      - id: Log.out
-      - id: bamRemDups
-      - id: transcript_sorted_bam_bai
-      - id: transcript_sorted_bam
-      - id: transcript_bam
-      - id: stat
-      - id: isoforms_result
-      - id: genes_result
-      - id: aligned
-    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
-    'sbg:x': -380.3752746582031
-    'sbg:y': -238.04119873046875
-  - id: star_rsem_wf_pe_3
-    in:
-      - id: split_files
-        source: split_files
-      - id: runid
-        source: runid_3
-      - id: nthreads
-        source: nthreads_2
-      - id: genomeDir
-        source: star_index/starIndex
-      - id: nthreads_1
-        source: nthreads_2
-      - id: outFileNamePrefix
-        source: runid_3
-      - id: outSAMtype
-        source:
-          - outSAMtype
-      - id: quantMode
-        source: quantMode
-      - id: rsem_index_dir
-        source: rsem_index/rsem_index
-      - id: rsem_output_prefix
-        source: runid_3
-      - id: nthreads_2
-        source: nthreads_2
-      - id: rsem_index_prefix
-        source: rsem_index_prefix
-    out:
-      - id: fastqFiles
-      - id: transcriptomesam
-      - id: SJ.out.tab
-      - id: readspergene
-      - id: mappingstats
-      - id: Log.progress.out
-      - id: Log.out
-      - id: bamRemDups
-      - id: transcript_sorted_bam_bai
-      - id: transcript_sorted_bam
-      - id: transcript_bam
-      - id: stat
-      - id: isoforms_result
-      - id: genes_result
-      - id: aligned
-    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
-    'sbg:x': -406.21466064453125
-    'sbg:y': 301.96051025390625
-  - id: star_rsem_wf_pe_4
-    in:
-      - id: split_files
-        source: split_files
-      - id: runid
-        source: runid_4
-      - id: nthreads
-        source: nthreads_2
-      - id: genomeDir
-        source: star_index/starIndex
-      - id: nthreads_1
-        source: nthreads_2
-      - id: outFileNamePrefix
-        source: runid_4
-      - id: outSAMtype
-        source:
-          - outSAMtype
-      - id: quantMode
-        source: quantMode
-      - id: rsem_index_dir
-        source: rsem_index/rsem_index
-      - id: rsem_output_prefix
-        source: runid_4
-      - id: nthreads_2
-        source: nthreads_2
-      - id: rsem_index_prefix
-        source: rsem_index_prefix
-    out:
-      - id: fastqFiles
-      - id: transcriptomesam
-      - id: SJ.out.tab
-      - id: readspergene
-      - id: mappingstats
-      - id: Log.progress.out
-      - id: Log.out
-      - id: bamRemDups
-      - id: transcript_sorted_bam_bai
-      - id: transcript_sorted_bam
-      - id: transcript_bam
-      - id: stat
-      - id: isoforms_result
-      - id: genes_result
-      - id: aligned
-    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
-    'sbg:x': -325.3263854980469
-    'sbg:y': 783.5361938476562
-  - id: star_rsem_wf_pe_5
-    in:
-      - id: split_files
-        source: split_files
-      - id: runid
-        source: runid_5
-      - id: nthreads
-        source: nthreads_2
-      - id: genomeDir
-        source: star_index/starIndex
-      - id: nthreads_1
-        source: nthreads_2
-      - id: outFileNamePrefix
-        source: runid_5
-      - id: outSAMtype
-        source:
-          - outSAMtype
-      - id: quantMode
-        source: quantMode
-      - id: rsem_index_dir
-        source: rsem_index/rsem_index
-      - id: rsem_output_prefix
-        source: runid_5
-      - id: nthreads_2
-        source: nthreads_2
-      - id: rsem_index_prefix
-        source: rsem_index_prefix
-    out:
-      - id: fastqFiles
-      - id: transcriptomesam
-      - id: SJ.out.tab
-      - id: readspergene
-      - id: mappingstats
-      - id: Log.progress.out
-      - id: Log.out
-      - id: bamRemDups
-      - id: transcript_sorted_bam_bai
-      - id: transcript_sorted_bam
-      - id: transcript_bam
-      - id: stat
-      - id: isoforms_result
-      - id: genes_result
-      - id: aligned
-    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
-    'sbg:x': -291.1352844238281
-    'sbg:y': 1275.9014892578125
-  - id: star_rsem_wf_pe_6
-    in:
-      - id: split_files
-        source: split_files
-      - id: runid
-        source: runid_6
-      - id: nthreads
-        source: nthreads_2
-      - id: genomeDir
-        source: star_index/starIndex
-      - id: nthreads_1
-        source: nthreads_2
-      - id: outFileNamePrefix
-        source: runid_6
-      - id: outSAMtype
-        source:
-          - outSAMtype
-      - id: quantMode
-        source: quantMode
-      - id: rsem_index_dir
-        source: rsem_index/rsem_index
-      - id: rsem_output_prefix
-        source: runid_6
-      - id: nthreads_2
-        source: nthreads_2
-      - id: rsem_index_prefix
-        source: rsem_index_prefix
-    out:
-      - id: fastqFiles
-      - id: transcriptomesam
-      - id: SJ.out.tab
-      - id: readspergene
-      - id: mappingstats
-      - id: Log.progress.out
-      - id: Log.out
-      - id: bamRemDups
-      - id: transcript_sorted_bam_bai
-      - id: transcript_sorted_bam
-      - id: transcript_bam
-      - id: stat
-      - id: isoforms_result
-      - id: genes_result
-      - id: aligned
-    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
-    'sbg:x': -316.378662109375
-    'sbg:y': 1836.4862060546875
-  - id: wget
-    in:
-      - id: output_name
-        source: output_name
-      - id: url
-        source: url
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../../../../tool/wget/wget.cwl
-    'sbg:x': -2117.332275390625
-    'sbg:y': -423.4134826660156
-  - id: wget_1
-    in:
-      - id: output_name
-        source: output_name_1
-      - id: url
-        source: url_1
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../../../../tool/wget/wget.cwl
-    'sbg:x': -2153.620361328125
-    'sbg:y': 89.62873840332031
   - id: gunzip
     in:
       - id: file
@@ -1073,14 +797,16 @@ steps:
         source: for_star_index_dir_sh/STAR_reference
       - id: genomeFastaFiles
         source: gunzip_1/decompressed
+      - id: runThreadN
+        source: runThreadN
       - id: sjdbGTFfile
         source: gunzip/decompressed
     out:
       - id: starIndex
     run: ../../../../tool/star_pre/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
-    'sbg:x': -1420.1297607421875
-    'sbg:y': -425.753173828125
+    'sbg:x': -1368.9208984375
+    'sbg:y': -373.9208068847656
   - id: rsem_index
     in:
       - id: gtf
@@ -1097,8 +823,8 @@ steps:
       - id: rsem_index
     run: ../../../../tool/rsem/rsem_index/rsem_index.cwl
     label: 'rsem-prepare-reference: preparing reference sequences'
-    'sbg:x': -1378.09716796875
-    'sbg:y': 197.94418334960938
+    'sbg:x': -1324.488525390625
+    'sbg:y': 182.40597534179688
   - id: for_star_index_dir_sh
     in: []
     out:
@@ -1134,8 +860,8 @@ steps:
       - id: output
     run: ../../../../tool/DESeq2/deseq2.cwl
     label: deseq2
-    'sbg:x': 1379.4359130859375
-    'sbg:y': -194.1349334716797
+    'sbg:x': 1379
+    'sbg:y': -233.7388916015625
   - id: target2gene
     in: []
     out:
@@ -1154,6 +880,352 @@ steps:
     label: sample2condition
     'sbg:x': 1148.21044921875
     'sbg:y': 52.8286018371582
+  - id: wget
+    in:
+      - id: output_name
+        source: output_name
+      - id: url
+        source: url
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../../tool/wget/wget.cwl
+    'sbg:x': -2236.78515625
+    'sbg:y': -418.1373596191406
+  - id: wget_1
+    in:
+      - id: output_name
+        source: output_name_1
+      - id: url
+        source: url_1
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../../tool/wget/wget.cwl
+    'sbg:x': -2244.922607421875
+    'sbg:y': -36.88838577270508
+  - id: star_rsem_wf_pe
+    in:
+      - id: split_files
+        source: split_files
+      - id: runid
+        source: runid
+      - id: nthreads
+        source: nthreads
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: nthreads_1
+        source: nthreads
+      - id: outFileNamePrefix
+        source: runid
+      - id: outSAMtype
+        source:
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+      - id: rsem_output_prefix
+        source: runid
+      - id: nthreads_2
+        source: nthreads
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
+    out:
+      - id: fastqFiles
+      - id: SJ.out.tab
+      - id: readspergene
+      - id: mappingstats
+      - id: Log.progress.out
+      - id: Log.out
+      - id: bamRemDups
+      - id: transcript_sorted_bam_bai
+      - id: transcript_sorted_bam
+      - id: transcript_bam
+      - id: stat
+      - id: isoforms_result
+      - id: genes_result
+      - id: aligned
+      - id: transcriptomesam
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -184.75482177734375
+    'sbg:y': -1221.2520751953125
+  - id: star_rsem_wf_pe_1
+    in:
+      - id: split_files
+        source: split_files
+      - id: runid
+        source: runid_1
+      - id: nthreads
+        source: nthreads_1
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: nthreads_1
+        source: nthreads_1
+      - id: outFileNamePrefix
+        source: runid_1
+      - id: outSAMtype
+        source:
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+      - id: rsem_output_prefix
+        source: runid_1
+      - id: nthreads_2
+        source: nthreads_1
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
+    out:
+      - id: fastqFiles
+      - id: SJ.out.tab
+      - id: readspergene
+      - id: mappingstats
+      - id: Log.progress.out
+      - id: Log.out
+      - id: bamRemDups
+      - id: transcript_sorted_bam_bai
+      - id: transcript_sorted_bam
+      - id: transcript_bam
+      - id: stat
+      - id: isoforms_result
+      - id: genes_result
+      - id: aligned
+      - id: transcriptomesam
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -130.2200927734375
+    'sbg:y': -771.3663940429688
+  - id: star_rsem_wf_pe_2
+    in:
+      - id: split_files
+        source: split_files
+      - id: runid
+        source: runid_2
+      - id: nthreads
+        source: nthreads_2
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: nthreads_1
+        source: nthreads_2
+      - id: outFileNamePrefix
+        source: runid_2
+      - id: outSAMtype
+        source:
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+      - id: rsem_output_prefix
+        source: runid_2
+      - id: nthreads_2
+        source: nthreads_2
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
+    out:
+      - id: fastqFiles
+      - id: SJ.out.tab
+      - id: readspergene
+      - id: mappingstats
+      - id: Log.progress.out
+      - id: Log.out
+      - id: bamRemDups
+      - id: transcript_sorted_bam_bai
+      - id: transcript_sorted_bam
+      - id: transcript_bam
+      - id: stat
+      - id: isoforms_result
+      - id: genes_result
+      - id: aligned
+      - id: transcriptomesam
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -69.236083984375
+    'sbg:y': -255.41929626464844
+  - id: star_rsem_wf_pe_3
+    in:
+      - id: split_files
+        source: split_files
+      - id: runid
+        source: runid_3
+      - id: nthreads
+        source: nthreads_3
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: nthreads_1
+        source: nthreads_3
+      - id: outFileNamePrefix
+        source: runid_3
+      - id: outSAMtype
+        source:
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+      - id: rsem_output_prefix
+        source: runid_3
+      - id: nthreads_2
+        source: nthreads_3
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
+    out:
+      - id: fastqFiles
+      - id: SJ.out.tab
+      - id: readspergene
+      - id: mappingstats
+      - id: Log.progress.out
+      - id: Log.out
+      - id: bamRemDups
+      - id: transcript_sorted_bam_bai
+      - id: transcript_sorted_bam
+      - id: transcript_bam
+      - id: stat
+      - id: isoforms_result
+      - id: genes_result
+      - id: aligned
+      - id: transcriptomesam
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -115.67168426513672
+    'sbg:y': 252.97007751464844
+  - id: star_rsem_wf_pe_4
+    in:
+      - id: split_files
+        source: split_files
+      - id: runid
+        source: runid_4
+      - id: nthreads
+        source: nthreads_4
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: nthreads_1
+        source: nthreads_4
+      - id: outFileNamePrefix
+        source: runid_4
+      - id: outSAMtype
+        source:
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+      - id: rsem_output_prefix
+        source: runid_4
+      - id: nthreads_2
+        source: nthreads_4
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
+    out:
+      - id: fastqFiles
+      - id: SJ.out.tab
+      - id: readspergene
+      - id: mappingstats
+      - id: Log.progress.out
+      - id: Log.out
+      - id: bamRemDups
+      - id: transcript_sorted_bam_bai
+      - id: transcript_sorted_bam
+      - id: transcript_bam
+      - id: stat
+      - id: isoforms_result
+      - id: genes_result
+      - id: aligned
+      - id: transcriptomesam
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -86.0744857788086
+    'sbg:y': 753.5776977539062
+  - id: star_rsem_wf_pe_5
+    in:
+      - id: split_files
+        source: split_files
+      - id: runid
+        source: runid_5
+      - id: nthreads
+        source: nthreads_5
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: nthreads_1
+        source: nthreads_5
+      - id: outFileNamePrefix
+        source: runid_5
+      - id: outSAMtype
+        source:
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+      - id: rsem_output_prefix
+        source: runid_5
+      - id: nthreads_2
+        source: nthreads_5
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
+    out:
+      - id: fastqFiles
+      - id: SJ.out.tab
+      - id: readspergene
+      - id: mappingstats
+      - id: Log.progress.out
+      - id: Log.out
+      - id: bamRemDups
+      - id: transcript_sorted_bam_bai
+      - id: transcript_sorted_bam
+      - id: transcript_bam
+      - id: stat
+      - id: isoforms_result
+      - id: genes_result
+      - id: aligned
+      - id: transcriptomesam
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -73.4804458618164
+    'sbg:y': 1369.66259765625
+  - id: star_rsem_wf_pe_6
+    in:
+      - id: split_files
+        source: split_files
+      - id: runid
+        source: runid_6
+      - id: nthreads
+        source: nthreads_6
+      - id: genomeDir
+        source: star_index/starIndex
+      - id: nthreads_1
+        source: nthreads_6
+      - id: outFileNamePrefix
+        source: runid_6
+      - id: outSAMtype
+        source:
+          - outSAMtype
+      - id: quantMode
+        source: quantMode
+      - id: rsem_index_dir
+        source: rsem_index/rsem_index
+      - id: rsem_output_prefix
+        source: runid_6
+      - id: nthreads_2
+        source: nthreads_6
+      - id: rsem_index_prefix
+        source: rsem_index_prefix
+    out:
+      - id: fastqFiles
+      - id: SJ.out.tab
+      - id: readspergene
+      - id: mappingstats
+      - id: Log.progress.out
+      - id: Log.out
+      - id: bamRemDups
+      - id: transcript_sorted_bam_bai
+      - id: transcript_sorted_bam
+      - id: transcript_bam
+      - id: stat
+      - id: isoforms_result
+      - id: genes_result
+      - id: aligned
+      - id: transcriptomesam
+    run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
+    'sbg:x': -59.01015853881836
+    'sbg:y': 1916.6461181640625
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: MultipleInputFeatureRequirement
