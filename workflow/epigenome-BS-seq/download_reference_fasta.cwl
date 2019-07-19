@@ -8,6 +8,10 @@ inputs:
   url:
     doc: Download target URL
     type: string
+  fastafilename:
+    doc: Name of created fasta file
+    type: string
+    default: "hg38.fasta"
 
 steps:
   wget:
@@ -68,17 +72,29 @@ steps:
       files: lists/files
     out:
       [concatinated]
-  cp:
-    run: https://raw.githubusercontent.com/manabuishii/DAT2-cwl/feature/epigenome-bacteriagenome/tool/cp/cp.cwl
+  rename:
+    run:
+      class: CommandLineTool
+      baseCommand: ["true"] # dummy command
+      requirements:
+        InitialWorkDirRequirement:
+          listing:
+            - entryname: $(inputs.finalfilename)
+              entry: $(inputs.oldfile)
+      inputs:
+        oldfile: File
+        finalfilename: string
+      outputs:
+        renamed_file:
+          type: File
+          outputBinding:
+            glob: $(inputs.finalfilename)
     in:
-      file: cat/concatinated
-      renamed_name:
-        default:
-          "hg38.fasta"
-    out:
-      - renamed_file
+      oldfile: cat/concatinated
+      finalfilename: fastafilename
+    out: [ renamed_file ]
 
 outputs:
   output_fasta:
     type: File
-    outputSource: cp/renamed_file
+    outputSource: rename/renamed_file
