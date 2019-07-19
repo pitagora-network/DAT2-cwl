@@ -53,26 +53,26 @@ inputs:
     type: string?
     'sbg:x': 1298.7064208984375
     'sbg:y': 57.05970001220703
-  - id: url
-    type: string
-    'sbg:x': -92.67952728271484
-    'sbg:y': 262.93231201171875
-  - id: output_name
-    type: string
-    'sbg:x': -92.67952728271484
-    'sbg:y': 418.37054443359375
-  - id: url_1
-    type: string
-    'sbg:x': -99.74490356445312
-    'sbg:y': 589.7058715820312
-  - id: output_name_1
-    type: string
-    'sbg:x': -82.08146667480469
-    'sbg:y': 746.9104614257812
   - id: runThreadN
     type: string?
     'sbg:x': 382.23968505859375
     'sbg:y': 185.78221130371094
+  - id: url
+    type: string
+    'sbg:x': -192.08668518066406
+    'sbg:y': 250.10882568359375
+  - id: output_name
+    type: string
+    'sbg:x': -180.9623260498047
+    'sbg:y': 401.9412536621094
+  - id: url_1
+    type: string
+    'sbg:x': -216.14300537109375
+    'sbg:y': 561.18017578125
+  - id: output_name_1
+    type: string
+    'sbg:x': -168.0010223388672
+    'sbg:y': 709.3093872070312
 outputs:
   - id: fastqFiles
     outputSource:
@@ -168,14 +168,20 @@ outputs:
     outputSource:
       - wget/downloaded
     type: File
-    'sbg:x': 115.42977905273438
-    'sbg:y': 437
-  - id: downloaded_1
+    'sbg:x': 57.46524429321289
+    'sbg:y': 390.6058044433594
+  - id: stderr
     outputSource:
-      - wget_1/downloaded
-    type: File
-    'sbg:x': 181.08592224121094
-    'sbg:y': 752.20947265625
+      - wget/stderr
+    type: stderr
+    'sbg:x': 86.29705047607422
+    'sbg:y': 205.2584686279297
+  - id: stderr_1
+    outputSource:
+      - wget_1/stderr
+    type: stderr
+    'sbg:x': 64.32996368408203
+    'sbg:y': 527.900146484375
 steps:
   - id: star_mapping_pe
     in:
@@ -304,30 +310,6 @@ steps:
     label: for_rsem_index_dir
     'sbg:x': 750.696044921875
     'sbg:y': 917.0963134765625
-  - id: wget
-    in:
-      - id: output_name
-        source: output_name
-      - id: url
-        source: url
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../../../../../tool/wget/wget.cwl
-    'sbg:x': 20.349292755126953
-    'sbg:y': 337.1184997558594
-  - id: wget_1
-    in:
-      - id: output_name
-        source: output_name_1
-      - id: url
-        source: url_1
-    out:
-      - id: downloaded
-      - id: stderr
-    run: ../../../../../tool/wget/wget.cwl
-    'sbg:x': 38.01244354248047
-    'sbg:y': 647.9952392578125
   - id: star_index
     in:
       - id: genomeDir
@@ -344,6 +326,30 @@ steps:
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': 608.2809448242188
     'sbg:y': 366.4420166015625
+  - id: wget
+    in:
+      - id: output_name
+        source: output_name
+      - id: url
+        source: url
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../../../tool/wget/wget.cwl
+    'sbg:x': -58.83025360107422
+    'sbg:y': 321.8041076660156
+  - id: wget_1
+    in:
+      - id: output_name
+        source: output_name_1
+      - id: url
+        source: url_1
+    out:
+      - id: downloaded
+      - id: stderr
+    run: ../../../../../tool/wget/wget.cwl
+    'sbg:x': -47.54941940307617
+    'sbg:y': 583.1447143554688
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
