@@ -126,8 +126,8 @@ outputs:
     outputSource:
       - star_mapping_pe/transcriptomesam
     type: File?
-    'sbg:x': 1077.09814453125
-    'sbg:y': -435.57427978515625
+    'sbg:x': 1093.938232421875
+    'sbg:y': -435
   - id: SJ.out.tab
     outputSource:
       - star_mapping_pe/SJ.out.tab
@@ -176,6 +176,12 @@ outputs:
     type: File
     'sbg:x': 93.07672119140625
     'sbg:y': 740.7868041992188
+  - id: starIndex
+    outputSource:
+      - star_index/starIndex
+    type: Directory
+    'sbg:x': 717.4619140625
+    'sbg:y': 656.6461791992188
 steps:
   - id: star_mapping_pe
     in:
@@ -237,7 +243,7 @@ steps:
       - id: rsem_output_prefix
         source: rsem_output_prefix
       - id: bam
-        source: star_mapping_pe/aligned
+        source: star_mapping_pe/transcriptomesam
     out:
       - id: genes_result
       - id: isoforms_result
