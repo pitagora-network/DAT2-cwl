@@ -1,0 +1,32 @@
+SraRunTable:
+  class: File
+  path: /home/kyamada/cwl/data_cwl/SraRunTable.txt
+nthreads: 8
+nthreads_1: 8
+nthreads_2: 8
+nthreads_3: 8
+nthreads_4: 8
+nthreads_5: 8
+nthreads_6: 8
+num_threads: 8
+outSAMtype:
+  - BAM
+  - SortedByCoordinate
+output_name: Homo_sapiens.GRCh38.95.gtf.gz
+output_name_1: Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+quantMode: TranscriptomeSAM
+reference_prefix: RSEM_reference
+rsem_index_prefix: RSEM_reference
+runThreadN: '12'
+runid: SRR1550989
+runid_1: SRR1551005
+runid_2: SRR1551011
+runid_3: SRR1551050
+runid_4: SRR1551057
+runid_5: SRR1551071
+runid_6: SRR1551091
+split_files: true
+url: >-
+  ftp://ftp.ensembl.org/pub/release-95/gtf/homo_sapiens/Homo_sapiens.GRCh38.95.gtf.gz
+url_1: >-
+  ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna//Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
