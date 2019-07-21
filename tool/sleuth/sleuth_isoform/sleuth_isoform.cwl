@@ -2,10 +2,10 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-id: sleuth
+id: sleuth_isoform
 baseCommand:
   - Rscript
-  - /workdir/sleuth.R
+  - /workdir/sleuth_isoform.R
 inputs:
   - id: sample.txt
     type: File
@@ -20,14 +20,14 @@ inputs:
     inputBinding:
       position: 3
 outputs:
-  - id: output
+  - id: output_isoform
     type: Directory
     outputBinding:
-      glob: output
-label: sleuth
+      glob: output_isoform
+label: sleuth_isoform
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/sleuth
+    dockerPull: dat2-cwl/sleuth_isoform
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.kallisto_out)

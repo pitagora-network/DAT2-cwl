@@ -2,21 +2,21 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-id: deseq2_gene
+id: sleuth_gene
 baseCommand:
   - Rscript
-  - /workdir/deseq2_gene.R
+  - /workdir/sleuth_gene.R
 inputs:
-  - id: sample2condition.txt
+  - id: sample.txt
     type: File
     inputBinding:
       position: 1
   - id: target2gene.txt
-    type: File?
+    type: File
     inputBinding:
       position: 2
-  - id: rsem_out
-    type: 'File[]'
+  - id: kallisto_out
+    type: 'Directory[]'
     inputBinding:
       position: 3
 outputs:
@@ -24,12 +24,11 @@ outputs:
     type: Directory
     outputBinding:
       glob: output_gene
-label: deseq2_gene
+label: sleuth_gene
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/deseq2_gene
+    dockerPull: dat2-cwl/sleuth_gene
   - class: InitialWorkDirRequirement
     listing:
-      - entry: $(inputs.rsem_out)
+      - entry: $(inputs.kallisto_out)
         writable: true
-  - class: InlineJavascriptRequirement

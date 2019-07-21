@@ -20,10 +20,10 @@ inputs:
     inputBinding:
       position: 3
 outputs:
-  - id: output
+  - id: output_isoform
     type: Directory
     outputBinding:
-      glob: output
+      glob: output_isoform
 label: deseq2_isoform
 requirements:
   - class: DockerRequirement

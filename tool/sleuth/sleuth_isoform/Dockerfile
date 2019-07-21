@@ -2,8 +2,8 @@ FROM bioconductor/release_base2:R3.6.0_Bioc3.9
 
 WORKDIR /workdir
 
-COPY sleuth.R /workdir
-RUN chmod 777 sleuth.R
+COPY sleuth_isoform.R /workdir
+RUN chmod 777 sleuth_isoform.R
 
 RUN Rscript -e 'BiocManager::install("rhdf5"); \
      install.packages(c("devtools", "gridExtra")); \

@@ -116,12 +116,18 @@ outputs:
     type: 'File[]'
     'sbg:x': 546.5037231445312
     'sbg:y': 90.27542114257812
-  - id: output
+  - id: output_isoform
     outputSource:
-      - sleuth/output
+      - sleuth/output_isoform
     type: Directory
-    'sbg:x': 1348.909423828125
-    'sbg:y': 316.36029052734375
+    'sbg:x': 1511.9923095703125
+    'sbg:y': 129.16879272460938
+  - id: output_gene
+    outputSource:
+      - sleuth_gene/output_gene
+    type: Directory
+    'sbg:x': 1551
+    'sbg:y': 542.5396118164062
 steps:
   - id: wget
     in:
@@ -305,11 +311,11 @@ steps:
           - kallisto_wf_pe_5/quant_output
           - kallisto_wf_pe_6/quant_output
     out:
-      - id: output
-    run: ../../../../tool/sleuth/sleuth.cwl
-    label: sleuth
-    'sbg:x': 1143.80908203125
-    'sbg:y': 322.94586181640625
+      - id: output_isoform
+    run: ../../../../tool/sleuth/sleuth_isoform/sleuth_isoform.cwl
+    label: sleuth_isoform
+    'sbg:x': 1160.984619140625
+    'sbg:y': 108.4322280883789
   - id: target2gene
     in: []
     out:
@@ -326,8 +332,29 @@ steps:
       - id: sample.txt
     run: ../../../../tool/sample_for_sleuth/sample_for_sleuth.cwl
     label: sample_for_sleuth
-    'sbg:x': 1047.9063720703125
-    'sbg:y': 636.7926635742188
+    'sbg:x': 990.7979736328125
+    'sbg:y': 647.2404174804688
+  - id: sleuth_gene
+    in:
+      - id: sample.txt
+        source: sample_for_sleuth/sample.txt
+      - id: target2gene.txt
+        source: target2gene/target2gene.txt
+      - id: kallisto_out
+        source:
+          - kallisto_wf_pe/quant_output
+          - kallisto_wf_pe_1/quant_output
+          - kallisto_wf_pe_2/quant_output
+          - kallisto_wf_pe_3/quant_output
+          - kallisto_wf_pe_4/quant_output
+          - kallisto_wf_pe_5/quant_output
+          - kallisto_wf_pe_6/quant_output
+    out:
+      - id: output_gene
+    run: ../../../../tool/sleuth/sleuth_gene/sleuth_gene.cwl
+    label: sleuth_gene
+    'sbg:x': 1185.27880859375
+    'sbg:y': 521.833740234375
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: MultipleInputFeatureRequirement

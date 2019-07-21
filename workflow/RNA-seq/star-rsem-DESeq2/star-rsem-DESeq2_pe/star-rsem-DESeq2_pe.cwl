@@ -764,18 +764,18 @@ outputs:
     type: File
     'sbg:x': 659.3233032226562
     'sbg:y': 2129.17236328125
-  - id: output
+  - id: output_gene
     outputSource:
-      - deseq2/output
+      - deseq2/output_gene
     type: Directory
-    'sbg:x': 1842.525634765625
-    'sbg:y': -215.01559448242188
-  - id: output_1
+    'sbg:x': 1880.04736328125
+    'sbg:y': -218.24851989746094
+  - id: output_isoform
     outputSource:
-      - deseq2_isoform/output
+      - deseq2_isoform/output_isoform
     type: Directory
-    'sbg:x': 1841.4320068359375
-    'sbg:y': 526.9732666015625
+    'sbg:x': 1883.72607421875
+    'sbg:y': 514.9773559570312
 steps:
   - id: gunzip
     in:
@@ -863,7 +863,7 @@ steps:
           - star_rsem_wf_pe_5/genes_result
           - star_rsem_wf_pe_6/genes_result
     out:
-      - id: output
+      - id: output_gene
     run: ../../../../tool/deseq2/deseq2_gene/deseq2_gene.cwl
     label: deseq2_gene
     'sbg:x': 1471.296142578125
@@ -1249,7 +1249,7 @@ steps:
           - star_rsem_wf_pe_5/isoforms_result
           - star_rsem_wf_pe_6/isoforms_result
     out:
-      - id: output
+      - id: output_isoform
     run: ../../../../tool/deseq2/deseq2_isoform/deseq2_isoform.cwl
     label: deseq2_isoform
     'sbg:x': 1521.6851806640625
