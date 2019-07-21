@@ -9,49 +9,7 @@ inputs:
     type: File?
     'sbg:x': -262
     'sbg:y': 50
-outputs:
-  - id: WT_res.sorted.txt
-    outputSource:
-      - sleuth/WT_res.sorted.txt
-    type: File
-    'sbg:x': 370
-    'sbg:y': -378.9877624511719
-  - id: volcanoplot.png
-    outputSource:
-      - sleuth/volcanoplot.png
-    type: File
-    'sbg:x': 511
-    'sbg:y': -294
-  - id: LRT_res.sorted.txt
-    outputSource:
-      - sleuth/LRT_res.sorted.txt
-    type: File
-    'sbg:x': 394
-    'sbg:y': -159
-  - id: kallisto_res.txt
-    outputSource:
-      - sleuth/kallisto_res.txt
-    type: File
-    'sbg:x': 520
-    'sbg:y': -58
-  - id: heatmap.pdf
-    outputSource:
-      - sleuth/heatmap.pdf
-    type: File
-    'sbg:x': 395
-    'sbg:y': 16
-  - id: ENST00000503567.5.png
-    outputSource:
-      - sleuth/ENST00000503567.5.png
-    type: File
-    'sbg:x': 526.6065063476562
-    'sbg:y': 88.00071716308594
-  - id: ENST00000503567.5.pdf
-    outputSource:
-      - sleuth/ENST00000503567.5.pdf
-    type: File
-    'sbg:x': 384.60650634765625
-    'sbg:y': 179.00071716308594
+outputs: []
 steps:
   - id: sleuth
     in:
@@ -60,11 +18,11 @@ steps:
       - id: target2gene.txt
         source: target2gene/target2gene.txt
     out:
-      - id: output
-    run: ../../../tool/sleuth/sleuth.cwl
+      - id: output_gene
+    run: ../../../tool/sleuth/sleuth_gene/sleuth_gene.cwl
     label: sleuth
-    'sbg:x': 16
-    'sbg:y': -26
+    'sbg:x': 17.234201431274414
+    'sbg:y': -63.02602005004883
   - id: target2gene
     in: []
     out:
