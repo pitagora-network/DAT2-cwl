@@ -210,7 +210,7 @@ steps:
       - id: Log.progress.out
       - id: SJ.out.tab
     run: >-
-      ../../../../../tool/star_pre/star_mapping/star_mapping_pe/star_mapping_pe.cwl
+      ../../../../../tool/star/star_mapping/star_mapping_pe/star_mapping_pe.cwl
     label: 'STAR mapping: running mapping jobs.'
     'sbg:x': 841.53271484375
     'sbg:y': -26.69127655029297
@@ -322,7 +322,7 @@ steps:
         source: gunzip/decompressed
     out:
       - id: starIndex
-    run: ../../../../../tool/star_pre/star_index/star_index.cwl
+    run: ../../../../../tool/star/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': 608.2809448242188
     'sbg:y': 366.4420166015625

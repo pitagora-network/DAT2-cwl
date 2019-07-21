@@ -15,8 +15,8 @@ inputs:
     'sbg:y': 400.5768737792969
   - id: SraRunTable
     type: File
-    'sbg:x': 1048.414306640625
-    'sbg:y': 326.6095275878906
+    'sbg:x': 991.5216674804688
+    'sbg:y': 108.470458984375
   - id: url
     type: string
     'sbg:x': -2450.151123046875
@@ -122,12 +122,6 @@ outputs:
     type: Directory
     'sbg:x': -1251.2496337890625
     'sbg:y': 423.8552551269531
-  - id: output
-    outputSource:
-      - deseq2/output
-    type: Directory
-    'sbg:x': 1664
-    'sbg:y': -212.76437377929688
   - id: downloaded
     outputSource:
       - wget/downloaded
@@ -162,8 +156,8 @@ outputs:
     outputSource:
       - star_rsem_wf_pe/genes_result
     type: File
-    'sbg:x': 97.81195068359375
-    'sbg:y': -1158.723876953125
+    'sbg:x': 110.58501434326172
+    'sbg:y': -1162.5283203125
   - id: transcript_sorted_bam
     outputSource:
       - star_rsem_wf_pe/transcript_sorted_bam
@@ -216,8 +210,8 @@ outputs:
     outputSource:
       - star_rsem_wf_pe/isoforms_result
     type: File
-    'sbg:x': 530.5995483398438
-    'sbg:y': -1484.4942626953125
+    'sbg:x': 588.4632568359375
+    'sbg:y': -1565.8485107421875
   - id: fastqFiles
     outputSource:
       - star_rsem_wf_pe/fastqFiles
@@ -770,6 +764,18 @@ outputs:
     type: File
     'sbg:x': 659.3233032226562
     'sbg:y': 2129.17236328125
+  - id: output
+    outputSource:
+      - deseq2/output
+    type: Directory
+    'sbg:x': 1842.525634765625
+    'sbg:y': -215.01559448242188
+  - id: output_1
+    outputSource:
+      - deseq2_isoform/output
+    type: Directory
+    'sbg:x': 1841.4320068359375
+    'sbg:y': 526.9732666015625
 steps:
   - id: gunzip
     in:
@@ -803,7 +809,7 @@ steps:
         source: gunzip/decompressed
     out:
       - id: starIndex
-    run: ../../../../tool/star_pre/star_index/star_index.cwl
+    run: ../../../../tool/star/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': -1368.9208984375
     'sbg:y': -373.9208068847656
@@ -858,28 +864,29 @@ steps:
           - star_rsem_wf_pe_6/genes_result
     out:
       - id: output
-    run: ../../../../tool/DESeq2/deseq2.cwl
-    label: deseq2
-    'sbg:x': 1379
-    'sbg:y': -233.7388916015625
+    run: ../../../../tool/deseq2/deseq2_gene/deseq2_gene.cwl
+    label: deseq2_gene
+    'sbg:x': 1471.296142578125
+    'sbg:y': -223.66146850585938
   - id: target2gene
     in: []
     out:
       - id: target2gene.txt
     run: ../../../../tool/target2gene/target2gene.cwl
     label: target2gene
-    'sbg:x': 1005.1517333984375
-    'sbg:y': -548.1040649414062
+    'sbg:x': 1073.6351318359375
+    'sbg:y': -706.525146484375
   - id: sample2condition
     in:
       - id: SraRunTable
         source: SraRunTable
     out:
       - id: output1
-    run: ../../../../tool/sample2condition/sample2condition.cwl
-    label: sample2condition
-    'sbg:x': 1148.21044921875
-    'sbg:y': 52.8286018371582
+    run: >-
+      ../../../../tool/sample2condition/sample2condition_gene/sample2condition_gene.cwl
+    label: sample2condition_gene
+    'sbg:x': 1087.04736328125
+    'sbg:y': -449.24114990234375
   - id: wget
     in:
       - id: output_name
@@ -948,8 +955,8 @@ steps:
       - id: aligned
       - id: transcriptomesam
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
-    'sbg:x': -184.75482177734375
-    'sbg:y': -1221.2520751953125
+    'sbg:x': -186.26417541503906
+    'sbg:y': -1239.1134033203125
   - id: star_rsem_wf_pe_1
     in:
       - id: split_files
@@ -1226,6 +1233,38 @@ steps:
     run: ../../star-rsem/paired_end/star-rsem_wf_pe.cwl
     'sbg:x': -59.01015853881836
     'sbg:y': 1916.6461181640625
+  - id: deseq2_isoform
+    in:
+      - id: sample2condition.txt
+        source: sample2condition_isoform/output1
+      - id: target2gene.txt
+        source: target2gene/target2gene.txt
+      - id: rsem_out
+        source:
+          - star_rsem_wf_pe/isoforms_result
+          - star_rsem_wf_pe_1/isoforms_result
+          - star_rsem_wf_pe_2/isoforms_result
+          - star_rsem_wf_pe_3/isoforms_result
+          - star_rsem_wf_pe_4/isoforms_result
+          - star_rsem_wf_pe_5/isoforms_result
+          - star_rsem_wf_pe_6/isoforms_result
+    out:
+      - id: output
+    run: ../../../../tool/deseq2/deseq2_isoform/deseq2_isoform.cwl
+    label: deseq2_isoform
+    'sbg:x': 1521.6851806640625
+    'sbg:y': 514.4035034179688
+  - id: sample2condition_isoform
+    in:
+      - id: SraRunTable
+        source: SraRunTable
+    out:
+      - id: output1
+    run: >-
+      ../../../../tool/sample2condition/sample2condition_isoform/sample2condition_isoform.cwl
+    label: sample2condition_isoform
+    'sbg:x': 1142.68994140625
+    'sbg:y': 697.2831420898438
 requirements:
   - class: SubworkflowFeatureRequirement
   - class: MultipleInputFeatureRequirement
