@@ -1,3 +1,0 @@
-input_bamfile:
-  class: File
-  path: ../../data/ERR034597_1.bam

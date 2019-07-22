@@ -1,8 +1,0 @@
-target_bam: # type "File"
-  class: File
-  path: ../../data/ERR034597_1.sort.bam
-p-value: 0.01 # default value of type "float". (optional)
-organism: mm # default value of type "string". (optional)
-control_bam: # type "File"
-  class: File
-  path: ../../data/ERR034597_1.sort.bam

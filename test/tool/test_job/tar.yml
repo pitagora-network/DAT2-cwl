@@ -1,6 +1,0 @@
-file:
-  class: File
-  location: ../../data/test.tar.gz
-extract: true
-gzip: true
-verbose: true
