@@ -1,6 +1,0 @@
-sample2condition.txt:
-  class: File
-  path: /Users/yamada/cwl/local_data/sample2condition_deseq2_2.txt
-target2gene.txt:
-  class: File
-  path: /Users/yamada/cwl/local_data/target2gene.txt

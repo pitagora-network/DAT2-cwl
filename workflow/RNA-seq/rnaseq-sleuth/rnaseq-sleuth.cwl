@@ -14,12 +14,12 @@ inputs:
     'sbg:x': -141.671875
     'sbg:y': 176.5
 outputs:
-  - id: output_gene
+  - id: output
     outputSource:
-      - sleuth/output_gene
+      - sleuth/output
     type: Directory
-    'sbg:x': 251.328125
-    'sbg:y': -78.5
+    'sbg:x': 260.796875
+    'sbg:y': -61.5
 steps:
   - id: sleuth
     in:
@@ -31,8 +31,8 @@ steps:
         source:
           - kallisto_out
     out:
-      - id: output_gene
-    run: ../../../tool/sleuth_gene/sleuth_gene.cwl
+      - id: output
+    run: ../../../tool/sleuth/sleuth.cwl
     label: sleuth
     'sbg:x': 17.234201431274414
     'sbg:y': -63.02602005004883

@@ -764,12 +764,12 @@ outputs:
     type: File
     'sbg:x': 659.3233032226562
     'sbg:y': 2129.17236328125
-  - id: output_gene
+  - id: output
     outputSource:
-      - deseq2/output_gene
+      - deseq2/output
     type: Directory
-    'sbg:x': 1922.123779296875
-    'sbg:y': 39.4229736328125
+    'sbg:x': 1828.6297607421875
+    'sbg:y': 28.64093780517578
 steps:
   - id: gunzip
     in:
@@ -803,7 +803,7 @@ steps:
         source: gunzip/decompressed
     out:
       - id: starIndex
-    run: '../../../tool/star:star_index/star_index.cwl'
+    run: ../../../tool/star/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': -1368.9208984375
     'sbg:y': -373.9208068847656
@@ -821,7 +821,7 @@ steps:
         source: reference_prefix
     out:
       - id: rsem_index
-    run: '../../../tool/rsem:rsem_index/rsem_index.cwl'
+    run: ../../../tool/rsem/rsem_index/rsem_index.cwl
     label: 'rsem-prepare-reference: preparing reference sequences'
     'sbg:x': -1324.488525390625
     'sbg:y': 182.40597534179688
@@ -947,7 +947,7 @@ steps:
       - id: genes_result
       - id: aligned
       - id: transcriptomesam
-    run: ../rnaseq-star-rsem_pe/rnaseq-star-rsem_pe.cwl
+    run: ../rnaseq-star-rsem-pe/rnaseq-star-rsem-pe.cwl
     'sbg:x': -186.26417541503906
     'sbg:y': -1239.1134033203125
   - id: star_rsem_wf_pe_1
@@ -993,7 +993,7 @@ steps:
       - id: genes_result
       - id: aligned
       - id: transcriptomesam
-    run: ../rnaseq-star-rsem_pe/rnaseq-star-rsem_pe.cwl
+    run: ../rnaseq-star-rsem-pe/rnaseq-star-rsem-pe.cwl
     'sbg:x': -130.2200927734375
     'sbg:y': -771.3663940429688
   - id: star_rsem_wf_pe_2
@@ -1039,7 +1039,7 @@ steps:
       - id: genes_result
       - id: aligned
       - id: transcriptomesam
-    run: ../rnaseq-star-rsem_pe/rnaseq-star-rsem_pe.cwl
+    run: ../rnaseq-star-rsem-pe/rnaseq-star-rsem-pe.cwl
     'sbg:x': -69.236083984375
     'sbg:y': -255.41929626464844
   - id: star_rsem_wf_pe_3
@@ -1085,7 +1085,7 @@ steps:
       - id: genes_result
       - id: aligned
       - id: transcriptomesam
-    run: ../rnaseq-star-rsem_pe/rnaseq-star-rsem_pe.cwl
+    run: ../rnaseq-star-rsem-pe/rnaseq-star-rsem-pe.cwl
     'sbg:x': -115.67168426513672
     'sbg:y': 252.97007751464844
   - id: star_rsem_wf_pe_4
@@ -1131,7 +1131,7 @@ steps:
       - id: genes_result
       - id: aligned
       - id: transcriptomesam
-    run: ../rnaseq-star-rsem_pe/rnaseq-star-rsem_pe.cwl
+    run: ../rnaseq-star-rsem-pe/rnaseq-star-rsem-pe.cwl
     'sbg:x': -86.0744857788086
     'sbg:y': 753.5776977539062
   - id: star_rsem_wf_pe_5
@@ -1177,7 +1177,7 @@ steps:
       - id: genes_result
       - id: aligned
       - id: transcriptomesam
-    run: ../rnaseq-star-rsem_pe/rnaseq-star-rsem_pe.cwl
+    run: ../rnaseq-star-rsem-pe/rnaseq-star-rsem-pe.cwl
     'sbg:x': -73.4804458618164
     'sbg:y': 1369.66259765625
   - id: star_rsem_wf_pe_6
@@ -1223,7 +1223,7 @@ steps:
       - id: genes_result
       - id: aligned
       - id: transcriptomesam
-    run: ../rnaseq-star-rsem_pe/rnaseq-star-rsem_pe.cwl
+    run: ../rnaseq-star-rsem-pe/rnaseq-star-rsem-pe.cwl
     'sbg:x': -59.01015853881836
     'sbg:y': 1916.6461181640625
 requirements:

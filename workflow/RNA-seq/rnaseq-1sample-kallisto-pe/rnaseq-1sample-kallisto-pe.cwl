@@ -84,7 +84,7 @@ steps:
     out:
       - id: quant_output
     run: >-
-      ../../../tool/kallisto:kallisto_quant:kallisto_quant_pe/kallisto_quant_pe.cwl
+      ../../../tool/kallisto/kallisto_quant-pe/kallisto_quant-pe.cwl
     label: 'kallisto quant: runs the quantification algorithm'
     'sbg:x': 789.8097534179688
     'sbg:y': 64.03107452392578
@@ -112,7 +112,7 @@ steps:
         source: index_name
     out:
       - id: index_file
-    run: ../../../tool/kallisto:kallisto_index/kallisto_index.cwl
+    run: ../../../tool/kallisto/kallisto_index/kallisto_index.cwl
     label: >-
       kallisto index: builds an index from a FASTA formatted file of target
       sequences

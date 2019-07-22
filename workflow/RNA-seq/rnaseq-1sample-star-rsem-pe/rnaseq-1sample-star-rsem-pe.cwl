@@ -210,7 +210,7 @@ steps:
       - id: Log.progress.out
       - id: SJ.out.tab
     run: >-
-      ../../../tool/star:star_mapping:star_mapping_pe/star_mapping_pe.cwl
+      ../../../tool/star/star_mapping-pe/star_mapping-pe.cwl
     label: 'STAR mapping: running mapping jobs.'
     'sbg:x': 841.53271484375
     'sbg:y': -26.69127655029297
@@ -228,7 +228,7 @@ steps:
         source: reference_prefix
     out:
       - id: rsem_index
-    run: ../../../tool/rsem:rsem_index/rsem_index.cwl
+    run: ../../../tool/rsem/rsem_index/rsem_index.cwl
     label: 'rsem-prepare-reference: preparing reference sequences'
     'sbg:x': 1066.9779052734375
     'sbg:y': 564.1251831054688
@@ -252,7 +252,7 @@ steps:
       - id: transcript_sorted_bam
       - id: transcript_sorted_bam_bai
     run: >-
-      ../../../tool/rsem:rsem_calculate-expression:rsem_calculate-expression_pe/rsem_calculate-expression_pe.cwl
+      ../../../tool/rsem/rsem_calculate-expression-pe/rsem_calculate-expression-pe.cwl
     label: >-
       rsem-calculate-expression: calculate expression values (BAM input version
       CWL)
@@ -322,7 +322,7 @@ steps:
         source: gunzip/decompressed
     out:
       - id: starIndex
-    run: ../../../tool/star:star_index/star_index.cwl
+    run: ../../../tool/star/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': 608.2809448242188
     'sbg:y': 366.4420166015625

@@ -116,12 +116,12 @@ outputs:
     type: 'File[]'
     'sbg:x': 546.5037231445312
     'sbg:y': 90.27542114257812
-  - id: output_isoform
+  - id: output
     outputSource:
-      - sleuth/output_isoform
+      - sleuth/output
     type: Directory
-    'sbg:x': 1506.45703125
-    'sbg:y': 267.5615539550781
+    'sbg:x': 1384.811767578125
+    'sbg:y': 291.9703063964844
 steps:
   - id: wget
     in:
@@ -143,7 +143,7 @@ steps:
         source: index_name
     out:
       - id: index_file
-    run: '../../../tool/kallisto:kallisto_index/kallisto_index.cwl'
+    run: ../../../tool/kallisto/kallisto_index/kallisto_index.cwl
     label: >-
       kallisto index: builds an index from a FASTA formatted file of target
       sequences
@@ -166,7 +166,7 @@ steps:
     out:
       - id: quant_output
       - id: fastqFiles
-    run: ../rnaseq-kallisto_pe/rnaseq-kallisto_pe.cwl
+    run: ../rnaseq-kallisto-pe/rnaseq-kallisto-pe.cwl
     'sbg:x': 121.716796875
     'sbg:y': -135.70619201660156
   - id: kallisto_wf_pe_1
@@ -186,7 +186,7 @@ steps:
     out:
       - id: quant_output
       - id: fastqFiles
-    run: ../rnaseq-kallisto_pe/rnaseq-kallisto_pe.cwl
+    run: ../rnaseq-kallisto-pe/rnaseq-kallisto-pe.cwl
     'sbg:x': 150.9099884033203
     'sbg:y': 73.20912170410156
   - id: kallisto_wf_pe_2
@@ -206,7 +206,7 @@ steps:
     out:
       - id: quant_output
       - id: fastqFiles
-    run: ../rnaseq-kallisto_pe/rnaseq-kallisto_pe.cwl
+    run: ../rnaseq-kallisto-pe/rnaseq-kallisto-pe.cwl
     'sbg:x': 162.2940216064453
     'sbg:y': 259.6216125488281
   - id: kallisto_wf_pe_3
@@ -226,7 +226,7 @@ steps:
     out:
       - id: quant_output
       - id: fastqFiles
-    run: ../rnaseq-kallisto_pe/rnaseq-kallisto_pe.cwl
+    run: ../rnaseq-kallisto-pe/rnaseq-kallisto-pe.cwl
     'sbg:x': 150.9100341796875
     'sbg:y': 467.37945556640625
   - id: kallisto_wf_pe_4
@@ -246,7 +246,7 @@ steps:
     out:
       - id: quant_output
       - id: fastqFiles
-    run: ../rnaseq-kallisto_pe/rnaseq-kallisto_pe.cwl
+    run: ../rnaseq-kallisto-pe/rnaseq-kallisto-pe.cwl
     'sbg:x': 155.80699157714844
     'sbg:y': 680.8070068359375
   - id: kallisto_wf_pe_5
@@ -266,7 +266,7 @@ steps:
     out:
       - id: quant_output
       - id: fastqFiles
-    run: ../rnaseq-kallisto_pe/rnaseq-kallisto_pe.cwl
+    run: ../rnaseq-kallisto-pe/rnaseq-kallisto-pe.cwl
     'sbg:x': 167.98602294921875
     'sbg:y': 917.0471801757812
   - id: kallisto_wf_pe_6
@@ -286,7 +286,7 @@ steps:
     out:
       - id: quant_output
       - id: fastqFiles
-    run: ../rnaseq-kallisto_pe/rnaseq-kallisto_pe.cwl
+    run: ../rnaseq-kallisto-pe/rnaseq-kallisto-pe.cwl
     'sbg:x': 186.07598876953125
     'sbg:y': 1198.0718994140625
   - id: sleuth
@@ -305,7 +305,7 @@ steps:
           - kallisto_wf_pe_5/quant_output
           - kallisto_wf_pe_6/quant_output
     out:
-      - id: output_isoform
+      - id: output
     run: ../../../tool/sleuth/sleuth.cwl
     label: sleuth
     'sbg:x': 1157.728515625

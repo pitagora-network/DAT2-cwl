@@ -64,8 +64,7 @@ steps:
         source: out_dir_name
     out:
       - id: quant_output
-    run: >-
-      ../../../tool/kallisto:kallisto_quant:kallisto_quant_pe/kallisto_quant_pe.cwl
+    run: ../../../tool/kallisto/kallisto_quant-pe/kallisto_quant-pe.cwl
     label: 'kallisto quant: runs the quantification algorithm'
     'sbg:x': 787.4363403320312
     'sbg:y': 105.44190216064453

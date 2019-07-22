@@ -181,7 +181,7 @@ steps:
       - id: transcript_sorted_bam
       - id: transcript_sorted_bam_bai
     run: >-
-      ../../../tool/rsem:rsem_calculate-expression:rsem_calculate-expression_pe/rsem_calculate-expression_pe.cwl
+      ../../../tool/rsem/rsem_calculate-expression-pe/rsem_calculate-expression-pe.cwl
     label: >-
       rsem-calculate-expression: calculate expression values (BAM input version
       CWL)
@@ -213,7 +213,7 @@ steps:
       - id: Log.out
       - id: Log.progress.out
       - id: SJ.out.tab
-    run: ../../../tool/star:star_mapping:star_mapping_pe/star_mapping_pe.cwl
+    run: ../../../tool/star/star_mapping-pe/star_mapping-pe.cwl
     label: 'STAR mapping: running mapping jobs.'
     'sbg:x': 645.68408203125
     'sbg:y': 171.9577178955078

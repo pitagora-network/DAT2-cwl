@@ -14,40 +14,38 @@ inputs:
     'sbg:x': 51
     'sbg:y': 198
 outputs:
-  - id: output_gene
+  - id: output
     outputSource:
-      - deseq2/output_gene
+      - deseq2/output
     type: Directory
-    'sbg:x': 494.0078125
-    'sbg:y': -88
+    'sbg:x': 537
+    'sbg:y': -54
 steps:
-  - id: sample2condition_gene
+  - id: sample2condition
     in:
       - id: SraRunTable
         source: SraRunTable
     out:
       - id: output1
-    run: ../../../tool/sample2condition_gene/sample2condition_gene.cwl
-    label: sample2condition_gene
+    run: ../../../tool/sample2condition/sample2condition.cwl
+    label: sample2condition
     'sbg:x': -96
     'sbg:y': 85
   - id: deseq2
     in:
       - id: sample2condition.txt
-        source:
-          - sample2condition/output1
-          - sample2condition_gene/output1
+        source: sample2condition/output1
       - id: target2gene.txt
         source: target2gene/target2gene.txt
       - id: rsem_out
         source:
           - rsem_out
     out:
-      - id: output_gene
-    run: ../../../tool/deseq2_gene/deseq2_gene.cwl
-    label: deseq2_gene
-    'sbg:x': 274
-    'sbg:y': -75
+      - id: output
+    run: ../../../tool/deseq2/deseq2.cwl
+    label: deseq2
+    'sbg:x': 273
+    'sbg:y': -49
   - id: target2gene
     in: []
     out:
@@ -56,8 +54,7 @@ steps:
     label: target2gene
     'sbg:x': -93
     'sbg:y': -161
-requirements:
-  - class: MultipleInputFeatureRequirement
+requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'

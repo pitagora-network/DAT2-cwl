@@ -57,7 +57,7 @@ steps:
         source: gunzip/decompressed
     out:
       - id: starIndex
-    run: ../../../tool/star:star_index/star_index.cwl
+    run: ../../../tool/star/star_index/star_index.cwl
     label: 'STAR genomeGenerate: Generating genome indexes.'
     'sbg:x': 60
     'sbg:y': -108
