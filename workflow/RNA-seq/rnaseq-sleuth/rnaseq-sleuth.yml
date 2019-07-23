@@ -1,6 +1,6 @@
 sample.txt:
   class: File
-  path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/sleuth/sample.txt
+  path: sample.txt
 kallisto_out:
   - class: Directory
     path: /home/kyamada/cwl/rna-seq/kallisto/SRR1550989
