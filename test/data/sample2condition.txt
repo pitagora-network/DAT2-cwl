@@ -1,0 +1,8 @@
+sample	group	path
+SRR1550989	Healthy Control	../../data/SRR1550989.genes.results
+SRR1551005	Type 1 Diabetes	../../data/SRR1551005.genes.results
+SRR1551011	Type 1 Diabetes	../../data/SRR1551011.genes.results
+SRR1551050	Healthy Control	../../data/SRR1551050.genes.results
+SRR1551057	Healthy Control	../../data/SRR1551057.genes.results
+SRR1551071	Healthy Control	../../data/SRR1551071.genes.results
+SRR1551091	Type 1 Diabetes	../../data/SRR1551091.genes.results
