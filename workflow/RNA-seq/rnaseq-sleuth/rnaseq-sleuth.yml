@@ -1,3 +1,18 @@
 sample.txt:
   class: File
   path: /home/kyamada/cwl/DAT2-cwl_kyamada/workflow/sleuth/sample.txt
+kallisto_out:
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1550989
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551005
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551011
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551050
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551057
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551071
+  - class: Directory
+    path: /home/kyamada/cwl/rna-seq/kallisto/SRR1551091
