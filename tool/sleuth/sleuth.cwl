@@ -5,7 +5,7 @@ $namespaces:
 id: sleuth
 baseCommand:
   - Rscript
-  - /workdir/sleuthm.R
+  - /workdir/sleuth.R
 inputs:
   - id: sample.txt
     type: File
