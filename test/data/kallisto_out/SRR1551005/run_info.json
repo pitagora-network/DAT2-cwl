@@ -1,0 +1,13 @@
+{
+	"n_targets": 187626,
+	"n_bootstraps": 100,
+	"n_processed": 25173451,
+	"n_pseudoaligned": 20265137,
+	"n_unique": 5254563,
+	"p_pseudoaligned": 80.5,
+	"p_unique": 20.9,
+	"kallisto_version": "0.46.0",
+	"index_version": 10,
+	"start_time": "Wed Jul 10 01:00:40 2019",
+	"call": "kallisto quant --index=/home/kyamada/cwl/rna-seq/ref/kallisto.idx --output-dir=SRR1551005 --bootstrap-samples=100 --threads=4 /home/kyamada/cwl/rna-seq/seq/SRR1551005_1.fastq.gz /home/kyamada/cwl/rna-seq/seq/SRR1551005_2.fastq.gz"
+}
