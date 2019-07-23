@@ -1,0 +1,10 @@
+
+reference_genome:  # type "File"
+    class: File
+    path: hg38.fasta
+fastq_reverse:  # type "File"
+    class: File
+    path: DRR006760_1.fastq.gz
+fastq_forward:  # type "File"
+    class: File
+    path: DRR006760_2.fastq.gz
