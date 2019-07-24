@@ -3,8 +3,8 @@ USER root
 
 WORKDIR /workdir
 
-COPY for_star_index_dir.sh /workdir
+COPY mkdir_rsem.sh /workdir
 
-RUN chmod 777 for_star_index_dir.sh
+RUN chmod 777 mkdir_rsem.sh
 
 ENV PATH $PATH:/workdir

@@ -829,16 +829,16 @@ steps:
     in: []
     out:
       - id: STAR_reference
-    run: ../../../tool/for_star_index_dir/for_star_index_dir.cwl
-    label: for_star_index_dir
+    run: ../../../tool/mkdir_star/mkdir_star.cwl
+    label: mkdir_star
     'sbg:x': -1872.7210693359375
     'sbg:y': -127.8011474609375
   - id: for_rsem_index_dir_sh
     in: []
     out:
       - id: RSEM_reference
-    run: ../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
-    label: for_rsem_index_dir
+    run: ../../../tool/mkdir_rsem/mkdir_rsem.cwl
+    label: mkdir_rsem
     'sbg:x': -1730.2900390625
     'sbg:y': 543.0032958984375
   - id: deseq2

@@ -2,17 +2,17 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-id: for_rsem_index_dir_sh
+id: mkdir_star
 baseCommand:
   - bash
-  - for_rsem_index_dir.sh
+  - mkdir_star.sh
 inputs: []
 outputs:
-  - id: RSEM_reference
+  - id: STAR_reference
     type: Directory
     outputBinding:
-      glob: RSEM_reference/
-label: for_rsem_index_dir
+      glob: STAR_reference/
+label: mkdir_star
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/for_rsem_index_dir
+    dockerPull: dat2-cwl/mkdir_star

@@ -7,12 +7,12 @@ $namespaces:
 inputs:
   - id: sample.txt
     type: File?
-    'sbg:x': -262
+    'sbg:x': -281
     'sbg:y': 50
   - id: kallisto_out
     type: 'Directory[]'
-    'sbg:x': -141.671875
-    'sbg:y': 176.5
+    'sbg:x': -149
+    'sbg:y': 178
 outputs:
   - id: output
     outputSource:

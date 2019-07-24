@@ -278,8 +278,8 @@ steps:
     in: []
     out:
       - id: STAR_reference
-    run: ../../../tool/for_star_index_dir/for_star_index_dir.cwl
-    label: for_star_index_dir
+    run: ../../../tool/mkdir_star/mkdir_star.cwl
+    label: mkdir_star
     'sbg:x': 448.2990417480469
     'sbg:y': 668.261474609375
   - id: gunzip
@@ -306,8 +306,8 @@ steps:
     in: []
     out:
       - id: RSEM_reference
-    run: ../../../tool/for_rsem_index_dir/for_rsem_index_dir.cwl
-    label: for_rsem_index_dir
+    run: ../../../tool/mkdir_rsem/mkdir_rsem.cwl
+    label: mkdir_rsem
     'sbg:x': 750.696044921875
     'sbg:y': 917.0963134765625
   - id: star_index
