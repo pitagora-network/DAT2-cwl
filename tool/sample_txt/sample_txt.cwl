@@ -2,9 +2,9 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-id: sample_for_sleuth
+id: sample_txt
 baseCommand:
-  - sample_for_sleuth.sh
+  - sample_txt.sh
 inputs:
   - id: SraRunTable
     type: File
@@ -15,10 +15,10 @@ outputs:
     type: File
     outputBinding:
       glob: sample.txt
-label: sample_for_sleuth
+label: sample_txt
 arguments:
   - position: 0
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/sample_for_sleuth
+    dockerPull: dat2-cwl/sample_txt
   - class: InlineJavascriptRequirement

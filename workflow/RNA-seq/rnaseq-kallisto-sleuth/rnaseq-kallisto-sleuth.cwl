@@ -324,8 +324,8 @@ steps:
         source: SraRunTable
     out:
       - id: sample.txt
-    run: ../../../tool/sample_for_sleuth/sample_for_sleuth.cwl
-    label: sample_for_sleuth
+    run: ../../../tool/sample_txt/sample_txt.cwl
+    label: sample_txt
     'sbg:x': 990.7979736328125
     'sbg:y': 647.2404174804688
 requirements:
