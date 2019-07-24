@@ -2,7 +2,7 @@ bootstrap_samples: 100
 index_file:
   class: File
   path: >-
-    /home/kyamada/cwl/rna-seq/ref/kallisto.idx
+    ../../data/kallisto.idx
 nthreads: 4
 out_dir_name: SRR1550989
 runid: SRR1550989

@@ -1,6 +1,6 @@
 genomeDir:
   class: Directory
-  path: /home/kyamada/cwl/rna-seq/ref/STAR_reference
+  path: ../../data/STAR_reference
 nthreads: 8
 nthreads_1: 8
 nthreads_2: 8
@@ -10,7 +10,7 @@ quantMode: TranscriptomeSAM
 rsem_index_prefix: RSEM_reference
 rsem_index_dir:
   class: Directory
-  path: /home/kyamada/cwl/data/ref/RSEM_reference
+  path: ../../data/RSEM_reference
 #rsem_index_prefix: /home/kyamada/cwl/data/ref/RSEM_reference
 rsem_output_prefix: SRR1550989
 runid: SRR1550989
