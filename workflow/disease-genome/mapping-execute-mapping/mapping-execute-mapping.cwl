@@ -2,7 +2,6 @@
 cwlVersion: v1.0
 class: Workflow
 doc: "Process mapping (See chapter: マッピングの実行)"
-requirements: {}
 inputs:
   reference_genome:
     type: File
