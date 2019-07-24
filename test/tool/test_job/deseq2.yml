@@ -1,6 +1,6 @@
 rsem_out:
-  - class: Directory
-    path: ../../data/rsem_out/
+  class: Directory
+  path: ../../data/rsem_out/
 sample2condition.txt:
   class: File
   path: ../../data/sample2condition.txt
