@@ -1,0 +1,16 @@
+### STAR   --runMode genomeGenerate   --genomeDir /home/kyamada/cwl/rna-seq/ref/STAR_reference   --genomeFastaFiles /home/kyamada/cwl/rna-seq/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa      --sjdbGTFfile /home/kyamada/cwl/rna-seq/ref/Homo_sapiens.GRCh38.95.gtf
+### GstrandBit 32
+versionGenome	2.7.1a
+genomeFastaFiles	/home/kyamada/cwl/rna-seq/ref/Homo_sapiens.GRCh38.dna.primary_assembly.fa 
+genomeSAindexNbases	14
+genomeChrBinNbits	18
+genomeSAsparseD	1
+sjdbOverhang	100
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	/home/kyamada/cwl/rna-seq/ref/Homo_sapiens.GRCh38.95.gtf
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	3210988163 24899226556
