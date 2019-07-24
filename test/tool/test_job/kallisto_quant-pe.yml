@@ -1,6 +1,6 @@
 index_file:
   class: File
-  path: ../../data/kallisto/kallisto.idx
+  path: ../../data/kallisto.idx
 fq1:
   class: File
   path: ../../data/SRR1550989_1.fastq.gz
