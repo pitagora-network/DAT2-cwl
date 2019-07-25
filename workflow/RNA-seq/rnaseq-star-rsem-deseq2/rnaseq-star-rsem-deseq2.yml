@@ -1,6 +1,6 @@
 SraRunTable:
   class: File
-  path: /home/kyamada/cwl/data_cwl/SraRunTable.txt
+  path: SraRunTable.txt
 nthreads: 8
 nthreads_1: 8
 nthreads_2: 8
