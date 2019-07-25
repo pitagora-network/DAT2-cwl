@@ -1,4 +1,4 @@
-runThreadN: '12'
+runThreadN: '8'
 nthreads: 4
 nthreads_1: 4
 nthreads_2: 4
