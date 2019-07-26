@@ -28,4 +28,4 @@ reference-genome-names:
   - chrEBV.fa
 decoy-fasta:
     class: File
-    path: decoyJRGv2.fasta
+    path: inputs/decoyJRGv2.fasta

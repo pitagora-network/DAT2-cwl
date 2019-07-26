@@ -22,7 +22,7 @@ inputs:
       prefix: OUTPUT=
       separate: false
 outputs:
-  sam:
+  dict:
     type: File
     outputBinding:
       glob: |

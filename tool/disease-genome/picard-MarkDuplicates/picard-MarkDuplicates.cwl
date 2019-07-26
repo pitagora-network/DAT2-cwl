@@ -11,7 +11,7 @@ requirements:
 baseCommand: [picard, MarkDuplicates]
 inputs:
   input:
-    type: File?
+    type: File
     inputBinding:
       prefix: INPUT=
       separate: false
