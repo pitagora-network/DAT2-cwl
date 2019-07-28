@@ -79,6 +79,6 @@ if [ $? -ne 0 ]; then
 else
   echo "[PASS] test job is passed."
 fi
-rm -rf ${test_dir}/tmp
+#rm -rf ${test_dir}/tmp
 
 echo "*** ALL TEST IS PASSED ***"
