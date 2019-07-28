@@ -1,7 +1,7 @@
 nthreads: 8
 genomeDir:
   class: Directory
-  path: ../../data/STAR_reference
+  path: /home/kyamada/cwl/DAT2-cwl/test/tool/tmp/STAR_reference
 fq1:
   class: File
   path: ../../data/SRR1550989_1.fastq.gz
