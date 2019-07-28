@@ -48,7 +48,8 @@ steps:
   - id: star_index
     in:
       - id: genomeDir
-        source: for_star_index_dir_sh/STAR_reference
+        source:
+          - mkdir_star/STAR_reference
       - id: genomeFastaFiles
         source: gunzip_1/decompressed
       - id: runThreadN
@@ -105,15 +106,16 @@ steps:
     run: ../../../tool/gunzip/gunzip.cwl
     'sbg:x': -364
     'sbg:y': 25
-  - id: for_star_index_dir_sh
+  - id: mkdir_star
     in: []
     out:
       - id: STAR_reference
-    run: ../../../tool/for_star_index_dir/for_star_index_dir.cwl
-    label: for_star_index_dir
+    run: ../../../tool/mkdir_star/mkdir_star.cwl
+    label: mkdir_star
     'sbg:x': -257
-    'sbg:y': 144
-requirements: []
+    'sbg:y': 168
+requirements:
+  - class: MultipleInputFeatureRequirement
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
   - 'http://edamontology.org/EDAM_1.18.owl'
