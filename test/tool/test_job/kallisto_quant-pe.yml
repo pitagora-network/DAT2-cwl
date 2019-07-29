@@ -1,6 +1,6 @@
 index_file:
   class: File
-  path: ../../data/kallisto.idx
+  path: https://zenodo.org/record/3354077/files/kallisto.idx?download=1
 fq1:
   class: File
   path: https://zenodo.org/record/3354045/files/SRR1550989_1.fastq.gz?download=1

@@ -1,7 +1,7 @@
 nthreads: 8
 genomeDir:
-  class: File
-  path: [https://zenodo.org/record/3354018/files/chrLength.txt?download=1, https://zenodo.org/record/3354018/files/chrName.txt?download=1, https://zenodo.org/record/3354018/files/chrNameLength.txt?download=1,https://zenodo.org/record/3354018/files/chrStart.txt?download=1, https://zenodo.org/record/3354018/files/exonGeTrInfo.tab?download=1, https://zenodo.org/record/3354018/files/exonInfo.tab?download=1, https://zenodo.org/record/3354018/files/geneInfo.tab?download=1, https://zenodo.org/record/3354018/files/genomeParameters.txt?download=1, https://zenodo.org/record/3354018/files/SA?download=1, https://zenodo.org/record/3354018/files/SAindex?download=1, https://zenodo.org/record/3354018/files/sjdbInfo.txt?download=1, https://zenodo.org/record/3354018/files/sjdbList.fromGTF.out.tab?download=1, https://zenodo.org/record/3354018/files/sjdbList.out.tab?download=1, https://zenodo.org/record/3354018/files/transcriptInfo.tab?download=1]
+  class: Directory
+  path: STAR_reference
 fq1:
   class: File
   path: ../../data/SRR1550989_1.fastq.gz
