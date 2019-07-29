@@ -3,10 +3,10 @@ index_file:
   path: ../../data/kallisto.idx
 fq1:
   class: File
-  path: ../../data/SRR1550989_1.fastq.gz
+  path: https://zenodo.org/record/3354045/files/SRR1550989_1.fastq.gz?download=1
 fq2:
   class: File
-  path: ../../data/SRR1550989_2.fastq.gz
+  path: https://zenodo.org/record/3354045/files/SRR1550989_2.fastq.gz?download=1
 out_dir_name: SRR1550989
 bootstrap_samples: 100
 nthreads: 4
