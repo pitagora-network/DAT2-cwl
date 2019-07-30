@@ -1,10 +1,21 @@
-
+reference_id: DRR006760
 reference_genome:  # type "File"
     class: File
-    path: hg38.fasta
-fastq_reverse:  # type "File"
-    class: File
-    path: DRR006760_1.fastq.gz
+    path: inputs/hg38.fasta
+    secondaryFiles:
+      - class: File
+        location: inputs/hg38.fasta.amb
+      - class: File
+        location: inputs/hg38.fasta.ann
+      - class: File
+        location: inputs/hg38.fasta.bwt
+      - class: File
+        location: inputs/hg38.fasta.pac
+      - class: File
+        location: inputs/hg38.fasta.sa
 fastq_forward:  # type "File"
     class: File
-    path: DRR006760_2.fastq.gz
+    path: inputs/DRR006760_1.fastq.gz
+fastq_reverse:  # type "File"
+    class: File
+    path: inputs/DRR006760_2.fastq.gz

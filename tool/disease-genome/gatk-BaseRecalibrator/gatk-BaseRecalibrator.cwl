@@ -18,7 +18,7 @@ inputs:
     secondaryFiles:
       - .fai
       - ^.dict
-  output:
+  output_name:
     type: string
     inputBinding:
       prefix: --output
@@ -29,11 +29,11 @@ inputs:
       inputBinding:
         prefix: --known-sites
 outputs:
-  # recaltab:
-  #   type: File
+  # recalibration_table:
+  #   type: File[]
   #   outputBinding:
-  #     glob: $(inputs.output)
-  others:
+  #     glob: "*" #$(inputs.output_name)
+  all-outputs:
     type: File[]
     outputBinding:
       glob: "*"

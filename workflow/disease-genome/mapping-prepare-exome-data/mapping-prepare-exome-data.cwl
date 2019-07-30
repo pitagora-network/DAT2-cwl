@@ -19,13 +19,19 @@ steps:
   sra2fastq:
     run: https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/master/tools/fastq-dump/fastq-dump.cwl
     in:
-      split_files:
-        default: true
-      gzip:
-        default: true
       sraFiles:
         source: [download/downloaded]
         linkMerge: merge_flattened
+      split_files:
+        default: true
+      split_spot:
+        default: false
+      skip_technical:
+        default: false
+      readids:
+        default: false
+      gzip:
+        default: true
     out:
       - forward
       - reverse
