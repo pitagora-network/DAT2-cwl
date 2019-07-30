@@ -19,7 +19,9 @@ inputs:
     type: File
     inputBinding:
       prefix: --reference
-  bqsr_recal_file:
+    secondaryFiles:
+      - .fai
+  recal_file:
     type: File
     inputBinding:
       prefix: --bqsr-recal-file

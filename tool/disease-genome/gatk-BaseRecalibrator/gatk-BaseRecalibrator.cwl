@@ -28,15 +28,13 @@ inputs:
       items: File
       inputBinding:
         prefix: --known-sites
+    secondaryFiles:
+      - .tbi
 outputs:
-  # recalibration_table:
-  #   type: File[]
-  #   outputBinding:
-  #     glob: "*" #$(inputs.output_name)
-  all-outputs:
-    type: File[]
+  recalibration_table:
+    type: File
     outputBinding:
-      glob: "*"
+      glob: $(inputs.output_name)
   stdout: stdout
   stderr: stderr
 stdout: gatk-BaseRecalibrator-stdout.log
