@@ -12,4 +12,6 @@ rsem_index_dir:
 rsem_output_prefix: SRR1550989
 runid: SRR1550989
 split_files: true
-file: https://zenodo.org/record/3354995#.XUGA_ZP7R26
+file:
+  class: File
+  path: https://zenodo.org/record/3354995#.XUGA_ZP7R26
