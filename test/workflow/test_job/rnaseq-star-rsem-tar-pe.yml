@@ -14,4 +14,4 @@ runid: SRR1550989
 split_files: true
 file:
   class: File
-  path: https://zenodo.org/record/3354995#.XUGA_ZP7R26
+  path: https://zenodo.org/record/3354995/files/STAR_reference_chr22.tar.gz?download=1
