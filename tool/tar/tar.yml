@@ -1,0 +1,6 @@
+extract: true
+file:
+  class: File
+  path: /Users/yamada/cwl/test_data_git/kallisto_out/SRR1550989.tar.gz
+gzip: true
+verbose: true

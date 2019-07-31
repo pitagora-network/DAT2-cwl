@@ -51,8 +51,8 @@ inputs:
     'sbg:y': 507.3333435058594
   - id: file
     type: File
-    'sbg:x': 144.47509765625
-    'sbg:y': 463.6762390136719
+    'sbg:x': -106.28228759765625
+    'sbg:y': 469.0377197265625
 outputs:
   - id: fastqFiles
     outputSource:
@@ -223,9 +223,11 @@ steps:
         source: file
     out:
       - id: output
+      - id: stderr
+      - id: stdout
     run: ../../../tool/tar/tar.cwl
-    'sbg:x': 382.1233825683594
-    'sbg:y': 426.6426696777344
+    'sbg:x': 161.6614990234375
+    'sbg:y': 453
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
