@@ -15,3 +15,6 @@ split_files: true
 file:
   class: File
   path: https://zenodo.org/record/3354995/files/STAR_reference_chr22.tar.gz?download=1
+verbose: true
+verbose_1: true
+extract: true
