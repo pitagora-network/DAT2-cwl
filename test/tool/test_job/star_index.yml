@@ -4,8 +4,8 @@ genomeDir:
     path: ../../data/STAR_reference
 genomeFastaFiles:
     class: File
-    path: ../../data/Homo_sapiens.GRCh38.dna.primary_assembly.chr22.fa
+    path: ../../../test_data_git/Homo_sapiens.GRCh38.dna.primary_assembly.chr22_test.fa
 sjdbGTFfile:
     class: File
-    path: ../../data/Homo_sapiens.GRCh38.95.chr22.gtf
+    path: ../../../test_data_git/Homo_sapiens.GRCh38.95.chr22_test.gtf
 # sjdbOverhang: _SJDB_OVERHANG_
