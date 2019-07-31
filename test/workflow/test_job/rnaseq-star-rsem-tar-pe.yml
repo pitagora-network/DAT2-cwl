@@ -1,6 +1,3 @@
-genomeDir:
-  class: Directory
-  path: ../../data/STAR_reference
 nthreads: 8
 nthreads_1: 8
 nthreads_2: 8
@@ -15,3 +12,4 @@ rsem_index_dir:
 rsem_output_prefix: SRR1550989
 runid: SRR1550989
 split_files: true
+file: https://zenodo.org/record/3354995#.XUGA_ZP7R26
