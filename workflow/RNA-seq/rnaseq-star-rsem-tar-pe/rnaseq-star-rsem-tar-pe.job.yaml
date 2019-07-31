@@ -1,0 +1,15 @@
+extract: true
+file: null
+nthreads: null
+nthreads_1: null
+nthreads_2: null
+outFileNamePrefix: null
+outSAMtype: null
+quantMode: null
+rsem_index_dir: null
+rsem_index_prefix: null
+rsem_output_prefix: null
+runid: null
+split_files: null
+verbose: true
+verbose_1: true

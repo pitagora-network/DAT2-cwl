@@ -49,10 +49,22 @@ inputs:
     type: string?
     'sbg:x': 607
     'sbg:y': 507.3333435058594
+  - id: verbose
+    type: boolean
+    'sbg:x': -47.39967727661133
+    'sbg:y': 462.0929870605469
+  - id: gzip
+    type: boolean
+    'sbg:x': -134.9113006591797
+    'sbg:y': 607.3953247070312
   - id: file
     type: File
-    'sbg:x': -106.28228759765625
-    'sbg:y': 469.0377197265625
+    'sbg:x': -237.28082275390625
+    'sbg:y': 546.2996826171875
+  - id: extract
+    type: boolean
+    'sbg:x': 23.6028995513916
+    'sbg:y': 716.3695068359375
 outputs:
   - id: fastqFiles
     outputSource:
@@ -219,15 +231,21 @@ steps:
     'sbg:y': 171.9577178955078
   - id: tar
     in:
+      - id: extract
+        source: extract
       - id: file
         source: file
+      - id: gzip
+        source: gzip
+      - id: verbose
+        source: verbose
     out:
       - id: output
       - id: stderr
       - id: stdout
     run: ../../../tool/tar/tar.cwl
-    'sbg:x': 161.6614990234375
-    'sbg:y': 453
+    'sbg:x': 148.6511688232422
+    'sbg:y': 531.1627807617188
 requirements: []
 $schemas:
   - 'https://schema.org/docs/schema_org_rdfa.html'
