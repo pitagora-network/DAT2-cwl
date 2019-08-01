@@ -1,6 +1,6 @@
-extract: true
-file:
-  class: File
-  path: /Users/yamada/cwl/test_data_git/kallisto_out/SRR1550989.tar.gz
-gzip: true
-verbose: true
+verbose: false  # type "boolean"
+gzip: false  # type "boolean"
+file:  # type "File"
+    class: File
+    path: a/file/path
+extract: false  # type "boolean"
