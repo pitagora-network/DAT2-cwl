@@ -33,7 +33,7 @@ inputs:
       prefix: --java-options
       valueFrom: -Xmx$(self)g
 outputs:
-  gvcf:
+  vcf:
     type: File
     outputBinding:
       glob: $(inputs.output)

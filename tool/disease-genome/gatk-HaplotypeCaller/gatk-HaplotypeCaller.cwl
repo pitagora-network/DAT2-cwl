@@ -50,7 +50,7 @@ inputs:
       prefix: --java-options
       valueFrom: -Xmx$(self)g
 outputs:
-  cvf:
+  gcvf:
     type: File
     outputBinding:
       glob: $(inputs.output)

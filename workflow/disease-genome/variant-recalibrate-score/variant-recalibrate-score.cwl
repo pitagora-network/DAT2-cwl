@@ -3,64 +3,31 @@ cwlVersion: v1.0
 class: Workflow
 doc: "Recalibrate quality scores for each base (See chapter: 塩基ごとの品質スコアの再校正)"
 requirements:
-  ScatterFeatureRequirement: {}
+  MultipleInputFeatureRequirement: {}
   StepInputExpressionRequirement: {}
+  SubworkflowFeatureRequirement: {}
 inputs:
-  known-site-urls:
-    type: string[]
+  dbsnp-url:
+    type: string
+  mills-url:
+    type: string
   reference:
     type: File
   dedupped-bam:
     type: File
 steps:
-  download-known-variations:
-    run: wget.cwl
+  download-dbsnp:
+    run: download-known-site.cwl
     in:
-      url: known-site-urls
-      use_remote_name:
-        default: true
-    scatter: url
+      site-url: dbsnp-url
     out:
-      - downloaded
-  download-variation-indices:
-    run: wget.cwl
+      - site
+  download-mills:
+    run: download-known-site.cwl
     in:
-      url:
-        source: known-site-urls
-        valueFrom: $(self).tbi
-      use_remote_name:
-        default: true
-    scatter: url
+      site-url: mills-url
     out:
-      - downloaded
-  variation-with-index:
-    run:
-      class: CommandLineTool
-      requirements:
-        InitialWorkDirRequirement:
-          listing:
-            - entry: $(inputs.variation)
-            - entry: $(inputs.index)
-      baseCommand: "true"
-      inputs:
-        variation: File
-        index: File
-      outputs:
-        variation-with-index:
-          type: File
-          outputBinding:
-            glob: $(inputs.variation.basename)
-          secondaryFiles:
-            - .tbi
-    in:
-      variation: download-known-variations/downloaded
-      index: download-variation-indices/downloaded
-    scatter:
-      - variation
-      - index
-    scatterMethod: dotproduct
-    out:
-      - variation-with-index
+      - site
   picard-create-dictionary:
     run: picard-CreateSequenceDictionary.cwl
     in:
@@ -88,7 +55,7 @@ steps:
         fai: File
         dict: File
       outputs:
-        reference-with-index:
+        reference:
           type: File
           outputBinding:
             glob: $(inputs.fasta.basename)
@@ -100,13 +67,15 @@ steps:
       fai: samtools-faidx/fasta-index
       dict: picard-create-dictionary/dict
     out:
-      - reference-with-index
+      - reference
   base-recalibrator:
     run: gatk-BaseRecalibrator.cwl
     in:
       input: dedupped-bam
-      reference: reference-with-index/reference-with-index
-      known_sites: variation-with-index/variation-with-index
+      reference: reference-with-index/reference
+      known_sites:
+        source: [download-dbsnp/site, download-mills/site]
+        linkMerge: merge_flattened
       output_name:
         source: dedupped-bam
         valueFrom: $(self.nameroot).recaltab.txt
@@ -119,7 +88,7 @@ steps:
       output:
         source: dedupped-bam
         valueFrom: $(self.nameroot).recal.bam
-      reference: reference-with-index/reference-with-index
+      reference: reference-with-index/reference
       recal_file: base-recalibrator/recalibration_table
     out:
       - bam
@@ -127,3 +96,6 @@ outputs:
   recalibrated-bam:
     type: File
     outputSource: apply-bqsr/bam
+  dbsnp:
+    type: File
+    outputSource: download-dbsnp/site
