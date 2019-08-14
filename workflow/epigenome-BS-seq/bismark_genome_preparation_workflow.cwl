@@ -10,22 +10,29 @@ inputs:
     doc: fasta file
     label: fasta file
 steps:
-  mkdir_ref:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/mkdir/mkdir.cwl
+  rename:
+    run:
+      class: CommandLineTool
+      baseCommand: ["true"] # dummy command
+      requirements:
+        InitialWorkDirRequirement:
+          listing:
+            - entry: $(inputs.fastafile)
+      inputs:
+        fastafile: File
+      outputs:
+        renamed_dir:
+          type: Directory
+          outputBinding:
+            glob: $(runtime.outdir)
     in:
-      dir_name:
-        default: "ref"
-    out: [created_directory]
-  cp_to_directory:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/cp_to_directory/cp_to_directory.cwl
-    in:
-      file: fasta
-      dest_dir: mkdir_ref/created_directory
-    out: [result]
+      fastafile: fasta
+    out: [ renamed_dir ]
+
   bismark_genome_preparation:
     run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/bismark/bismark_genome_preparation/bismark_genome_preparation.cwl
     in:
-      ref_directory: cp_to_directory/result
+      ref_directory: rename/renamed_dir
     out:
       - output
 
