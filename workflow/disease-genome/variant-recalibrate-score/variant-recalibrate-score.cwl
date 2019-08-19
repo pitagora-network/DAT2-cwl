@@ -40,7 +40,7 @@ steps:
       fasta: reference
     out:
       - fasta-index
-  reference-with-index:
+  gather-index:
     run:
       class: CommandLineTool
       requirements:
@@ -72,7 +72,7 @@ steps:
     run: gatk-BaseRecalibrator.cwl
     in:
       input: dedupped-bam
-      reference: reference-with-index/reference
+      reference: gather-index/reference
       known_sites:
         source: [download-dbsnp/site, download-mills/site]
         linkMerge: merge_flattened
@@ -88,7 +88,7 @@ steps:
       output:
         source: dedupped-bam
         valueFrom: $(self.nameroot).recal.bam
-      reference: reference-with-index/reference
+      reference: gather-index/reference
       recal_file: base-recalibrator/recalibration_table
     out:
       - bam
@@ -99,3 +99,6 @@ outputs:
   dbsnp:
     type: File
     outputSource: download-dbsnp/site
+  reference-with-index:
+    type: File
+    outputSource: gather-index/reference
