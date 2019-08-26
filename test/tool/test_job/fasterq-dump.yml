@@ -8,7 +8,7 @@ include_technical: null
 log_level: null
 mem: null
 min_read_len: null
-nthreads: null
+nthreads: 10
 option_file: null
 outfile: null
 print_help: null
@@ -18,11 +18,11 @@ print_version: null
 progress: null
 quiet: null
 rowid_as_name: null
-runid: SRR1550989
-skip_technical: null
-split_3: null
+runid: DRR092257
+skip_technical: false
+split_3: false
 split_files: true
-split_spot: null
+split_spot: false
 strict: null
 table: null
 temp: null
