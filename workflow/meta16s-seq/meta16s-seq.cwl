@@ -185,6 +185,7 @@ steps:
     run: ../../tool/qiime2/diversity.visualizers.alpha_rarefaction.cwl
     in:
       table: dada2.methods.denoise_paired/table
+      metadata: METADATA
       phylogeny: phylogeny.pipelines.align_to_tree_mafft_fasttree/rooted_tree
       output_name:
         default: alpha-rarefaction.qzv
