@@ -30,9 +30,8 @@ inputs:
     inputBinding:
       prefix: --i-phylogeny
   max_depth:
-    default: null
     doc: The maximum rarefaction depth. Must be greater than min_depth.
-    type: long
+    type: long?
     inputBinding:
       prefix: --p-max-depth
   metrics:
@@ -47,7 +46,7 @@ inputs:
     type:
       - File
       - File[]
-      - null
+      - "null"
     inputBinding:
       prefix: --m-metadata-file
   min_depth:

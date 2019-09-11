@@ -28,7 +28,7 @@ inputs:
     type:
       - File
       - File[]
-      - null
+      - "null"
     inputBinding:
       prefix: --m-sample-metadata-file
   output_name:

@@ -49,7 +49,7 @@ inputs:
     type:
       - File
       - File[]
-      - null
+      - "null"
     inputBinding:
       prefix: --m-metadata-file
   where:
