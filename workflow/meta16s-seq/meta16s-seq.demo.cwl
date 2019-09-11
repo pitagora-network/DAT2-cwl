@@ -7,14 +7,9 @@ requirements:
 
 inputs: {}
 
-$namespaces:
-  dat2: https://github.com/pitagora-network/DAT2-cwl/raw/develop/ # dev
-  # dat2: https://github.com/pitagora-network/DAT2-cwl/raw/master/ # master
-  # dat2: /Users/inutano/repos/cwl/DAT2-CWL/ # local
-
 steps:
   download.fastq.tar:
-    run: dat2:tool/wget/wget.cwl
+    run: ../../tool/wget/wget.cwl
     in:
       url:
         default: https://zenodo.org/record/3371848/files/fastq.tar.gz
@@ -23,7 +18,7 @@ steps:
     out:
       - downloaded
   extract.fastq.tar:
-    run: dat2:tool/tar/tar.cwl
+    run: ../../tool/tar/tar.cwl
     in:
       file: download.fastq.tar/downloaded
       extract:
@@ -33,7 +28,7 @@ steps:
     out:
       - output
   download.metadata:
-    run: dat2:tool/wget/wget.cwl
+    run: ../../tool/wget/wget.cwl
     in:
       url:
         default: https://zenodo.org/record/3371848/files/metadata.txt
@@ -42,7 +37,7 @@ steps:
     out:
       - downloaded
   download.classifier:
-    run: dat2:tool/wget/wget.cwl
+    run: ../../tool/wget/wget.cwl
     in:
       url:
         default: https://zenodo.org/record/3371848/files/gg-13-8-99-nb-classifier.qza
@@ -51,7 +46,7 @@ steps:
     out:
       - downloaded
   meta16s-seq-wf:
-    run: dat2:workflow/meta16s-seq/meta16s-seq.cwl
+    run: ../../workflow/meta16s-seq/meta16s-seq.cwl
     in:
       INPUT: extract.fastq.tar/output
       METADATA: download.metadata/downloaded
