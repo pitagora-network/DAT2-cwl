@@ -30,19 +30,16 @@ inputs:
     inputBinding:
       prefix: --p-min-frequency
   max_frequency:
-    default: null
     doc: The maximum total frequency that a sample can have to be retained. If no value is provided this will default to infinity (i.e., no maximum frequency filter will be applied).
     type: long?
     inputBinding:
       prefix: --p-max-frequency
   min_features:
-    default: 0
     doc: The minimum number of features that a sample must have to be retained.
-    type: long
+    type: long?
     inputBinding:
       prefix: --p-min-features
   max_features:
-    default: null
     doc: The maximum number of features that a sample can have to be retained. If no value is provided this will default to infinity (i.e., no maximum feature filter will be applied).
     type: long?
     inputBinding:
@@ -50,12 +47,12 @@ inputs:
   metadata:
     doc: Sample metadata used with `where` parameter when selecting samples to retain, or with `exclude_ids` when selecting samples to discard.
     type:
-      - File?
-      - File[]?
+      - File
+      - File[]
+      - null
     inputBinding:
       prefix: --m-metadata-file
   where:
-    default: null
     doc: SQLite WHERE clause specifying sample metadata criteria that must be met to be included in the filtered feature table. If not provided, all samples in `metadata` that are also in the feature table will be retained.
     type: string?
     inputBinding:

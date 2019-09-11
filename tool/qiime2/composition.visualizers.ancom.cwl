@@ -42,7 +42,6 @@ inputs:
     inputBinding:
       prefix: --p-transform-function
   difference_function:
-    default: null
     doc: The method applied to visualize fold difference in feature abundances across groups for volcano plots.
     type: string?
     inputBinding:

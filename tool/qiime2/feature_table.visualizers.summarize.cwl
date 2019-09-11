@@ -26,8 +26,9 @@ inputs:
   sample_metadata:
     doc: The sample metadata.
     type:
-      - File?
-      - File[]?
+      - File
+      - File[]
+      - null
     inputBinding:
       prefix: --m-sample-metadata-file
   output_name:

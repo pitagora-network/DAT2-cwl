@@ -46,7 +46,6 @@ inputs:
     inputBinding:
       prefix: --p-normalize
   title:
-    default: null
     doc: Optional custom plot title.
     type: string?
     inputBinding:

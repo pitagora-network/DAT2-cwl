@@ -36,17 +36,18 @@ inputs:
     inputBinding:
       prefix: --p-max-depth
   metrics:
-    default: null
+    default: []
     doc: The metrics to be measured. By default computes observed_otus, shannon, and
       if phylogeny is provided, faith_pd.
-    type: string[]?
+    type: string[]
     inputBinding:
       prefix: --p-metrics
   metadata:
     doc: The sample metadata.
     type:
-      - File?
-      - File[]?
+      - File
+      - File[]
+      - null
     inputBinding:
       prefix: --m-metadata-file
   min_depth:
