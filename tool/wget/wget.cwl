@@ -24,12 +24,6 @@ inputs:
     doc: Use the basename of `url` parameter as an output file name. It is equivalent to `curl -O`.
     type: boolean
     default: false
-  track_location:
-    doc: Equivalent to `curl -L`
-    type: boolean
-    default: false
-    inputBinding:
-      prefix: --trusted-server-names
 outputs:
   downloaded:
     type: File
