@@ -1,0 +1,12 @@
+reads_per_batch: 0  # type "long"
+reads:  # type "File"
+    class: File
+    path: ../../data/qiime2/rep-seqs.qza
+read_orientation: # type "string" (optional)
+pre_dispatch: 2*n_jobs  # default value of type "string".
+output_name: taxonomy.qza  # type "string"
+n_jobs: -1  # default value of type "long".
+confidence: 0.7  # default value of type "double".
+classifier:  # type "File"
+    class: File
+    path: ../../data/qiime2/gg-13-8-99-nb-classifier.qza
