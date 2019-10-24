@@ -3,21 +3,21 @@
 ## 実装する予定の workflow
 
 - animal-genome-assembly
-  - inutano
+  - [inutano](github.com/inutano)
 - bacteria-genome
-  - suecharo
+  - [suecharo](githu.com/suecharo)
 - disease-genome
-  - tom-tan
+  - [tom-tan](github.com/tom-tan)
 - epigenome-bs-seq
-  - manabu
+  - [manabuishii](github.com/manabuishii)
 - epigenome-chip-seq
-  - suecharo
+  - [suecharo](github.com/suecharo)
 - metagenome
-  - inutano
+  - [inutano](github.com/inutano)
 - rna-seq
-  - yasumizu
+  - [ykohki](github.com/ykohki)
 - transcriptome-assemble
-  - tasumizu
+  - [yyoshiaki](github.com/yyoshiaki)
 
 ## Directory 構造と命名規則
 
