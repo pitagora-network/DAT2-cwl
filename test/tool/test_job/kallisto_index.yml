@@ -1,0 +1,4 @@
+index_name: kallisto.idx
+fasta_files:
+  class: File
+  path: ../../data/Homo_sapiens.GRCh38.cdna.all.chr22.fa.gz
