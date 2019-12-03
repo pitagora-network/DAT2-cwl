@@ -1,0 +1,8 @@
+dbsnp-url: ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg38/dbsnp_146.hg38.vcf.gz
+mills-url: ftp://gsapubftp-anonymous@ftp.broadinstitute.org/bundle/hg38/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz
+reference:
+  class: File
+  location: inputs/hg38.fasta
+dedupped-bam:
+  class: File
+  location: inputs/DRR006760.sort.dedup.bam
