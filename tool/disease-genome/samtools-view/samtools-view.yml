@@ -1,0 +1,6 @@
+use_fast_compression: false  # type "boolean"
+threads: 0  # type "int"
+sam:  # type "File"
+    class: File
+    path: a/file/path
+output_bam: false  # type "boolean"

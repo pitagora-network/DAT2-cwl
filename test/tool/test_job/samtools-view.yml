@@ -1,3 +1,6 @@
-input_file:
+threads: 4
+output_bam: true
+use_fast_compression: true
+sam:
   class: File
-  path: ../../data/ERR034597_1.sam
+  location: ../../data/ERR034597_1.sam

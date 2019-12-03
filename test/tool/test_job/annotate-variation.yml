@@ -1,0 +1,4 @@
+table: cytoBand
+location_name: annovar-hg38
+download: true
+buildver: hg38

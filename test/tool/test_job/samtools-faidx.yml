@@ -1,0 +1,3 @@
+fasta:
+  class: File
+  location: ../../data/chr22.fa

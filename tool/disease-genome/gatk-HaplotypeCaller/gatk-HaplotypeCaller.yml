@@ -1,0 +1,17 @@
+sample_name: a_string  # type "string"
+reference:  # type "File"
+    class: File
+    path: a/file/path
+output: a_string  # type "string"
+intervals:  # type "File"
+    class: File
+    path: a/file/path
+interval_padding: 0  # type "int"
+input:  # type "File"
+    class: File
+    path: a/file/path
+heap_size: 0  # type "int"
+emit-ref-confidence: valid_enum_value  # enum; valid values: "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-HaplotypeCaller/gatk-HaplotypeCaller.cwl#emit-ref-confidence/NONE", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-HaplotypeCaller/gatk-HaplotypeCaller.cwl#emit-ref-confidence/BP_RESOLUTION", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-HaplotypeCaller/gatk-HaplotypeCaller.cwl#emit-ref-confidence/GVCF"
+dbsnp:  # type "File"
+    class: File
+    path: a/file/path

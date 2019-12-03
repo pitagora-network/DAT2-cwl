@@ -1,0 +1,9 @@
+variant:  # type "File"
+    class: File
+    path: a/file/path
+select_type: valid_enum_value  # enum; valid values: "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-SelectVariants/gatk-SelectVariants.cwl#select_type/NO_VARIATION", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-SelectVariants/gatk-SelectVariants.cwl#select_type/SNP", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-SelectVariants/gatk-SelectVariants.cwl#select_type/MNP", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-SelectVariants/gatk-SelectVariants.cwl#select_type/INDEL", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-SelectVariants/gatk-SelectVariants.cwl#select_type/SYMBOLIC", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/gatk-SelectVariants/gatk-SelectVariants.cwl#select_type/MIXED"
+reference:  # type "File"
+    class: File
+    path: a/file/path
+output: a_string  # type "string"
+heap_size: 0  # type "int"
