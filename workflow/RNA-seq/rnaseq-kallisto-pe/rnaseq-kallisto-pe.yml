@@ -1,0 +1,9 @@
+nthreads_1: 0  # type "int" (optional)
+split_files: false  # type "boolean" (optional)
+nthreads: 0  # type "int" (optional)
+runid: a_string  # type "string"
+out_dir_name: a_string  # type "string" (optional)
+index_file:  # type "File"
+    class: File
+    path: a/file/path
+bootstrap_samples: 0  # type "int" (optional)

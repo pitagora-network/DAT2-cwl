@@ -1,0 +1,21 @@
+rsem_out:
+  - class: File
+    path: ../../data/SRR1550989.genes.results
+  - class: File
+    path: ../../data/SRR1551005.genes.results
+  - class: File
+    path: ../../data/SRR1551011.genes.results
+  - class: File
+    path: ../../data/SRR1551050.genes.results
+  - class: File
+    path: ../../data/SRR1551057.genes.results
+  - class: File
+    path: ../../data/SRR1551071.genes.results
+  - class: File
+    path: ../../data/SRR1551091.genes.results
+sample2condition.txt:
+  class: File
+  path: ../../data/sample2condition.txt
+target2gene.txt:
+  class: File
+  path: ../../data/target2gene.txt
