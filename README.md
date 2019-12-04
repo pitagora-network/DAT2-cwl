@@ -2,7 +2,7 @@
 
 This repository contains the Common Workflow Language (CWL) definitions of the workflows introduced in the book [#NGS_DAT 2nd edition (A tutorial book in Japanese, 次世代シークエンサーDRY解析教本 改訂第2版)](https://www.amazon.co.jp/dp/478090983X).
 
-Go to [`develop`](tree/develop) branch to test the workflows in development.
+Go to [`develop`](https://github.com/pitagora-network/DAT2-cwl/tree/develop) branch to test the workflows in development.
 
 ## Workflows
 
