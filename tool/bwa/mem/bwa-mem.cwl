@@ -5,6 +5,15 @@ doc: string
 requirements:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/bwa:0.7.17--h84994c4_5
+  InitialWorkDirRequirement:
+    listing:
+      - $(inputs.index_base)
+      - $(inputs.amb)
+      - $(inputs.ann)
+      - $(inputs.bwt)
+      - $(inputs.pac)
+      - $(inputs.sa)
+
 baseCommand: [bwa, mem]
 
 inputs:
@@ -30,12 +39,16 @@ inputs:
     label: "fasta file for index basename"
     inputBinding:
       position: 1
-    secondaryFiles:
-      - .amb
-      - .ann
-      - .bwt
-      - .pac
-      - .sa
+  amb:
+    type: File
+  ann:
+    type: File
+  bwt:
+    type: File
+  pac:
+    type: File
+  sa:
+    type: File
   fastq_forward:
     type: File
     label: "input fastq file to map (single-end or forward for pair-end)"

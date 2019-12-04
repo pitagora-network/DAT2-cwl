@@ -1,210 +1,53 @@
 # DAT2-CWL
 
-## 実装する予定の workflow
+This repository contains the Common Workflow Language (CWL) definitions of the workflows introduced in the book [#NGS_DAT 2nd edition (A tutorial book in Japanese, 次世代シークエンサー DRY 解析教本 改訂第 2 版)](https://www.amazon.co.jp/dp/478090983X).
 
-- animal-genome-assembly
-  - inutano
-- bacteria-genome
-  - suecharo
-- disease-genome
-  - tom-tan
-- epigenome-bs-seq
-  - manabu
-- epigenome-chip-seq
-  - suecharo
-- metagenome
-  - inutano
-- rna-seq
-  - yamada
-- transcriptome-assemble
-  - yasumizu
+## Learn how to run CWL
 
-## Directory 構造と命名規則
+There are many online documents to learn about CWL out there:
 
-### Workflow
+- [The official website](https://www.commonwl.org/)
+- [Getting started](https://www.commonwl.org/user_guide/)
+- [Getting started in Japanese](https://github.com/pitagora-galaxy/cwl/wiki/CWL-Start-Guide-JP)
+- [The workflow meetup Tokyo/Osaka](https://github.com/manabuishii/workflow-meetup/wiki/20180418)
+  - Slack workspace and invitation code is on the website
+- [Pitagora Network](https://pitagora-network.org/)
+  - a monthly meetup in Tokyo for bioinformatics workflow users and developers
 
-- 基本的に小文字でハイフンつなぎ
-- `workflow/rna-seq/rna-seq-se` のように dir を作成する
-  - この際 workflow name は `rna-seq-se` となる
-  - rna-seq において複数存在する場合、rna-seq の下に `rna-seq-se` や `rna-seq-pe` のような子 dir を作成する
-  - 逆に `rna-seq` などと一意に定まる workflow の場合、子 dir を作成せずそのまま `workflow/rna-seq` が worklfow dir となる
-- `workflow/rna-seq/rna-seq-se` の中身は以下のファイルが存在する
-  - `rna-seq-se.cwl`
-    - workflow file
-  - `rna-seq-se.yml`
-    - job template file
-- test job は `test/workflow/test_job` 以下に `rna-seq-se.yml` として作成する
+## Workflow test status
 
-### Tool
+All workflows introduced in the book has been translated in CWL, but yet the testing is ongoing.
 
-- 基本的に小文字でハイフンつなぎ
-- `tool/trimmomatic/trimmomatic-se` のように dir を作成する
-  - この際 tool name は `trimmomatic-se` となる
-  - trimmomatic の中でも複数存在する場合、trimmomatic の下に `trimmomatic-se` や `trimmomatic-pe` のような子 dir を作成する
-- `tool/trimmomatic/trimmomatic-se` の中身は以下のファイルが存在する
-  - `trimmomatic-se.cwl`
-    - tool file
-  - `trimmomatic-se.yml`
-    - job template file
-  - `trimmomatic-se.sh`
-    - script file
-    - これは、docker image の中に ADD される
-  - `Dockerfile`
-  - `build.sh`
-- test job は `test/tool/test_job` 以下に `trimmomatic-se.yml` として作成する
-- 基本的に bioconda の base image を使って bioconda で tool を用意する
-  - 省エネのため
-  - もちろん、個々人でスクラッチで書いても良い
-- 基本的に全ての tool の出力は File
-- Log はなるべく cwltool で巻き取る
+- [Animal genome assembly](workflow/animal_genome_assembly) by [inutano](https://github.com/inutano)
+  - [ ] WIP
+- [Bacteria genome](workflow/bacteria_genome) by [suecharo](https://github.com/suecharo)
+  - [x] bacteria_genome
+- [Disease genome](workflow/disease-genome) by [tom-tan](https://github.com/tom-tan)
+  - [ ] WIP
+- [Epigenome: Bisulfite-Seq](workflow/epigenome-BS-seq) by [manabuishii](https://github.com/manabuishii)
+  - [x] download_rawdata
+  - [x] download_reference_fasta
+  - [x] bismark_genome_preparation_workflow
+  - [x] epigenome-BS-seq
+  - [x] fastqc-workflow
+- [Epigenome: ChIP-Seq](workflow/epigenome-chip-seq) by [suecharo](https://github.com/suecharo)
+  - [ ] WIP
+- [Meta 16S-Seq](workflow/meta16s-seq) by [inutano](https://github.com/inutano)
+  - [x] meta16s-seq.demo
+- [RNA-seq](workflow/RNA-seq) by [ykohki](https://github.com/ykohki)
+  - [x] rnaseq-1sample-kallisto-pe
+  - [x] rnaseq-1sample-star-rsem-pe
+  - [ ] rnaseq-deseq2_gene
+  - [x] rnaseq-kallisto-pe
+  - [x] rnaseq-kallisto-sleuth
+  - [x] rnaseq-sleuth_isoform
+  - [x] rnaseq-star_index
+  - [x] rnaseq-star-rsem-deseq2
+  - [x] rnaseq-star-rsem-tar-pe
+  - [ ] rnaseq-star-rsem-pe
+- [Transcriptome assembly](workflow/transcriptome_assemble) by [yyoshiaki](https://github.com/yyoshiaki)
+  - [x] transcriptome_assemble
 
-### 変数名
+## Troubleshooting
 
-- shellscript, workflow, tool のそれぞれの変数名は snake case
-  - shellscript の仕様上、ハイフンを使うことが出来ない
-  - input, output の args など
-- workflow steps の step 名, ファイル名は小文字でハイフンつなぎ
-
-## Template
-
-### Workflow Template
-
-- workflow の template を作成する script を用意した
-
-```shell
-$ cd script
-$ ./prepare_workflow_template workflow_name
-$ cd ../workflow
-$ tree
-.
-└── workflow_name
-    ├── workflow_name.cwl
-    └── workflow_name.yml
-
-1 directory, 2 files
-
-# workflow_1 の下に workflow_2 のように子 dir に分ける場合
-$ ./prepare_workflow_template workflow_name_1/workflow_name_2
-```
-
-- 中にある程度書き込まれている
-  - 適当に編集する
-
----
-
-- cwl を編集したら validate、template の作成、test_job の作成をする
-
-```shell
-$ cd workflow/workflow_name
-$ cwltool --validate workflow_name.cwl
-$ cwltool --make-template workflow_name.cwl > workflow_name.yml
-$ cp workflow_name.yml ../../test/workflow/test_job/
-$ vim ../../test/workflow/test_job/workflow_name.yml
-
-# script を使う場合
-$ cd script
-$ ./build_workflow workflow_name
-$ vim ../test/workflow/test_job/workflow_name.yml
-```
-
-### Tool Template
-
-- tool の template を作成する script を用意した
-
-```shell
-$ cd script
-$ ./prepare_tool_template tool_name
-$ cd ../tool
-$ tree tool_name
-tool_name
-├── build.sh
-├── Dockerfile
-├── tool_name.cwl
-└── tool_name.sh
-└── tool_name.yml
-
-0 directories, 5 files
-
-# tool_1 の下に tool_2 のように子 dir に分ける場合
-$ cd script
-$ ./prepare_tool_template tool_1/tool_2
-$ cd ../tool
-$ tree tool_1
-tool_1
-└── tool_2
-    ├── build.sh
-    ├── Dockerfile
-    ├── tool_2.cwl
-    └── tool_2.sh
-    └── tool_2.yml
-
-1 directory, 5 files
-```
-
-- 中にある程度書き込まれている
-  - 適当に編集する
-
----
-
-- cwl を編集したら docker image の作成、validate、template の作成、test_job の作成をする
-
-```shell
-$ cd tool/tool_name
-$ bash build.sh
-$ cwltool --validate tool_name.cwl
-$ cwltool --make-template tool_name.cwl > tool_name.yml
-$ cp tool_name.yml ../../test/tool/test_job/
-$ vim ../../test/tool/test_job/tool_name.yml
-
-# script を使う場合
-$ cd script
-$ ./build_tool tool_name
-$ vim ../test/tool/test_job/tool_name.yml
-```
-
-## Test
-
-### Workflow Test
-
-- `test/workflow/test_job` の中の test job に基づいて test を実行する
-  - `build.sh` の実行
-  - cwltool を用いた validate
-  - cwltool を用いた make template
-  - test job を用いた test
-- 出力 dir は削除される
-  - 出力 file を確認したい場合は `rm -rf ${test_dir}/tmp` をコメントアウトする
-
-```shell
-$ cd test/workflow
-# workflow ごとの test
-$ ./test workflow_name
-# workflow dir 以下の全ての workflow の test
-$ ./all_test
-```
-
-### Tool Test
-
-- `test/tool/test_job` の中の test job に基づいて test を実行する
-  - `build.sh` の実行
-  - cwltool を用いた validate
-  - cwltool を用いた make template
-  - test job を用いた test
-- 出力 dir は削除される
-  - 出力 file を確認したい場合は `rm -rf ${test_dir}/tmp` をコメントアウトする
-
-```shell
-$ cd test/tool
-# tool ごとの test
-$ ./test tool_name
-# 全ての tool の test
-$ ./all_test
-```
-
-### Test Data
-
-- `test/data` 以下に適当に
-
-## Branch 管理
-
-- git-flow?
-  - [git-flow - cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/)
+Please create an issue on [github issue](https://github.com/pitagora-network/DAT2-cwl/issues) if you have any trouble with the workflows. For questions to Common Workflow Language, please go to [discourse group](https://cwl.discourse.group/) of CWL - the experts will help you.
