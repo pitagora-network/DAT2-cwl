@@ -43,6 +43,10 @@ inputs:
       position: 1
 
 outputs:
+  files:
+    type: File[]
+    outputBinding:
+      glob: $(inputs.assembly_directory)/*
   contigs:
     type: File
     outputBinding:

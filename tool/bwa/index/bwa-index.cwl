@@ -8,6 +8,7 @@ requirements:
   InitialWorkDirRequirement:
     listing:
       - entry: $(inputs.input_fasta)
+        entryname: $(inputs.input_fasta.basename)
 baseCommand: [bwa, index]
 inputs:
   input_fasta:

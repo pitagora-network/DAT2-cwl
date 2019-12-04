@@ -1,3 +1,3 @@
-sequence:
+input_contigs:
   class: File
-  path: ../../data/ERR2092776_1.fastq.gz
+  location: ../../data/worm.wtdbg2.ctg.lay.gz

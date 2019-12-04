@@ -1,4 +1,4 @@
 input_fastq:
   class: File
-  path: ../../data/ERR034597_1.fastq
-genomeSize: 100m
+  location: http://nanopore.s3.climb.ac.uk/MAP006-PCR-1_2D_pass.fasta
+genomeSize: 4.8m

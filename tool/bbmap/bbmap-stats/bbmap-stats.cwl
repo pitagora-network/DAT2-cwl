@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: Output statistics of input sequence reads
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/bbmap:38.43
+    dockerPull: quay.io/inutano/bbmap:38.43
 baseCommand: bash
 arguments:
   - position: 0
