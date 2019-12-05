@@ -1,7 +1,7 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: Workflow
-doc: "Animal Genome Assembly pipeline by Kazuharu Arakawa (@gaou_ak) without assembly step by canu, CWLized by Tazro Ohta (@inutano)"
+doc: "Animal Genome Assembly pipeline by Kazuharu Arakawa (@gaou_ak), CWLized by Tazro Ohta (@inutano). This workflow contains assembly step by canu which may take a few weeks to complete. Be careful to run!"
 requirements:
   SubworkflowFeatureRequirement: {}
 
@@ -51,6 +51,20 @@ steps:
       - Weighted_LogTransformed_HistogramReadlength
       - NanoPlot-report
       - NanoStats
+  canu:
+    run: ../../tool/canu/canu.cwl
+    in:
+      input_fastq: INPUT_LONGREAD
+      genomeSize: ESTIMATED_GENOME_SIZE
+      maxThreads: THREADS
+    out:
+      - contigs
+  bbmap-stats-canu-contigs:
+    run: ../../tool/bbmap/bbmap-stats/bbmap-stats.cwl
+    in:
+      input_fastq: canu/contigs
+    out:
+      - stats
   wtdbg2:
     run: ../../tool/wtdbg2/wtdbg2/wtdbg2.cwl
     in:
