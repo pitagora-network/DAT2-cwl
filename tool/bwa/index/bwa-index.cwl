@@ -7,8 +7,7 @@ requirements:
     dockerPull: quay.io/biocontainers/bwa:0.7.17--h84994c4_5
   InitialWorkDirRequirement:
     listing:
-      - entry: $(inputs.input_fasta)
-        entryname: $(inputs.input_fasta.basename)
+      - $(inputs.input_fasta)
 baseCommand: [bwa, index]
 inputs:
   input_fasta:

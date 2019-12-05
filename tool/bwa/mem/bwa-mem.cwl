@@ -7,18 +7,12 @@ requirements:
     dockerPull: quay.io/biocontainers/bwa:0.7.17--h84994c4_5
   InitialWorkDirRequirement:
     listing:
-      - entry: $(inputs.index_base)
-        entryname: $(inputs.index_base.basename)
-      - entry: $(inputs.amb)
-        entryname: $(inputs.amb.basename)
-      - entry: $(inputs.ann)
-        entryname: $(inputs.ann.basename)
-      - entry: $(inputs.bwt)
-        entryname: $(inputs.bwt.basename)
-      - entry: $(inputs.pac)
-        entryname: $(inputs.pac.basename)
-      - entry: $(inputs.sa)
-        entryname: $(inputs.sa.basename)
+      - $(inputs.index_base)
+      - $(inputs.amb)
+      - $(inputs.ann)
+      - $(inputs.bwt)
+      - $(inputs.pac)
+      - $(inputs.sa)
 
 baseCommand: [bwa, mem]
 
