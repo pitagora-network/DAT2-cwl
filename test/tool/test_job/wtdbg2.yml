@@ -1,4 +1,4 @@
 sequence:
-    class: File
-    location: http://nanopore.s3.climb.ac.uk/MAP006-PCR-1_2D_pass.fasta
+  class: File
+  location: http://nanopore.s3.climb.ac.uk/MAP006-PCR-1_2D_pass.fasta
 genome_size: 4.8m
