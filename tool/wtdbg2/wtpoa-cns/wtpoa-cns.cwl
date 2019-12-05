@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/wtdbg2:2.0--h470a237_0
+    dockerPull: quay.io/inutano/wtdbg2:v2.2
 baseCommand: wtpoa-cns
 
 inputs:
@@ -21,13 +21,14 @@ inputs:
       prefix: -i
   overwrite:
     type: boolean
+    default: true
     label: "Force overwrite"
     inputBinding:
       prefix: -f
   output_filename:
     type: string
-    label: "Output files"
     default: worm.wtdbg2.fa
+    label: "Output files"
     inputBinding:
       prefix: -o
 

@@ -5,6 +5,12 @@ doc: "Pilon for hybrid genome assembly"
 requirements:
   DockerRequirement:
     dockerPull: quay.io/biocontainers/pilon:1.23--0
+  InitialWorkDirRequirement:
+    listing:
+      - entry: $(inputs.aligned_bam)
+        entryname: $(inputs.aligned_bam.basename)
+      - entry: $(inputs.bam_index)
+        entryname: $(inputs.bam_index.basename)
 baseCommand: [java]
 
 arguments:
@@ -27,12 +33,15 @@ inputs:
     label: "genome fasta file to be polished"
     inputBinding:
       prefix: --genome
-  alinged_bam:
+  aligned_bam:
     type: File
     label: "A bam file of unknown type"
     doc: "A bam file of unknown type; Pilon will scan it and attempt to classify it"
     inputBinding:
       prefix: --bam
+  bam_index:
+    type: File
+    label: "A bam file index"
   threads:
     type: int
     label: "Degree of parallelism to use for certain processing"
@@ -47,10 +56,18 @@ inputs:
     inputBinding:
       prefix: --output
 outputs:
-  output_files:
+  out_bam:
     type: File
     outputBinding:
-      glob: "*"
+      glob: "*bam"
+  out_bam_index:
+    type: File
+    outputBinding:
+      glob: "*bai"
+  fasta:
+    type: File
+    outputBinding:
+      glob: $(inputs.output_prefix).fasta
   stdout: stdout
   stderr: stderr
 stdout: pilon-stdout.log
