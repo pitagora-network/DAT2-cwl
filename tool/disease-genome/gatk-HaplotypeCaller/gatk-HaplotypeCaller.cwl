@@ -11,6 +11,8 @@ inputs:
     type: File
     inputBinding:
       prefix: --input
+    secondaryFiles:
+      - ^.bai
   output:
     type: string
     inputBinding:
@@ -19,6 +21,9 @@ inputs:
     type: File
     inputBinding:
       prefix: --reference
+    secondaryFiles:
+      - .fai
+      - ^.dict
   intervals:
     type: File
     inputBinding:
@@ -40,6 +45,8 @@ inputs:
     type: File
     inputBinding:
       prefix: --dbsnp
+    secondaryFiles:
+      - .tbi
   sample_name:
     type: string
     inputBinding:
@@ -54,6 +61,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.output)
+    secondaryFiles:
+      - .tbi
   stdout: stdout
   stderr: stderr
 stdout: gatk-HaplotypeCaller-stdout.log

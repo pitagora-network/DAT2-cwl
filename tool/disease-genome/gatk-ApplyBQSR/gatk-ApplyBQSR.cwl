@@ -30,6 +30,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.output)
+    secondaryFiles:
+      - ^.bai
   stdout: stdout
   stderr: stderr
 stdout: gatk-ApplyBQSR-stdout.log

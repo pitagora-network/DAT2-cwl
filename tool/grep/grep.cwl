@@ -19,7 +19,7 @@ inputs:
     type: boolean
     default: false
     inputBinding:
-      prefix: --invert-match
+      prefix: -v
 outputs:
   output:
     type: stdout

@@ -9,12 +9,16 @@ inputs:
     type: string
   reference_genome:
     type: File
-    secondaryFiles:
-      - .amb
-      - .ann
-      - .bwt
-      - .pac
-      - .sa
+  reference_amb:
+    type: File
+  reference_ann:
+    type: File
+  reference_bwt:
+    type: File
+  reference_pac:
+    type: File
+  reference_sa:
+    type: File
   fastq_forward:
     type: File
   fastq_reverse:
@@ -43,6 +47,11 @@ steps:
     in:
       group_header_line: generate-group-header/header
       index_base: reference_genome
+      amb: reference_amb
+      ann: reference_ann
+      bwt: reference_bwt
+      pac: reference_pac
+      sa: reference_sa
       fastq_forward: fastq_forward
       fastq_reverse: fastq_reverse
     out:
