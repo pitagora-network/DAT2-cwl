@@ -15,6 +15,8 @@ inputs:
     type: File
     inputBinding:
       prefix: --variant
+    secondaryFiles:
+      - .tbi
   output:
     type: string
     inputBinding:

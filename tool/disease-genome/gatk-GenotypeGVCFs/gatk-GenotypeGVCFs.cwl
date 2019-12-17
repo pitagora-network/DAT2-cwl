@@ -15,6 +15,8 @@ inputs:
     type: File
     inputBinding:
       prefix: --variant
+    secondaryFiles:
+      - .tbi
   output:
     type: string
     inputBinding:
@@ -37,6 +39,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.output)
+    secondaryFiles:
+      - .tbi
   stdout: stdout
   stderr: stderr
 stdout: gatk-GenotypeGVCFs-stdout.log
