@@ -15,6 +15,8 @@ inputs:
     type: File
     inputBinding:
       prefix: --variant
+    secondaryFiles:
+      - .tbi
   select_type:
     type:
       type: enum
@@ -41,6 +43,8 @@ outputs:
     type: File
     outputBinding:
       glob: $(inputs.output)
+    secondaryFiles:
+      - .tbi
   stdout: stdout
   stderr: stderr
 stdout: gatk-SelectVariants-stdout.log

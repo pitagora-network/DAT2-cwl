@@ -1,0 +1,24 @@
+reference_id: DRR006760  # type "string"
+reference:  # type "File"
+    class: File
+    path: inputs/hg38.fasta
+    secondaryFiles:
+      - class: File
+        path: inputs/hg38.fasta.fai
+      - class: File
+        path: inputs/hg38.dict
+dbsnp:  # type "File"
+    class: File
+    path: inputs/dbsnp_146.hg38.vcf.gz
+    secondaryFiles:
+      - class: File
+        path: inputs/dbsnp_146.hg38.vcf.gz.tbi
+ccds:  # type "File"
+    class: File
+    path: inputs/ccds.bed
+bam:  # type "File"
+    class: File
+    path: inputs/DRR006760.sort.dedup.recal.bam
+    secondaryFiles:
+      - class: File
+        path: inputs/DRR006760.sort.dedup.recal.bai
