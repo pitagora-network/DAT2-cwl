@@ -1,6 +1,6 @@
 # DAT2-CWL
 
-This repository contains the Common Workflow Language (CWL) definitions of the workflows introduced in the book [#NGS_DAT 2nd edition (A tutorial book in Japanese, 次世代シークエンサーDRY解析教本 改訂第2版)](https://www.amazon.co.jp/dp/478090983X).
+This repository contains the Common Workflow Language (CWL) definitions of the workflows introduced in the book [#NGS_DAT 2nd edition (A tutorial book in Japanese, 次世代シークエンサー DRY 解析教本 改訂第 2 版)](https://www.amazon.co.jp/dp/478090983X).
 
 ## Learn how to run CWL
 
@@ -51,3 +51,7 @@ All workflows introduced in the book has been translated in CWL, but yet the tes
 ## Troubleshooting
 
 Please create an issue on [github issue](https://github.com/pitagora-network/DAT2-cwl/issues) if you have any trouble with the workflows. For questions to Common Workflow Language, please go to [discourse group](https://cwl.discourse.group/) of CWL - the experts will help you.
+
+## Copyright
+
+Copyright (c) 2020 [Contributors](https://github.com/pitagora-network/DAT2-cwl/graphs/contributors). See [LICENSE](https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/LICENSE) for further details.
