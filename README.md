@@ -51,3 +51,7 @@ All workflows introduced in the book has been translated in CWL, but yet the tes
 ## Troubleshooting
 
 Please create an issue on [github issue](https://github.com/pitagora-network/DAT2-cwl/issues) if you have any trouble with the workflows. For questions to Common Workflow Language, please go to [discourse group](https://cwl.discourse.group/) of CWL - the experts will help you.
+
+## Copyright
+
+Copyright (c) 2020 [Contributors](https://github.com/pitagora-network/DAT2-cwl/graphs/contributors). See [LICENSE](https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/LICENSE) for further details.
