@@ -43,7 +43,7 @@ steps:
     out:
       - header
   bwa-mem:
-    run: bwa-mem.cwl
+    run: ../../../tool/bwa/mem/bwa-mem.cwl
     in:
       group_header_line: generate-group-header/header
       index_base: reference_genome
@@ -57,7 +57,7 @@ steps:
     out:
       - output
   samtools-view:
-    run: samtools-view.cwl
+    run: ../../../tool/samtools/view/samtools-view.cwl
     in:
       output_bam:
         default: true
@@ -66,13 +66,13 @@ steps:
     out:
       - bam
   samtools-sort:
-    run: samtools-sort.cwl
+    run: ../../../tool/samtools/sort/samtools-sort.cwl
     in:
       input_bamfile: samtools-view/bam
     out:
       - sorted_bam
   samtools-index:
-    run: samtools-index.cwl
+    run: ../../../tool/samtools/index/samtools-index.cwl
     in:
       input_bamfile: samtools-sort/sorted_bam
     out:

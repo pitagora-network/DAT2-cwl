@@ -9,7 +9,7 @@ inputs:
     type: File
 steps:
   mark-duplicates:
-    run: picard-MarkDuplicates.cwl
+    run: ../../../tool/disease-genome/picard-MarkDuplicates/picard-MarkDuplicates.cwl
     in:
       input: input
       output_name:

@@ -10,7 +10,7 @@ inputs:
     type: string
 steps:
   download:
-    run: wget.cwl
+    run: ../../../tool/wget/wget.cwl
     in:
       url: site-url
       use_remote_name:
@@ -18,7 +18,7 @@ steps:
     out:
       - downloaded
   download-variation-index:
-    run: wget.cwl
+    run: ../../../tool/wget/wget.cwl
     in:
       url:
         source: site-url

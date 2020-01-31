@@ -14,7 +14,7 @@ inputs:
     type: File
 steps:
   download:
-    run: wget.cwl
+    run: ../../../tool/wget/wget.cwl
     in:
       url: reference-genome-url
       use_remote_name:
@@ -22,7 +22,7 @@ steps:
     out:
       - downloaded
   extract:
-    run: tar.cwl
+    run: ../../../tool/tar/tar.cwl
     in:
       file: download/downloaded
       extract:
@@ -32,14 +32,14 @@ steps:
     out:
       - output
   listing:
-    run: listing.cwl
+    run: ../../../tool/listing/listing.cwl
     in:
       dir: extract/output
       file_names: reference-genome-names
     out:
       - files
   concat:
-    run: cat.cwl
+    run: ../../../tool/cat/cat.cwl
     in:
       files:
         source:
@@ -49,7 +49,7 @@ steps:
     out:
       - concatinated
   list-sequence:
-    run: grep.cwl
+    run: ../../../tool/grep/grep.cwl
     in:
       pattern:
         default: ^>

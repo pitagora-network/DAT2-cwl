@@ -25,19 +25,19 @@ inputs:
       - .tbi
 steps:
   sort-ccds:
-    run: sort-bed.cwl
+    run: ../../../tool/disease-genome/sort-bed/sort-bed.cwl
     in:
       bed: ccds
     out:
       - sorted
   bedtool-merge:
-    run: bedtool-merge.cwl
+    run: ../../../tool/disease-genome/bedtool-merge/bedtool-merge.cwl
     in:
       bed: sort-ccds/sorted
     out:
       - sorted
   run-HaplotypeCaller:
-    run: gatk-HaplotypeCaller.cwl
+    run: ../../../tool/disease-genome/gatk-HaplotypeCaller/gatk-HaplotypeCaller.cwl
     in:
       input: bam
       output:
@@ -56,7 +56,7 @@ steps:
     out:
       - gvcf
   run-GenotypeGVCFs:
-    run: gatk-GenotypeGVCFs.cwl
+    run: ../../../tool/disease-genome/gatk-GenotypeGVCFs/gatk-GenotypeGVCFs.cwl
     in:
       reference: reference
       variant: run-HaplotypeCaller/gvcf
@@ -71,13 +71,13 @@ steps:
     out:
       - vcf
   gunzip-raw:
-    run: gunzip.cwl
+    run: ../../../tool/gunzip/gunzip.cwl
     in:
       file: run-GenotypeGVCFs/vcf
     out:
       - decompressed
   remove-comment-from-raw:
-    run: grep.cwl
+    run: ../../../tool/grep/grep.cwl
     in:
       pattern:
         default: "^#"
@@ -89,13 +89,13 @@ steps:
     out:
       - output
   count-raw:
-    run: wc.cwl
+    run: ../../../tool/wc/wc.cwl
     in:
       file: remove-comment-from-raw/output
     out:
       - lines
   run-SelectVariants-SNV:
-    run: gatk-SelectVariants.cwl
+    run: ../../../tool/disease-genome/gatk-SelectVariants/gatk-SelectVariants.cwl
     in:
       reference: reference
       variant: run-GenotypeGVCFs/vcf
@@ -109,7 +109,7 @@ steps:
     out:
       - gvcf
   run-SelectVariants-INDEL:
-    run: gatk-SelectVariants.cwl
+    run: ../../../tool/disease-genome/gatk-SelectVariants/gatk-SelectVariants.cwl
     in:
       reference: reference
       variant: run-GenotypeGVCFs/vcf
@@ -123,7 +123,7 @@ steps:
     out:
       - gvcf
   run-VariantFiltration-SNV:
-    run: gatk-VariantFiltration.cwl
+    run: ../../../tool/disease-genome/gatk-VariantFiltration/gatk-VariantFiltration.cwl
     in:
       reference: reference
       variant: run-SelectVariants-SNV/gvcf
@@ -149,7 +149,7 @@ steps:
     out:
       - gvcf
   run-VariantFiltration-INDEL:
-    run: gatk-VariantFiltration.cwl
+    run: ../../../tool/disease-genome/gatk-VariantFiltration/gatk-VariantFiltration.cwl
     in:
       reference: reference
       variant: run-SelectVariants-INDEL/gvcf
@@ -171,13 +171,13 @@ steps:
     out:
       - gvcf
   gunzip-snv:
-    run: gunzip.cwl
+    run: ../../../tool/gunzip/gunzip.cwl
     in:
       file: run-VariantFiltration-SNV/gvcf
     out:
       - decompressed
   select-pass-from-snv:
-    run: grep.cwl
+    run: ../../../tool/grep/grep.cwl
     in:
       pattern:
         default: PASS
@@ -187,19 +187,19 @@ steps:
     out:
       - output
   count-snv:
-    run: wc.cwl
+    run: ../../../tool/wc/wc.cwl
     in:
       file: select-pass-from-snv/output
     out:
       - lines
   gunzip-indel:
-    run: gunzip.cwl
+    run: ../../../tool/gunzip/gunzip.cwl
     in:
       file: run-VariantFiltration-INDEL/gvcf
     out:
       - decompressed
   select-pass-from-indel:
-    run: grep.cwl
+    run: ../../../tool/grep/grep.cwl
     in:
       pattern:
         default: PASS
@@ -209,7 +209,7 @@ steps:
     out:
       - output
   count-indel:
-    run: wc.cwl
+    run: ../../../tool/wc/wc.cwl
     in:
       file: select-pass-from-indel/output
     out:
