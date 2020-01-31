@@ -1,29 +1,17 @@
-class: CommandLineTool
+#!/usr/bin/env cwl-runner
 cwlVersion: v1.0
-$namespaces:
-  sbg: 'https://www.sevenbridges.com/'
-baseCommand:
-  - bash
-inputs:
-  - id: input_1
-    type: File
-    inputBinding:
-      position: 1
-outputs:
-  - id: gzipped
-    type: File
-    outputBinding:
-      glob: '*.gz'
-  - id: stderr
-    type: stderr
-  - id: stdout
-    type: stdout
-doc: string
-arguments:
-  - position: 0
-    valueFrom: /workdir/gzip.sh
+class: CommandLineTool
+doc: compression/decompression tool using Lempel-Ziv coding (LZ77)
 requirements:
-  - class: DockerRequirement
-    dockerPull: 'dat2-cwl/gzip:latest'
-stdout: gzip-stdout.log
+  DockerRequirement:
+    dockerPull: alpine:3.9
+baseCommand: [gzip, -c]
+inputs:
+  file:
+    type: File
+    inputBinding: {}
+outputs:
+  compressed: stdout
+  stderr: stderr
+stdout: $(inputs.file.basename).gz
 stderr: gzip-stderr.log

@@ -9,7 +9,7 @@ inputs:
     type: string
 steps:
   download:
-    run: wget.cwl
+    run: ../../../tool/wget/wget.cwl
     in:
       url: exome-data-url
       use_remote_name:
@@ -36,13 +36,13 @@ steps:
       - forward
       - reverse
   unwrap-forward:
-    run: unwrap.cwl
+    run: ../../../tool/unwrap/unwrap.cwl
     in:
       input: sra2fastq/forward
     out:
       - unwrapped
   unwrap-reverse:
-    run: unwrap.cwl
+    run: ../../../tool/unwrap/unwrap.cwl
     in:
       input: sra2fastq/reverse
     out:

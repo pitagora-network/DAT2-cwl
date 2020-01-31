@@ -7,7 +7,7 @@ inputs:
     type: File
 steps:
   bwa-index:
-    run: bwa-index.cwl
+    run: ../../../tool/bwa/index/bwa-index.cwl
     in:
       input_fasta: fasta
     out:

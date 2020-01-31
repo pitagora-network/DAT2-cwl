@@ -29,13 +29,13 @@ steps:
     out:
       - site
   picard-create-dictionary:
-    run: picard-CreateSequenceDictionary.cwl
+    run: ../../../tool/disease-genome/picard-CreateSequenceDictionary/picard-CreateSequenceDictionary.cwl
     in:
       reference: reference
     out:
       - dict
   samtools-faidx:
-    run: samtools-faidx.cwl
+    run: ../../../tool/samtools/faidx/samtools-faidx.cwl
     in:
       fasta: reference
     out:
@@ -69,7 +69,7 @@ steps:
     out:
       - reference
   base-recalibrator:
-    run: gatk-BaseRecalibrator.cwl
+    run: ../../../tool/disease-genome/gatk-BaseRecalibrator/gatk-BaseRecalibrator.cwl
     in:
       input: dedupped-bam
       reference: gather-index/reference
@@ -82,7 +82,7 @@ steps:
     out:
       - recalibration_table
   apply-bqsr:
-    run: gatk-ApplyBQSR.cwl
+    run: ../../../tool/disease-genome/gatk-ApplyBQSR/gatk-ApplyBQSR.cwl
     in:
       input: dedupped-bam
       output:

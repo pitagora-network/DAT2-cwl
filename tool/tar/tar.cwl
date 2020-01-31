@@ -1,36 +1,35 @@
-class: CommandLineTool
+#!/usr/bin/env cwl-runner
 cwlVersion: v1.0
-$namespaces:
-  sbg: 'https://www.sevenbridges.com/'
-baseCommand:
-  - tar
+class: CommandLineTool
+doc: manipulate tape archives
+requirements:
+  DockerRequirement:
+    dockerPull: alpine:3.9
+  InlineJavascriptRequirement: {}
+baseCommand: tar
 inputs:
-  - default: false
-    id: extract
-    type: boolean
-    inputBinding:
-      position: 0
-      prefix: '-x'
-  - id: file
+  file:
     type: File
     inputBinding:
-      position: 0
-      prefix: '--file='
+      prefix: --file=
       separate: false
-  - default: false
-    id: gzip
+  extract:
     type: boolean
+    default: false
     inputBinding:
-      position: 0
-      prefix: '-z'
-  - default: false
-    id: verbose
+      prefix: -x
+  gzip:
     type: boolean
+    default: false
     inputBinding:
-      position: 0
-      prefix: '-v'
+      prefix: -z
+  verbose:
+    type: boolean
+    default: false
+    inputBinding:
+      prefix: -v
 outputs:
-  - id: output
+  output:
     type: Directory
     outputBinding:
       glob: |
@@ -38,14 +37,7 @@ outputs:
           var extlen = inputs.gzip ? 2 : 1;
           return inputs.file.basename.split('.').slice(0, -extlen).join('.');
         }
-  - id: stderr
-    type: stderr
-  - id: stdout
-    type: stdout
-doc: manipulate tape archives
-requirements:
-  - class: DockerRequirement
-    dockerPull: 'alpine:3.9'
-  - class: InlineJavascriptRequirement
+  stdout: stdout
+  stderr: stderr
 stdout: tar-stdout.log
 stderr: tar-stderr.log

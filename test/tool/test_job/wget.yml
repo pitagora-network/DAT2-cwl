@@ -1,5 +1,3 @@
-output_name: Homo_sapiens.GRCh38.cdna.all.fa.gz
-track_location: null
-url: >-
-  ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens//cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
-use_remote_name: null
+use_remote_name: true  # type "boolean"
+url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/master/README.md # type "string"
+track_location: false  # type "boolean"
