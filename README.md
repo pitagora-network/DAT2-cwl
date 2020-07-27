@@ -48,6 +48,15 @@ All workflows introduced in the book has been translated in CWL, but yet the tes
 - [Transcriptome assembly](workflow/transcriptome_assemble) by [yyoshiaki](https://github.com/yyoshiaki)
   - [x] transcriptome_assemble
 
+## Erratum
+
+p.333 に記載のあるURL `https://tinyurl.com/dat2_cwl_example` がアクセス不能となっています。すみません。こちらで指定すべきコマンドとURLはこちらです。(コピペする場合は `$` は除いてください)
+
+```
+$ cwltool https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/workflow/meta16s-seq/meta16s-seq.demo.cwl
+```
+
+
 ## Troubleshooting
 
 Please create an issue on [github issue](https://github.com/pitagora-network/DAT2-cwl/issues) if you have any trouble with the workflows. For questions to Common Workflow Language, please go to [discourse group](https://cwl.discourse.group/) of CWL - the experts will help you.
