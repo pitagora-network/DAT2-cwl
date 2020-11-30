@@ -5,14 +5,22 @@ doc: Meta 16S Sequence data analysis pipeline originally developed by Yuh Shiwa,
 requirements:
   SubworkflowFeatureRequirement: {}
 
-inputs: {}
+inputs:
+  fastq.tar.url:
+    type: string
+    default: https://zenodo.org/record/3371848/files/fastq.tar.gz
+  metadata.url:
+    type: string
+    default: https://zenodo.org/record/3371848/files/metadata.txt
+  classifier.url:
+    type: string
+    default: https://zenodo.org/record/3371848/files/gg-13-8-99-nb-classifier.qza
 
 steps:
   download.fastq.tar:
     run: ../../tool/wget/wget.cwl
     in:
-      url:
-        default: https://zenodo.org/record/3371848/files/fastq.tar.gz
+      url: fastq.tar.url
       use_remote_name:
         default: true
     out:
@@ -30,8 +38,7 @@ steps:
   download.metadata:
     run: ../../tool/wget/wget.cwl
     in:
-      url:
-        default: https://zenodo.org/record/3371848/files/metadata.txt
+      url: metadata.url
       use_remote_name:
         default: true
     out:
@@ -39,8 +46,7 @@ steps:
   download.classifier:
     run: ../../tool/wget/wget.cwl
     in:
-      url:
-        default: https://zenodo.org/record/3371848/files/gg-13-8-99-nb-classifier.qza
+      url: classifier.url
       use_remote_name:
         default: true
     out:
