@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.composition.methods.add_pseudocount
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.8
+    dockerImageId: qiime2/core:2020.8
     dockerOutputDirectory: /home/qiime2
 label: Add pseudocount to table
 doc: Increment all counts in table by pseudocount.

@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.feature_table.visualizers.tabulate_seqs
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.8
+    dockerImageId: qiime2/core:2020.8
     dockerOutputDirectory: /home/qiime2
 label: View sequence associated with each feature
 doc: Generate tabular view of feature identifier to sequence mapping, including links to BLAST each sequence against the NCBI nt database.

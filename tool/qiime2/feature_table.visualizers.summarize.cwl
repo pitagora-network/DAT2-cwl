@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.feature_table.visualizers.summarize
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.8
+    dockerImageId: qiime2/core:2020.8
     dockerOutputDirectory: /home/qiime2
 label: Summarize table
 doc: Generate visual and tabular summaries of a feature table.

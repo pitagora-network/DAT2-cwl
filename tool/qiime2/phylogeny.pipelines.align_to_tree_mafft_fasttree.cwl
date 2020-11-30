@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.phylogeny.pipelines.align_to_tree_mafft_fasttree
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.8
+    dockerImageId: qiime2/core:2020.8
     dockerOutputDirectory: /home/qiime2
 label: Build a phylogenetic tree using fasttree and mafft alignment
 doc: This pipeline will start by creating a sequence alignment using MAFFT, after which any alignment columns that are phylogenetically uninformative or ambiguously aligned will be removed (masked). The resulting masked alignment will be used to infer a phylogenetic tree and then subsequently rooted at its midpoint. Output files from each step of the pipeline will be saved. This includes both the unmasked and masked MAFFT alignment from q2-alignment methods, and both the rooted and unrooted phylogenies from q2-phylogeny methods.

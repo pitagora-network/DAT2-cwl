@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.taxa.visualizers.barplot
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.8
+    dockerImageId: qiime2/core:2020.8
     dockerOutputDirectory: /home/qiime2
 label: Visualize taxonomy with an interactive bar plot
 doc: This visualizer produces an interactive barplot visualization of taxonomies. Interactive features include multi-level sorting, plot recoloring, sample relabeling, and SVG figure export.

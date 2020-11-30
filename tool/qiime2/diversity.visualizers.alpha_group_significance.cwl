@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.diversity.visualizers.alpha_group_significance
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.8
+    dockerImageId: qiime2/core:2020.8
     dockerOutputDirectory: /home/qiime2
 label: Alpha diversity comparisons
 doc: Visually and statistically compare groups of alpha diversity values.

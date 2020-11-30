@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.diversity.visualizers.alpha_rarefaction
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.8
+    dockerImageId: qiime2/core:2020.8
     dockerOutputDirectory: /home/qiime2
 label: Alpha rarefaction curves
 doc: Generate interactive alpha rarefaction curves by computing rarefactions between `min_depth` and `max_depth`. The number of intermediate depths to compute is controlled by the `steps` parameter, with n `iterations` being computed at each rarefaction depth. If sample metadata is provided, samples may be grouped based on distinct values within a metadata column.
