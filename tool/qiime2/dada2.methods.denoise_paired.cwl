@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.dada2.methods.denoise_paired
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2020.8
-    dockerImageId: qiime2/core:2020.8
+    dockerPull: qiime2/core:2020.2
+    dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
   InitialWorkDirRequirement:
     listing:

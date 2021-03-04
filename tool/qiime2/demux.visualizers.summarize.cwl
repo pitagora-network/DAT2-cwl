@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.demux.visualizers.summarize
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2020.8
-    dockerImageId: qiime2/core:2020.8
+    dockerPull: qiime2/core:2020.2
+    dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
 label: Summarize counts per sample.
 doc: Summarize counts per sample for all samples, and generate interactive positional

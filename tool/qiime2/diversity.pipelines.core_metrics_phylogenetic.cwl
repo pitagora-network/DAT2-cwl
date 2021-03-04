@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.diversity.pipelines.core_metrics_phylogenetic
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2020.8
-    dockerImageId: qiime2/core:2020.8
+    dockerPull: qiime2/core:2020.2
+    dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
 label: Core diversity metrics (phylogenetic and non-phylogenetic)
 doc: Applies a collection of diversity metrics (both phylogenetic and non-phylogenetic) to a feature table.
