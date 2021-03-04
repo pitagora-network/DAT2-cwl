@@ -47,7 +47,7 @@ outputs:
 
 steps:
   import:
-    run: ../../tool/qiime2/import.cwl
+    run: ../../tool/qiime2/tools.import.cwl
     in:
       input_data: INPUT
     out:
