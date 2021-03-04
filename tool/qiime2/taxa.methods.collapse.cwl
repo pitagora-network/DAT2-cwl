@@ -40,7 +40,7 @@ inputs:
     default: null
     doc: The taxonomic level at which the features should be collapsed. All ouput
       features will have exactly this many levels of taxonomic annotation.
-    type: long
+    type: int
     inputBinding:
       prefix: --p-level
   output_name:
