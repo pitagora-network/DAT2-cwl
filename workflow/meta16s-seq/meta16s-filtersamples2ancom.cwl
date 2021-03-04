@@ -33,6 +33,9 @@ outputs:
   ancom_result:
     type: File
     outputSource: composition.visualizers.ancom/visualization
+  ancom_data:
+    type: Directory
+    outputSource: tools.export/data
 
 steps:
   feature_table.methods.filter_samples:
