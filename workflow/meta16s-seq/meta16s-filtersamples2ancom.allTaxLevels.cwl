@@ -18,9 +18,6 @@ inputs:
   TAXONOMY:
     label: taxonomy classification data
     type: File
-  TAXONOMY_LEVEL:
-    label: taxonomic level to be collapsed to
-    type: long
   METADATA_COLUMN:
     label: column to be used for comaprison in ancom
     type: string
@@ -50,6 +47,27 @@ outputs:
   ancom_result_7:
       type: File
       outputSource: composition.visualizers.ancom.7/ancom_result
+  ancom_data_1:
+      type: Directory
+      outputSource: composition.visualizers.ancom.1/ancom_data
+  ancom_data_2:
+      type: Directory
+      outputSource: composition.visualizers.ancom.2/ancom_data
+  ancom_data_3:
+      type: Directory
+      outputSource: composition.visualizers.ancom.3/ancom_data
+  ancom_data_4:
+      type: Directory
+      outputSource: composition.visualizers.ancom.4/ancom_data
+  ancom_data_5:
+      type: Directory
+      outputSource: composition.visualizers.ancom.5/ancom_data
+  ancom_data_6:
+      type: Directory
+      outputSource: composition.visualizers.ancom.6/ancom_data
+  ancom_data_7:
+      type: Directory
+      outputSource: composition.visualizers.ancom.7/ancom_data
 
 steps:
   composition.visualizers.ancom.1:
@@ -64,6 +82,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
     out:
       - ancom_result
+      - ancom_data
       - barplot
 
   composition.visualizers.ancom.2:
@@ -78,6 +97,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
     out:
       - ancom_result
+      - ancom_data
 
   composition.visualizers.ancom.3:
     run: meta16s-filtersamples2ancom.cwl
@@ -91,6 +111,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
     out:
       - ancom_result
+      - ancom_data
 
   composition.visualizers.ancom.4:
     run: meta16s-filtersamples2ancom.cwl
@@ -104,6 +125,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
     out:
       - ancom_result
+      - ancom_data
 
   composition.visualizers.ancom.5:
     run: meta16s-filtersamples2ancom.cwl
@@ -117,6 +139,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
     out:
       - ancom_result
+      - ancom_data
 
   composition.visualizers.ancom.6:
     run: meta16s-filtersamples2ancom.cwl
@@ -130,6 +153,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
     out:
       - ancom_result
+      - ancom_data
 
   composition.visualizers.ancom.7:
     run: meta16s-filtersamples2ancom.cwl
@@ -143,3 +167,4 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
     out:
       - ancom_result
+      - ancom_data

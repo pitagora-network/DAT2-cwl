@@ -67,7 +67,8 @@ steps:
       taxonomy: TAXONOMY
       level: TAXONOMY_LEVEL
       output_name:
-        default: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).qza
+        default:
+          valueFrom: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).qza
     out:
       - collapsed_table # table.filtered.collapse_7.qza
 
@@ -76,7 +77,8 @@ steps:
     in:
       table: taxa.methods.collapse.table/collapsed_table
       output_name:
-        default: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.qza
+        default:
+          valueFrom: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.qza
     out:
       - composition_table # table.filtered.collapse_7.comp.qza
 
@@ -87,7 +89,8 @@ steps:
       metadata: METADATA
       metadata_column: METADATA_COLUMN
       output_name:
-        default: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.ancom.qzv
+        default:
+          valueFrom: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.ancom.qzv
     out:
       - visualization # table.filtered.collapse_7.comp.ancom.qzv
 
@@ -96,6 +99,7 @@ steps:
     in:
       input_artifact: composition.visualizers.ancom/visualization
       output_name:
-        default: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.ancom
+        default:
+          valueFrom: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.ancom
     out:
       - data # table.filtered.collapse_7.comp.ancom
