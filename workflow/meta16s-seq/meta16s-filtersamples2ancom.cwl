@@ -22,6 +22,14 @@ inputs:
   METADATA_COLUMN:
     label: column to be used for comaprison in ancom
     type: string
+  RESULT_OUTPUT_NAME:
+    label: output file name for ancom result
+    type: string
+    default: table.filtered.collapse.comp.ancom.qzv
+  DATA_OUTPUT_NAME:
+    label: output file name for ancom data
+    type: string
+    default: table.filtered.collapse.comp.ancom
 
 outputs:
   filtered_table:
@@ -67,16 +75,16 @@ steps:
       taxonomy: TAXONOMY
       level: TAXONOMY_LEVEL
       output_name:
-        valueFrom: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).qza
+        default: table.filtered.collapse.qza
     out:
-      - collapsed_table # table.filtered.collapse_7.qza
+      - collapsed_table # table.filtered.collapse.qza
 
   composition.methods.add_pseudocount:
     run: ../../tool/qiime2/composition.methods.add_pseudocount.cwl
     in:
       table: taxa.methods.collapse.table/collapsed_table
       output_name:
-        valueFrom: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.qza
+        default: table.filtered.collapse.comp.qza
     out:
       - composition_table # table.filtered.collapse_7.comp.qza
 
@@ -86,8 +94,7 @@ steps:
       table: composition.methods.add_pseudocount/composition_table
       metadata: METADATA
       metadata_column: METADATA_COLUMN
-      output_name:
-        valueFrom: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.ancom.qzv
+      output_name: RESULT_OUTPUT_NAME
     out:
       - visualization # table.filtered.collapse_7.comp.ancom.qzv
 
@@ -95,7 +102,6 @@ steps:
     run: ../../tool/qiime2/tools.export.cwl
     in:
       input_artifact: composition.visualizers.ancom/visualization
-      output_name:
-        valueFrom: table.filtered.collapse_$(inputs.TAXONOMY_LEVEL).comp.ancom
+      output_name: DATA_OUTPUT_NAME
     out:
       - data # table.filtered.collapse_7.comp.ancom

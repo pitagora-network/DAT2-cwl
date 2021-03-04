@@ -80,6 +80,10 @@ steps:
       TAXONOMY_LEVEL:
         default: 1
       METADATA_COLUMN: METADATA_COLUMN
+      RESULT_OUTPUT_NAME:
+        default: ancom.1.qzv
+      DATA_OUTPUT_NAME:
+        default: ancom.1
     out:
       - ancom_result
       - ancom_data
@@ -95,6 +99,10 @@ steps:
       TAXONOMY_LEVEL:
         default: 2
       METADATA_COLUMN: METADATA_COLUMN
+      RESULT_OUTPUT_NAME:
+        default: ancom.2.qzv
+      DATA_OUTPUT_NAME:
+        default: ancom.2
     out:
       - ancom_result
       - ancom_data
@@ -109,6 +117,10 @@ steps:
       TAXONOMY_LEVEL:
         default: 3
       METADATA_COLUMN: METADATA_COLUMN
+      RESULT_OUTPUT_NAME:
+        default: ancom.3.qzv
+      DATA_OUTPUT_NAME:
+        default: ancom.3
     out:
       - ancom_result
       - ancom_data
@@ -123,6 +135,10 @@ steps:
       TAXONOMY_LEVEL:
         default: 4
       METADATA_COLUMN: METADATA_COLUMN
+      RESULT_OUTPUT_NAME:
+        default: ancom.4.qzv
+      DATA_OUTPUT_NAME:
+        default: ancom.4
     out:
       - ancom_result
       - ancom_data
@@ -137,6 +153,10 @@ steps:
       TAXONOMY_LEVEL:
         default: 5
       METADATA_COLUMN: METADATA_COLUMN
+      RESULT_OUTPUT_NAME:
+        default: ancom.5.qzv
+      DATA_OUTPUT_NAME:
+        default: ancom.5
     out:
       - ancom_result
       - ancom_data
@@ -151,6 +171,10 @@ steps:
       TAXONOMY_LEVEL:
         default: 6
       METADATA_COLUMN: METADATA_COLUMN
+      RESULT_OUTPUT_NAME:
+        default: ancom.6.qzv
+      DATA_OUTPUT_NAME:
+        default: ancom.6
     out:
       - ancom_result
       - ancom_data
@@ -165,6 +189,10 @@ steps:
       TAXONOMY_LEVEL:
         default: 7
       METADATA_COLUMN: METADATA_COLUMN
+      RESULT_OUTPUT_NAME:
+        default: ancom.7.qzv
+      DATA_OUTPUT_NAME:
+        default: ancom.7
     out:
       - ancom_result
       - ancom_data
