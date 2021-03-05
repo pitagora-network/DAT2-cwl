@@ -25,11 +25,11 @@ inputs:
   BARPLOT_OUTPUT_NAME:
     label: output file name for barplot
     type: string
-    default: table.filtered.taxa-bar-plots.qzv
+    default: table.filtered.taxa-bar-plots
   HEATMAP_OUTPUT_NAME:
     label: output file name for heatmap
     type: string
-    default:
+    default: table.filtered.collapse.heatmap
   ANCOM_OUTPUT_NAME:
     label: output file name for ancom data
     type: string
@@ -98,7 +98,7 @@ steps:
       metadata: METADATA
       metadata_column: METADATA_COLUMN
       output_name:
-        default: heatmap.qzv
+        default: table.filtered.collapse.heatmap.qzv
     out:
       - visualization # heatmap.qzv
 
