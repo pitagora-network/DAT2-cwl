@@ -28,12 +28,12 @@ inputs:
       and `cluster`='feature', samples will be sorted by the metadata values.
     type: File
     inputBinding:
-      prefix: --m-metadata-file
+      prefix: --m-sample-metadata-file
   metadata_column:
     doc: Column name to use from 'metadata'
     type: string
     inputBinding:
-      prefix: --m-metadata-column
+      prefix: --m-sample-metadata-column
   normalize:
     default: true
     doc: Normalize the feature table by adding a psuedocount of 1 and then taking
