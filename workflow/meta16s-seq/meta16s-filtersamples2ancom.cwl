@@ -97,6 +97,8 @@ steps:
       table: taxa.methods.collapse.table/collapsed_table
       metadata: METADATA
       metadata_column: METADATA_COLUMN
+      cluster:
+        default: samples
       output_name:
         default: table.filtered.collapse.heatmap.qzv
     out:
