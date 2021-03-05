@@ -8,10 +8,6 @@ requirements:
     dockerPull: qiime2/core:2020.2
     dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
-  InitialWorkDirRequirement:
-    listing:
-    - entryname: inputs.json
-      entry: '{"inputs": $(inputs)}'
 label: Generate a heatmap representation of a feature table
 doc: 'Generate a heatmap representation of a feature table with optional clustering on both the sample and feature axes. Tip: To generate a heatmap containing taxonomic annotations, use `qiime taxa collapse` to collapse the feature table at the desired taxonomic level.'
 
@@ -77,7 +73,10 @@ inputs:
     inputBinding:
       prefix: --p-color-scheme
   output_name:
+    label: output_name
+    doc: The filename to use for the artifact.
     type: string
+    default: heatmap.qzv
     inputBinding:
       prefix: --o-visualization
 outputs:
