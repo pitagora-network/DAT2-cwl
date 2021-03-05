@@ -98,7 +98,7 @@ steps:
       metadata: METADATA
       metadata_column: METADATA_COLUMN
       cluster:
-        default: samples
+        default: features
       output_name:
         default: table.filtered.collapse.heatmap.qzv
     out:
