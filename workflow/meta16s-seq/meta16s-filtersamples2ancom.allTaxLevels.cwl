@@ -78,7 +78,7 @@ steps:
         default: barplot
       HEATMAP_OUTPUT_NAME:
         default: heatmap.2
-      DATA_OUTPUT_NAME:
+      ANCOM_OUTPUT_NAME:
         default: ancom.2
     out:
       - barplot
@@ -97,7 +97,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.3
-      DATA_OUTPUT_NAME:
+      ANCOM_OUTPUT_NAME:
         default: ancom.3
     out:
       - heatmap
@@ -115,7 +115,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.4
-      DATA_OUTPUT_NAME:
+      ANCOM_OUTPUT_NAME:
         default: ancom.4
     out:
       - heatmap
@@ -133,7 +133,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.5
-      DATA_OUTPUT_NAME:
+      ANCOM_OUTPUT_NAME:
         default: ancom.5
     out:
       - heatmap
@@ -151,7 +151,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.6
-      DATA_OUTPUT_NAME:
+      ANCOM_OUTPUT_NAME:
         default: ancom.6
     out:
       - heatmap
@@ -169,7 +169,7 @@ steps:
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.7
-      DATA_OUTPUT_NAME:
+      ANCOM_OUTPUT_NAME:
         default: ancom.7
     out:
       - heatmap
