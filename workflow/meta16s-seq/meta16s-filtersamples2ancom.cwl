@@ -14,7 +14,7 @@ inputs:
     type: string
   MIN_FREQUENCY:
     label: minimum read frequency per sample for filtering
-    type: int
+    type: long
     default: 1500
   TAXONOMY:
     label: taxonomy classification data
