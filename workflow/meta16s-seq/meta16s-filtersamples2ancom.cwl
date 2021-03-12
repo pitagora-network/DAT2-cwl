@@ -12,6 +12,10 @@ inputs:
   FILTER_CONDITION:
     label: filtering condition based on column name of metadata file e.g. "[diagnosis]='Control' OR [diagnosis]='CD'"
     type: string
+  MIN_FREQUENCY:
+    label: minimum read frequency per sample for filtering
+    type: int
+    default: 1500
   TAXONOMY:
     label: taxonomy classification data
     type: File
@@ -56,6 +60,7 @@ steps:
       table: TABLE
       metadata: METADATA
       where: FILTER_CONDITION
+      min_frequency: MIN_FREQUENCY
       output_name:
         default: table.filtered.qza
     out:
