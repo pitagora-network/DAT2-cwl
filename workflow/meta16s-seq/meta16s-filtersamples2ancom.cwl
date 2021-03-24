@@ -23,6 +23,10 @@ inputs:
     label: taxonomic level to be collapsed to
     type: int
     default: 7
+  COUNT_TABLE_OUTPUT_NAME:
+    label: output file name for count table
+    type: string
+    default: table.filtered.collapse
   METADATA_COLUMN:
     label: column to be used for comaprison in ancom
     type: string
@@ -46,6 +50,9 @@ outputs:
   barplot:
     type: Directory
     outputSource: tools.export.barplot/data
+  count_table:
+    type: File
+    outputSource: biom.convert/table
   heatmap:
     type: Directory
     outputSource: tools.export.heatmap/data
@@ -95,6 +102,23 @@ steps:
         default: table.filtered.collapse.qza
     out:
       - collapsed_table # table.filtered.collapse.qza
+
+  tools.export.count_table:
+    run: ../../tool/qiime2/tools.export.cwl
+    in:
+      input_artifact: taxa.methods.collapse.table/collapsed_table
+      output_name:
+        default: table.filtered.collapse
+    out:
+      - feature_table
+
+  biom.convert:
+    run: ../../tool/qiime2/biom.convert.cwl
+    in:
+      input_fp: tools.export.count_table/feature_table
+      output_fp: COUNT_TABLE_OUTPUT_NAME
+    out:
+      - table
 
   feature_table.visualizers.heatmap:
     run: ../../tool/qiime2/feature_table.visualizers.heatmap.cwl

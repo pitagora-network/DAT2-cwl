@@ -41,3 +41,8 @@ outputs:
       - Directory
     outputBinding:
       glob: $(inputs.output_name)
+  feature_table:
+    label: feature_table biom table
+    type: File?
+    outputBinding:
+      glob: $(inputs.output_name)/feature-table.biom

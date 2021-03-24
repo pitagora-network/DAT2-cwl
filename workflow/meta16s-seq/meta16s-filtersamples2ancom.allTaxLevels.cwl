@@ -26,6 +26,24 @@ outputs:
   barplot:
     type: Directory
     outputSource: tax-rank.2/barplot
+  count_table_2:
+      type: File
+      outputSource: tax-rank.2/count_table
+  count_table_3:
+      type: File
+      outputSource: tax-rank.3/count_table
+  count_table_4:
+      type: File
+      outputSource: tax-rank.4/count_table
+  count_table_5:
+      type: File
+      outputSource: tax-rank.5/count_table
+  count_table_6:
+      type: File
+      outputSource: tax-rank.6/count_table
+  count_table_7:
+      type: File
+      outputSource: tax-rank.7/count_table
   heatmap_2:
       type: Directory
       outputSource: tax-rank.2/heatmap
@@ -73,6 +91,8 @@ steps:
       TAXONOMY: TAXONOMY
       TAXONOMY_LEVEL:
         default: 2
+      COUNT_TABLE_OUTPUT_NAME:
+        default: count_table.2.tsv
       METADATA_COLUMN: METADATA_COLUMN
       BARPLOT_OUTPUT_NAME:
         default: barplot
@@ -82,6 +102,7 @@ steps:
         default: ancom.2
     out:
       - barplot
+      - count_table
       - heatmap
       - ancom
 
@@ -94,12 +115,15 @@ steps:
       TAXONOMY: TAXONOMY
       TAXONOMY_LEVEL:
         default: 3
+      COUNT_TABLE_OUTPUT_NAME:
+        default: count_table.3.tsv
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.3
       ANCOM_OUTPUT_NAME:
         default: ancom.3
     out:
+      - count_table
       - heatmap
       - ancom
 
@@ -112,12 +136,15 @@ steps:
       TAXONOMY: TAXONOMY
       TAXONOMY_LEVEL:
         default: 4
+      COUNT_TABLE_OUTPUT_NAME:
+        default: count_table.4.tsv
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.4
       ANCOM_OUTPUT_NAME:
         default: ancom.4
     out:
+      - count_table
       - heatmap
       - ancom
 
@@ -130,12 +157,15 @@ steps:
       TAXONOMY: TAXONOMY
       TAXONOMY_LEVEL:
         default: 5
+      COUNT_TABLE_OUTPUT_NAME:
+        default: count_table.5.tsv
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.5
       ANCOM_OUTPUT_NAME:
         default: ancom.5
     out:
+      - count_table
       - heatmap
       - ancom
 
@@ -148,12 +178,15 @@ steps:
       TAXONOMY: TAXONOMY
       TAXONOMY_LEVEL:
         default: 6
+      COUNT_TABLE_OUTPUT_NAME:
+        default: count_table.6.tsv
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.6
       ANCOM_OUTPUT_NAME:
         default: ancom.6
     out:
+      - count_table
       - heatmap
       - ancom
 
@@ -166,11 +199,14 @@ steps:
       TAXONOMY: TAXONOMY
       TAXONOMY_LEVEL:
         default: 7
+      COUNT_TABLE_OUTPUT_NAME:
+        default: count_table.7.tsv
       METADATA_COLUMN: METADATA_COLUMN
       HEATMAP_OUTPUT_NAME:
         default: heatmap.7
       ANCOM_OUTPUT_NAME:
         default: ancom.7
     out:
+      - count_table
       - heatmap
       - ancom
