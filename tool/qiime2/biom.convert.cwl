@@ -1,6 +1,9 @@
 #!/usr/bin/env cwl-runner
 class: CommandLineTool
 cwlVersion: v1.0
+requirements:
+  DockerRequirement:
+    dockerPull: qiime2/core:2020.2
 baseCommand: biom
 arguments:
   - convert
