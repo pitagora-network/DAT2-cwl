@@ -21,11 +21,17 @@ inputs:
   METADATA_COLUMN:
     label: column to be used for comaprison in ancom
     type: string
+  ROOTED_TREE
+    label: rooted tree data from phylogeny processing
+    type: File
 
 outputs:
   barplot:
-    type: Directory
-    outputSource: tax-rank.2/barplot
+      type: Directory
+      outputSource: tax-rank.2/barplot
+  diversity:
+      type: Directory
+      outputSource: tax-rank.2/diversity
   count_table_2:
       type: File
       outputSource: tax-rank.2/count_table
@@ -105,6 +111,7 @@ steps:
       - count_table
       - heatmap
       - ancom
+      - diversity
 
   tax-rank.3:
     run: meta16s-filtersamples2ancom.cwl

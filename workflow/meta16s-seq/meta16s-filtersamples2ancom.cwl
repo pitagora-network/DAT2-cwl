@@ -42,6 +42,9 @@ inputs:
     label: output file name for ancom data
     type: string
     default: table.filtered.collapse.comp.ancom
+  ROOTED_TREE
+    label: rooted tree data from phylogeny processing
+    type: File
 
 outputs:
   filtered_table:
@@ -59,6 +62,9 @@ outputs:
   ancom:
     type: Directory
     outputSource: tools.export.ancom/data
+  diversity:
+    type: Directory
+    outputSource: diversity.pipelines.core_metrics_phylogenetic/output_dir
 
 steps:
   feature_table.methods.filter_samples:
@@ -91,6 +97,17 @@ steps:
       output_name: BARPLOT_OUTPUT_NAME
     out:
       - data
+
+  diversity.pipelines.core_metrics_phylogenetic:
+    run: ../../tool/qiime2/diversity.pipelines.core_metrics_phylogenetic.cwl
+    in:
+      table: feature_table.methods.filter_samples/filtered_table
+      phylogeny: ROOTED_TREE
+      metadata: METADATA
+      sampling_depth:
+        default: 1500
+    out:
+      - output_dir
 
   taxa.methods.collapse.table:
     run: ../../tool/qiime2/taxa.methods.collapse.cwl
