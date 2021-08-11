@@ -49,7 +49,7 @@ inputs:
     inputBinding:
       prefix: --p-n-jobs
   output_dir:
-    type: Directory
+    type: string
     default: core-metrics-results
     inputBinding:
       prefix: --output-dir
