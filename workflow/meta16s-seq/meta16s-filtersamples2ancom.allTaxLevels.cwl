@@ -21,7 +21,7 @@ inputs:
   METADATA_COLUMN:
     label: column to be used for comaprison in ancom
     type: string
-  ROOTED_TREE
+  ROOTED_TREE:
     label: rooted tree data from phylogeny processing
     type: File
 
@@ -106,6 +106,7 @@ steps:
         default: heatmap.2
       ANCOM_OUTPUT_NAME:
         default: ancom.2
+      ROOTED_TREE: ROOTED_TREE
     out:
       - barplot
       - count_table
@@ -129,6 +130,7 @@ steps:
         default: heatmap.3
       ANCOM_OUTPUT_NAME:
         default: ancom.3
+      ROOTED_TREE: ROOTED_TREE
     out:
       - count_table
       - heatmap
@@ -150,6 +152,7 @@ steps:
         default: heatmap.4
       ANCOM_OUTPUT_NAME:
         default: ancom.4
+      ROOTED_TREE: ROOTED_TREE
     out:
       - count_table
       - heatmap
@@ -171,6 +174,7 @@ steps:
         default: heatmap.5
       ANCOM_OUTPUT_NAME:
         default: ancom.5
+      ROOTED_TREE: ROOTED_TREE
     out:
       - count_table
       - heatmap
@@ -192,6 +196,7 @@ steps:
         default: heatmap.6
       ANCOM_OUTPUT_NAME:
         default: ancom.6
+      ROOTED_TREE: ROOTED_TREE
     out:
       - count_table
       - heatmap
@@ -213,6 +218,7 @@ steps:
         default: heatmap.7
       ANCOM_OUTPUT_NAME:
         default: ancom.7
+      ROOTED_TREE: ROOTED_TREE
     out:
       - count_table
       - heatmap

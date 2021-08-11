@@ -42,7 +42,7 @@ inputs:
     label: output file name for ancom data
     type: string
     default: table.filtered.collapse.comp.ancom
-  ROOTED_TREE
+  ROOTED_TREE:
     label: rooted tree data from phylogeny processing
     type: File
 
