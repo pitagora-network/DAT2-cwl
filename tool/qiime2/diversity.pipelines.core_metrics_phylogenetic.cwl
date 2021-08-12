@@ -53,91 +53,91 @@ inputs:
     default: core-metrics-results
     inputBinding:
       prefix: --output-dir
-  output_rarefied_table:
-    type: string?
-    default: rarefied_table.qza
-    inputBinding:
-      prefix: --o-rarefied-table
-  output_faith_pd_vector:
-    type: string?
-    default: faith_pd_vector.qza
-    inputBinding:
-      prefix: --o-faith-pd-vector
-  output_observed_otus_vector:
-    type: string?
-    default: observed_otus_vector.qza
-    inputBinding:
-      prefix: --o-observed-otus-vector
-  output_shannon_vector:
-    type: string?
-    default: shannon_vector.qza
-    inputBinding:
-      prefix: --o-shannon-vector
-  output_evenness_vector:
-    type: string?
-    default: evenness_vector.qza
-    inputBinding:
-      prefix: --o-evenness-vector
-  output_unweighted_unifrac_distance_matrix:
-    type: string?
-    default: unweighted_unifrac_distance_matrix.qza
-    inputBinding:
-      prefix: --o-unweighted-unifrac-distance-matrix
-  output_weighted_unifrac_distance_matrix:
-    type: string?
-    default: weighted_unifrac_distance_matrix.qza
-    inputBinding:
-      prefix: --o-weighted-unifrac-distance-matrix
-  output_jaccard_distance_matrix:
-    type: string?
-    default: jaccard_distance_matrix.qza
-    inputBinding:
-      prefix: --o-jaccard-distance-matrix
-  output_bray_curtis_distance_matrix:
-    type: string?
-    default: bray_curtis_distance_matrix.qza
-    inputBinding:
-      prefix: --o-bray-curtis-distance-matrix
-  output_unweighted_unifrac_pcoa_results:
-    type: string?
-    default: unweighted_unifrac_pcoa_results.qza
-    inputBinding:
-      prefix: --o-unweighted-unifrac-pcoa-results
-  output_weighted_unifrac_pcoa_results:
-    type: string?
-    default: weighted_unifrac_pcoa_results.qza
-    inputBinding:
-      prefix: --o-weighted-unifrac-pcoa-results
-  output_jaccard_pcoa_results:
-    type: string?
-    default: jaccard_pcoa_results.qza
-    inputBinding:
-      prefix: --o-jaccard-pcoa-results
-  output_bray_curtis_pcoa_results:
-    type: string?
-    default: bray_curtis_pcoa_results.qza
-    inputBinding:
-      prefix: --o-bray-curtis-pcoa-results
-  output_unweighted_unifrac_emperor:
-    type: string?
-    default: unweighted_unifrac_emperor.qzv
-    inputBinding:
-      prefix: --o-unweighted-unifrac-emperor
-  output_weighted_unifrac_emperor:
-    type: string?
-    default: weighted_unifrac_emperor.qzv
-    inputBinding:
-      prefix: --o-weighted-unifrac-emperor
-  output_jaccard_emperor:
-    type: string?
-    default: jaccard_emperor.qzv
-    inputBinding:
-      prefix: --o-jaccard-emperor
-  output_bray_curtis_emperor:
-    type: string?
-    default: bray_curtis_emperor.qzv
-    inputBinding:
-      prefix: --o-bray-curtis-emperor
+  # output_rarefied_table:
+  #   type: string?
+  #   default: rarefied_table.qza
+  #   inputBinding:
+  #     prefix: --o-rarefied-table
+  # output_faith_pd_vector:
+  #   type: string?
+  #   default: faith_pd_vector.qza
+  #   inputBinding:
+  #     prefix: --o-faith-pd-vector
+  # output_observed_otus_vector:
+  #   type: string?
+  #   default: observed_otus_vector.qza
+  #   inputBinding:
+  #     prefix: --o-observed-otus-vector
+  # output_shannon_vector:
+  #   type: string?
+  #   default: shannon_vector.qza
+  #   inputBinding:
+  #     prefix: --o-shannon-vector
+  # output_evenness_vector:
+  #   type: string?
+  #   default: evenness_vector.qza
+  #   inputBinding:
+  #     prefix: --o-evenness-vector
+  # output_unweighted_unifrac_distance_matrix:
+  #   type: string?
+  #   default: unweighted_unifrac_distance_matrix.qza
+  #   inputBinding:
+  #     prefix: --o-unweighted-unifrac-distance-matrix
+  # output_weighted_unifrac_distance_matrix:
+  #   type: string?
+  #   default: weighted_unifrac_distance_matrix.qza
+  #   inputBinding:
+  #     prefix: --o-weighted-unifrac-distance-matrix
+  # output_jaccard_distance_matrix:
+  #   type: string?
+  #   default: jaccard_distance_matrix.qza
+  #   inputBinding:
+  #     prefix: --o-jaccard-distance-matrix
+  # output_bray_curtis_distance_matrix:
+  #   type: string?
+  #   default: bray_curtis_distance_matrix.qza
+  #   inputBinding:
+  #     prefix: --o-bray-curtis-distance-matrix
+  # output_unweighted_unifrac_pcoa_results:
+  #   type: string?
+  #   default: unweighted_unifrac_pcoa_results.qza
+  #   inputBinding:
+  #     prefix: --o-unweighted-unifrac-pcoa-results
+  # output_weighted_unifrac_pcoa_results:
+  #   type: string?
+  #   default: weighted_unifrac_pcoa_results.qza
+  #   inputBinding:
+  #     prefix: --o-weighted-unifrac-pcoa-results
+  # output_jaccard_pcoa_results:
+  #   type: string?
+  #   default: jaccard_pcoa_results.qza
+  #   inputBinding:
+  #     prefix: --o-jaccard-pcoa-results
+  # output_bray_curtis_pcoa_results:
+  #   type: string?
+  #   default: bray_curtis_pcoa_results.qza
+  #   inputBinding:
+  #     prefix: --o-bray-curtis-pcoa-results
+  # output_unweighted_unifrac_emperor:
+  #   type: string?
+  #   default: unweighted_unifrac_emperor.qzv
+  #   inputBinding:
+  #     prefix: --o-unweighted-unifrac-emperor
+  # output_weighted_unifrac_emperor:
+  #   type: string?
+  #   default: weighted_unifrac_emperor.qzv
+  #   inputBinding:
+  #     prefix: --o-weighted-unifrac-emperor
+  # output_jaccard_emperor:
+  #   type: string?
+  #   default: jaccard_emperor.qzv
+  #   inputBinding:
+  #     prefix: --o-jaccard-emperor
+  # output_bray_curtis_emperor:
+  #   type: string?
+  #   default: bray_curtis_emperor.qzv
+  #   inputBinding:
+  #     prefix: --o-bray-curtis-emperor
 
 outputs:
   output_dir:
