@@ -7,7 +7,7 @@ inputs:
     type: Any?
 expression: |
   ${
-    if (!inputs.input) {
+    if (!inputs.input === null) {
       throw new Error("Input is null but it should not");
     }
     return {
