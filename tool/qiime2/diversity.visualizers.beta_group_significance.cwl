@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.diversity.visualizers.beta_group_significance
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.2
+    dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
 label: Beta diversity group significance
 doc: Determine whether groups of samples are significantly different from one another using a permutation-based statistical test.

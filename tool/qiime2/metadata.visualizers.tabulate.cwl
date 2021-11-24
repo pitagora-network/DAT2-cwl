@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.metadata.visualizers.tabulate
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.2
+    dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
 label: Interactively explore Metadata in an HTML table
 doc: "Generate a tabular view of Metadata. The output visualization supports interactive filtering, sorting, and exporting to common file formats."

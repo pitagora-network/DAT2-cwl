@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.composition.visualizers.ancom
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.2
+    dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
 label: Apply ANCOM to identify features that differ in abundance.
 doc: Apply Analysis of Composition of Microbiomes (ANCOM) to identify features that are differentially abundant across groups.

@@ -5,13 +5,9 @@ class: CommandLineTool
 id: qiime2.plugins.feature_table.visualizers.heatmap
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.2
+    dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
-  InitialWorkDirRequirement:
-    listing:
-    - entryname: inputs.json
-      entry: '{"inputs": $(inputs)}'
 label: Generate a heatmap representation of a feature table
 doc: 'Generate a heatmap representation of a feature table with optional clustering on both the sample and feature axes. Tip: To generate a heatmap containing taxonomic annotations, use `qiime taxa collapse` to collapse the feature table at the desired taxonomic level.'
 
@@ -32,12 +28,12 @@ inputs:
       and `cluster`='feature', samples will be sorted by the metadata values.
     type: File
     inputBinding:
-      prefix: --m-metadata-file
+      prefix: --m-sample-metadata-file
   metadata_column:
     doc: Column name to use from 'metadata'
     type: string
     inputBinding:
-      prefix: --m-metadata-column
+      prefix: --m-sample-metadata-column
   normalize:
     default: true
     doc: Normalize the feature table by adding a psuedocount of 1 and then taking
@@ -77,7 +73,10 @@ inputs:
     inputBinding:
       prefix: --p-color-scheme
   output_name:
+    label: output_name
+    doc: The filename to use for the artifact.
     type: string
+    default: heatmap.qzv
     inputBinding:
       prefix: --o-visualization
 outputs:

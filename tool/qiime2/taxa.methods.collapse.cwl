@@ -5,8 +5,8 @@ class: CommandLineTool
 id: qiime2.plugins.taxa.methods.collapse
 requirements:
   DockerRequirement:
-    dockerPull: qiime2/core:2019.4
-    dockerImageId: qiime2/core:2019.4
+    dockerPull: qiime2/core:2020.2
+    dockerImageId: qiime2/core:2020.2
     dockerOutputDirectory: /home/qiime2
   InitialWorkDirRequirement:
     listing:
@@ -40,7 +40,7 @@ inputs:
     default: null
     doc: The taxonomic level at which the features should be collapsed. All ouput
       features will have exactly this many levels of taxonomic annotation.
-    type: long
+    type: int
     inputBinding:
       prefix: --p-level
   output_name:
