@@ -85,7 +85,7 @@ hints:
   - class: DockerRequirement
     dockerPull: 'quay.io/biocontainers/rsem:1.3.0--boost1.64_3'
 $schemas:
-  - 'https://schema.org/docs/schema_org_rdfa.html'
+  - 'https://schema.org/version/latest/schemaorg-current-http.rdf'
   - 'http://edamontology.org/EDAM_1.18.owl'
 's:author':
   - class: 's:Person'
