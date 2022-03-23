@@ -1,6 +1,6 @@
 sequences: # type "File"
   class: File
-  location: ../../data/qiime2/rep-seqs.qza
+  location: qiime2/rep-seqs.qza
 output_tree: unrooted-tree.qza # type "string"
 output_rooted_tree: rooted-tree.qza # type "string"
 output_masked_alignemnt: masked-aligned-rep-seqs.qza # type "string"

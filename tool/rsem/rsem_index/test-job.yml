@@ -1,14 +1,14 @@
 gtf:
   class: File
   location: >-
-    ../../data/Homo_sapiens.GRCh38.95.chr22.gtf
+    Homo_sapiens.GRCh38.95.chr22.gtf
 num_threads: 4
 reference_dir:
   class: Directory
   location: >-
-    ../../data/RSEM_reference
+    RSEM_reference
 reference_fasta:
   class: File
   location: >-
-    ../../data/Homo_sapiens.GRCh38.dna.primary_assembly.chr22.fa
+    Homo_sapiens.GRCh38.dna.primary_assembly.chr22.fa
 reference_prefix: RSEM_reference

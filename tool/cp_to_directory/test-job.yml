@@ -1,6 +1,6 @@
 file: # type "File"
   class: File
-  location: ../../data/sample.txt
+  location: sample.txt
 dest_dir: # type "Directory"
   class: Directory
   location: .

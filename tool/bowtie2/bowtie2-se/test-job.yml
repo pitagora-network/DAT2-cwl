@@ -1,7 +1,7 @@
 num_process: 2 # type "int" (optional)
 genome_index: # type "File"
   class: File
-  location: ../../data/bowtie2_index_mm10/mm10_chr19.fa
+  location: bowtie2_index_mm10/mm10_chr19.fa
 fastq: # type "File"
   class: File
-  location: ../../data/DRR024501_1.fastq
+  location: DRR024501_1.fastq

@@ -1,4 +1,4 @@
 reference:
   class: File
-  location: ../../data/chr22.fa
+  location: chr22.fa
 output_name: chr22.dict

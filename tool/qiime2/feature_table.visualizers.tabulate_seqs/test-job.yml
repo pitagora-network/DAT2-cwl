@@ -1,4 +1,4 @@
 output_name: rep-seqs.qzv # type "string"
 data: # type "File"
   class: File
-  location: ../../data/qiime2/rep-seqs.qza
+  location: qiime2/rep-seqs.qza

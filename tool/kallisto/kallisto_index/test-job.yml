@@ -1,4 +1,4 @@
 index_name: kallisto.idx
 fasta_files:
   class: File
-  location: ../../data/Homo_sapiens.GRCh38.cdna.all.chr22.fa.gz
+  location: Homo_sapiens.GRCh38.cdna.all.chr22.fa.gz

@@ -1,0 +1,67 @@
+authors:
+  - affiliation: DNA Data Bank of Japan
+    github_account: ddbj
+    name: ddbj-workflow
+  - affiliation: The University of Tokyo
+    github_account: suecharo
+    name: Hirotaka Suetake
+    orcid: 0000-0003-2765-0049
+  - affiliation: National Institute of Genetics
+    github_account: tom-tan
+    name: Tomoya Tanjo
+    orcid: 0000-0002-4421-9659
+  - affiliation: Database Center for Life Science
+    github_account: inutano
+    name: Tazro Ohta
+    orcid: 0000-0003-3777-5945
+  - affiliation: Osaka University
+    github_account: yyoshiaki
+    name: Yoshiaki Yasumizu
+    orcid: 0000-0002-9872-4909
+  - github_account: ykohki
+id: a3fcb118-1fa4-40f4-b12c-7f09251eda7c
+license: Apache-2.0
+version: 1.0.0
+workflow:
+  files:
+    - target: blast-blastdbcmd.cwl
+      type: primary
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/blast/blast-blastdbcmd/blast-blastdbcmd.cwl
+  language:
+    type: CWL
+    version: v1.0
+  name: "DAT2-cwl workflow - blast-blastdbcmd"
+  readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
+  testing:
+    - files:
+        - target: test-job.yml
+          type: wf_params
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/blast/blast-blastdbcmd/test-job.yml
+        - target: blastdb_trinity_rslt/trinity_rslt.psq
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.psq
+        - target: blastdb_trinity_rslt/trinity_rslt.pin
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.pin
+        - target: blastdb_trinity_rslt/trinity_rslt.phi
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.phi
+        - target: blastdb_trinity_rslt/trinity_rslt.pog
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.pog
+        - target: blastdb_trinity_rslt/trinity_rslt.psi
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.psi
+        - target: blastdb_trinity_rslt/trinity_rslt.phr
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.phr
+        - target: blastdb_trinity_rslt/trinity_rslt.psd
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.psd
+        - target: blastdb_trinity_rslt/trinity_rslt.phd
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.phd
+        - target: sample.longest_orfs.SOD_Cu.ids
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/sample.longest_orfs.SOD_Cu.ids
+      id: test

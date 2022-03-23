@@ -1,11 +1,11 @@
 nthreads: 8
 genomeDir:
   class: Directory
-  location: ../../data/STAR_reference
+  location: STAR_reference
 genomeFastaFiles:
   class: File
-  location: ../../data/Homo_sapiens.GRCh38.dna.primary_assembly.chr22.fa
+  location: Homo_sapiens.GRCh38.dna.primary_assembly.chr22.fa
 sjdbGTFfile:
   class: File
-  location: ../../data/Homo_sapiens.GRCh38.95.chr22.gtf
+  location: Homo_sapiens.GRCh38.95.chr22.gtf
 # sjdbOverhang: _SJDB_OVERHANG_

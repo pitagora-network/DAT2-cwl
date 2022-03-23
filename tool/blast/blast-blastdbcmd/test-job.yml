@@ -1,12 +1,12 @@
 blastdb_dir:
   class: Directory
   location: >-
-    ../../data/blastdb_trinity_rslt
+    blastdb_trinity_rslt
 db_flag: trinity_rslt
 entry_batch_flag:
   class: File
   location: >-
-    ../../data/sample.longest_orfs.SOD_Cu.ids
+    sample.longest_orfs.SOD_Cu.ids
 entry_flag: null
 out_flag: sample.longest_orfs.SOD_Cu.pep
 outfmt_flag: null

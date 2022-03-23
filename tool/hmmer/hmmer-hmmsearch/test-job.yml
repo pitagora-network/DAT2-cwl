@@ -3,8 +3,8 @@ domtblout: sample.longest_orfs.SOD_Cu.out
 hmm:
   class: File
   location: >-
-    ../../data/Sod_Cu.hmm
+    Sod_Cu.hmm
 pep:
   class: File
   location: >-
-    ../../data/sample.longest_orfs.pep
+    sample.longest_orfs.pep

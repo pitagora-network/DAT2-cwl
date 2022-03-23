@@ -1,6 +1,6 @@
 input:
   class: File
-  location: ../../data/ERR034597_1.sort.bam
+  location: ERR034597_1.sort.bam
 output_name: ERR034597_1.sort.dedup.bam
 metrics_file_name: ERR034597_1.sort.dedup.bam.metrix.txt
 validation_stringency: LENIENT

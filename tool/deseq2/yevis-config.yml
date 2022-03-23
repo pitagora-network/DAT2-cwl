@@ -1,0 +1,67 @@
+authors:
+  - affiliation: DNA Data Bank of Japan
+    github_account: ddbj
+    name: ddbj-workflow
+  - affiliation: The University of Tokyo
+    github_account: suecharo
+    name: Hirotaka Suetake
+    orcid: 0000-0003-2765-0049
+  - affiliation: National Institute of Genetics
+    github_account: tom-tan
+    name: Tomoya Tanjo
+    orcid: 0000-0002-4421-9659
+  - affiliation: Database Center for Life Science
+    github_account: inutano
+    name: Tazro Ohta
+    orcid: 0000-0003-3777-5945
+  - affiliation: Osaka University
+    github_account: yyoshiaki
+    name: Yoshiaki Yasumizu
+    orcid: 0000-0002-9872-4909
+  - github_account: ykohki
+id: a21784f9-c138-44de-932a-f97fa4542b9e
+license: Apache-2.0
+version: 1.0.0
+workflow:
+  files:
+    - target: deseq2.cwl
+      type: primary
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/deseq2/deseq2.cwl
+  language:
+    type: CWL
+    version: v1.0
+  name: "DAT2-cwl workflow - deseq2"
+  readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
+  testing:
+    - files:
+        - target: test-job.yml
+          type: wf_params
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/deseq2/test-job.yml
+        - target: SRR1550989.genes.results
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1550989.genes.results
+        - target: SRR1551005.genes.results
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1551005.genes.results
+        - target: SRR1551011.genes.results
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1551011.genes.results
+        - target: SRR1551050.genes.results
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1551050.genes.results
+        - target: SRR1551057.genes.results
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1551057.genes.results
+        - target: SRR1551071.genes.results
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1551071.genes.results
+        - target: SRR1551091.genes.results
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1551091.genes.results
+        - target: sample2condition.txt
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/sample2condition.txt
+        - target: target2gene.txt
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/target2gene.txt
+      id: test

@@ -1,0 +1,49 @@
+authors:
+  - affiliation: DNA Data Bank of Japan
+    github_account: ddbj
+    name: ddbj-workflow
+  - affiliation: The University of Tokyo
+    github_account: suecharo
+    name: Hirotaka Suetake
+    orcid: 0000-0003-2765-0049
+  - affiliation: National Institute of Genetics
+    github_account: tom-tan
+    name: Tomoya Tanjo
+    orcid: 0000-0002-4421-9659
+  - affiliation: Database Center for Life Science
+    github_account: inutano
+    name: Tazro Ohta
+    orcid: 0000-0003-3777-5945
+  - affiliation: Osaka University
+    github_account: yyoshiaki
+    name: Yoshiaki Yasumizu
+    orcid: 0000-0002-9872-4909
+  - github_account: ykohki
+id: 620f7a7a-230b-4cdc-8296-760efd69cb27
+license: Apache-2.0
+version: 1.0.0
+workflow:
+  files:
+    - target: diversity.visualizers.alpha_rarefaction.cwl
+      type: primary
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/diversity.visualizers.alpha_rarefaction/diversity.visualizers.alpha_rarefaction.cwl
+  language:
+    type: CWL
+    version: v1.0
+  name: "DAT2-cwl workflow - diversity.visualizers.alpha_rarefaction"
+  readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
+  testing:
+    - files:
+        - target: test-job.yml
+          type: wf_params
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/qiime2/diversity.visualizers.alpha_rarefaction/test-job.yml
+        - target: qiime2/table.qza
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/qiime2/table.qza
+        - target: qiime2/rooted-tree.qza
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/qiime2/rooted-tree.qza
+        - target: qiime2/metadata.txt
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/qiime2/metadata.txt
+      id: test

@@ -1,8 +1,8 @@
 IN1:
   class: File
   location: >-
-    ../../data/sample.DRR092257_1_val_1.fq.gz
+    sample.DRR092257_1_val_1.fq.gz
 IN2:
   class: File
   location: >-
-    ../../data/sample.DRR092257_2_val_2.fq.gz
+    sample.DRR092257_2_val_2.fq.gz

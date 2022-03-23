@@ -5,7 +5,7 @@ method: permanova # default value of type "string".
 metadata_column: group # type "string"
 metadata: # type "File"
   class: File
-  location: ../../data/qiime2/metadata.txt
+  location: qiime2/metadata.txt
 distance_matrix: # type "File"
   class: File
-  location: ../../data/qiime2/unweighted_unifrac_distance_matrix.qza
+  location: qiime2/unweighted_unifrac_distance_matrix.qza

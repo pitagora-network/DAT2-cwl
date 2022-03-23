@@ -2,4 +2,4 @@ minimum_protein_length: 30
 transcripts:
   class: File
   location: >-
-    ../../data/sample.Trinity.fasta
+    sample.Trinity.fasta

@@ -1,9 +1,9 @@
 genome_fasta:
   class: File
-  location: ../../data/tiny-data.fa
+  location: tiny-data.fa
 aligned_bam:
   class: File
-  location: ../../data/tiny-data.bam
+  location: tiny-data.bam
 bam_index:
   class: File
-  location: ../../data/tiny-data.bam.bai
+  location: tiny-data.bam.bai

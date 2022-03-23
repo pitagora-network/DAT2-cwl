@@ -4,10 +4,10 @@ genomeDir:
   location: STAR_reference
 fq1:
   class: File
-  location: ../../data/SRR1550989_1.fastq.gz
+  location: SRR1550989_1.fastq.gz
 fq2:
   class: File
-  location: ../../data/SRR1550989_2.fastq.gz
+  location: SRR1550989_2.fastq.gz
 quantMode: TranscriptomeSAM
 outSAMtype: [BAM, SortedByCoordinate]
 outFileNamePrefix: SRR1550989

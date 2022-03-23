@@ -1,3 +1,3 @@
 kmer_db:
   class: File
-  location: ../../data/reads.jf_0
+  location: reads.jf_0

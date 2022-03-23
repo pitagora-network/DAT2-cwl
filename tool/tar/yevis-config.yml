@@ -1,0 +1,43 @@
+authors:
+  - affiliation: DNA Data Bank of Japan
+    github_account: ddbj
+    name: ddbj-workflow
+  - affiliation: The University of Tokyo
+    github_account: suecharo
+    name: Hirotaka Suetake
+    orcid: 0000-0003-2765-0049
+  - affiliation: National Institute of Genetics
+    github_account: tom-tan
+    name: Tomoya Tanjo
+    orcid: 0000-0002-4421-9659
+  - affiliation: Database Center for Life Science
+    github_account: inutano
+    name: Tazro Ohta
+    orcid: 0000-0003-3777-5945
+  - affiliation: Osaka University
+    github_account: yyoshiaki
+    name: Yoshiaki Yasumizu
+    orcid: 0000-0002-9872-4909
+  - github_account: ykohki
+id: f25f65f5-5d69-4112-a2c3-567d1866f5d1
+license: Apache-2.0
+version: 1.0.0
+workflow:
+  files:
+    - target: tar.cwl
+      type: primary
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/tar/tar.cwl
+  language:
+    type: CWL
+    version: v1.0
+  name: "DAT2-cwl workflow - tar"
+  readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
+  testing:
+    - files:
+        - target: test-job.yml
+          type: wf_params
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/tar/test-job.yml
+        - target: test.tar.gz
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/test.tar.gz
+      id: test

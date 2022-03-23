@@ -1,0 +1,67 @@
+authors:
+  - affiliation: DNA Data Bank of Japan
+    github_account: ddbj
+    name: ddbj-workflow
+  - affiliation: The University of Tokyo
+    github_account: suecharo
+    name: Hirotaka Suetake
+    orcid: 0000-0003-2765-0049
+  - affiliation: National Institute of Genetics
+    github_account: tom-tan
+    name: Tomoya Tanjo
+    orcid: 0000-0002-4421-9659
+  - affiliation: Database Center for Life Science
+    github_account: inutano
+    name: Tazro Ohta
+    orcid: 0000-0003-3777-5945
+  - affiliation: Osaka University
+    github_account: yyoshiaki
+    name: Yoshiaki Yasumizu
+    orcid: 0000-0002-9872-4909
+  - github_account: ykohki
+id: 4eed7a5d-33b4-44af-8c79-f182f3f2f27e
+license: Apache-2.0
+version: 1.0.0
+workflow:
+  files:
+    - target: blast-blastp.cwl
+      type: primary
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/blast/blast-blastp/blast-blastp.cwl
+  language:
+    type: CWL
+    version: v1.0
+  name: "DAT2-cwl workflow - blast-blastp"
+  readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
+  testing:
+    - files:
+        - target: test-job.yml
+          type: wf_params
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/blast/blast-blastp/test-job.yml
+        - target: blastdb_uniprot_insect/uniprot_insect.psd
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_uniprot_insect/uniprot_insect.psd
+        - target: blastdb_uniprot_insect/uniprot_insect.phr
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_uniprot_insect/uniprot_insect.phr
+        - target: blastdb_uniprot_insect/uniprot_insect.phd
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_uniprot_insect/uniprot_insect.phd
+        - target: blastdb_uniprot_insect/uniprot_insect.psi
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_uniprot_insect/uniprot_insect.psi
+        - target: blastdb_uniprot_insect/uniprot_insect.psq
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_uniprot_insect/uniprot_insect.psq
+        - target: blastdb_uniprot_insect/uniprot_insect.phi
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_uniprot_insect/uniprot_insect.phi
+        - target: blastdb_uniprot_insect/uniprot_insect.pog
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_uniprot_insect/uniprot_insect.pog
+        - target: blastdb_uniprot_insect/uniprot_insect.pin
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_uniprot_insect/uniprot_insect.pin
+        - target: sample.longest_orfs.SOD_Cu.pep
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/sample.longest_orfs.SOD_Cu.pep
+      id: test

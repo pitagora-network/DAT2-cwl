@@ -1,7 +1,7 @@
 table: # type "File"
   class: File
-  location: ../../data/qiime2/table.qza
+  location: qiime2/table.qza
 sample_metadata: # optional
   class: File
-  location: ../../data/qiime2/metadata.txt
+  location: qiime2/metadata.txt
 output_name: table.qzv # type "string"
