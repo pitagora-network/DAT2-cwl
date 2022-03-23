@@ -4,15 +4,32 @@ This repository contains the Common Workflow Language (CWL) definitions of the w
 
 ## Workflows
 
-- animal-genome-assembly by [inutano](https://github.com/inutano)
-- bacteria-genome by [suecharo](https://github.com/suecharo)
-- disease-genome by [tom-tan](https://github.com/tom-tan)
-- epigenome-bs-seq by [manabuishii](https://github.com/manabuishii)
-- epigenome-chip-seq by [suecharo](https://github.com/suecharo)
-- metagenome by [inutano](https://github.com/inutano)
-- rna-seq by [ykohki](https://github.com/ykohki)
-- transcriptome-assemble by [yyoshiaki](https://github.com/yyoshiaki)
-  This repository contains the Common Workflow Language (CWL) definitions of the workflows introduced in the book [#NGS_DAT 2nd edition (A tutorial book in Japanese, 次世代シークエンサー DRY 解析教本 改訂第 2 版)](https://www.amazon.co.jp/dp/478090983X).
+This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edition.
+
+- [`disease-genome`](./workflow/disease-genome)
+  - `疾患ゲノム解析`
+  - by [@tom-tan](https://github.com/tom-tan)
+- [`rna-seq`](./workflow/rna-seq)
+  - `発現解析`
+  - by [@ykohki](https://github.com/ykohki)
+- [`epigenome-chip-seq`](./workflow/epigenome-chip-seq)
+  - `エピゲノム解析 (ChIP-seq)`
+  - by [@suecharo](https://github.com/suecharo)
+- [`epigenome-bs-seq`](./workflow/epigenome-bs-seq)
+  - `エピゲノム解析 (BS-seq)`
+  - by [@manabuishii](https://github.com/manabuishii)
+- [`meta16s-seq`](./workflow/meta16s-seq)
+  - `メタゲノム解析`
+  - by [@inutano](https://github.com/inutano)
+- [`bacteria-genome`](./workflow/bacteria-genome)
+  - `バクテリアゲノム解析`
+  - by [suecharo](https://github.com/suecharo)
+- [`animal-genome-assembly`](./workflow/animal-genome-assembly)
+  - `動物ゲノムアセンブリ`
+  - by [inutano](https://github.com/inutano)
+- [`transcriptome-assembly`](./workflow/transcriptome-assembly)
+  - `トランスクリプトームアセンブル解析`
+  - by [yyoshiaki](https://github.com/yyoshiaki)
 
 ## Learn how to run CWL
 
