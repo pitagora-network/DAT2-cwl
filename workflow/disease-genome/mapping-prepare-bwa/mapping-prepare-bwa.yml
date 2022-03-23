@@ -1,0 +1,3 @@
+fasta:  # type "File"
+    class: File
+    path: inputs/hg38.fasta

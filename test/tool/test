@@ -9,7 +9,8 @@ fi
 tool_name=$1
 test_dir=$(cd $(dirname $0) && pwd)
 root_dir=$(cd ${test_dir}/../.. && pwd)
-tool_dir=$(find ${root_dir}/tool -type d | grep ${tool_name})
+cwl_file=$(find ${root_dir}/tool -type f | grep "${tool_name}.cwl")
+tool_dir=$(cd $(dirname ${cwl_file}) && pwd)
 
 echo "*** TEST START: ${tool_name} ***"
 echo "...check tool dir"
@@ -20,8 +21,6 @@ if [ ! -d ${tool_dir} ]; then
 else
   echo "[PASS] tool dir exists."
 fi
-
-cwl_file=${tool_dir}/${tool_name}.cwl
 
 echo "...check cwl file"
 # cwl file が存在するか
@@ -43,15 +42,18 @@ else
 fi
 
 # template を作成しておく
-cwl_template_file=${tool_dir}/${tool_name}.yml
-cwltool --make-template ${cwl_file} > ${cwl_template_file}
+# cwl_template_file=${tool_dir}/${tool_name}.yml
+# cwltool --make-template ${cwl_file} > ${cwl_template_file}
 
 # Dockerfile が存在する場合、build を行っておく
 dockerfile=${tool_dir}/Dockerfile
 if [ -f ${dockerfile} ]; then
   echo "...docker build"
-  build_file=${tool_dir}/build.sh
-  bash ${build_file}
+  # build_file=${tool_dir}/build.sh
+  # bash ${build_file}
+  cd ${tool_dir}
+  bash build.sh
+  cd -
   if [ $? -ne 0 ]; then
     echo "[ERROR] Docker build is failed."
     exit 1
@@ -62,7 +64,7 @@ fi
 
 # test_job を使って、実際に実行する
 echo "...do test job"
-test_job_file=${test_dir}/test_job/${tool_name}.yml
+test_job_file=${test_dir}/test_job/$(basename $cwl_file .cwl).yml
 if [ ! -f ${test_job_file} ]; then
   echo "[ERROR] ${test_job_file} does not exist."
   exit 1

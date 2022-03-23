@@ -1,0 +1,5 @@
+input_pep:
+  class: File
+  path: >-
+    ../../data/sample.uniprot_insect.fasta
+out: uniprot_insect

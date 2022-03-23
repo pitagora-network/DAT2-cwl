@@ -1,0 +1,11 @@
+permutations: 999  # default value of type "long".
+pairwise: true  # type "boolean"
+output_name: unweighted-unifrac-group-significance.qzv  # type "string"
+method: permanova  # default value of type "string".
+metadata_column: group  # type "string"
+metadata:  # type "File"
+    class: File
+    path: ../../data/qiime2/metadata.txt
+distance_matrix:  # type "File"
+    class: File
+    path: ../../data/qiime2/unweighted_unifrac_distance_matrix.qza

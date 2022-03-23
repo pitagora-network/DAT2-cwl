@@ -1,0 +1,15 @@
+blastdb_dir:
+  class: Directory
+  path: >-
+    ../../data/blastdb_uniprot_insect
+db_flag: uniprot_insect
+max_target_seqs: 1
+num_threads_flag: 4
+out_flag: blast.result.tab
+outfmt_flag: '6'
+query_flag:
+  class: File
+  path: >-
+    ../../data/sample.longest_orfs.SOD_Cu.pep
+task_flag: null
+taxid_flag: null

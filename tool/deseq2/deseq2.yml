@@ -1,0 +1,9 @@
+rsem_out:  # array of type "File"
+  - class: File
+    path: a/file/path
+target2gene.txt:  # type "File" (optional)
+    class: File
+    path: a/file/path
+sample2condition.txt:  # type "File"
+    class: File
+    path: a/file/path

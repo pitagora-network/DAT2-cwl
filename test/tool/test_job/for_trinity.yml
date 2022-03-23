@@ -1,0 +1,8 @@
+IN1:
+  class: File
+  path: >-
+    ../../data/sample.DRR092257_1_val_1.fq.gz
+IN2:
+  class: File
+  path: >-
+    ../../data/sample.DRR092257_2_val_2.fq.gz

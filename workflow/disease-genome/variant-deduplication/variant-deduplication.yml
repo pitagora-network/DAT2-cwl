@@ -1,0 +1,3 @@
+input:  # type "File"
+    class: File
+    path: inputs/DRR006760.sort.bam

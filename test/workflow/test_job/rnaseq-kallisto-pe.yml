@@ -1,0 +1,9 @@
+bootstrap_samples: 100
+index_file:
+  class: File
+  path: >-
+    https://zenodo.org/record/3354077/files/kallisto.idx?download=1
+nthreads: 4
+out_dir_name: SRR1550989
+runid: SRR1550989
+split_files: true

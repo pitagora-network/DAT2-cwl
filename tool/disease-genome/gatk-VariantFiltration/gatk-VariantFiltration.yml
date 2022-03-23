@@ -1,0 +1,11 @@
+variant:  # type "File"
+    class: File
+    path: a/file/path
+reference:  # type "File"
+    class: File
+    path: a/file/path
+output: a_string  # type "string"
+heap_size: 0  # type "int"
+filters:  # array of 
+    name: a_string  # type "string"
+    expression: a_string  # type "string"

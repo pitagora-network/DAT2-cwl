@@ -1,0 +1,25 @@
+reference_id: DRR006760
+reference_genome:  # type "File"
+    class: File
+    path: inputs/hg38.fasta
+reference_amb:  # type "File"
+    class: File
+    location: inputs/hg38.fasta.amb
+reference_ann:  # type "File"
+    class: File
+    location: inputs/hg38.fasta.ann
+reference_bwt:  # type "File"
+    class: File
+    location: inputs/hg38.fasta.bwt
+reference_pac:  # type "File"
+    class: File
+    location: inputs/hg38.fasta.pac
+reference_sa:  # type "File"
+    class: File
+    location: inputs/hg38.fasta.sa
+fastq_forward:  # type "File"
+    class: File
+    path: inputs/DRR006760_1.fastq.gz
+fastq_reverse:  # type "File"
+    class: File
+    path: inputs/DRR006760_2.fastq.gz

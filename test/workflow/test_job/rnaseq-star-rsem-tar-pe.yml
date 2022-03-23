@@ -1,0 +1,20 @@
+nthreads: 8
+nthreads_1: 8
+nthreads_2: 8
+outFileNamePrefix: SRR1550989
+outSAMtype: [BAM, SortedByCoordinate]
+quantMode: TranscriptomeSAM
+rsem_index_prefix: RSEM_reference
+rsem_index_dir:
+  class: Directory
+  path: ../../data/RSEM_reference
+#rsem_index_prefix: /home/kyamada/cwl/data/ref/RSEM_reference
+rsem_output_prefix: SRR1550989
+runid: SRR1550989
+split_files: true
+file:
+  class: File
+  path: https://zenodo.org/record/3354995/files/STAR_reference_chr22.tar.gz?download=1
+verbose: true
+gzip: true
+extract: true

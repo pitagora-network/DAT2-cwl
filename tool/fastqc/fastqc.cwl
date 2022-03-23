@@ -1,24 +1,29 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: CommandLineTool
-doc: string
+doc: A high throughput sequence QC analysis tool
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/fastqc:latest
-baseCommand: bash
+    dockerPull: biocontainers/fastqc:v0.11.5_cv4
+baseCommand: fastqc
 arguments:
-  - position: 0
-    valueFrom: /workdir/fastqc.sh
+  - prefix: --outdir
+    valueFrom: $(runtime.outdir)
+    position: 0
 inputs:
-  input_1:
+  fastq:
     type: File
     inputBinding:
       position: 1
 outputs:
-  output_1:
+  html:
     type: File
     outputBinding:
-      glob: "*.txt"
+      glob: "*.html"
+  result_files:
+    type: File
+    outputBinding:
+      glob: "*.zip"
   stdout: stdout
   stderr: stderr
 stdout: fastqc-stdout.log

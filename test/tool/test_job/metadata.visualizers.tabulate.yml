@@ -1,0 +1,4 @@
+input:
+  class: File
+  path: ../../data/qiime2/stats-dada2.qza
+output_name: stats-dada2.qzv
