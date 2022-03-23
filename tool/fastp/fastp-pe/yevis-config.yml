@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/fastp/fastp-pe/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/fastp/fastp-pe/test-job.yml
         - target: DRR024501_2.fastq
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/DRR024501_2.fastq

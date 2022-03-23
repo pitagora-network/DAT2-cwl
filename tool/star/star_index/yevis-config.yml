@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/star/star_index/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/star/star_index/test-job.yml
         - target: STAR_reference/chrLength.txt
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/STAR_reference/chrLength.txt

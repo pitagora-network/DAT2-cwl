@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/Trinity/Trinity-pe/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/Trinity/Trinity-pe/test-job.yml
         - target: sample.DRR092257_1.fq.gz
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/sample.DRR092257_1.fq.gz

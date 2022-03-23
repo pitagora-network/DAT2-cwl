@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/bedtools/bedtools_intersect_no_overlap/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/bedtools/bedtools_intersect_no_overlap/test-job.yml
         - target: ERR034597_1.sort_peaks.narrowPeak
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/ERR034597_1.sort_peaks.narrowPeak

@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/wc/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/wc/test-job.yml
         - target: sample.txt
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/sample.txt

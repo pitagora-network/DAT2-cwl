@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/TransDecoder/TransDecoder-TransDecoder.LongOrfs/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/TransDecoder/TransDecoder-TransDecoder.LongOrfs/test-job.yml
         - target: sample.Trinity.fasta
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/sample.Trinity.fasta

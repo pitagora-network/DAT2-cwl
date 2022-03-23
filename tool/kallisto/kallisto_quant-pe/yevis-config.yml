@@ -36,5 +36,5 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/kallisto/kallisto_quant-pe/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/kallisto/kallisto_quant-pe/test-job.yml
       id: test

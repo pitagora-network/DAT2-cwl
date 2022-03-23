@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/qiime2/composition.visualizers.ancom/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/composition.visualizers.ancom/test-job.yml
         - target: qiime2/comp_table_ob_l5.qza
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/qiime2/comp_table_ob_l5.qza

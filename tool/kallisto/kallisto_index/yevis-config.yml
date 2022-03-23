@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/kallisto/kallisto_index/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/kallisto/kallisto_index/test-job.yml
         - target: Homo_sapiens.GRCh38.cdna.all.chr22.fa.gz
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/Homo_sapiens.GRCh38.cdna.all.chr22.fa.gz

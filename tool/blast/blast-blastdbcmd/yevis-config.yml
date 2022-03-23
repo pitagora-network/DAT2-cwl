@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/blast/blast-blastdbcmd/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/blast/blast-blastdbcmd/test-job.yml
         - target: blastdb_trinity_rslt/trinity_rslt.psq
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/blastdb_trinity_rslt/trinity_rslt.psq

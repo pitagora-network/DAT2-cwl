@@ -36,7 +36,7 @@ workflow:
     - files:
         - target: test-job.yml
           type: wf_params
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tool/bowtie2/bowtie2-se/test-job.yml
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/bowtie2/bowtie2-se/test-job.yml
         - target: bowtie2_index_mm10/mm10_chr19.fa
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.fa
