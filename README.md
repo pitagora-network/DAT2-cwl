@@ -23,13 +23,13 @@ This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edi
   - by [@inutano](https://github.com/inutano)
 - [`bacteria-genome`](./workflow/bacteria-genome)
   - `バクテリアゲノム解析`
-  - by [suecharo](https://github.com/suecharo)
+  - by [@suecharo](https://github.com/suecharo)
 - [`animal-genome-assembly`](./workflow/animal-genome-assembly)
   - `動物ゲノムアセンブリ`
-  - by [inutano](https://github.com/inutano)
+  - by [@inutano](https://github.com/inutano)
 - [`transcriptome-assembly`](./workflow/transcriptome-assembly)
   - `トランスクリプトームアセンブル解析`
-  - by [yyoshiaki](https://github.com/yyoshiaki)
+  - by [@yyoshiaki](https://github.com/yyoshiaki)
 
 ## Learn how to run CWL
 
