@@ -6,7 +6,7 @@ num_threads: 4
 reference_dir:
   class: Directory
   location: >-
-    ../../data/RSEM_reference/
+    ../../data/RSEM_reference
 reference_fasta:
   class: File
   location: >-

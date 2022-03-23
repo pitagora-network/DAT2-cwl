@@ -1,5 +1,0 @@
-output_name: demux.qzv # default value of type "string". (optional)
-n: 10000 # default value of type "long".
-data: # type "File"
-  class: File
-  location: ../../data/qiime2/demux.qza
