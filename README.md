@@ -6,30 +6,32 @@ This repository contains the Common Workflow Language (CWL) definitions of the w
 
 This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edition.
 
-- [`disease-genome`](./workflow/disease-genome)
-  - `疾患ゲノム解析`
+- [disease-genome](./workflow/disease-genome)
+  - 疾患ゲノム解析 (p.64)
   - by [@tom-tan](https://github.com/tom-tan)
-- [`rna-seq`](./workflow/rna-seq)
-  - `発現解析`
+- [rna-seq](./workflow/rna-seq)
+  - 発現解析 (p.86)
   - by [@ykohki](https://github.com/ykohki)
-- [`epigenome-chip-seq`](./workflow/epigenome-chip-seq)
-  - `エピゲノム解析 (ChIP-seq)`
+- [epigenome-chip-seq](./workflow/epigenome-chip-seq)
+  - エピゲノム解析 (ChIP-seq) (p.114)
   - by [@suecharo](https://github.com/suecharo)
-- [`epigenome-bs-seq`](./workflow/epigenome-bs-seq)
-  - `エピゲノム解析 (BS-seq)`
+- [epigenome-bs-seq](./workflow/epigenome-bs-seq)
+  - エピゲノム解析 (BS-seq) (p.164)
   - by [@manabuishii](https://github.com/manabuishii)
-- [`meta16s-seq`](./workflow/meta16s-seq)
-  - `メタゲノム解析`
+- [meta16s-seq](./workflow/meta16s-seq)
+  - メタゲノム解析 (p.203)
   - by [@inutano](https://github.com/inutano)
-- [`bacteria-genome`](./workflow/bacteria-genome)
-  - `バクテリアゲノム解析`
+- [bacteria-genome](./workflow/bacteria-genome)
+  - バクテリアゲノム解析 (p.246)
   - by [@suecharo](https://github.com/suecharo)
-- [`animal-genome-assembly`](./workflow/animal-genome-assembly)
-  - `動物ゲノムアセンブリ`
+- [animal-genome-assembly](./workflow/animal-genome-assembly)
+  - 動物ゲノムアセンブリ (p.274)
   - by [@inutano](https://github.com/inutano)
-- [`transcriptome-assembly`](./workflow/transcriptome-assembly)
-  - `トランスクリプトームアセンブル解析`
+- [transcriptome-assembly](./workflow/transcriptome-assembly)
+  - トランスクリプトームアセンブル解析 (p.309)
   - by [@yyoshiaki](https://github.com/yyoshiaki)
+
+For more detailed documentation on testing, see [`test/README.md`](./test/README.md).
 
 ## Learn how to run CWL
 
@@ -42,40 +44,6 @@ There are many online documents to learn about CWL out there:
   - Slack workspace and invitation code is on the website
 - [Pitagora Network](https://pitagora-network.org/)
   - a monthly meetup in Tokyo for bioinformatics workflow users and developers
-
-## Testing
-
-All workflows introduced in the book has been translated in CWL, but yet the testing is ongoing.
-
-- [Animal genome assembly](workflow/animal_genome_assembly) by [inutano](https://github.com/inutano)
-  - [ ] WIP
-- [Bacteria genome](workflow/bacteria_genome) by [suecharo](https://github.com/suecharo)
-  - [x] bacteria_genome
-- [Disease genome](workflow/disease-genome) by [tom-tan](https://github.com/tom-tan)
-  - [ ] WIP
-- [Epigenome: Bisulfite-Seq](workflow/epigenome-BS-seq) by [manabuishii](https://github.com/manabuishii)
-  - [x] download_rawdata
-  - [x] download_reference_fasta
-  - [x] bismark_genome_preparation_workflow
-  - [x] epigenome-BS-seq
-  - [x] fastqc-workflow
-- [Epigenome: ChIP-Seq](workflow/epigenome-chip-seq) by [suecharo](https://github.com/suecharo)
-  - [ ] WIP
-- [Meta 16S-Seq](workflow/meta16s-seq) by [inutano](https://github.com/inutano)
-  - [x] meta16s-seq.demo
-- [RNA-seq](workflow/RNA-seq) by [ykohki](https://github.com/ykohki)
-  - [x] rnaseq-1sample-kallisto-pe
-  - [x] rnaseq-1sample-star-rsem-pe
-  - [ ] rnaseq-deseq2_gene
-  - [x] rnaseq-kallisto-pe
-  - [x] rnaseq-kallisto-sleuth
-  - [x] rnaseq-sleuth_isoform
-  - [x] rnaseq-star_index
-  - [x] rnaseq-star-rsem-deseq2
-  - [x] rnaseq-star-rsem-tar-pe
-  - [ ] rnaseq-star-rsem-pe
-- [Transcriptome assembly](workflow/transcriptome_assemble) by [yyoshiaki](https://github.com/yyoshiaki)
-  - [x] transcriptome_assemble
 
 ## Erratum
 
