@@ -5,8 +5,7 @@ RUN apt-get update && apt-get install -y wget
 
 WORKDIR /workdir
 
-COPY for_trinity.pl /workdir
-COPY for_trinity.sh /workdir
-RUN chmod 777 for_trinity.sh
+COPY --chmod=0777 for_trinity.pl /workdir
+COPY --chmod=0777 for_trinity.sh /workdir
 
 ENV PATH $PATH:/workdir

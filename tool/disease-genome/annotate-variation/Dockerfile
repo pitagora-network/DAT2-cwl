@@ -5,4 +5,4 @@ RUN yes '' | cpan -i Net::FTP LWP::UserAgent
 RUN apt-get purge -y gcc libc6-dev && apt-get autoremove -y
 
 WORKDIR /workdir
-COPY annotate_variation.pl /usr/bin
+COPY --chmod=0777 annotate_variation.pl /usr/bin

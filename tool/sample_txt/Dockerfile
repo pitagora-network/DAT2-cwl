@@ -5,8 +5,6 @@ RUN apt-get update && apt-get install -y wget
 
 WORKDIR /workdir
 
-COPY sample_txt.sh /workdir
-RUN chmod 777 sample_txt.sh
+COPY --chmod=0777 sample_txt.sh /workdir
 
 ENV PATH $PATH:/workdir
-#RUN mkdir output

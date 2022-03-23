@@ -3,6 +3,6 @@ USER root
 
 WORKDIR /workdir
 
-COPY blast-makeblastdb.sh /workdir
+COPY --chmod=0777 blast-makeblastdb.sh /workdir
 
 ENV PATH $PATH:/workdir

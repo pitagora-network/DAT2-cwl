@@ -3,8 +3,6 @@ USER root
 
 WORKDIR /workdir
 
-COPY mkdir_rsem.sh /workdir
-
-RUN chmod 777 mkdir_rsem.sh
+COPY --chmod=0777 mkdir_rsem.sh /workdir
 
 ENV PATH $PATH:/workdir

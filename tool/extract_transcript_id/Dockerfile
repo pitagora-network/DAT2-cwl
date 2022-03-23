@@ -3,6 +3,6 @@ USER root
 
 WORKDIR /workdir
 
-COPY extract_transcript_id.sh /workdir
+COPY --chmod=0777 extract_transcript_id.sh /workdir
 
 ENV PATH $PATH:/workdir
