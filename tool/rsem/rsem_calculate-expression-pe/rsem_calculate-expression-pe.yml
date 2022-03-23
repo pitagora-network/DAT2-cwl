@@ -1,9 +1,0 @@
-bam:  # type "File"
-    class: File
-    path: a/file/path
-rsem_output_prefix: a_string  # type "string"
-rsem_index_prefix: a_string  # type "string" (optional)
-rsem_index_dir:  # type "Directory"
-    class: Directory
-    path: a/directory/path
-nthreads: 0  # type "int"

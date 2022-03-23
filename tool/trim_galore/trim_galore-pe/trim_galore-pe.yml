@@ -1,9 +1,0 @@
-paired: false  # type "boolean" (optional)
-trim1: false  # type "boolean" (optional)
-fastqc: false  # type "boolean" (optional)
-read2:  # type "File"
-    class: File
-    path: a/file/path
-read1:  # type "File"
-    class: File
-    path: a/file/path

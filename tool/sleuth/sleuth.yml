@@ -1,9 +1,0 @@
-kallisto_out:  # array of type "Directory"
-  - class: Directory
-    path: a/directory/path
-target2gene.txt:  # type "File"
-    class: File
-    path: a/file/path
-sample.txt:  # type "File"
-    class: File
-    path: a/file/path

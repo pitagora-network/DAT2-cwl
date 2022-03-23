@@ -1,4 +1,0 @@
-out: a_string  # type "string" (optional)
-input_pep:  # type "File"
-    class: File
-    path: a/file/path

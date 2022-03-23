@@ -1,6 +1,0 @@
-make_unique: true  # default value of type "boolean".
-kmer_size: 31  # default value of type "int".
-index_name: a_string  # type "string" (optional)
-fasta_files:  # type "File"
-    class: File
-    path: a/file/path

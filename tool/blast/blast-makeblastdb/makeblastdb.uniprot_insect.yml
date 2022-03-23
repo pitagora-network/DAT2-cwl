@@ -1,5 +1,0 @@
-input_pep:
-  class: File
-  path: >-
-    /Users/yasumizuyoshiaki/bioinformatics/mishima_gassyuku/TA/trinity_out_dir/uniprot_insect.fasta
-out: uniprot_insect

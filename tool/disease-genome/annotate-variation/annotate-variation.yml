@@ -1,7 +1,0 @@
-webfrom: a_string  # type "string"
-table: a_string  # type "string"
-location:  # type "Directory"
-    class: Directory
-    path: a/directory/path
-download: false  # type "boolean"
-buildver: a_string  # type "string"

@@ -1,4 +1,0 @@
-threads: 4  # default value of type "int".
-kmer_db:  # type "File"
-    class: File
-    path: a/file/path

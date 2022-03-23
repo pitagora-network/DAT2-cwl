@@ -43,7 +43,7 @@ There are many online documents to learn about CWL out there:
 - [Pitagora Network](https://pitagora-network.org/)
   - a monthly meetup in Tokyo for bioinformatics workflow users and developers
 
-## Workflow test status
+## Testing
 
 All workflows introduced in the book has been translated in CWL, but yet the testing is ongoing.
 
@@ -79,7 +79,9 @@ All workflows introduced in the book has been translated in CWL, but yet the tes
 
 ## Erratum
 
-p.333 に記載のある URL `https://tinyurl.com/dat2_cwl_example` がアクセス不能となっています。すみません。こちらで指定すべきコマンドと URL はこちらです。(コピペする場合は `$` は除いてください)
+p.333 に記載のある URL `https://tinyurl.com/dat2_cwl_example` がアクセス不能となっています。すみません。
+
+こちらで指定すべきコマンドと URL はこちらです。(コピペする場合は `$` は除いてください)
 
 ```
 $ cwltool https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workflow/meta16s-seq/meta16s-seq.demo.cwl
@@ -87,8 +89,10 @@ $ cwltool https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workf
 
 ## Troubleshooting
 
-Please create an issue on [github issue](https://github.com/pitagora-network/DAT2-cwl/issues) if you have any trouble with the workflows. For questions to Common Workflow Language, please go to [discourse group](https://cwl.discourse.group/) of CWL - the experts will help you.
+Please create an issue on [github issue](https://github.com/pitagora-network/DAT2-cwl/issues) if you have any trouble with the workflows.
+For questions to Common Workflow Language, please go to [discourse group](https://cwl.discourse.group/) of CWL - the experts will help you.
 
 ## Copyright
 
-Copyright (c) 2020 [Contributors](https://github.com/pitagora-network/DAT2-cwl/graphs/contributors). See [LICENSE](https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/LICENSE) for further details.
+Copyright (c) 2020 [Contributors](https://github.com/pitagora-network/DAT2-cwl/graphs/contributors).
+See [LICENSE](./LICENSE) for further details.

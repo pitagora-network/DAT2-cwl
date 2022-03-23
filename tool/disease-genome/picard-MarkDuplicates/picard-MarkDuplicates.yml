@@ -1,7 +1,0 @@
-validation_stringency: valid_enum_value  # enum; valid values: "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/picard-MarkDuplicates/picard-MarkDuplicates.cwl#validation_stringency/STRICT", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/picard-MarkDuplicates/picard-MarkDuplicates.cwl#validation_stringency/LENIENT", "file:///Users/tanjo/repos/ngs/DAT2-cwl/tool/disease-genome/picard-MarkDuplicates/picard-MarkDuplicates.cwl#validation_stringency/SILENT"
-remove_duplicates: false  # type "boolean"
-output_name: a_string  # type "string"
-metrics_file_name: a_string  # type "string"
-input:  # type "File" (optional)
-    class: File
-    path: a/file/path
