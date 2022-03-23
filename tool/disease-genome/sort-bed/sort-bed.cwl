@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: dat2-cwl/sort-bed:latest
+    dockerPull: ghcr.io/pitagora-network/sort-bed:1.0.0
 baseCommand: sort-bed.rb
 inputs:
   bed:

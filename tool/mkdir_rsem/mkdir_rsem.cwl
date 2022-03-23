@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: mkdir_rsem
 baseCommand:
   - bash
@@ -15,4 +15,4 @@ outputs:
 label: mkdir_rsem
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/mkdir_rsem
+    dockerPull: ghcr.io/pitagora-network/mkdir_rsem:1.0.0

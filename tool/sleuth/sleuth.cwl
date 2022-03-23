@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: sleuth
 baseCommand:
   - Rscript
@@ -16,7 +16,7 @@ inputs:
     inputBinding:
       position: 2
   - id: kallisto_out
-    type: 'Directory[]'
+    type: "Directory[]"
     inputBinding:
       position: 3
 outputs:
@@ -27,7 +27,7 @@ outputs:
 label: sleuth
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/sleuth
+    dockerPull: ghcr.io/pitagora-network/sleuth:1.0.0
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.kallisto_out)

@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: target2gene
 baseCommand:
   - Rscript
@@ -15,4 +15,4 @@ outputs:
 label: target2gene
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/target2gene
+    dockerPull: ghcr.io/pitagora-network/target2gene:1.0.0

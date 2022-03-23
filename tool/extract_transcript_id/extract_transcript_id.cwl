@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: extract_transcript_id
 baseCommand:
   - bash
@@ -21,6 +21,6 @@ outputs:
 label: extract_transcript_id
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/extraxt_transcript_id
+    dockerPull: ghcr.io/pitagora-network/extract_transcript_id:1.0.0
   - class: InlineJavascriptRequirement
 stdout: $(inputs.output)

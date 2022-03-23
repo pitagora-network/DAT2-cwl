@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: Output statistics of input sequence reads
 requirements:
   DockerRequirement:
-    dockerPull: quay.io/inutano/bbmap:38.43
+    dockerPull: ghcr.io/pitagora-network/tool/bbmap-stats:1.0.0
 baseCommand: bash
 arguments:
   - position: 0

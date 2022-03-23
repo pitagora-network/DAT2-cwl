@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: sample_txt
 baseCommand:
   - sample_txt.sh
@@ -20,5 +20,5 @@ arguments:
   - position: 0
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/sample_txt
+    dockerPull: ghcr.io/pitagora-network/sample_txt:1.0.0
   - class: InlineJavascriptRequirement

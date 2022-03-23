@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: mkdir_star
 baseCommand:
   - bash
@@ -15,4 +15,4 @@ outputs:
 label: mkdir_star
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/mkdir_star
+    dockerPull: ghcr.io/pitagora-network/mkdir_star:1.0.0

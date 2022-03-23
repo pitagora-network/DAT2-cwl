@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: deseq2
 baseCommand:
   - Rscript
@@ -16,7 +16,7 @@ inputs:
     inputBinding:
       position: 2
   - id: rsem_out
-    type: 'File[]'
+    type: "File[]"
     inputBinding:
       position: 3
 outputs:
@@ -27,7 +27,7 @@ outputs:
 label: deseq2
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/deseq2
+    dockerPull: ghcr.io/pitagora-network/deseq2:1.0.0
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.rsem_out)

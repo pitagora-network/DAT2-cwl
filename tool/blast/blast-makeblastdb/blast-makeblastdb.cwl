@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: makeblastdb
 baseCommand:
   - bash
@@ -23,5 +23,5 @@ outputs:
 label: makeblastdb
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/blast
+    dockerPull: ghcr.io/pitagora-network/blast-makeblastdb:1.0.0
   - class: InlineJavascriptRequirement

@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: sample2condition
 baseCommand:
   - sample2condition.sh
@@ -20,5 +20,5 @@ arguments:
   - position: 0
 requirements:
   - class: DockerRequirement
-    dockerPull: dat2-cwl/sample2condition
+    dockerPull: ghcr.io/pitagora-network/sample2condition:1.0.0
   - class: InlineJavascriptRequirement

@@ -1,7 +1,7 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  sbg: 'https://www.sevenbridges.com/'
+  sbg: "https://www.sevenbridges.com/"
 id: for_trinity
 baseCommand:
   - for_trinity.sh
@@ -18,14 +18,14 @@ outputs:
   - id: output1
     type: File
     outputBinding:
-      glob: '*_1.fq.gz'
+      glob: "*_1.fq.gz"
   - id: output2
     type: File
     outputBinding:
-      glob: '*_2.fq.gz'
+      glob: "*_2.fq.gz"
 label: for_trinity
 arguments:
   - position: 0
 requirements:
   - class: DockerRequirement
-    dockerPull: 'dat2-cwl/for_trinity:latest'
+    dockerPull: ghcr.io/pitagora-network/for_trinity:1.0.0
