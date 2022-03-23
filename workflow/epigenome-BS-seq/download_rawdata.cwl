@@ -12,7 +12,7 @@ inputs:
     doc: "list of SRA Run ID e.g. SRR1274307"
 steps:
   download_fastq:
-    run: https://github.com/pitagora-network/pitagora-cwl/raw/master/workflows/download-fastq/download-fastq.cwl
+    run: https://github.com/pitagora-network/pitagora-cwl/raw/main/workflows/download-fastq/download-fastq.cwl
     in:
       run_ids: run_ids
     out:

@@ -41,7 +41,7 @@ outputs:
       glob: $(inputs.genomeDir.basename)
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
-  https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
+  https://github.com/alexdobin/STAR/blob/main/doc/STARmanual.pdf
 label: 'STAR genomeGenerate: Generating genome indexes.'
 requirements:
   - class: InitialWorkDirRequirement

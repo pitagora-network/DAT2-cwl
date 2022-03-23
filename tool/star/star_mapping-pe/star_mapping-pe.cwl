@@ -338,7 +338,7 @@ outputs:
         }
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
-  https://github.com/alexdobin/STAR/blob/master/doc/STARmanual.pdf
+  https://github.com/alexdobin/STAR/blob/main/doc/STARmanual.pdf
 label: 'STAR mapping: running mapping jobs.'
 requirements:
   - class: ShellCommandRequirement

@@ -11,7 +11,7 @@ inputs:
     default: 4
 steps:
   fastqc:
-    run: https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/master/tools/fastqc/fastqc.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/main/tools/fastqc/fastqc.cwl
     in:
       nogroup:
         default: true

@@ -17,7 +17,7 @@ steps:
     out:
       - downloaded
   sra2fastq:
-    run: https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/master/tools/fastq-dump/fastq-dump.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/main/tools/fastq-dump/fastq-dump.cwl
     in:
       sraFiles:
         source: [download/downloaded]
