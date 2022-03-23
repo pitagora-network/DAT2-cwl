@@ -68,7 +68,7 @@ outputs:
 
 steps:
   feature_table.methods.filter_samples:
-    run: ../../tool/qiime2/feature_table.methods.filter_samples.cwl
+    run: ../../tool/qiime2/feature_table.methods.filter_samples/feature_table.methods.filter_samples.cwl
     in:
       table: TABLE
       metadata: METADATA
@@ -80,7 +80,7 @@ steps:
       - filtered_table # table.filtered.qza
 
   taxa.visualizers.barplot:
-    run: ../../tool/qiime2/taxa.visualizers.barplot.cwl
+    run: ../../tool/qiime2/taxa.visualizers.barplot/taxa.visualizers.barplot.cwl
     in:
       table: feature_table.methods.filter_samples/filtered_table
       metadata: METADATA
@@ -91,7 +91,7 @@ steps:
       - visualization # table.filtered.taxa-bar-plots.qzv
 
   tools.export.barplot:
-    run: ../../tool/qiime2/tools.export.cwl
+    run: ../../tool/qiime2/tools.export/tools.export.cwl
     in:
       input_artifact: taxa.visualizers.barplot/visualization
       output_name: BARPLOT_OUTPUT_NAME
@@ -99,7 +99,7 @@ steps:
       - data
 
   diversity.pipelines.core_metrics_phylogenetic:
-    run: ../../tool/qiime2/diversity.pipelines.core_metrics_phylogenetic.cwl
+    run: ../../tool/qiime2/diversity.pipelines.core_metrics_phylogenetic/diversity.pipelines.core_metrics_phylogenetic.cwl
     in:
       table: feature_table.methods.filter_samples/filtered_table
       phylogeny: ROOTED_TREE
@@ -110,7 +110,7 @@ steps:
       - output_dir
 
   taxa.methods.collapse.table:
-    run: ../../tool/qiime2/taxa.methods.collapse.cwl
+    run: ../../tool/qiime2/taxa.methods.collapse/taxa.methods.collapse.cwl
     in:
       table: feature_table.methods.filter_samples/filtered_table
       taxonomy: TAXONOMY
@@ -121,7 +121,7 @@ steps:
       - collapsed_table # table.filtered.collapse.qza
 
   tools.export.count_table:
-    run: ../../tool/qiime2/tools.export.cwl
+    run: ../../tool/qiime2/tools.export/tools.export.cwl
     in:
       input_artifact: taxa.methods.collapse.table/collapsed_table
       output_name:
@@ -130,7 +130,7 @@ steps:
       - feature_table
 
   biom.convert:
-    run: ../../tool/qiime2/biom.convert.cwl
+    run: ../../tool/qiime2/biom.convert/biom.convert.cwl
     in:
       input_fp: tools.export.count_table/feature_table
       output_fp: COUNT_TABLE_OUTPUT_NAME
@@ -138,7 +138,7 @@ steps:
       - table
 
   feature_table.visualizers.heatmap:
-    run: ../../tool/qiime2/feature_table.visualizers.heatmap.cwl
+    run: ../../tool/qiime2/feature_table.visualizers.heatmap/feature_table.visualizers.heatmap.cwl
     in:
       table: taxa.methods.collapse.table/collapsed_table
       metadata: METADATA
@@ -151,7 +151,7 @@ steps:
       - visualization # heatmap.qzv
 
   tools.export.heatmap:
-    run: ../../tool/qiime2/tools.export.cwl
+    run: ../../tool/qiime2/tools.export/tools.export.cwl
     in:
       input_artifact: feature_table.visualizers.heatmap/visualization
       output_name: HEATMAP_OUTPUT_NAME
@@ -159,7 +159,7 @@ steps:
       - data
 
   composition.methods.add_pseudocount:
-    run: ../../tool/qiime2/composition.methods.add_pseudocount.cwl
+    run: ../../tool/qiime2/composition.methods.add_pseudocount/composition.methods.add_pseudocount.cwl
     in:
       table: taxa.methods.collapse.table/collapsed_table
       output_name:
@@ -168,7 +168,7 @@ steps:
       - composition_table # table.filtered.collapse_7.comp.qza
 
   composition.visualizers.ancom:
-    run: ../../tool/qiime2/composition.visualizers.ancom.cwl
+    run: ../../tool/qiime2/composition.visualizers.ancom/composition.visualizers.ancom.cwl
     in:
       table: composition.methods.add_pseudocount/composition_table
       metadata: METADATA
@@ -179,7 +179,7 @@ steps:
       - visualization # table.filtered.collapse_7.comp.ancom.qzv
 
   tools.export.ancom:
-    run: ../../tool/qiime2/tools.export.cwl
+    run: ../../tool/qiime2/tools.export/tools.export.cwl
     in:
       input_artifact: composition.visualizers.ancom/visualization
       output_name: ANCOM_OUTPUT_NAME

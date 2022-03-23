@@ -12,14 +12,14 @@ inputs:
 
 steps:
   import:
-    run: ../../tool/qiime2/tools.import.cwl
+    run: ../../tool/qiime2/tools.import/tools.import.cwl
     in:
       input_data: INPUT
     out:
       - artifact # demux.qza
 
   demux.visualizers.summarize:
-    run: ../../tool/qiime2/demux.visualizers.summarize.cwl
+    run: ../../tool/qiime2/demux.visualizers.summarize/demux.visualizers.summarize.cwl
     in:
       data: import/artifact
       output_name:
@@ -28,7 +28,7 @@ steps:
       - visualization # demux.qzv
 
   dada2.methods.denoise_paired:
-    run: ../../tool/qiime2/dada2.methods.denoise_paired.cwl
+    run: ../../tool/qiime2/dada2.methods.denoise_paired/dada2.methods.denoise_paired.cwl
     in:
       demultiplexed_seqs: import/artifact
       output_denoising_stats:
@@ -51,7 +51,7 @@ steps:
       - denoising_stats # stats-dada2.qza
 
   metadata.visualizers.tabulate.stats-dada2:
-    run: ../../tool/qiime2/metadata.visualizers.tabulate.cwl
+    run: ../../tool/qiime2/metadata.visualizers.tabulate/metadata.visualizers.tabulate.cwl
     in:
       input: dada2.methods.denoise_paired/denoising_stats
       output_name:
@@ -60,7 +60,7 @@ steps:
       - visualization # stats-dada2.qzv
 
   feature_table.visualizers.summarize:
-    run: ../../tool/qiime2/feature_table.visualizers.summarize.cwl
+    run: ../../tool/qiime2/feature_table.visualizers.summarize/feature_table.visualizers.summarize.cwl
     in:
       table: dada2.methods.denoise_paired/table
       sample_metadata: METADATA
@@ -70,7 +70,7 @@ steps:
       - visualization # table.qzv
 
   feature_table.visualizers.tabulate_seqs:
-    run: ../../tool/qiime2/feature_table.visualizers.tabulate_seqs.cwl
+    run: ../../tool/qiime2/feature_table.visualizers.tabulate_seqs/feature_table.visualizers.tabulate_seqs.cwl
     in:
       data: dada2.methods.denoise_paired/representative_sequences
       output_name:
@@ -79,7 +79,7 @@ steps:
       - visualization # rep-seqs.qzv
 
   phylogeny.pipelines.align_to_tree_mafft_fasttree:
-    run: ../../tool/qiime2/phylogeny.pipelines.align_to_tree_mafft_fasttree.cwl
+    run: ../../tool/qiime2/phylogeny.pipelines.align_to_tree_mafft_fasttree/phylogeny.pipelines.align_to_tree_mafft_fasttree.cwl
     in:
       sequences: dada2.methods.denoise_paired/representative_sequences
       output_alignment:
@@ -97,7 +97,7 @@ steps:
       - rooted_tree # rooted-tree.qza
 
   diversity.pipelines.core_metrics_phylogenetic:
-    run: ../../tool/qiime2/diversity.pipelines.core_metrics_phylogenetic.cwl
+    run: ../../tool/qiime2/diversity.pipelines.core_metrics_phylogenetic/diversity.pipelines.core_metrics_phylogenetic.cwl
     in:
       table: dada2.methods.denoise_paired/table
       phylogeny: phylogeny.pipelines.align_to_tree_mafft_fasttree/rooted_tree
@@ -124,7 +124,7 @@ steps:
       - bray_curtis_emperor
 
   diversity.visualizers.alpha_group_significance.observed_otus_vector:
-    run: ../../tool/qiime2/diversity.visualizers.alpha_group_significance.cwl
+    run: ../../tool/qiime2/diversity.visualizers.alpha_group_significance/diversity.visualizers.alpha_group_significance.cwl
     in:
       alpha_diversity: diversity.pipelines.core_metrics_phylogenetic/observed_otus_vector
       metadata: METADATA
@@ -134,7 +134,7 @@ steps:
       - visualization # observed_otus-group-significance.qzv
 
   diversity.visualizers.alpha_group_significance.shannon_vector:
-    run: ../../tool/qiime2/diversity.visualizers.alpha_group_significance.cwl
+    run: ../../tool/qiime2/diversity.visualizers.alpha_group_significance/diversity.visualizers.alpha_group_significance.cwl
     in:
       alpha_diversity: diversity.pipelines.core_metrics_phylogenetic/shannon_vector
       metadata: METADATA
@@ -144,7 +144,7 @@ steps:
       - visualization # shannon-group-significance.qzv
 
   diversity.visualizers.alpha_group_significance.faith_pd_vector:
-    run: ../../tool/qiime2/diversity.visualizers.alpha_group_significance.cwl
+    run: ../../tool/qiime2/diversity.visualizers.alpha_group_significance/diversity.visualizers.alpha_group_significance.cwl
     in:
       alpha_diversity: diversity.pipelines.core_metrics_phylogenetic/faith_pd_vector
       metadata: METADATA
@@ -154,7 +154,7 @@ steps:
       - visualization # faith-pd-group-significance.qzv
 
   diversity.visualizers.beta_group_significance.unweighted_unifrac_distance_matrix:
-    run: ../../tool/qiime2/diversity.visualizers.beta_group_significance.cwl
+    run: ../../tool/qiime2/diversity.visualizers.beta_group_significance/diversity.visualizers.beta_group_significance.cwl
     in:
       distance_matrix: diversity.pipelines.core_metrics_phylogenetic/unweighted_unifrac_distance_matrix
       metadata: METADATA
@@ -168,7 +168,7 @@ steps:
       - visualization # unweighted-unifrac-group-significance.qzv
 
   diversity.visualizers.beta_group_significance.weighted_unifrac_distance_matrix:
-    run: ../../tool/qiime2/diversity.visualizers.beta_group_significance.cwl
+    run: ../../tool/qiime2/diversity.visualizers.beta_group_significance/diversity.visualizers.beta_group_significance.cwl
     in:
       distance_matrix: diversity.pipelines.core_metrics_phylogenetic/weighted_unifrac_distance_matrix
       metadata: METADATA
@@ -182,7 +182,7 @@ steps:
       - visualization # weighted-unifrac-group-significance.qzv
 
   diversity.visualizers.alpha_rarefaction:
-    run: ../../tool/qiime2/diversity.visualizers.alpha_rarefaction.cwl
+    run: ../../tool/qiime2/diversity.visualizers.alpha_rarefaction/diversity.visualizers.alpha_rarefaction.cwl
     in:
       table: dada2.methods.denoise_paired/table
       metadata: METADATA
@@ -195,7 +195,7 @@ steps:
       - visualization # alpha-rarefaction.qzv
 
   feature_classifier.methods.classify_sklearn:
-    run: ../../tool/qiime2/feature_classifier.methods.classify_sklearn.cwl
+    run: ../../tool/qiime2/feature_classifier.methods.classify_sklearn/feature_classifier.methods.classify_sklearn.cwl
     in:
       reads: dada2.methods.denoise_paired/representative_sequences
       classifier: CLASSIFIER
@@ -205,7 +205,7 @@ steps:
       - classification # taxonomy.qza
 
   metadata.visualizers.tabulate.taxonomy:
-    run: ../../tool/qiime2/metadata.visualizers.tabulate.cwl
+    run: ../../tool/qiime2/metadata.visualizers.tabulate/metadata.visualizers.tabulate.cwl
     in:
       input: feature_classifier.methods.classify_sklearn/classification
       output_name:
@@ -214,7 +214,7 @@ steps:
       - visualization # taxonomy.qzv
 
   taxa.visualizers.barplot:
-    run: ../../tool/qiime2/taxa.visualizers.barplot.cwl
+    run: ../../tool/qiime2/taxa.visualizers.barplot/taxa.visualizers.barplot.cwl
     in:
       table: dada2.methods.denoise_paired/table
       metadata: METADATA
@@ -225,7 +225,7 @@ steps:
       - visualization # taxa-bar-plots.qzv
 
   taxa.methods.collapse.table:
-    run: ../../tool/qiime2/taxa.methods.collapse.cwl
+    run: ../../tool/qiime2/taxa.methods.collapse/taxa.methods.collapse.cwl
     in:
       table: dada2.methods.denoise_paired/table
       taxonomy: feature_classifier.methods.classify_sklearn/classification
@@ -237,7 +237,7 @@ steps:
       - collapsed_table # table-l5.qza
 
   feature_table.visualizers.heatmap:
-    run: ../../tool/qiime2/feature_table.visualizers.heatmap.cwl
+    run: ../../tool/qiime2/feature_table.visualizers.heatmap/feature_table.visualizers.heatmap.cwl
     in:
       table: taxa.methods.collapse.table/collapsed_table
       metadata: METADATA
@@ -249,7 +249,7 @@ steps:
       - visualization # heatmap_l5_group.qzv
 
   feature_table.methods.filter_samples:
-    run: ../../tool/qiime2/feature_table.methods.filter_samples.cwl
+    run: ../../tool/qiime2/feature_table.methods.filter_samples/feature_table.methods.filter_samples.cwl
     in:
       table: dada2.methods.denoise_paired/table
       metadata: METADATA
@@ -261,7 +261,7 @@ steps:
       - filtered_table # table_ob.qza
 
   taxa.methods.collapse.table_ob:
-    run: ../../tool/qiime2/taxa.methods.collapse.cwl
+    run: ../../tool/qiime2/taxa.methods.collapse/taxa.methods.collapse.cwl
     in:
       table: feature_table.methods.filter_samples/filtered_table
       taxonomy: feature_classifier.methods.classify_sklearn/classification
@@ -273,14 +273,14 @@ steps:
       - collapsed_table # table_ob_l5.qza
 
   composition.methods.add_pseudocount:
-    run: ../../tool/qiime2/composition.methods.add_pseudocount.cwl
+    run: ../../tool/qiime2/composition.methods.add_pseudocount/composition.methods.add_pseudocount.cwl
     in:
       table: taxa.methods.collapse.table_ob/collapsed_table
     out:
       - composition_table # comp_table_ob_l5.qza
 
   composition.visualizers.ancom:
-    run: ../../tool/qiime2/composition.visualizers.ancom.cwl
+    run: ../../tool/qiime2/composition.visualizers.ancom/composition.visualizers.ancom.cwl
     in:
       table: composition.methods.add_pseudocount/composition_table
       metadata: METADATA
