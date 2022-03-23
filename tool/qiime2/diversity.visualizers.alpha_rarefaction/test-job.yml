@@ -1,15 +1,15 @@
-table:  # type "File"
-    class: File
-    path: ../../data/qiime2/table.qza
-steps: 10  # default value of type "long".
-phylogeny:  # type "File" (optional)
-    class: File
-    path: ../../data/qiime2/rooted-tree.qza
-output_name: alpha-rarefaction.qzv  # type "string"
-min_depth: 1  # default value of type "long".
-metrics:  # array of type "string" (optional)
-metadata:  # optional
+table: # type "File"
   class: File
-  path: ../../data/qiime2/metadata.txt
-max_depth: 114279  # type "long"
-iterations: 10  # default value of type "long".
+  location: ../../data/qiime2/table.qza
+steps: 10 # default value of type "long".
+phylogeny: # type "File" (optional)
+  class: File
+  location: ../../data/qiime2/rooted-tree.qza
+output_name: alpha-rarefaction.qzv # type "string"
+min_depth: 1 # default value of type "long".
+metrics: # array of type "string" (optional)
+metadata: # optional
+  class: File
+  location: ../../data/qiime2/metadata.txt
+max_depth: 114279 # type "long"
+iterations: 10 # default value of type "long".

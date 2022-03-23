@@ -1,11 +1,11 @@
 cpu: 6
 fq1:
   class: File
-  path: >-
+  location: >-
     ../../data/sample.DRR092257_1.fq.gz
 fq2:
   class: File
-  path: >-
+  location: >-
     ../../data/sample.DRR092257_2.fq.gz
 min_contig_length: 200
 no_bowtie: false

@@ -1,6 +1,6 @@
 peaks_narrow_peak_b: # type "File"
   class: File
-  path: ../../data/ERR034597_1.sort_peaks.narrowPeak
+  location: ../../data/ERR034597_1.sort_peaks.narrowPeak
 peaks_narrow_peak_a: # type "File"
   class: File
-  path: ../../data/ERR034597_1.sort_peaks.narrowPeak
+  location: ../../data/ERR034597_1.sort_peaks.narrowPeak

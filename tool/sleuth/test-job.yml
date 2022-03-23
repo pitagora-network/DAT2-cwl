@@ -1,21 +1,21 @@
 kallisto_out:
   - class: Directory
-    path: ../../data/kallisto_out/SRR1550989
+    location: ../../data/kallisto_out/SRR1550989
   - class: Directory
-    path: ../../data/kallisto_out/SRR1551005
+    location: ../../data/kallisto_out/SRR1551005
   - class: Directory
-    path: ../../data/kallisto_out/SRR1551011
+    location: ../../data/kallisto_out/SRR1551011
   - class: Directory
-    path: ../../data/kallisto_out/SRR1551050
+    location: ../../data/kallisto_out/SRR1551050
   - class: Directory
-    path: ../../data/kallisto_out/SRR1551057
+    location: ../../data/kallisto_out/SRR1551057
   - class: Directory
-    path: ../../data/kallisto_out/SRR1551071
+    location: ../../data/kallisto_out/SRR1551071
   - class: Directory
-    path: ../../data/kallisto_out/SRR1551091
+    location: ../../data/kallisto_out/SRR1551091
 sample.txt:
   class: File
-  path: ../../data/sample.txt
+  location: ../../data/sample.txt
 target2gene.txt:
   class: File
-  path: ../../data/target2gene.txt
+  location: ../../data/target2gene.txt

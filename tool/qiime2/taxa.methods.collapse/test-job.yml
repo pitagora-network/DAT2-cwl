@@ -1,8 +1,8 @@
-taxonomy:  # type "File"
-    class: File
-    path: ../../data/qiime2/taxonomy.qza
-table:  # type "File"
-    class: File
-    path: ../../data/qiime2/table.qza
-output_name: table-l5.qza  # type "string"
-level: 5  # type "long"
+taxonomy: # type "File"
+  class: File
+  location: ../../data/qiime2/taxonomy.qza
+table: # type "File"
+  class: File
+  location: ../../data/qiime2/table.qza
+output_name: table-l5.qza # type "string"
+level: 5 # type "long"

@@ -1,5 +1,5 @@
-table:  # type "File"
-    class: File
-    path: ../../data/qiime2/table_ob_l5.qza
-pseudocount: 1  # default value of type "long".
-output_name: comp_table_ob_l5.qza  # type "string"
+table: # type "File"
+  class: File
+  location: ../../data/qiime2/table_ob_l5.qza
+pseudocount: 1 # default value of type "long".
+output_name: comp_table_ob_l5.qza # type "string"

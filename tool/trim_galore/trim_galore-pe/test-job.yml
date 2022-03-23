@@ -2,8 +2,8 @@ fastqc: true
 paired: true
 read1:
   class: File
-  path: ../../data/sample.DRR092257_1.fastq.gz
+  location: ../../data/sample.DRR092257_1.fastq.gz
 read2:
   class: File
-  path: ../../data/sample.DRR092257_2.fastq.gz
+  location: ../../data/sample.DRR092257_2.fastq.gz
 trim1: true

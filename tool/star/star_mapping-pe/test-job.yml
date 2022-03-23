@@ -1,13 +1,13 @@
 nthreads: 8
 genomeDir:
   class: Directory
-  path: STAR_reference
+  location: STAR_reference
 fq1:
   class: File
-  path: ../../data/SRR1550989_1.fastq.gz
+  location: ../../data/SRR1550989_1.fastq.gz
 fq2:
   class: File
-  path: ../../data/SRR1550989_2.fastq.gz
+  location: ../../data/SRR1550989_2.fastq.gz
 quantMode: TranscriptomeSAM
 outSAMtype: [BAM, SortedByCoordinate]
 outFileNamePrefix: SRR1550989

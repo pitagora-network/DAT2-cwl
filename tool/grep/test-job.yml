@@ -2,4 +2,4 @@ pattern: ^>
 invert_match: false
 files:
   - class: File
-    path: ../../data/chr22.fa
+    location: ../../data/chr22.fa

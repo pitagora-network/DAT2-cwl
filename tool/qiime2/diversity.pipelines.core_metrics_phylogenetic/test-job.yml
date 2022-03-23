@@ -1,11 +1,11 @@
-table:  # type "File"
-    class: File
-    path: ../../data/qiime2/table.qza
-sampling_depth: 43256  # type "long"
-phylogeny:  # type "File"
-    class: File
-    path: ../../data/qiime2/rooted-tree.qza
-n_jobs: 1  # default value of type "long".
-metadata:  # type "File"
-    class: File
-    path: ../../data/qiime2/metadata.txt
+table: # type "File"
+  class: File
+  location: ../../data/qiime2/table.qza
+sampling_depth: 43256 # type "long"
+phylogeny: # type "File"
+  class: File
+  location: ../../data/qiime2/rooted-tree.qza
+n_jobs: 1 # default value of type "long".
+metadata: # type "File"
+  class: File
+  location: ../../data/qiime2/metadata.txt

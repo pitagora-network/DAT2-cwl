@@ -1,14 +1,14 @@
-title:  # type "string" (optional)
-table:  # type "File"
-    class: File
-    path: ../../data/qiime2/table-l5.qza
-output_name: heatmap_l5_group.qzv  # type "string"
-normalize: true  # default value of type "boolean".
-metric: euclidean  # default value of type "string".
-method: average  # default value of type "string".
-metadata_column: group  # type "string"
-metadata:  # type "File"
-    class: File
-    path: ../../data/qiime2/metadata.txt
-color_scheme: rocket  # default value of type "string".
-cluster: both  # default value of type "string".
+title: # type "string" (optional)
+table: # type "File"
+  class: File
+  location: ../../data/qiime2/table-l5.qza
+output_name: heatmap_l5_group.qzv # type "string"
+normalize: true # default value of type "boolean".
+metric: euclidean # default value of type "string".
+method: average # default value of type "string".
+metadata_column: group # type "string"
+metadata: # type "File"
+  class: File
+  location: ../../data/qiime2/metadata.txt
+color_scheme: rocket # default value of type "string".
+cluster: both # default value of type "string".

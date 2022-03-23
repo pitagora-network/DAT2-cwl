@@ -1,9 +1,9 @@
 genome_fasta:
   class: File
-  path: ../../data/worm.wtdbg2.fa
+  location: ../../data/worm.wtdbg2.fa
 aligned_bam:
   class: File
-  path: ../../data/aln.sorted.bam
+  location: ../../data/aln.sorted.bam
 bam_index:
   class: File
-  path: ../../data/aln.sorted.bam.bai
+  location: ../../data/aln.sorted.bam.bai

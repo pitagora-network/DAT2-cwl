@@ -1,7 +1,0 @@
-samples_label: None  # default value of type "string". (optional)
-regions_label: None  # default value of type "string". (optional)
-plot_title: None  # default value of type "string". (optional)
-matrix-file:  # type "File"
-    class: File
-    path: a/file/path
-kmeans: None  # default value of type "string". (optional)

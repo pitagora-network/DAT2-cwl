@@ -1,5 +1,5 @@
 input:
   class: File
-  path: >-
+  location: >-
     ../../data/sample.longest_orfs.SOD_Cu.out
 output: longest_orfs.SOD_Cu.ids

@@ -1,9 +1,9 @@
 nthreads: 8
 bam:
   class: File
-  path: ../../data/SRR1550989Aligned.toTranscriptome.out.bam
+  location: ../../data/SRR1550989Aligned.toTranscriptome.out.bam
 rsem_index_dir:
   class: Directory
-  path: ../../data/RSEM_reference
+  location: ../../data/RSEM_reference
 rsem_index_prefix: RSEM_reference
 rsem_output_prefix: SRR1550989

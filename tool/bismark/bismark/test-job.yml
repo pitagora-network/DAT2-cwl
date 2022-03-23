@@ -1,7 +1,7 @@
-multicore: 1  # default value of type "int".
-genome_folder:  # type "Directory"
-    class: Directory
-    path: ../../../test/data/bismark
-fq:  # type "File"
-    class: File
-    path: ../../../test/data/DRR024501_1.fastq
+multicore: 1 # default value of type "int".
+genome_folder: # type "Directory"
+  class: Directory
+  location: ../../../test/data/bismark
+fq: # type "File"
+  class: File
+  location: ../../../test/data/DRR024501_1.fastq

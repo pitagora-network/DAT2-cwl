@@ -1,3 +1,3 @@
 fastq: # type "File"
   class: File
-  path: ../../data/DRR024501_2.fastq
+  location: ../../data/DRR024501_2.fastq

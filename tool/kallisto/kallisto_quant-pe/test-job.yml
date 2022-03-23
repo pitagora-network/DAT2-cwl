@@ -1,12 +1,12 @@
 index_file:
   class: File
-  path: https://zenodo.org/record/3354077/files/kallisto.idx?download=1
+  location: https://zenodo.org/record/3354077/files/kallisto.idx?download=1
 fq1:
   class: File
-  path: https://zenodo.org/record/3354045/files/SRR1550989_1.fastq.gz?download=1
+  location: https://zenodo.org/record/3354045/files/SRR1550989_1.fastq.gz?download=1
 fq2:
   class: File
-  path: https://zenodo.org/record/3354045/files/SRR1550989_2.fastq.gz?download=1
+  location: https://zenodo.org/record/3354045/files/SRR1550989_2.fastq.gz?download=1
 out_dir_name: SRR1550989
 bootstrap_samples: 100
 nthreads: 4
