@@ -30,7 +30,7 @@ steps:
     out: [ renamed_dir ]
 
   bismark_genome_preparation:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/bismark/bismark_genome_preparation/bismark_genome_preparation.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/bismark/bismark_genome_preparation/bismark_genome_preparation.cwl
     in:
       ref_directory: rename/renamed_dir
     out:

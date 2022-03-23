@@ -42,7 +42,7 @@ steps:
       fastq_files: download_rawdata/fastq_files
     out: [output]
   trim_galore_rawdata:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/trim_galore/trim_galore.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/trim_galore/trim_galore.cwl
     in:
       nogroup:
         default: true
@@ -63,7 +63,7 @@ steps:
     out:
       - output
   bismark_exec:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/bismark/bismark/bismark.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/bismark/bismark/bismark.cwl
     in:
       genome_folder: bismark_genome_preparation/output
       fq: trim_galore_rawdata/fq

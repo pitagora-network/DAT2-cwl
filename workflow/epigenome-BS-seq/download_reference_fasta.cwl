@@ -15,7 +15,7 @@ inputs:
 
 steps:
   wget:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/wget/wget.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/wget/wget.cwl
     in:
       url: url
       use_remote_name:
@@ -23,7 +23,7 @@ steps:
     out:
       [downloaded]
   tar:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/tar/tar.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/tar/tar.cwl
     in:
       file: wget/downloaded
       extract:
@@ -33,7 +33,7 @@ steps:
     out:
       [output]
   lists:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/listing/listing.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/listing/listing.cwl
     in:
       dir: tar/output
       file_names:
@@ -67,7 +67,7 @@ steps:
     out:
       [files]
   cat:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/cat/cat.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/cat/cat.cwl
     in:
       files: lists/files
     out:

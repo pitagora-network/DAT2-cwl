@@ -18,7 +18,7 @@ steps:
     out:
       [fastq_files]
   gunzip:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/tool/gunzip/gunzip.cwl
+    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/gunzip/gunzip.cwl
     in:
       file: download_fastq/fastq_files
     scatter: file

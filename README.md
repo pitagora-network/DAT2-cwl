@@ -2,8 +2,6 @@
 
 This repository contains the Common Workflow Language (CWL) definitions of the workflows introduced in the book [#NGS_DAT 2nd edition (A tutorial book in Japanese, 次世代シークエンサー DRY 解析教本 改訂第 2 版)](https://www.amazon.co.jp/dp/478090983X).
 
-Go to [`develop`](https://github.com/pitagora-network/DAT2-cwl/tree/develop) branch to test the workflows in development.
-
 ## Workflows
 
 - animal-genome-assembly by [inutano](https://github.com/inutano)
@@ -67,7 +65,7 @@ All workflows introduced in the book has been translated in CWL, but yet the tes
 p.333 に記載のある URL `https://tinyurl.com/dat2_cwl_example` がアクセス不能となっています。すみません。こちらで指定すべきコマンドと URL はこちらです。(コピペする場合は `$` は除いてください)
 
 ```
-$ cwltool https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/workflow/meta16s-seq/meta16s-seq.demo.cwl
+$ cwltool https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workflow/meta16s-seq/meta16s-seq.demo.cwl
 ```
 
 ## Troubleshooting
@@ -76,4 +74,4 @@ Please create an issue on [github issue](https://github.com/pitagora-network/DAT
 
 ## Copyright
 
-Copyright (c) 2020 [Contributors](https://github.com/pitagora-network/DAT2-cwl/graphs/contributors). See [LICENSE](https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/LICENSE) for further details.
+Copyright (c) 2020 [Contributors](https://github.com/pitagora-network/DAT2-cwl/graphs/contributors). See [LICENSE](https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/LICENSE) for further details.
