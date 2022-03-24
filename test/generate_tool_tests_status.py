@@ -5,12 +5,15 @@ SCRIPT_DIR = Path(__file__).parent.resolve()
 GIT_DIR = SCRIPT_DIR.parent.resolve()
 TOOL_DIR = GIT_DIR.joinpath("tool").resolve()
 
-TEMPLATE_NO_TEST = "- [{tool_file_name}]({tool_file_path_from_script_dir}): no test"
-TEMPLATE_EXISTS_TEST = "- [{tool_file_name}]({tool_file_path_from_script_dir}): [![{action_name}](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/{action_name}.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/{action_name}.yml)"
+TEMPLATE_NO_TEST = "|[`{tool_file_name}`]({tool_file_path_from_script_dir})|no test|"
+TEMPLATE_EXISTS_TEST = "|[`{tool_file_name}`]({tool_file_path_from_script_dir})|[![{action_name}](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/{action_name}.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/{action_name}.yml)|"
 
 
 def main():
-    contents = []
+    contents = [
+        "| Tool | Status |",
+        "| ---- | ------ |",
+    ]
     tool_files = list(TOOL_DIR.glob("**/*.cwl"))
     for tool_file in tool_files:
         tool_file_name = tool_file.name

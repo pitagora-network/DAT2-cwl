@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-workflows=$(gh workflow list | grep -v "^#" | awk '{print $1}' | grep "test-tool")
+workflows=$(gh workflow list --limit 300 | grep -v "^#" | awk '{print $1}' | grep "test-tool")
 
 for workflow in $workflows; do
   echo "Running workflow $workflow"
