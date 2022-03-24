@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: feature_classifier.methods.classify_sklearn.cwl
+    - target: qiime2-feature_classifier.methods.classify_sklearn.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/feature_classifier.methods.classify_sklearn/feature_classifier.methods.classify_sklearn.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/feature_classifier.methods.classify_sklearn/qiime2-feature_classifier.methods.classify_sklearn.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl feature_classifier.methods.classify_sklearn"
+  name: "DAT2-cwl qiime2-feature_classifier.methods.classify_sklearn"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

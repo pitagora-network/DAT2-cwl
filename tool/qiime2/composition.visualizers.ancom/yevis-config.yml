@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: composition.visualizers.ancom.cwl
+    - target: qiime2-composition.visualizers.ancom.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/composition.visualizers.ancom/composition.visualizers.ancom.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/composition.visualizers.ancom/qiime2-composition.visualizers.ancom.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl composition.visualizers.ancom"
+  name: "DAT2-cwl qiime2-composition.visualizers.ancom"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

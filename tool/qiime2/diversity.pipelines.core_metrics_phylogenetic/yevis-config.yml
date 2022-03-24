@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: diversity.pipelines.core_metrics_phylogenetic.cwl
+    - target: qiime2-diversity.pipelines.core_metrics_phylogenetic.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/diversity.pipelines.core_metrics_phylogenetic/diversity.pipelines.core_metrics_phylogenetic.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/diversity.pipelines.core_metrics_phylogenetic/qiime2-diversity.pipelines.core_metrics_phylogenetic.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl diversity.pipelines.core_metrics_phylogenetic"
+  name: "DAT2-cwl qiime2-diversity.pipelines.core_metrics_phylogenetic"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

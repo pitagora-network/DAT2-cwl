@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: feature_table.visualizers.heatmap.cwl
+    - target: qiime2-feature_table.visualizers.heatmap.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/feature_table.visualizers.heatmap/feature_table.visualizers.heatmap.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/feature_table.visualizers.heatmap/qiime2-feature_table.visualizers.heatmap.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl feature_table.visualizers.heatmap"
+  name: "DAT2-cwl qiime2-feature_table.visualizers.heatmap"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

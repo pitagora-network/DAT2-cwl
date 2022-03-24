@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: taxa.methods.collapse.cwl
+    - target: qiime2-taxa.methods.collapse.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/taxa.methods.collapse/taxa.methods.collapse.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/taxa.methods.collapse/qiime2-taxa.methods.collapse.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl taxa.methods.collapse"
+  name: "DAT2-cwl qiime2-taxa.methods.collapse"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

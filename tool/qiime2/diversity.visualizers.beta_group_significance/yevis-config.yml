@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: diversity.visualizers.beta_group_significance.cwl
+    - target: qiime2-diversity.visualizers.beta_group_significance.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/diversity.visualizers.beta_group_significance/diversity.visualizers.beta_group_significance.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/diversity.visualizers.beta_group_significance/qiime2-diversity.visualizers.beta_group_significance.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl diversity.visualizers.beta_group_significance"
+  name: "DAT2-cwl qiime2-diversity.visualizers.beta_group_significance"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

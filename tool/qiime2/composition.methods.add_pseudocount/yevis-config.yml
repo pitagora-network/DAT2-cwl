@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: composition.methods.add_pseudocount.cwl
+    - target: qiime2-composition.methods.add_pseudocount.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/composition.methods.add_pseudocount/composition.methods.add_pseudocount.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/composition.methods.add_pseudocount/qiime2-composition.methods.add_pseudocount.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl composition.methods.add_pseudocount"
+  name: "DAT2-cwl qiime2-composition.methods.add_pseudocount"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: taxa.visualizers.barplot.cwl
+    - target: qiime2-taxa.visualizers.barplot.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/taxa.visualizers.barplot/taxa.visualizers.barplot.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/taxa.visualizers.barplot/qiime2-taxa.visualizers.barplot.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl taxa.visualizers.barplot"
+  name: "DAT2-cwl qiime2-taxa.visualizers.barplot"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: feature_table.methods.filter_samples.cwl
+    - target: qiime2-feature_table.methods.filter_samples.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/feature_table.methods.filter_samples/feature_table.methods.filter_samples.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/feature_table.methods.filter_samples/qiime2-feature_table.methods.filter_samples.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl feature_table.methods.filter_samples"
+  name: "DAT2-cwl qiime2-feature_table.methods.filter_samples"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

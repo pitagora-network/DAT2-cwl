@@ -25,13 +25,13 @@ license: Apache-2.0
 version: 1.0.0
 workflow:
   files:
-    - target: phylogeny.pipelines.align_to_tree_mafft_fasttree.cwl
+    - target: qiime2-phylogeny.pipelines.align_to_tree_mafft_fasttree.cwl
       type: primary
-      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/phylogeny.pipelines.align_to_tree_mafft_fasttree/phylogeny.pipelines.align_to_tree_mafft_fasttree.cwl
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/phylogeny.pipelines.align_to_tree_mafft_fasttree/qiime2-phylogeny.pipelines.align_to_tree_mafft_fasttree.cwl
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl phylogeny.pipelines.align_to_tree_mafft_fasttree"
+  name: "DAT2-cwl qiime2-phylogeny.pipelines.align_to_tree_mafft_fasttree"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:

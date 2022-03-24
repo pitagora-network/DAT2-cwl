@@ -47,14 +47,14 @@ outputs:
 
 steps:
   import:
-    run: ../../tool/qiime2/tools.import/tools.import.cwl
+    run: ../../tool/qiime2/tools.import/qiime2-tools.import.cwl
     in:
       input_data: INPUT
     out:
       - artifact # demux.qza
 
   demux.visualizers.summarize:
-    run: ../../tool/qiime2/demux.visualizers.summarize/demux.visualizers.summarize.cwl
+    run: ../../tool/qiime2/demux.visualizers.summarize/qiime2-demux.visualizers.summarize.cwl
     in:
       data: import/artifact
       output_name:
@@ -63,7 +63,7 @@ steps:
       - visualization # demux.qzv
 
   dada2.methods.denoise_paired:
-    run: ../../tool/qiime2/dada2.methods.denoise_paired/dada2.methods.denoise_paired.cwl
+    run: ../../tool/qiime2/dada2.methods.denoise_paired/qiime2-dada2.methods.denoise_paired.cwl
     in:
       demultiplexed_seqs: import/artifact
       output_denoising_stats:
@@ -86,7 +86,7 @@ steps:
       - denoising_stats # stats-dada2.qza
 
   feature_table.visualizers.summarize:
-    run: ../../tool/qiime2/feature_table.visualizers.summarize/feature_table.visualizers.summarize.cwl
+    run: ../../tool/qiime2/feature_table.visualizers.summarize/qiime2-feature_table.visualizers.summarize.cwl
     in:
       table: dada2.methods.denoise_paired/table
       sample_metadata: METADATA
@@ -96,7 +96,7 @@ steps:
       - visualization # table.qzv
 
   feature_table.visualizers.tabulate_seqs:
-    run: ../../tool/qiime2/feature_table.visualizers.tabulate_seqs/feature_table.visualizers.tabulate_seqs.cwl
+    run: ../../tool/qiime2/feature_table.visualizers.tabulate_seqs/qiime2-feature_table.visualizers.tabulate_seqs.cwl
     in:
       data: dada2.methods.denoise_paired/representative_sequences
       output_name:
@@ -105,7 +105,7 @@ steps:
       - visualization # rep-seqs.qzv
 
   metadata.visualizers.tabulate.stats-dada2:
-    run: ../../tool/qiime2/metadata.visualizers.tabulate/metadata.visualizers.tabulate.cwl
+    run: ../../tool/qiime2/metadata.visualizers.tabulate/qiime2-metadata.visualizers.tabulate.cwl
     in:
       input: dada2.methods.denoise_paired/denoising_stats
       output_name:
@@ -114,7 +114,7 @@ steps:
       - visualization # stats-dada2.qzv
 
   feature_classifier.methods.classify_sklearn:
-    run: ../../tool/qiime2/feature_classifier.methods.classify_sklearn/feature_classifier.methods.classify_sklearn.cwl
+    run: ../../tool/qiime2/feature_classifier.methods.classify_sklearn/qiime2-feature_classifier.methods.classify_sklearn.cwl
     in:
       reads: dada2.methods.denoise_paired/representative_sequences
       classifier: CLASSIFIER
@@ -124,7 +124,7 @@ steps:
       - classification # taxonomy.qza
 
   metadata.visualizers.tabulate.taxonomy:
-    run: ../../tool/qiime2/metadata.visualizers.tabulate/metadata.visualizers.tabulate.cwl
+    run: ../../tool/qiime2/metadata.visualizers.tabulate/qiime2-metadata.visualizers.tabulate.cwl
     in:
       input: feature_classifier.methods.classify_sklearn/classification
       output_name:
