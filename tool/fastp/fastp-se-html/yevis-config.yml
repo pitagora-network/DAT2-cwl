@@ -4,21 +4,22 @@ authors:
     name: ddbj-workflow
   - affiliation: The University of Tokyo
     github_account: suecharo
-    name: Hirotaka Suetake
+    name: Suetake, Hirotaka
     orcid: 0000-0003-2765-0049
   - affiliation: National Institute of Genetics
     github_account: tom-tan
-    name: Tomoya Tanjo
+    name: Tanjo, Tomoya
     orcid: 0000-0002-4421-9659
   - affiliation: Database Center for Life Science
     github_account: inutano
-    name: Tazro Ohta
+    name: Ohta, Tazro
     orcid: 0000-0003-3777-5945
   - affiliation: Osaka University
     github_account: yyoshiaki
-    name: Yoshiaki Yasumizu
+    name: Yasumizu, Yoshiaki
     orcid: 0000-0002-9872-4909
   - github_account: ykohki
+    name: Yamada, Kohki
 id: 6f9703a1-4945-4323-b033-7f71f6aeaa35
 license: Apache-2.0
 version: 1.0.0
@@ -30,7 +31,7 @@ workflow:
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl workflow - fastp-se-html"
+  name: "DAT2-cwl fastp-se-html"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:
     - files:
