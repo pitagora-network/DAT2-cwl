@@ -14,8 +14,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
       - name: "Download gh-trs binary from release"
         run: |
           curl -fsSL -O https://github.com/suecharo/gh-trs/releases/latest/download/gh-trs
@@ -24,9 +22,8 @@ jobs:
       - name: "Run test"
         id: "run-test"
         run: |
-          mkdir -p ./test-logs
           SAPPORO_RUN_DIR=${GITHUB_WORKSPACE}/test-results \
-            ./gh-trs test --verbose ./test/cat/yevis-config.yml 2>&1 \
+            ./gh-trs test --verbose https://github.com/pitagora-network/DAT2-cwl/blob/main/tool/cat/yevis-config.yml 2>&1 \
             | tee ./test-logs/gh-trs.log
           exit ${PIPESTATUS[0]}
         continue-on-error: true
@@ -39,7 +36,7 @@ jobs:
       - name: "Upload test logs"
         uses: actions/upload-artifact@v2
         with:
-          name: yevis-test-logs
+          name: gh-trs-test-logs
           path: test-logs/*
           if-no-files-found: ignore
 
