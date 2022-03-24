@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: string
 requirements:
   DockerRequirement:
-    dockerPull: bioinfochrustrasbourg/annovar:latest
+    dockerPull: ghcr.io/pitagora-network/annotate-variation:1.0.0
 baseCommand: [annotate_variation.pl]
 inputs:
   buildver:

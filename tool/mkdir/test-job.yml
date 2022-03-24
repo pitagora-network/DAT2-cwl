@@ -1,2 +1,1 @@
-dir_name:
-  - newdirectory # type "string"
+dir_name: newdirectory # type "string"
