@@ -30,7 +30,7 @@ workflow:
       url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/sleuth/sleuth.cwl
   language:
     type: CWL
-    version: v1.0
+    version: v1.2
   name: "DAT2-cwl sleuth"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/README.md
   testing:

@@ -38,4 +38,13 @@ workflow:
         - target: test-job.yml
           type: wf_params
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/listing/test-job.yml
+        - target: chr22.fa
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/chr22.fa
+        - target: DRR024501_1.fastq
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/DRR024501_1.fastq
+        - target: DRR024501_2.fastq
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/DRR024501_2.fastq
       id: test
