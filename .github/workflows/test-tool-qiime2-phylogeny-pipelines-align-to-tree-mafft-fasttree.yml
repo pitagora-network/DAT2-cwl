@@ -1,0 +1,46 @@
+name: test-tool-qiime2-phylogeny-pipelines-align-to-tree-mafft-fasttree
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "tool/qiime2/phylogeny.pipelines.align_to_tree_mafft_fasttree/**"
+  schedule:
+    - cron: "00 04 1 */6 *"
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Download gh-trs binary from release"
+        run: |
+          curl -fsSL -O https://github.com/suecharo/gh-trs/releases/latest/download/gh-trs
+          chmod +x ./gh-trs
+
+      - name: "Run test"
+        id: "run-test"
+        run: |
+          mkdir -p ./test-logs
+          SAPPORO_RUN_DIR=${GITHUB_WORKSPACE}/test-results \
+            ./gh-trs test --verbose https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/qiime2/phylogeny.pipelines.align_to_tree_mafft_fasttree/yevis-config.yml 2>&1 \
+            | tee ./test-logs/gh-trs.log
+          exit ${PIPESTATUS[0]}
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "List test results"
+        run: ls -lR ./test-results > ./test-logs/test-results-list.txt
+
+      - name: "Upload test logs"
+        uses: actions/upload-artifact@v2
+        with:
+          name: gh-trs-test-logs
+          path: test-logs/*
+          if-no-files-found: ignore
+
+      - name: "Check test status"
+        if: ${{ steps.run-test.outcome != 'success' }}
+        run: exit 1
