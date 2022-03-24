@@ -41,4 +41,7 @@ workflow:
         - target: sample.txt
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/sample.txt
+        - target: dest_dir/sample_alt.txt
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/sample.txt
       id: test

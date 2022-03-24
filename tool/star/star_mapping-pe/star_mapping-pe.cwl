@@ -1,12 +1,12 @@
 class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
-  edam: 'http://edamontology.org/'
-  s: 'https://schema.org/'
-  sbg: 'https://www.sevenbridges.com/'
+  edam: "http://edamontology.org/"
+  s: "https://schema.org/"
+  sbg: "https://www.sevenbridges.com/"
 baseCommand:
   - STAR
-  - '--runMode'
+  - "--runMode"
   - alignReads
 inputs:
   - default: 1000000
@@ -14,17 +14,17 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--alignIntronMax'
+      prefix: "--alignIntronMax"
     label: maximum intron size
     doc: >-
       maximum intron size, if 0, max intron size will be determined by
-      (2ˆwinBinNbits)*winAnchorDistNbins
+      (2^winBinNbits)*winAnchorDistNbins
   - default: 20
     id: alignIntronMin
     type: int
     inputBinding:
       position: 0
-      prefix: '--alignIntronMin'
+      prefix: "--alignIntronMin"
     label: minimum intron size
     doc: >-
       minimum intron size: genomic gap is considered intron if its
@@ -34,17 +34,17 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--alignMatesGapMax'
+      prefix: "--alignMatesGapMax"
     label: maximum gap between two mates
     doc: >-
       maximum gap between two mates, if 0, max intron gap will be determined by
-      (2ˆwinBinNbits)*winAnchorDistNbins
+      (2^winBinNbits)*winAnchorDistNbins
   - default: 1
     id: alignSJDBoverhangMin
     type: int
     inputBinding:
       position: 0
-      prefix: '--alignSJDBoverhangMin'
+      prefix: "--alignSJDBoverhangMin"
     label: minimum overhang (i.e. block size) for annotated (sjdb) spliced alignments
     doc: minimum overhang (i.e. block size) for annotated (sjdb) spliced alignments
   - default: 8
@@ -52,14 +52,14 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--alignSJoverhangMin'
+      prefix: "--alignSJoverhangMin"
     label: minimum overhang (i.e. block size) for spliced alignments
     doc: minimum overhang (i.e. block size) for spliced alignments
   - id: fq1
     type: File
     inputBinding:
       position: 50
-      prefix: '--readFilesIn'
+      prefix: "--readFilesIn"
     label: path to file that contain input read1
     doc: path to file that contain input read1
   - id: fq2
@@ -72,14 +72,14 @@ inputs:
     type: Directory
     inputBinding:
       position: 0
-      prefix: '--genomeDir'
+      prefix: "--genomeDir"
     label: path to the directory where genome files are stored
     doc: path to the directory where genome files are stored
   - id: limitBAMsortRAM
     type: long?
     inputBinding:
       position: 0
-      prefix: '--limitBAMsortRAM'
+      prefix: "--limitBAMsortRAM"
     label: maximum available RAM for sorting BAM
     doc: >-
       maximum available RAM for sorting BAM. If =0, it will be set to the genome
@@ -89,7 +89,7 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--runThreadN'
+      prefix: "--runThreadN"
     label: Number of threads
     doc: >-
       defines the number of threads to be used for genome generation, it has to
@@ -99,7 +99,7 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--outBAMcompression'
+      prefix: "--outBAMcompression"
     label: BAM compression level
     doc: >-
       BAM compression level, -1=default compression (6?), 0=no compression,
@@ -109,7 +109,7 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--outFilterMismatchNmax'
+      prefix: "--outFilterMismatchNmax"
     label: alignment will be output only if it has no more mismatches than this value
     doc: alignment will be output only if it has no more mismatches than this value
   - default: 0.04
@@ -117,7 +117,7 @@ inputs:
     type: float
     inputBinding:
       position: 0
-      prefix: '--outFilterMismatchNoverReadLmax'
+      prefix: "--outFilterMismatchNoverReadLmax"
     label: >-
       alignment will be output only if its ratio of mismatches to *read* length
       is less than or equal to this value.
@@ -129,7 +129,7 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--outFilterMultimapNmax'
+      prefix: "--outFilterMultimapNmax"
     label: maximum number of loci the read is allowed to map to
     doc: >-
       maximum number of loci the read is allowed to map to. Alignments (all of
@@ -141,7 +141,7 @@ inputs:
     type: string
     inputBinding:
       position: 0
-      prefix: '--outFilterType'
+      prefix: "--outFilterType"
     label: type of filtering
     doc: >-
       Normal: standard filtering using only current alignment, BySJout: keep
@@ -154,10 +154,10 @@ inputs:
       - NM
       - MD
     id: outSAMattributes
-    type: 'string[]'
+    type: "string[]"
     inputBinding:
       position: 0
-      prefix: '--outSAMattributes'
+      prefix: "--outSAMattributes"
     label: >-
       a string of desired SAM attributes, in the order desired for the output
       SAM
@@ -169,7 +169,7 @@ inputs:
     type: string
     inputBinding:
       position: 0
-      prefix: '--outSAMstrandField'
+      prefix: "--outSAMstrandField"
     label: Cuffinks-like strand field flag
     doc: >-
       Cuffinks-like strand field flag. None: not used, intronMotif: strand
@@ -179,23 +179,23 @@ inputs:
       - BAM
       - Unsorted
     id: outSAMtype
-    type: 'string[]'
+    type: "string[]"
     inputBinding:
       position: 1
-      prefix: '--outSAMtype'
+      prefix: "--outSAMtype"
       shellQuote: false
     label: type of SAM/BAM output
     doc: >-
       1st word: BAM: output BAM without sorting, SAM: output SAM without
       sorting, None: no SAM/BAM output, 2nd, 3rd: Unsorted: standard unsorted,
       SortedByCoordinate: sorted by coordinate. This option will allocate extra
-      memory for sorting which can be specified by –limitBAMsortRAM
+      memory for sorting which can be specified by -limitBAMsortRAM
   - default: Within
     id: outSAMunmapped
     type: string
     inputBinding:
       position: 0
-      prefix: '--outSAMunmapped'
+      prefix: "--outSAMunmapped"
     label: output of unmapped reads in the SAM format
     doc: >-
       1st word: None: no output, Within: output unmapped reads within the main
@@ -207,7 +207,7 @@ inputs:
     type: string
     inputBinding:
       position: 0
-      prefix: '--outSJfilterReads'
+      prefix: "--outSJfilterReads"
     label: which reads to consider for collapsed splice junctions output
     doc: >-
       which reads to consider for collapsed splice junctions output. All: all
@@ -224,7 +224,7 @@ inputs:
     type: string
     inputBinding:
       position: 0
-      prefix: '--quantMode'
+      prefix: "--quantMode"
     label: types of quantification requested
     doc: >-
       types of quantification requested. -: none, TranscriptomeSAM: output
@@ -235,7 +235,7 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--quantTranscriptomeBAMcompression'
+      prefix: "--quantTranscriptomeBAMcompression"
     label: transcriptome BAM compression level
     doc: >-
       transcriptome BAM compression level, -1=default compression (6?), 0=no
@@ -245,19 +245,19 @@ inputs:
     type: int
     inputBinding:
       position: 0
-      prefix: '--sjdbScore'
+      prefix: "--sjdbScore"
     label: extra alignment score for alignmets that cross database junctions
     doc: extra alignment score for alignmets that cross database junctions
   - id: outFileNamePrefix
     type: string?
     inputBinding:
       position: 0
-      prefix: '--outFileNamePrefix'
+      prefix: "--outFileNamePrefix"
   - id: readFilesCommand
     type: string?
     inputBinding:
       position: 0
-      prefix: '--readFilesCommand'
+      prefix: "--readFilesCommand"
 outputs:
   - id: aligned
     type: File
@@ -268,16 +268,6 @@ outputs:
             return p+"Aligned.out.bam";
           var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
           return p+"Aligned.sortedByCoord.out.bam";
-        }
-    secondaryFiles:
-      - |
-        ${
-           var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
-           return [
-             {"path": p+"Log.final.out", "class":"File"},
-             {"path": p+"SJ.out.tab", "class":"File"},
-             {"path": p+"Log.out", "class":"File"}
-           ];
         }
   - id: bamRemDups
     type: File?
@@ -318,7 +308,7 @@ outputs:
     type: File?
     outputBinding:
       glob: >-
-        ${   var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";  
+        ${   var p=inputs.outFileNamePrefix?inputs.outFileNamePrefix:"";
         return p+"Log.out"; }
   - id: Log.progress.out
     type: File?
@@ -339,7 +329,7 @@ outputs:
 doc: >-
   STAR: Spliced Transcripts Alignment to a Reference.
   https://github.com/alexdobin/STAR/blob/main/doc/STARmanual.pdf
-label: 'STAR mapping: running mapping jobs.'
+label: "STAR mapping: running mapping jobs."
 requirements:
   - class: ShellCommandRequirement
   - class: InitialWorkDirRequirement
@@ -349,14 +339,14 @@ requirements:
   - class: InlineJavascriptRequirement
 hints:
   - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/star:2.7.1a--0'
+    dockerPull: "quay.io/biocontainers/star:2.7.1a--0"
 $schemas:
-  - 'https://schema.org/version/latest/schemaorg-current-http.rdf'
-  - 'http://edamontology.org/EDAM_1.18.owl'
-'s:author':
-  - class: 's:Person'
-    's:email': 'mailto:inutano@gmail.com'
-    's:identifier': 'https://orcid.org/0000-0003-3777-5945'
-    's:name': Tazro Ohta
-'s:codeRepository': 'https://github.com/pitagora-network/pitagora-cwl'
-'s:license': 'https://spdx.org/licenses/Apache-2.0'
+  - "https://schema.org/version/latest/schemaorg-current-http.rdf"
+  - "http://edamontology.org/EDAM_1.18.owl"
+"s:author":
+  - class: "s:Person"
+    "s:email": "mailto:inutano@gmail.com"
+    "s:identifier": "https://orcid.org/0000-0003-3777-5945"
+    "s:name": Tazro Ohta
+"s:codeRepository": "https://github.com/pitagora-network/pitagora-cwl"
+"s:license": "https://spdx.org/licenses/Apache-2.0"

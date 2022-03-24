@@ -3,4 +3,4 @@ file: # type "File"
   location: sample.txt
 dest_dir: # type "Directory"
   class: Directory
-  location: .
+  location: dest_dir

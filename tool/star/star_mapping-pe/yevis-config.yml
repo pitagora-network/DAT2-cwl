@@ -38,13 +38,55 @@ workflow:
         - target: test-job.yml
           type: wf_params
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/star/star_mapping-pe/test-job.yml
-        - target: STAR_reference/chrLength.txt
-          type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/STAR_reference/chrLength.txt
         - target: SRR1550989_1.fastq.gz
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1550989_1.fastq.gz
         - target: SRR1550989_2.fastq.gz
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/SRR1550989_2.fastq.gz
+        - target: STAR_reference/chrLength.txt
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/chrLength.txt
+        - target: STAR_reference/chrNameLength.txt
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/chrNameLength.txt
+        - target: STAR_reference/chrName.txt
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/chrName.txt
+        - target: STAR_reference/chrStart.txt
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/chrStart.txt
+        - target: STAR_reference/exonGeTrInfo.tab
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/exonGeTrInfo.tab
+        - target: STAR_reference/exonInfo.tab
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/exonInfo.tab
+        - target: STAR_reference/geneInfo.tab
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/geneInfo.tab
+        - target: STAR_reference/Genome
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/Genome
+        - target: STAR_reference/genomeParameters.txt
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/genomeParameters.txt
+        - target: STAR_reference/SA
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/SA
+        - target: STAR_reference/SAindex
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/SAindex
+        - target: STAR_reference/sjdbInfo.txt
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/sjdbInfo.txt
+        - target: STAR_reference/sjdbList.fromGTF.out.tab
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/sjdbList.fromGTF.out.tab
+        - target: STAR_reference/sjdbList.out.tab
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/sjdbList.out.tab
+        - target: STAR_reference/transcriptInfo.tab
+          type: other
+          url: https://labshare.cshl.edu/shares/gingeraslab/www-data/dobin/STAR/STARgenomes/Human/GRCh38_Ensembl99_sparseD3_sjdbOverhang99/transcriptInfo.tab
       id: test
