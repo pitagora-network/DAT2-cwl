@@ -13,7 +13,7 @@ max_kmer_factor: 0.5 # default value of type "float".
 initial_kmer_size: 32 # default value of type "int".
 read_files: # array of type "File"
   - class: File
-    path: ../../../test/data/DRR024501_1.fastq
+    path: DRR024501_1.fastq
   - class: File
-    path: ../../../test/data/DRR024501_2.fastq
+    path: DRR024501_2.fastq
 out_file_prefix: out # default value of type "string".
