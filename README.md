@@ -24,6 +24,7 @@ This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edi
 - [bacteria-genome](./workflow/bacteria-genome)
   - バクテリアゲノム解析 (p.246)
   - by [@suecharo](https://github.com/suecharo)
+  - [![test-workflow-bacteria-genome](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-bacteria-genome.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-bacteria-genome.yml)
 - [animal-genome-assembly](./workflow/animal-genome-assembly)
   - 動物ゲノムアセンブリ (p.274)
   - by [@inutano](https://github.com/inutano)

@@ -1,5 +1,7 @@
 # DAT2-cwl bacteria genome data analysis workflow
 
+[![test-workflow-bacteria-genome](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-bacteria-genome.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-bacteria-genome.yml)
+
 Written by [@suecharo](https://github.com/suecharo).
 
 Please refer to p.246 of NGS_DAT 2nd edition for details of the analysis.
