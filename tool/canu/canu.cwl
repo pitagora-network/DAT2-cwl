@@ -53,5 +53,5 @@ outputs:
       glob: "$(inputs.assembly_directory)/$(inputs.output_prefix).contigs.fasta"
   stdout: stdout
   stderr: stderr
-stdout: canu-stdout.log
-stderr: canu-stderr.log
+# stdout: canu-stdout.log
+# stderr: canu-stderr.log

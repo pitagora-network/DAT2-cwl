@@ -1,4 +1,0 @@
-input_fastq:
-  class: File
-  location: http://nanopore.s3.climb.ac.uk/MAP006-PCR-1_2D_pass.fasta
-genomeSize: 4.8m
