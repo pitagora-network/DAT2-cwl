@@ -1,0 +1,19 @@
+repeat: false # type "boolean"
+kmer_occ_only: false # type "boolean"
+mem_limit: 4 # default value of type "int".
+num_threads: 2 # default value of type "int".
+kmer_cov_depth: 0.1 # type "float" (optional)
+max_diff_branch_cut: 0.5 # default value of type "float".
+max_diff_bubble_crush: 0.1 # type "float"
+kmer_ext_safety_level: 10.0 # default value of type "float".
+min_kmer_cov: 1 # default value of type "int".
+initial_kmer_cov_cutoff: 0 # type "int"
+step_size: 10 # default value of type "int".
+max_kmer_factor: 0.5 # default value of type "float".
+initial_kmer_size: 32 # default value of type "int".
+read_files: # array of type "File"
+  - class: File
+    path: ../../../test/data/DRR024501_1.fastq
+  - class: File
+    path: ../../../test/data/DRR024501_2.fastq
+out_file_prefix: out # default value of type "string".

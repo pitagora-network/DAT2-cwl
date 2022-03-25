@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: a cross-platform and ultrafast toolkit for FASTA/Q file manipulation
 requirements:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/seqkit:0.10.1--1
+    dockerPull: quay.io/biocontainers/seqkit:2.2.0--h9ee0642_0
 baseCommand: [seqkit, stats]
 inputs:
   fastq:

@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: A high throughput sequence QC analysis tool
 requirements:
   DockerRequirement:
-    dockerPull: biocontainers/fastqc:v0.11.5_cv4
+    dockerPull: quay.io/biocontainers/fastqc:0.11.9--hdfd78af_1
 baseCommand: fastqc
 arguments:
   - prefix: --outdir

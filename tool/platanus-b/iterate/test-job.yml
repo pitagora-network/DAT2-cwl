@@ -1,0 +1,15 @@
+trim_overlap: false # type "boolean"
+keep_file: false # type "boolean"
+mem_limit: 4 # default value of type "int".
+num_threads: 2 # default value of type "int".
+inward_pair_file_in_2_file: # array of type "File" (optional)
+  - class: File
+    path: ../../../test/data/DRR024501_1.fastq
+  - class: File
+    path: ../../../test/data/DRR024501_2.fastq
+max_diff_bubble_crush: 0.0 # type "float"
+num_of_iteration: 6 # default value of type "int".
+contig_files: # array of type "File" (optional)
+  - class: File
+    path: ../../../test/data/platanus-b-contig.fa
+out_file_dir_prefix: out # default value of type "string".

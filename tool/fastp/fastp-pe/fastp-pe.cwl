@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: An ultra-fast all-in-one FASTQ preprocessor (QC/adapters/trimming/filtering/splitting/merging...)
 requirements:
   DockerRequirement:
-    dockerPull: quay.io/biocontainers/fastp:0.20.0--hdbcaa40_0
+    dockerPull: quay.io/biocontainers/fastp:0.23.2--hb7a2d85_2
 baseCommand: fastp
 arguments:
   - prefix: -o
