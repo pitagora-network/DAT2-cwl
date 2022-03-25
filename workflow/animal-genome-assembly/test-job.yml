@@ -1,0 +1,8 @@
+THREADS: 4 # type "int"
+INPUT_SHORTREAD: # type "File"
+  class: File
+  location: https://nig-reference.s3.amazonaws.com/dat2-cwl/ERR2092781_1.fastq
+INPUT_LONGREAD: # type "File"
+  class: File
+  location: https://nig-reference.s3.amazonaws.com/dat2-cwl/ERR2092776_1.fastq
+ESTIMATED_GENOME_SIZE: 95m # type "string"

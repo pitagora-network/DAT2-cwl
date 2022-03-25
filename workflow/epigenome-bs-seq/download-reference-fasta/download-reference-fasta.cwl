@@ -15,25 +15,23 @@ inputs:
 
 steps:
   wget:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/wget/wget.cwl
+    run: ../../../tool/wget/wget.cwl
     in:
       url: url
       use_remote_name:
         default: true
-    out:
-      [downloaded]
+    out: [downloaded]
   tar:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/tar/tar.cwl
+    run: ../../../tool/tar/tar.cwl
     in:
       file: wget/downloaded
       extract:
         default: true
       gzip:
         default: true
-    out:
-      [output]
+    out: [output]
   lists:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/listing/listing.cwl
+    run: ../../../tool/listing/listing.cwl
     in:
       dir: tar/output
       file_names:
@@ -64,14 +62,12 @@ steps:
           - chrY.fa
           - chrM.fa
           - chrEBV.fa
-    out:
-      [files]
+    out: [files]
   cat:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/cat/cat.cwl
+    run: ../../../tool/cat/cat.cwl
     in:
       files: lists/files
-    out:
-      [concatinated]
+    out: [concatinated]
   rename:
     run:
       class: CommandLineTool
@@ -92,7 +88,7 @@ steps:
     in:
       oldfile: cat/concatinated
       finalfilename: fastafilename
-    out: [ renamed_file ]
+    out: [renamed_file]
 
 outputs:
   output_fasta:

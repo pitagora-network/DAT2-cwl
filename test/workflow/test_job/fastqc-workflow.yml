@@ -1,4 +1,0 @@
-nthreads: 1  # default value of type "int".
-fastq_files:  # array of type "File"
-  - class: File
-    path: ../../data/ERR034597_1.fastq

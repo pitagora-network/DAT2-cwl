@@ -11,7 +11,7 @@ inputs:
     default: 4
 steps:
   fastqc:
-    run: https://raw.githubusercontent.com/pitagora-network/pitagora-cwl/main/tools/fastqc/fastqc.cwl
+    run: https://github.com/pitagora-network/pitagora-cwl/raw/master/tools/fastqc/fastqc.cwl
     in:
       nogroup:
         default: true
@@ -23,4 +23,3 @@ outputs:
   output:
     type: File[]
     outputSource: fastqc/fastqc_result
-      

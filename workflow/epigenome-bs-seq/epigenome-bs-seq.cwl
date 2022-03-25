@@ -26,44 +26,43 @@ inputs:
     doc: "trim_galore thread number and bismark multicore"
 steps:
   download_rawdata:
-    run: download_rawdata.cwl
+    run: download-rawdata/download-rawdata.cwl
     in:
       run_ids: run_ids
     out: [fastq_files]
   download_reference_fasta:
-    run: download_reference_fasta.cwl
+    run: download-reference-fasta/download-reference-fasta.cwl
     in:
       url: url
     out:
       - output_fasta
   fastqc_rawdata:
-    run: fastqc-workflow.cwl
+    run: fastqc/fastqc.cwl
     in:
       fastq_files: download_rawdata/fastq_files
     out: [output]
   trim_galore_rawdata:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/trim_galore/trim_galore.cwl
+    run: ../../tool/trim_galore/trim_galore.cwl
     in:
       nogroup:
         default: true
       quality: quality
       rrbs: download_rawdata/fastq_files
     scatter: rrbs
-    out:
-      [fq] # [fq, report]
+    out: [fq] # [fq, report]
   fastqc_trimmed_data:
-    run: fastqc-workflow.cwl
+    run: fastqc/fastqc.cwl
     in:
       fastq_files: trim_galore_rawdata/fq
     out: [output]
   bismark_genome_preparation:
-    run: bismark_genome_preparation_workflow.cwl
+    run: bismark-genome-preparation/bismark-genome-preparation.cwl
     in:
       fasta: download_reference_fasta/output_fasta
     out:
       - output
   bismark_exec:
-    run: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/bismark/bismark/bismark.cwl
+    run: ../../tool/bismark/bismark/bismark.cwl
     in:
       genome_folder: bismark_genome_preparation/output
       fq: trim_galore_rawdata/fq
@@ -76,10 +75,9 @@ outputs:
   report:
     type: File[]
     outputSource: bismark_exec/report
-  fastqc_rawdata:
+  fastqc_result_rawdata:
     type: File[]
     outputSource: fastqc_rawdata/output
-  fastqc_trimmed_data:
+  fastqc_result_trimmed_data:
     type: File[]
     outputSource: fastqc_trimmed_data/output
-

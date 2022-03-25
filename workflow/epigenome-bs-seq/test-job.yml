@@ -1,0 +1,5 @@
+url: ftp://hgdownload.soe.ucsc.edu/goldenPath/hg38/bigZips/analysisSet/hg38.analysisSet.chroms.tar.gz # default value of type "string".
+run_ids: # array of type "string"
+  - SRR1274307
+quality: 20 # default value of type "int".
+nthreads: 4 # default value of type "int".

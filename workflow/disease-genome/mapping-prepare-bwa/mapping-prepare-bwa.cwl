@@ -1,7 +1,7 @@
 #!/usr/bin/env cwl-runner
 cwlVersion: v1.0
 class: Workflow
-doc: "Preparing index (See chapter: BWA​の準備)"
+doc: "Preparing index (See chapter: BWAの準備)"
 inputs:
   fasta:
     type: File

@@ -1,0 +1,3 @@
+fasta: # type "File"
+  class: File
+  path: ../../../test/data/chr22.fa
