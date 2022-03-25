@@ -2,7 +2,7 @@ gtf:
   class: File
   location: >-
     Homo_sapiens.GRCh38.95.chr22.gtf
-num_threads: 4
+num_threads: 2
 reference_dir:
   class: Directory
   location: >-

@@ -1,4 +1,4 @@
-nthreads: 8
+nthreads: 2
 bam:
   class: File
   location: SRR1550989Aligned.toTranscriptome.out.bam

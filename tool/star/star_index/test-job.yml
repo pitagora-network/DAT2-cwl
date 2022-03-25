@@ -1,4 +1,4 @@
-nthreads: 8
+nthreads: 2
 genomeDir:
   class: Directory
   location: STAR_reference

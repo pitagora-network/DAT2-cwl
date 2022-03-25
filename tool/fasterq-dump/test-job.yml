@@ -8,7 +8,7 @@ include_technical: null
 log_level: null
 mem: null
 min_read_len: null
-nthreads: 10
+nthreads: 2
 option_file: null
 outfile: null
 print_help: null

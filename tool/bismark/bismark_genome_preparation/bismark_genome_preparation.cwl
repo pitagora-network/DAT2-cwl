@@ -26,5 +26,5 @@ outputs:
       glob: $(inputs.ref_directory.basename)
   stderr: stderr
   stdout: stdout
-stdout: bismark_genome_preparation-stdout.log
-stderr: bismark_genome_preparation-stderr.log
+# stdout: bismark_genome_preparation-stdout.log
+# stderr: bismark_genome_preparation-stderr.log

@@ -49,20 +49,20 @@ workflow:
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.fa
         - target: bowtie2_index_mm10/mm10_chr19.1.bt2
           type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19..1.bt2
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.1.bt2
         - target: bowtie2_index_mm10/mm10_chr19.2.bt2
           type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19..2.bt2
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.2.bt2
         - target: bowtie2_index_mm10/mm10_chr19.3.bt2
           type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19..3.bt2
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.3.bt2
         - target: bowtie2_index_mm10/mm10_chr19.4.bt2
           type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19..4.bt2
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.4.bt2
         - target: bowtie2_index_mm10/mm10_chr19.rev.1.bt2
           type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19..rev.1.bt2
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.rev.1.bt2
         - target: bowtie2_index_mm10/mm10_chr19.rev.2.bt2
           type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19..rev.2.bt2
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.rev.2.bt2
       id: test

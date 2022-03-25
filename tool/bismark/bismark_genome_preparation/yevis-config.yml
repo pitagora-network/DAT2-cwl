@@ -38,4 +38,7 @@ workflow:
         - target: test-job.yml
           type: wf_params
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/bismark/bismark_genome_preparation/test-job.yml
+        - target: bismark/chr22.fa
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bismark/chr22.fa
       id: test

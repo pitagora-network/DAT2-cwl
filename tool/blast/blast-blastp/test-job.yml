@@ -4,7 +4,7 @@ blastdb_dir:
     blastdb_uniprot_insect
 db_flag: uniprot_insect
 max_target_seqs: 1
-num_threads_flag: 4
+num_threads_flag: 2
 out_flag: blast.result.tab
 outfmt_flag: "6"
 query_flag:

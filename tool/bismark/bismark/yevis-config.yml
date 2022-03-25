@@ -38,18 +38,12 @@ workflow:
         - target: test-job.yml
           type: wf_params
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/bismark/bismark/test-job.yml
-        - target: bismark/Bisulfite_Genome
+        - target: DRR024501_1.fastq
           type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bismark/Bisulfite_Genome
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/DRR024501_1.fastq
         - target: bismark/chr22.fa
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bismark/chr22.fa
-        - target: bismark/Bisulfite_Genome/GA_conversion
-          type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bismark/Bisulfite_Genome/GA_conversion
-        - target: bismark/Bisulfite_Genome/CT_conversion
-          type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bismark/Bisulfite_Genome/CT_conversion
         - target: bismark/Bisulfite_Genome/GA_conversion/BS_GA.1.bt2
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bismark/Bisulfite_Genome/GA_conversion/BS_GA.1.bt2
@@ -92,7 +86,4 @@ workflow:
         - target: bismark/Bisulfite_Genome/CT_conversion/BS_CT.3.bt2
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bismark/Bisulfite_Genome/CT_conversion/BS_CT.3.bt2
-        - target: DRR024501_1.fastq
-          type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/DRR024501_1.fastq
       id: test

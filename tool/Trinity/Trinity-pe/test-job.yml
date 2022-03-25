@@ -1,4 +1,4 @@
-cpu: 6
+cpu: 2
 fq1:
   class: File
   location: >-
@@ -12,4 +12,4 @@ no_bowtie: false
 output_dir: trinity_out_dir
 seq_type: fq
 ss_lib_type: null
-max_memory: 30G
+max_memory: 6G
