@@ -4,7 +4,7 @@ class: CommandLineTool
 doc: A de novo assembler for isolated bacterial genomes.
 requirements:
   - class: DockerRequirement
-    dockerPull: ghcr.io/pitagora-network/platanus-b:1.0.0
+    dockerPull: ghcr.io/pitagora-network/platanus-b:1.3.2
   - class: InlineJavascriptRequirement
 baseCommand:
   - platanus_b
