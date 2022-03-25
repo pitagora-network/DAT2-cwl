@@ -1,6 +1,6 @@
-# DAT2-cwl disease genome data analysis workflow (疾患ゲノムアセンブリ)
+# DAT2-cwl disease genome data analysis workflow
 
-Written by @tom-tan.
+Written by [@tom-tan](https://github.com/tom-tan).
 
 Please refer to p.64 of NGS_DAT 2nd edition for details of the analysis.
 

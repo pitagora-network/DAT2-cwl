@@ -9,6 +9,7 @@ This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edi
 - [disease-genome](./workflow/disease-genome)
   - 疾患ゲノム解析 (p.64)
   - by [@tom-tan](https://github.com/tom-tan)
+  - no test
 - [rna-seq](./workflow/rna-seq)
   - 発現解析 (p.86)
   - by [@ykohki](https://github.com/ykohki)
@@ -18,6 +19,7 @@ This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edi
 - [epigenome-bs-seq](./workflow/epigenome-bs-seq)
   - エピゲノム解析 (BS-seq) (p.164)
   - by [@manabuishii](https://github.com/manabuishii)
+  - [![test-workflow-epigenome-bs-seq](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-epigenome-bs-seq.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-epigenome-bs-seq.yml)
 - [meta16s-seq](./workflow/meta16s-seq)
   - メタゲノム解析 (p.203)
   - by [@inutano](https://github.com/inutano)
@@ -28,6 +30,7 @@ This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edi
 - [animal-genome-assembly](./workflow/animal-genome-assembly)
   - 動物ゲノムアセンブリ (p.274)
   - by [@inutano](https://github.com/inutano)
+  - [![test-workflow-animal-genome-assembly](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-animal-genome-assembly.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-animal-genome-assembly.yml)
 - [transcriptome-assembly](./workflow/transcriptome-assembly)
   - トランスクリプトームアセンブル解析 (p.309)
   - by [@yyoshiaki](https://github.com/yyoshiaki)
