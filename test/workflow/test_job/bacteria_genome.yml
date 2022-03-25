@@ -1,6 +1,0 @@
-fastq2: # type "File"
-  class: File
-  path: ../../test/data/DRR024501_2.fastq
-fastq1: # type "File"
-  class: File
-  path: ../../test/data/DRR024501_1.fastq
