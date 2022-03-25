@@ -1,6 +1,6 @@
 target_bam: # type "File"
   class: File
-  location: ERR034597_1.sort.bam
+  location: tiny-data.bam
 p-value: 0.01 # default value of type "float". (optional)
 organism: mm # default value of type "string". (optional)
 control_bam: # type "File"

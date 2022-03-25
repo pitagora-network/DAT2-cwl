@@ -38,9 +38,9 @@ workflow:
         - target: test-job.yml
           type: wf_params
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/MACS2/MACS2-callpeak/test-job.yml
-        - target: ERR034597_1.sort.bam
+        - target: tiny-data.bam
           type: other
-          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/ERR034597_1.sort.bam
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tiny-data.bam
         - target: ERR034597_1.sort.bam
           type: other
           url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/ERR034597_1.sort.bam
