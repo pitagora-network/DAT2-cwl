@@ -1,0 +1,8 @@
+num_threads: 2 # default value of type "int".
+mem_limit: 4 # default value of type "int".
+fastq2: # type "File"
+  class: File
+  path: DRR024501_2.fastq
+fastq1: # type "File"
+  class: File
+  path: DRR024501_1.fastq
