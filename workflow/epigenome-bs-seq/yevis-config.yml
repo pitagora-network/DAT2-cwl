@@ -31,7 +31,7 @@ workflow:
   language:
     type: CWL
     version: v1.0
-  name: "DAT2-cwl epigenome BS sequence workflow"
+  name: "DAT2-cwl epigenome BS-seq workflow"
   readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workflow/epigenome-bs-seq/README.md
   testing:
     - files:

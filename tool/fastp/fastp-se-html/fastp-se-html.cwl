@@ -21,7 +21,7 @@ inputs:
       prefix: -i
       position: 0
 outputs:
-  trimed_fastq:
+  trimmed_fastq:
     type: File
     outputBinding:
       glob: $(inputs.fastq.basename.replace('.fq', '').replace('.fastq', '').replace('.gz', '')).trim.fastq.gz

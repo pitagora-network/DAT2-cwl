@@ -1,0 +1,53 @@
+authors:
+  - affiliation: DNA Data Bank of Japan
+    github_account: ddbj
+    name: ddbj-workflow
+  - affiliation: The University of Tokyo
+    github_account: suecharo
+    name: Suetake, Hirotaka
+    orcid: 0000-0003-2765-0049
+  - affiliation: National Institute of Genetics
+    github_account: tom-tan
+    name: Tanjo, Tomoya
+    orcid: 0000-0002-4421-9659
+  - affiliation: Database Center for Life Science
+    github_account: inutano
+    name: Ohta, Tazro
+    orcid: 0000-0003-3777-5945
+  - affiliation: Osaka University
+    github_account: yyoshiaki
+    name: Yasumizu, Yoshiaki
+    orcid: 0000-0002-9872-4909
+  - github_account: ykohki
+    name: Yamada, Kohki
+id: e12dc98b-3768-4812-abf0-83b35c20f785
+license: Apache-2.0
+version: 1.0.0
+workflow:
+  files:
+    - target: epigenome-chip-seq.packed.cwl
+      type: primary
+      url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workflow/epigenome-chip-seq/epigenome-chip-seq.packed.cwl
+  language:
+    type: CWL
+    version: v1.0
+  name: "DAT2-cwl epigenome ChIP-seq workflow"
+  readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workflow/epigenome-chip-seq/README.md
+  testing:
+    - files:
+        - target: test-job-yevis.yml
+          type: wf_params
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workflow/epigenome-chip-seq/test-job-yevis.yml
+        - target: DRR024501_1.fastq
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/DRR024501_1.fastq
+        - target: DRR024501_2.fastq
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/DRR024501_2.fastq
+        - target: bowtie2_index_mm10/mm10_chr19.fa
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/bowtie2_index_mm10/mm10_chr19.fa
+        - target: tiny-data.bam
+          type: other
+          url: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/test/data/tiny-data.bam
+      id: test

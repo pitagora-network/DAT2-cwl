@@ -1,0 +1,17 @@
+samtools_skip_alignments: 42 # default value of type "int".
+samtools_filter_alignments: "0x4" # default value of type "string".
+nthreads: 4 # default value of type "int".
+macs2_p_value: 0.01 # default value of type "float".
+macs2_organism: mm # default value of type "string".
+macs2_control_bam: # type "File"
+  class: File
+  path: tiny-data.bam
+fastq2: # type "File"
+  class: File
+  path: DRR024501_2.fastq
+fastq1: # type "File"
+  class: File
+  path: DRR024501_1.fastq
+bowtie2_genome_index: # type "File"
+  class: File
+  path: bowtie2_index_mm10/mm10_chr19.fa
