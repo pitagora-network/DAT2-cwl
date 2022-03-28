@@ -13,9 +13,11 @@ This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edi
 - [rna-seq](./workflow/rna-seq)
   - 発現解析 (p.86)
   - by [@ykohki](https://github.com/ykohki)
+  - [![test-workflow-rna-seq](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-rna-seq.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-rna-seq.yml)
 - [epigenome-chip-seq](./workflow/epigenome-chip-seq)
   - エピゲノム解析 (ChIP-seq) (p.114)
   - by [@suecharo](https://github.com/suecharo)
+  - [![test-workflow-epigenome-chip-seq](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-epigenome-chip-seq.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-epigenome-chip-seq.yml)
 - [epigenome-bs-seq](./workflow/epigenome-bs-seq)
   - エピゲノム解析 (BS-seq) (p.164)
   - by [@manabuishii](https://github.com/manabuishii)
@@ -23,6 +25,7 @@ This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edi
 - [meta16s-seq](./workflow/meta16s-seq)
   - メタゲノム解析 (p.203)
   - by [@inutano](https://github.com/inutano)
+  - no test
 - [bacteria-genome](./workflow/bacteria-genome)
   - バクテリアゲノム解析 (p.246)
   - by [@suecharo](https://github.com/suecharo)
@@ -34,6 +37,7 @@ This repository provides workflows of the Level 2 section of the NGS_DAT 2nd edi
 - [transcriptome-assembly](./workflow/transcriptome-assembly)
   - トランスクリプトームアセンブル解析 (p.309)
   - by [@yyoshiaki](https://github.com/yyoshiaki)
+  - [![test-workflow-transcriptome-assembly](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-transcriptome-assembly.yml/badge.svg?branch=main)](https://github.com/pitagora-network/DAT2-cwl/actions/workflows/test-workflow-transcriptome-assembly.yml)
 
 For more detailed documentation on testing, see [`test/README.md`](./test/README.md).
 
@@ -68,3 +72,11 @@ For questions to Common Workflow Language, please go to [discourse group](https:
 
 Copyright (c) 2020 [Contributors](https://github.com/pitagora-network/DAT2-cwl/graphs/contributors).
 See [LICENSE](./LICENSE) for further details.
+
+## Release
+
+- [1.1.0](https://github.com/pitagora-network/DAT2-cwl/releases/tag/1.1.0)
+- [1.0.1](https://github.com/pitagora-network/DAT2-cwl/releases/tag/1.0.1)
+  - at Nov 24, 2021
+- [1.0.0](https://github.com/pitagora-network/DAT2-cwl/releases/tag/1.0.0)
+  - at Dec 4, 2019
