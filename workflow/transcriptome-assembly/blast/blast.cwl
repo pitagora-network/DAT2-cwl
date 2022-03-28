@@ -36,7 +36,7 @@ steps:
         source: out_flag
     out:
       - id: blastdbcmd_results
-    run: ./blast-blastdbcmd/blastdbcmd.cwl
+    run: ../../../tool/blast/blast-blastdbcmd/blast-blastdbcmd.cwl
     label: Blastdbcmd to dump seqs/info.
   - id: makeblastdb
     in:
@@ -46,6 +46,6 @@ steps:
         source: out_flag_1
     out:
       - id: db_dir
-    run: ./blast-makeblastdb/makeblastdb.cwl
+    run: ../../../tool/blast/blast-makeblastdb/blast-makeblastdb.cwl
     label: makeblastdb
 requirements: []

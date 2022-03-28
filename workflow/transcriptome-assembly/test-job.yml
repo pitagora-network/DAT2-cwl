@@ -1,4 +1,4 @@
-cpu: 30
+cpu: 4
 db_flag: trinity_rslt
 db_flag_1: uniprot_insect
 domtblout: longest_orfs.SOD_Cu.out
@@ -8,7 +8,7 @@ max_target_seqs: 1
 minimum_protein_length: 30
 out_flag: longest_orfs.SOD_Cu.pep
 out_flag_1: blast.result.tab
-outfmt_flag: '6'
+outfmt_flag: "6"
 output_1: longest_orfs.SOD_Cu.ids
 output_dir: kallisto_out
 output_name: Sod_Cu.hmm
@@ -20,5 +20,5 @@ skip_technical: false
 split_3: false
 split_files: true
 split_spot: false
-url: 'https://pfam.xfam.org/family/PF00080/hmm'
-url_1: 'https://www.uniprot.org/uniprot/?query=taxonomy:50557&format=fasta'
+url: "https://pfam.xfam.org/family/PF00080/hmm"
+url_1: "https://www.uniprot.org/uniprot/?query=taxonomy:50557&format=fasta"

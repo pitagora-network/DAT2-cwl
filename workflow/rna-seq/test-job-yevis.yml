@@ -1,0 +1,25 @@
+kallisto_bootstrap_samples: 100
+kallisto_index_name: kallisto.idx
+star_outSAMtype:
+  - BAM
+  - SortedByCoordinate
+star_quantMode: TranscriptomeSAM
+rsem_index_prefix: RSEM_reference
+target2gene_SraRunTable:
+  class: File
+  path: SraRunTable.txt
+runid_0: SRR1550989
+runid_1: SRR1551005
+runid_2: SRR1551011
+runid_3: SRR1551050
+runid_4: SRR1551057
+runid_5: SRR1551071
+runid_6: SRR1551091
+fastrq_dump_split_files: true
+gtf_name: Homo_sapiens.GRCh38.95.gtf.gz
+gtf_url: ftp://ftp.ensembl.org/pub/release-95/gtf/homo_sapiens/Homo_sapiens.GRCh38.95.gtf.gz
+fasta_name: Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+fasta_url: ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+nthreads: 4
+kallisto_fasta_name: Homo_sapiens.GRCh38.cdna.all.fa.gz
+kallisto_fasta_url: ftp://ftp.ensembl.org/pub/release-95/fasta/homo_sapiens/cdna/Homo_sapiens.GRCh38.cdna.all.fa.gz
