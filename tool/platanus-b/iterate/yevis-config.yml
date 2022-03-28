@@ -32,7 +32,7 @@ workflow:
     type: CWL
     version: v1.0
   name: "DAT2-cwl Platanus-b iterate"
-  readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/tool/platanus-b/assemble/README.md
+  readme: https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/tool/platanus-b/assemble/README.md
   testing:
     - files:
         - target: test-job.yml
