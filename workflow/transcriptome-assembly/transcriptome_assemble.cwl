@@ -2,162 +2,108 @@ class: Workflow
 cwlVersion: v1.0
 id: transcriptome_assemble
 label: transcriptome_assemble
-$namespaces:
-  sbg: 'https://www.sevenbridges.com/'
 inputs:
   - id: split_spot
     type: boolean?
-    'sbg:exposed': true
   - id: split_files
     type: boolean?
-    'sbg:exposed': true
   - id: split_3
     type: boolean?
-    'sbg:exposed': true
   - id: skip_technical
     type: boolean?
-    'sbg:exposed': true
   - id: runid
     type: string
-    'sbg:exposed': true
   - id: output_name
     type: string
-    'sbg:exposed': true
   - id: url
     type: string
-    'sbg:exposed': true
   - id: minimum_protein_length
     type: int
-    'sbg:exposed': true
   - id: domtblout
     type: string
-    'sbg:exposed': true
   - id: output_1
     type: string
-    'sbg:exposed': true
   - id: cpu
     type: int
-    'sbg:x': 131
-    'sbg:y': -273
   - id: out_flag_1
     type: string
-    'sbg:exposed': true
   - id: outfmt_flag
     type: string
-    'sbg:exposed': true
   - id: max_target_seqs
     type: int?
-    'sbg:exposed': true
   - id: db_flag_1
     type: string
-    'sbg:exposed': true
   - id: url_1
     type: string
-    'sbg:exposed': true
   - id: output_name_1
     type: string
-    'sbg:exposed': true
   - id: max_memory
     type: string
-    'sbg:x': 183.18011474609375
-    'sbg:y': -25.5
   - id: seq_type
     type: string
-    'sbg:exposed': true
   - id: est_method
     type: string
-    'sbg:exposed': true
   - id: output_dir
     type: string?
-    'sbg:exposed': true
   - id: seqType
     type: string?
-    'sbg:exposed': true
   - id: db_flag
     type: string
-    'sbg:exposed': true
   - id: out_flag
     type: string
-    'sbg:exposed': true
 outputs:
   - id: output2
     outputSource:
       - for_trinity/output2
     type: File
-    'sbg:x': 455
-    'sbg:y': -7
   - id: output1
     outputSource:
       - for_trinity/output1
     type: File
-    'sbg:x': 420
-    'sbg:y': 360
   - id: output
     outputSource:
       - transdecoder/output
     type: Directory?
-    'sbg:x': 921
-    'sbg:y': 286
   - id: out
     outputSource:
       - extract_transcript_id/out
     type: File?
-    'sbg:x': 1347
-    'sbg:y': -70
   - id: reverse
     outputSource:
       - fasterq_dump/reverse
     type: File?
-    'sbg:x': -233.8203125
-    'sbg:y': 74.5
   - id: forward
     outputSource:
       - fasterq_dump/forward
     type: File?
-    'sbg:x': -203.8203125
-    'sbg:y': 438.5
   - id: blast_results
     outputSource:
       - blastp/blast_results
     type: File
-    'sbg:x': 1613.68310546875
-    'sbg:y': 403.5
   - id: output_2
     outputSource:
       - aaea/output
     type: Directory?
-    'sbg:x': 849
-    'sbg:y': 427
   - id: trinity_results
     outputSource:
       - trinity_pe/trinity_results
     type: File
-    'sbg:x': 654.1796875
-    'sbg:y': 42.5
   - id: blastdbcmd_results
     outputSource:
       - blastdbcmd/blastdbcmd_results
     type: File
-    'sbg:x': 1350.1796875
-    'sbg:y': 86.5
   - id: db_dir
     outputSource:
       - makeblastdb/db_dir
     type: Directory?
-    'sbg:x': 1183.18017578125
-    'sbg:y': 318.5
   - id: db_dir_1
     outputSource:
       - makeblastdb_1/db_dir
     type: Directory?
-    'sbg:x': 1392.18017578125
-    'sbg:y': 672.5
   - id: pep
     outputSource:
       - transdecoder/pep
     type: File?
-    'sbg:x': 903
-    'sbg:y': 75
 steps:
   - id: for_trinity
     in:
@@ -170,8 +116,6 @@ steps:
       - id: output2
     run: ../../tool/for_trinity/for_trinity.cwl
     label: for_trinity
-    'sbg:x': 316
-    'sbg:y': 176
   - id: fasterq_dump
     in:
       - id: skip_technical
@@ -189,9 +133,7 @@ steps:
       - id: forward
       - id: reverse
     run: ../../tool/fasterq-dump/fasterq-dump.cwl
-    label: 'fasterq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': -375
-    'sbg:y': 222
+    label: "fasterq-dump: dump .sra format file to generate fastq file"
   - id: transdecoder
     in:
       - id: transcripts
@@ -203,8 +145,6 @@ steps:
       - id: pep
     run: ../../tool/TransDecoder/TransDecoder-TransDecoder.LongOrfs/TransDecoder-TransDecoder.LongOrfs.cwl
     label: transdecoder
-    'sbg:x': 803
-    'sbg:y': 191
   - id: wget-Sod_Cu-hmm
     in:
       - id: output_name
@@ -215,9 +155,7 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../tool/wget/wget.cwl
-    label: 'wget:Sod_Cu.hmm'
-    'sbg:x': 874
-    'sbg:y': -66
+    label: "wget:Sod_Cu.hmm"
   - id: gzip
     in:
       - id: file
@@ -226,8 +164,6 @@ steps:
       - id: compressed
       - id: stderr
     run: ../../tool/gzip/gzip.cwl
-    'sbg:x': -70
-    'sbg:y': 147
   - id: gzip_1
     in:
       - id: file
@@ -236,8 +172,6 @@ steps:
       - id: compressed
       - id: stderr
     run: ../../tool/gzip/gzip.cwl
-    'sbg:x': -61
-    'sbg:y': 306
   - id: trim_galore
     in:
       - id: read1
@@ -255,8 +189,6 @@ steps:
       - id: out2
     run: ../../tool/trim_galore/trim_galore-pe/trim_galore-pe.cwl
     label: trim_galore
-    'sbg:x': 122
-    'sbg:y': 234
   - id: hmmsearch
     in:
       - id: cpu
@@ -271,8 +203,6 @@ steps:
       - id: output
     run: ../../tool/hmmer/hmmer-hmmsearch/hmmer-hmmsearch.cwl
     label: hmmsearch
-    'sbg:x': 1123
-    'sbg:y': -176
   - id: extract_transcript_id
     in:
       - id: input
@@ -283,23 +213,19 @@ steps:
       - id: out
     run: ../../tool/extract_transcript_id/extract_transcript_id.cwl
     label: extract_transcript_id
-    'sbg:x': 1205
-    'sbg:y': -61
   - id: wget-uniprot-taxonomy_50557-fasta
     in:
       - id: output_name
         default: uniprot-taxonomy_50557.fasta
         source: output_name_1
       - id: url
-        default: 'https://www.uniprot.org/uniprot/?query=taxonomy:50557&format=fasta'
+        default: "https://www.uniprot.org/uniprot/?query=taxonomy:50557&format=fasta"
         source: url_1
     out:
       - id: downloaded
       - id: stderr
     run: ../../tool/wget/wget.cwl
-    label: 'wget:uniprot-taxonomy_50557.fasta'
-    'sbg:x': 1019
-    'sbg:y': 623
+    label: "wget:uniprot-taxonomy_50557.fasta"
   - id: makeblastdb_1
     in:
       - id: input_pep
@@ -310,8 +236,6 @@ steps:
       - id: db_dir
     run: ../../tool/blast/blast-makeblastdb/blast-makeblastdb.cwl
     label: makeblastdb
-    'sbg:x': 1245
-    'sbg:y': 530
   - id: blastp
     in:
       - id: blastdb_dir
@@ -333,8 +257,6 @@ steps:
       - id: blast_results
     run: ../../tool/blast/blast-blastp/blast-blastp.cwl
     label: BLASTP search.
-    'sbg:x': 1455
-    'sbg:y': 404
   - id: trinity_pe
     in:
       - id: cpu
@@ -351,8 +273,6 @@ steps:
       - id: trinity_results
     run: ../../tool/Trinity/Trinity-pe/Trinity-pe.cwl
     label: Trinity
-    'sbg:x': 545
-    'sbg:y': 174
   - id: aaea
     in:
       - id: thread_count
@@ -380,8 +300,6 @@ steps:
       - id: output
     run: ../../tool/Trinity/Trinity-aaea/Trinity-aaea.cwl
     label: align_and_estimate_abundance.pl
-    'sbg:x': 668
-    'sbg:y': 425
   - id: makeblastdb
     in:
       - id: input_pep
@@ -392,8 +310,6 @@ steps:
       - id: db_dir
     run: ../../tool/blast/blast-makeblastdb/blast-makeblastdb.cwl
     label: makeblastdb
-    'sbg:x': 1029
-    'sbg:y': 181
   - id: blastdbcmd
     in:
       - id: blastdb_dir
@@ -408,6 +324,4 @@ steps:
       - id: blastdbcmd_results
     run: ../../tool/blast/blast-blastdbcmd/blast-blastdbcmd.cwl
     label: Blastdbcmd to dump seqs/info.
-    'sbg:x': 1231
-    'sbg:y': 161
 requirements: []

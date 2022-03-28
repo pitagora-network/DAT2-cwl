@@ -1,0 +1,52 @@
+#!/usr/bin/env cwl-runner
+cwlVersion: v1.0
+class: Workflow
+doc: DAT2 workflow RNA-seq
+requirements:
+  SubworkflowFeatureRequirement: {}
+inputs:
+  - id: reference_prefix
+    type: string
+  - id: num_threads
+    type: int?
+  - id: SraRunTable
+    type: File
+  - id: url
+    type: string
+  - id: output_name
+    type: string
+  - id: url_1
+    type: string
+  - id: output_name_1
+    type: string
+  - id: runThreadN
+    type: string?
+  - id: split_files
+    type: boolean?
+  - id: runid
+    type: string
+  - id: rsem_index_prefix
+    type: string?
+  - id: nthreads
+    type: int?
+  - id: runid_1
+    type: string
+  - id: runid_2
+    type: string
+  - id: runid_3
+    type: string
+  - id: runid_4
+    type: string
+  - id: runid_5
+    type: string
+  - id: runid_6
+    type: string
+  - id: quantMode
+    type: string
+  - id: outSAMtype
+    type: "string[]"
+
+steps:
+  star-rsem-deseq2:
+    run: rnaseq-star-rsem-deseq2/rnaseq-star-rsem-deseq2.cwl
+    in:

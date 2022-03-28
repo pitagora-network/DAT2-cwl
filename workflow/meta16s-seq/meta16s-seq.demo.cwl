@@ -52,7 +52,7 @@ steps:
     out:
       - downloaded
   meta16s-seq-wf:
-    run: ../../workflow/meta16s-seq/meta16s-seq.cwl
+    run: meta16s-seq.cwl
     in:
       INPUT: extract.fastq.tar/output
       METADATA: download.metadata/downloaded

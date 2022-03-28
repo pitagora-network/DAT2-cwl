@@ -105,23 +105,7 @@ steps:
       sampling_depth:
         default: 43256 # Use the number of reads of the sample with the smallest number of reads from feature-table summarize
     out:
-      - rarefied_table
-      - faith_pd_vector
-      - observed_otus_vector
-      - shannon_vector
-      - evenness_vector
-      - unweighted_unifrac_distance_matrix # unweighted_unifrac_distance_matrix.qza
-      - weighted_unifrac_distance_matrix
-      - jaccard_distance_matrix
-      - bray_curtis_distance_matrix
-      - unweighted_unifrac_pcoa_results
-      - weighted_unifrac_pcoa_results
-      - jaccard_pcoa_results
-      - bray_curtis_pcoa_results
-      - unweighted_unifrac_emperor
-      - weighted_unifrac_emperor
-      - jaccard_emperor
-      - bray_curtis_emperor
+      - output_dir
 
   diversity.visualizers.alpha_group_significance.observed_otus_vector:
     run: ../../tool/qiime2/diversity.visualizers.alpha_group_significance/qiime2-diversity.visualizers.alpha_group_significance.cwl

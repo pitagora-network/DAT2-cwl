@@ -2,7 +2,6 @@
     "$graph": [
         {
             "class": "CommandLineTool",
-            "doc": "string",
             "requirements": [
                 {
                     "dockerPull": "quay.io/biocontainers/macs2:2.1.2--py27r351h14c3975_1",
@@ -584,7 +583,6 @@
         },
         {
             "class": "Workflow",
-            "doc": "string",
             "requirements": [
                 {
                     "class": "InlineJavascriptRequirement"
@@ -930,7 +928,6 @@
         },
         {
             "class": "Workflow",
-            "doc": "string",
             "requirements": [
                 {
                     "class": "InlineJavascriptRequirement"

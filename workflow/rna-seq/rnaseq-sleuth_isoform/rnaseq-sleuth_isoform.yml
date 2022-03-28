@@ -1,6 +1,0 @@
-kallisto_out:  # array of type "Directory"
-  - class: Directory
-    path: a/directory/path
-sample.txt:  # type "File" (optional)
-    class: File
-    path: a/file/path

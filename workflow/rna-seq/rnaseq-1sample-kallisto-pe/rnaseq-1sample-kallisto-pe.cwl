@@ -1,71 +1,44 @@
 class: Workflow
 cwlVersion: v1.0
 $namespaces:
-  edam: 'http://edamontology.org/'
-  s: 'https://schema.org/'
-  sbg: 'https://www.sevenbridges.com/'
+  edam: "http://edamontology.org/"
+  s: "https://schema.org/"
 inputs:
   - id: bootstrap_samples
     type: int?
-    'sbg:x': 743.11474609375
-    'sbg:y': 449.393798828125
   - id: out_dir_name
     type: string?
-    'sbg:x': 544.4996948242188
-    'sbg:y': 416.59735107421875
   - id: runid
     type: string
-    'sbg:x': 23.035512924194336
-    'sbg:y': -175.34051513671875
   - id: nthreads
     type: int?
-    'sbg:x': -22.539627075195312
-    'sbg:y': -48.13252258300781
   - id: split_files
     type: boolean?
-    'sbg:x': 112.40266418457031
-    'sbg:y': -294.3493957519531
   - id: index_name
     type: string?
-    'sbg:x': -123.93341064453125
-    'sbg:y': 226.54916381835938
   - id: url
     type: string
-    'sbg:x': -333.5840148925781
-    'sbg:y': 512.977783203125
   - id: output_name
     type: string
-    'sbg:x': -321.46368408203125
-    'sbg:y': 666.7991943359375
   - id: nthreads_1
     type: int?
-    'sbg:x': 616.4044799804688
-    'sbg:y': -145.06246948242188
 outputs:
   - id: quant_output
     outputSource:
       - kallisto_quant/quant_output
     type: Directory
-    'sbg:x': 1074.3084716796875
-    'sbg:y': 69.94403076171875
   - id: fastqFiles
     outputSource:
       - fasterq_dump/fastqFiles
-    type: 'File[]'
-    'sbg:x': 387.4664306640625
-    'sbg:y': 41.82462692260742
+    type: "File[]"
   - id: index_file
     outputSource:
       - kallisto_index/index_file
     type: File
-    'sbg:x': 244.21517944335938
-    'sbg:y': 562
   - id: downloaded
     outputSource:
       - wget/downloaded
     type: File
-    'sbg:x': -75
-    'sbg:y': 631.6355590820312
 steps:
   - id: kallisto_quant
     in:
@@ -85,9 +58,7 @@ steps:
       - id: quant_output
     run: >-
       ../../../tool/kallisto/kallisto_quant-pe/kallisto_quant-pe.cwl
-    label: 'kallisto quant: runs the quantification algorithm'
-    'sbg:x': 789.8097534179688
-    'sbg:y': 64.03107452392578
+    label: "kallisto quant: runs the quantification algorithm"
   - id: fasterq_dump
     in:
       - id: nthreads
@@ -101,9 +72,7 @@ steps:
       - id: forward
       - id: reverse
     run: ../../../tool/fasterq-dump/fasterq-dump.cwl
-    label: 'fasterq-dump: dump .sra format file to generate fastq file'
-    'sbg:x': 329
-    'sbg:y': -118.56182098388672
+    label: "fasterq-dump: dump .sra format file to generate fastq file"
   - id: kallisto_index
     in:
       - id: fasta_files
@@ -116,8 +85,6 @@ steps:
     label: >-
       kallisto index: builds an index from a FASTA formatted file of target
       sequences
-    'sbg:x': 181
-    'sbg:y': 306.36444091796875
   - id: wget
     in:
       - id: output_name
@@ -128,16 +95,14 @@ steps:
       - id: downloaded
       - id: stderr
     run: ../../../tool/wget/wget.cwl
-    'sbg:x': -191.04071044921875
-    'sbg:y': 495.8605651855469
 requirements: []
 $schemas:
-  - 'https://schema.org/version/latest/schemaorg-current-http.rdf'
-  - 'http://edamontology.org/EDAM_1.18.owl'
-'s:author':
-  - class: 's:Person'
-    's:email': 'mailto:inutano@gmail.com'
-    's:identifier': 'https://orcid.org/0000-0003-3777-5945'
-    's:name': Tazro Ohta
-'s:codeRepository': 'https://github.com/pitagora-network/pitagora-cwl'
-'s:license': 'https://spdx.org/licenses/Apache-2.0'
+  - "https://schema.org/version/latest/schemaorg-current-http.rdf"
+  - "http://edamontology.org/EDAM_1.18.owl"
+"s:author":
+  - class: "s:Person"
+    "s:email": "mailto:inutano@gmail.com"
+    "s:identifier": "https://orcid.org/0000-0003-3777-5945"
+    "s:name": Tazro Ohta
+"s:codeRepository": "https://github.com/pitagora-network/pitagora-cwl"
+"s:license": "https://spdx.org/licenses/Apache-2.0"

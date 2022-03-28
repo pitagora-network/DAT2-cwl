@@ -27,69 +27,69 @@ inputs:
 
 outputs:
   barplot:
-      type: Directory
-      outputSource: tax-rank.2/barplot
+    type: Directory
+    outputSource: tax-rank.2/barplot
   diversity:
-      type: Directory
-      outputSource: tax-rank.2/diversity
+    type: Directory
+    outputSource: tax-rank.2/diversity
   count_table_2:
-      type: File
-      outputSource: tax-rank.2/count_table
+    type: File
+    outputSource: tax-rank.2/count_table
   count_table_3:
-      type: File
-      outputSource: tax-rank.3/count_table
+    type: File
+    outputSource: tax-rank.3/count_table
   count_table_4:
-      type: File
-      outputSource: tax-rank.4/count_table
+    type: File
+    outputSource: tax-rank.4/count_table
   count_table_5:
-      type: File
-      outputSource: tax-rank.5/count_table
+    type: File
+    outputSource: tax-rank.5/count_table
   count_table_6:
-      type: File
-      outputSource: tax-rank.6/count_table
+    type: File
+    outputSource: tax-rank.6/count_table
   count_table_7:
-      type: File
-      outputSource: tax-rank.7/count_table
+    type: File
+    outputSource: tax-rank.7/count_table
   heatmap_2:
-      type: Directory
-      outputSource: tax-rank.2/heatmap
+    type: Directory
+    outputSource: tax-rank.2/heatmap
   heatmap_3:
-      type: Directory
-      outputSource: tax-rank.3/heatmap
+    type: Directory
+    outputSource: tax-rank.3/heatmap
   heatmap_4:
-      type: Directory
-      outputSource: tax-rank.4/heatmap
+    type: Directory
+    outputSource: tax-rank.4/heatmap
   heatmap_5:
-      type: Directory
-      outputSource: tax-rank.5/heatmap
+    type: Directory
+    outputSource: tax-rank.5/heatmap
   heatmap_6:
-      type: Directory
-      outputSource: tax-rank.6/heatmap
+    type: Directory
+    outputSource: tax-rank.6/heatmap
   heatmap_7:
-      type: Directory
-      outputSource: tax-rank.7/heatmap
+    type: Directory
+    outputSource: tax-rank.7/heatmap
   ancom_2:
-      type: Directory
-      outputSource: tax-rank.2/ancom
+    type: Directory
+    outputSource: tax-rank.2/ancom
   ancom_3:
-      type: Directory
-      outputSource: tax-rank.3/ancom
+    type: Directory
+    outputSource: tax-rank.3/ancom
   ancom_4:
-      type: Directory
-      outputSource: tax-rank.4/ancom
+    type: Directory
+    outputSource: tax-rank.4/ancom
   ancom_5:
-      type: Directory
-      outputSource: tax-rank.5/ancom
+    type: Directory
+    outputSource: tax-rank.5/ancom
   ancom_6:
-      type: Directory
-      outputSource: tax-rank.6/ancom
+    type: Directory
+    outputSource: tax-rank.6/ancom
   ancom_7:
-      type: Directory
-      outputSource: tax-rank.7/ancom
+    type: Directory
+    outputSource: tax-rank.7/ancom
 
 steps:
   tax-rank.2:
-    run: meta16s-filtersamples2ancom.cwl
+    run: filtersamples2ancom.cwl
     in:
       TABLE: TABLE
       METADATA: METADATA
@@ -115,7 +115,7 @@ steps:
       - diversity
 
   tax-rank.3:
-    run: meta16s-filtersamples2ancom.cwl
+    run: filtersamples2ancom.cwl
     in:
       TABLE: TABLE
       METADATA: METADATA
@@ -137,7 +137,7 @@ steps:
       - ancom
 
   tax-rank.4:
-    run: meta16s-filtersamples2ancom.cwl
+    run: filtersamples2ancom.cwl
     in:
       TABLE: TABLE
       METADATA: METADATA
@@ -159,7 +159,7 @@ steps:
       - ancom
 
   tax-rank.5:
-    run: meta16s-filtersamples2ancom.cwl
+    run: filtersamples2ancom.cwl
     in:
       TABLE: TABLE
       METADATA: METADATA
@@ -181,7 +181,7 @@ steps:
       - ancom
 
   tax-rank.6:
-    run: meta16s-filtersamples2ancom.cwl
+    run: filtersamples2ancom.cwl
     in:
       TABLE: TABLE
       METADATA: METADATA
@@ -203,7 +203,7 @@ steps:
       - ancom
 
   tax-rank.7:
-    run: meta16s-filtersamples2ancom.cwl
+    run: filtersamples2ancom.cwl
     in:
       TABLE: TABLE
       METADATA: METADATA

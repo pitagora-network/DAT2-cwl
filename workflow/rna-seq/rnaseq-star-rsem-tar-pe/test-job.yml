@@ -7,8 +7,7 @@ quantMode: TranscriptomeSAM
 rsem_index_prefix: RSEM_reference
 rsem_index_dir:
   class: Directory
-  path: ../../data/RSEM_reference
-#rsem_index_prefix: /home/kyamada/cwl/data/ref/RSEM_reference
+  path: ../../../test/data/RSEM_reference
 rsem_output_prefix: SRR1550989
 runid: SRR1550989
 split_files: true
