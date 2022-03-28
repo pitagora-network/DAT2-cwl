@@ -76,6 +76,7 @@ See [LICENSE](./LICENSE) for further details.
 ## Release
 
 - [1.1.0](https://github.com/pitagora-network/DAT2-cwl/releases/tag/1.1.0)
+  - at Mar 28, 2022
 - [1.0.1](https://github.com/pitagora-network/DAT2-cwl/releases/tag/1.0.1)
   - at Nov 24, 2021
 - [1.0.0](https://github.com/pitagora-network/DAT2-cwl/releases/tag/1.0.0)
