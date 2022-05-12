@@ -21,8 +21,8 @@ def main():
         tool_file_from_git_dir = tool_file_dir.relative_to(GIT_DIR)
         tool_file_path_from_script_dir = f"../{tool_file_from_git_dir}"
 
-        yevis_config = tool_file_dir.joinpath("yevis-config.yml")
-        if yevis_config.exists():
+        yevis_metadata = tool_file_dir.joinpath("yevis-metadata.yml")
+        if yevis_metadata.exists():
             action_name = "test-tool-" + tool_file_name.replace(".cwl", "").replace("_", "-").replace(".", "-").lower()
             contents.append(TEMPLATE_EXISTS_TEST.format(
                 tool_file_name=tool_file_name,

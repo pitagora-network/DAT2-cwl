@@ -25,7 +25,7 @@ jobs:
         run: |
           mkdir -p ./test-logs
           SAPPORO_RUN_DIR=${GITHUB_WORKSPACE}/test-results \
-            ./gh-trs test --verbose https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workflow/epigenome-chip-seq/yevis-config.yml 2>&1 \
+            ./gh-trs test --verbose https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/main/workflow/epigenome-chip-seq/yevis-metadata.yml 2>&1 \
             | tee ./test-logs/gh-trs.log
           exit ${PIPESTATUS[0]}
         continue-on-error: true

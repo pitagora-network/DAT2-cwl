@@ -40,16 +40,16 @@ All workflows introduced in the book has been translated in CWL, but yet the tes
 
 As an example, use [`tool/cat/cat.cwl`](../tool/cat/cat.cwl).
 
-If tests are prepared, [`yevis-config.yml`](../tool/cat/yevis-config.yml) exists in the same directory.
+If tests are prepared, [`yevis-metadata.yml`](../tool/cat/yevis-metadata.yml) exists in the same directory.
 
-Using `gh-trs` and `yevis-config.yml`, run the test as follows:
+Using `gh-trs` and `yevis-metadata.yml`, run the test as follows:
 
 ```shell
-$ gh-trs ./tool/cat/yevis-config.yml
+$ gh-trs ./tool/cat/yevis-metadata.yml
 
 # or
 
-$ gh-trs https://raw.githubusercontent.com/ddbj/yevis-cli/main/tool/cat/yevis-config.yml
+$ gh-trs https://raw.githubusercontent.com/ddbj/yevis-cli/main/tool/cat/yevis-metadata.yml
 ```
 
 ---
