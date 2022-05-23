@@ -1,5 +1,7 @@
 # DAT2-CWL
 
+[![DOI](https://zenodo.org/badge/183195872.svg)](https://zenodo.org/badge/latestdoi/183195872)
+
 This repository contains the Common Workflow Language (CWL) definitions of the workflows introduced in the book [#NGS_DAT 2nd edition (A tutorial book in Japanese, 次世代シークエンサー DRY 解析教本 改訂第 2 版)](https://www.amazon.co.jp/dp/478090983X).
 
 ## Workflows
